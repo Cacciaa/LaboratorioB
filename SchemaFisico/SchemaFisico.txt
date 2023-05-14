@@ -1,0 +1,114 @@
+--Creazione tabella Canzoni--
+CREATE TABLE Canzoni(
+	titolo varchar(70),
+	autore varchar(80),
+	anno int not null
+
+);
+
+--Creazione del vincolo di chiave primaria sulla tabella Canzoni--
+ALTER TABLE Canzoni
+ADD CONSTRAINT pkCanzoni PRIMARY KEY(titolo,autore)
+	
+
+--Creazione tabella Indirizzo--	
+
+CREATE TABLE Indirizzo(
+	citta varchar(50),
+	cap int,
+	via varchar(70),
+	civico int
+	
+);
+
+
+--Creazione del vincolo di chiave primaria sulla tabella Indirizzo--
+ALTER TABLE Indirizzo
+ADD CONSTRAINT pkIndirizzo PRIMARY KEY (citta,cap,via,civico);
+
+
+--Creazione tabella Playlist--	
+
+CREATE TABLE Playlist(
+		idPlaylist serial,
+		nomeplaylist varchar(40) not null,
+		codiceFiscale varchar(11),
+		titolo varchar(70) not null,
+		autore varchar(80) not null
+	
+);
+
+
+--Creazione del vincolo di chiave primaria sulla tabella Playlist--
+alter table Playlist
+ADD CONSTRAINT pkPlaylist PRIMARY KEY (idPlaylist);
+
+--Creazione del vincolo di integrità referenziale sulla tabella Playlist verso la tabella UtentiRegistrati
+ALTER TABLE Playlist
+ADD CONSTRAINT fkPlaylistUtenti FOREIGN KEY (codiceFiscale) REFERENCES UtentiRegistrati(codiceFiscale) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--Creazione del vincolo di integrità referenziale sulla tabella Playlist verso la tabella Canzoni
+ALTER TABLE Playlist
+ADD CONSTRAINT fkPlaylistCanzoni FOREIGN KEY (titolo,autore) REFERENCES Canzoni(titolo,autore);
+
+--Creazione tabella UtentiRegistrati--
+
+CREATE TABLE UtentiRegistrati(
+	codiceFiscale varchar(11),
+	nome varchar(40) not null,
+	cognome varchar(40) not null,
+	citta varchar(50),
+	cap int,
+	via varchar(70),
+	civico int,
+	email varchar(60) not null,
+	password varchar(30) not null
+	
+);
+
+--Creazione del vincolo di chiave primaria sulla tabella UtentiRegistrati--
+ALTER TABLE UtentiRegistrati
+ADD CONSTRAINT pkUtentiRegistrati PRIMARY KEY (codiceFiscale);
+
+--Creazione del vincolo di integrità referenziale sulla tabella UtentiRegistrati verso la tabella Indirizzo
+ALTER TABLE UtentiRegistrati
+ADD CONSTRAINT fkUtentiIndirizzo FOREIGN KEY (citta,cap,via,civico) REFERENCES Indirizzo(citta,cap,via,civico);
+
+
+--Creazione tabella EmozioniCanzone--
+CREATE TABLE EmozioniCanzone(
+	idValutazione serial,
+	titolo varchar(70),
+	autore varchar(80),
+	codiceFiscale varchar(11),
+	amazement int not null, 
+	nostalgia int not null, 
+	calmness int not null,
+	power int not null, 
+	joy int not null, 
+	tension int not null, 
+	sadness int not null, 
+	tenderness int not null, 
+	solemnity int not null, 
+	amazement_notes varchar(200) not null, 
+	nostalgia_notes varchar(200) not null, 
+	calmness_notes varchar(200) not null, 
+	power_notes varchar(200) not null, 
+	joy_notes varchar(200) not null, 
+	tension_notes varchar(200) not null, 
+	sadness_notes varchar(200) not null, 
+	tenderness_notes varchar(200) not null, 
+	solemnity_notes varchar(200) not null
+);
+
+--Creazione del vincolo di chiave primaria sulla tabella EmozioniCanzone--
+ALTER TABLE EmozioniCanzone
+ADD CONSTRAINT pkEmozioniCanzone PRIMARY KEY (idValutazione);
+
+--Creazione del vincolo di integrità referenziale sulla tabella EmozioniCanzone verso la tabella Canzoni
+ALTER TABLE EmozioniCanzone
+ADD CONSTRAINT fkEmozioniCanzoneCanzoni FOREIGN KEY (titolo,autore) REFERENCES Canzoni(titolo,autore);
+
+--Creazione del vincolo di integrità referenziale sulla tabella EmozioniCanzone verso la tabella UtentiRegistrati
+ALTER TABLE EmozioniCanzone
+ADD CONSTRAINT fkEmozioniCanzoneUtente FOREIGN KEY (codiceFiscale) REFERENCES UtentiRegistrati(codiceFiscale);
