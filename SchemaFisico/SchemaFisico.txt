@@ -1,14 +1,13 @@
 --Creazione tabella Canzoni--
 CREATE TABLE Canzoni(
-	titolo varchar(70),
-	autore varchar(80),
+	titolo varchar(150),
+	autore varchar(150),
 	anno int not null
-
 );
 
 --Creazione del vincolo di chiave primaria sulla tabella Canzoni--
 ALTER TABLE Canzoni
-ADD CONSTRAINT pkCanzoni PRIMARY KEY(titolo,autore)
+ADD CONSTRAINT pkCanzoni PRIMARY KEY(titolo,autore,anno);
 	
 
 --Creazione tabella Indirizzo--	
