@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-05-17T18:55:32.002Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36" etag="SPHraA_sQtrbbvAQEEWj" version="21.3.0" type="device">
+<mxfile host="app.diagrams.net" modified="2023-05-17T19:10:28.245Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36" etag="_1YvIeJtH8lb7YFjWG6e" version="21.3.2" type="device">
   <diagram id="R2lEEEUBdFMjLlhIrx00" name="Page-1">
-    <mxGraphModel dx="1793" dy="995" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
+    <mxGraphModel dx="1434" dy="796" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -70,7 +70,7 @@
         <mxCell id="X9WCBh2QZouLG1bWIAwy-59" value="password" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="795" y="269" width="70" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="X9WCBh2QZouLG1bWIAwy-60" value="" style="endArrow=none;html=1;rounded=0;startArrow=oval;startFill=1;" parent="1" target="X9WCBh2QZouLG1bWIAwy-39" edge="1" source="X9WCBh2QZouLG1bWIAwy-61">
+        <mxCell id="X9WCBh2QZouLG1bWIAwy-60" value="" style="endArrow=none;html=1;rounded=0;startArrow=oval;startFill=1;" parent="1" source="X9WCBh2QZouLG1bWIAwy-61" target="X9WCBh2QZouLG1bWIAwy-39" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="1396.5" y="409" as="sourcePoint" />
             <mxPoint x="1236.5" y="409" as="targetPoint" />
@@ -91,7 +91,7 @@
             <mxPoint x="290" y="419" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="X9WCBh2QZouLG1bWIAwy-65" value="" style="endArrow=none;html=1;rounded=0;startArrow=oval;startFill=0;" parent="1" target="X9WCBh2QZouLG1bWIAwy-41" edge="1" source="X9WCBh2QZouLG1bWIAwy-71">
+        <mxCell id="X9WCBh2QZouLG1bWIAwy-65" value="" style="endArrow=none;html=1;rounded=0;startArrow=oval;startFill=0;" parent="1" source="X9WCBh2QZouLG1bWIAwy-71" target="X9WCBh2QZouLG1bWIAwy-41" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="220" y="394" as="sourcePoint" />
             <mxPoint x="300" y="424" as="targetPoint" />
@@ -331,7 +331,7 @@
         <mxCell id="uMZJFHJFrMh6VU6vfNvN-9" value="Contiene(&lt;u&gt;idPlaylist&lt;/u&gt;&lt;sup style=&quot;&quot;&gt;Playlist&lt;/sup&gt;, &lt;u&gt;titolo&lt;/u&gt;&lt;sup style=&quot;&quot;&gt;Canzoni&lt;/sup&gt;,&amp;nbsp;&lt;u style=&quot;border-color: var(--border-color);&quot;&gt;autore&lt;/u&gt;&lt;sup style=&quot;border-color: var(--border-color);&quot;&gt;Canzoni&lt;/sup&gt;&lt;br&gt;&amp;nbsp;,&lt;u&gt;anno&lt;/u&gt;&lt;sup style=&quot;&quot;&gt;Canzoni&lt;/sup&gt;)" style="text;html=1;align=center;verticalAlign=top;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=15;" parent="1" vertex="1">
           <mxGeometry x="620" y="740.25" width="370" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="uMZJFHJFrMh6VU6vfNvN-11" value="EmozioniCanzone(&lt;u&gt;idValutazione&lt;/u&gt;, amazement, nostalgia, calmness, power, joy, tension, sadness, tenderness, solemnity, amazement-notes, nostalgia-notes, calmness-notes, power-notes, joy-notes, tension-notes, sadness-notes, tenderness-notes, solemnity-notes,titolo&lt;sup&gt;Canzoni&lt;/sup&gt;,autore&lt;sup&gt;Canzoni&lt;/sup&gt;,codiceFiscale&lt;sup&gt;UtentiRegistrati&lt;/sup&gt;)" style="text;whiteSpace=wrap;html=1;fontSize=14;" parent="1" vertex="1">
+        <mxCell id="uMZJFHJFrMh6VU6vfNvN-11" value="EmozioniCanzone(&lt;u&gt;idValutazione&lt;/u&gt;, amazement, nostalgia, calmness, power, joy, tension, sadness, tenderness, solemnity, amazement-notes, nostalgia-notes, calmness-notes, power-notes, joy-notes, tension-notes, sadness-notes, tenderness-notes, solemnity-notes,titolo&lt;sup&gt;Canzoni&lt;/sup&gt;,autore&lt;sup&gt;Canzoni&lt;/sup&gt;,anno&lt;sup style=&quot;border-color: var(--border-color);&quot;&gt;Canzoni &lt;/sup&gt;&lt;span style=&quot;border-color: var(--border-color);&quot;&gt;,&amp;nbsp;&lt;/span&gt;codiceFiscale&lt;sup style=&quot;border-color: var(--border-color);&quot;&gt;UtentiRegistrati&lt;/sup&gt;)" style="text;whiteSpace=wrap;html=1;fontSize=14;" parent="1" vertex="1">
           <mxGeometry x="40" y="819" width="560" height="80" as="geometry" />
         </mxCell>
         <mxCell id="uMZJFHJFrMh6VU6vfNvN-12" value="UtentiRegistrati(&lt;u&gt;codiceFiscale&lt;/u&gt;, nome, cognome, citta&lt;sup&gt;Indirizzo&lt;/sup&gt;, cap&lt;sup&gt;Indirizzo&lt;/sup&gt;&lt;br&gt;, via&lt;sup&gt;Indirizzo&lt;/sup&gt;, civico&lt;sup&gt;Indirizzo&lt;/sup&gt;, email, password)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;" parent="1" vertex="1">
@@ -392,13 +392,13 @@
         <mxCell id="E54WmxcDRFIERYKBtLCP-13" value="Indirzzo (&lt;u style=&quot;font-size: 15px;&quot;&gt;citta, cap, via, civico&lt;/u&gt;)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=15;" parent="1" vertex="1">
           <mxGeometry x="1129" y="740.25" width="220" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="7s8jJXIYFW_wJS6nGfQI-1" value="" style="endArrow=none;html=1;rounded=0;startArrow=oval;startFill=0;" edge="1" parent="1" source="7s8jJXIYFW_wJS6nGfQI-2" target="X9WCBh2QZouLG1bWIAwy-130">
+        <mxCell id="7s8jJXIYFW_wJS6nGfQI-1" value="" style="endArrow=none;html=1;rounded=0;startArrow=oval;startFill=0;" parent="1" source="7s8jJXIYFW_wJS6nGfQI-2" target="X9WCBh2QZouLG1bWIAwy-130" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="745" y="632.75" as="sourcePoint" />
             <mxPoint x="775" y="610.75" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="7s8jJXIYFW_wJS6nGfQI-2" value="anno" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+        <mxCell id="7s8jJXIYFW_wJS6nGfQI-2" value="anno" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="675" y="622.75" width="50" height="30" as="geometry" />
         </mxCell>
       </root>
