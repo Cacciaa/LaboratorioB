@@ -10,23 +10,8 @@ ALTER TABLE Canzoni
 ADD CONSTRAINT pkCanzoni PRIMARY KEY(titolo,autore,anno);
 	
 
---Creazione tabella Indirizzo--	
-
-CREATE TABLE Indirizzo(
-	citta varchar(50),
-	cap int,
-	via varchar(70),
-	civico int
-	
-);
 
 
---Creazione del vincolo di chiave primaria sulla tabella Indirizzo--
-ALTER TABLE Indirizzo
-ADD CONSTRAINT pkIndirizzo PRIMARY KEY (citta,cap,via,civico);
-
-
---Creazione tabella Playlist--	
 
 --Creazione tabella Playlist--	
 
@@ -52,10 +37,10 @@ CREATE TABLE UtentiRegistrati(
 	codiceFiscale varchar(11),
 	nome varchar(40) not null,
 	cognome varchar(40) not null,
-	citta varchar(50),
-	cap int,
-	via varchar(70),
-	civico int,
+	citta varchar(50) not null,
+	cap int not null,
+	via varchar(70) not null,
+	civico int not null,
 	email varchar(60) not null,
 	password varchar(30) not null
 	
@@ -65,9 +50,6 @@ CREATE TABLE UtentiRegistrati(
 ALTER TABLE UtentiRegistrati
 ADD CONSTRAINT pkUtentiRegistrati PRIMARY KEY (codiceFiscale);
 
---Creazione del vincolo di integrità referenziale sulla tabella UtentiRegistrati verso la tabella Indirizzo
-ALTER TABLE UtentiRegistrati
-ADD CONSTRAINT fkUtentiIndirizzo FOREIGN KEY (citta,cap,via,civico) REFERENCES Indirizzo(citta,cap,via,civico);
 
 
 --Creazione tabella EmozioniCanzone--
