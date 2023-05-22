@@ -105,6 +105,9 @@ public class ServerFrame extends javax.swing.JFrame {
         //controllo se le credenziali inserite sono corrette
         if (txtUsername.getText().equals(user) && String.valueOf(txtPassword.getPassword()).equals(pass)) {   
             //creazione del nuovo panel
+            //reset dei campi di accesso
+            this.txtPassword.setText("");
+            this.txtUsername.setText("");
             final JDialog frame = new JDialog(this, "repositoryChoice_Gui", true);
             //aggiunta dell'istanza del nuovo JPanel ConsoleFrame al
             frame.getContentPane().add(new ConsoleFrame(user, pass));
@@ -112,9 +115,7 @@ public class ServerFrame extends javax.swing.JFrame {
             frame.pack();
             //visualizzazione del nuovo JPanel appena realizzato
             frame.setVisible(true);
-            //reset dei campi di accesso
-            this.txtPassword.setText("");
-            this.txtUsername.setText("");
+            
         }
         else{
             //pop up d'errore riguardo alle credenziali inserite
