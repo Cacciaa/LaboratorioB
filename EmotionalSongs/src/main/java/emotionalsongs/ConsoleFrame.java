@@ -15,7 +15,7 @@ import javax.swing.SwingUtilities;
  *
  * @author Lorenzo
  */
-public class ConsoleFrame extends javax.swing.JPanel {
+public class ConsoleFrame extends javax.swing.JPanel  {
 
     private static String user;
     private static String pass;

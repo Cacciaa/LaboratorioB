@@ -10,25 +10,25 @@ import java.util.ArrayList;
  *
  * @author Lorenzo
  */
-public interface InterfacciaServizio {
+public interface InterfacciaServizio extends Remote {
 
-    boolean login(String cf, String password);
+    boolean login(String cf, String password) throw UtenteInesistente, PasswordErrata;
 
-    boolean registrazione(String cf, String nome, String cognome, String citta, int cap, String via, int civico, String email, String password);
+    boolean registrazione(String cf, String nome, String cognome, String citta, int cap, String via, int civico, String email, String password) throws UtenteGiaRegistrato, DatiNonValidi;
 
-    ArrayList<Canzoni> filtraPerTitolo(String titolo);
+    ArrayList<Canzoni> filtraPerTitolo(String titolo) throws CanzoneInesistente;
 
-    ArrayList<Canzoni> filtraPerAutoreAnno(String autore, int anno);
+    ArrayList<Canzoni> filtraPerAutoreAnno(String autore, int anno) throws CanzoneInesistenti;
 
-    Emozioni getEmozioniFromBrano(String titolo, String autore, int anno);
+    Emozioni getEmozioniFromBrano(String titolo, String autore, int anno) throws EmozioniInesistenti;
 
-    ArrayList<Canzoni> getCanzoniForPlaylist();
+    ArrayList<Canzoni> getCanzoniForPlaylist() throws MyServerException;
 
-    boolean createPlaylist(String nomeplaylist, ArrayList<Canzoni> canzoni, String cf);
+    boolean createPlaylist(String nomeplaylist, ArrayList<Canzoni> canzoni, String cf) throws MyServerException;
 
-    ArrayList<Playlist> getPlaylist(String cf);
+    ArrayList<Playlist> getPlaylist(String cf) throws PlaylistInesistenti;
 
-    ArrayList<Canzoni> getCanzoniFromPlaylist(String idPlaylist);
+    ArrayList<Canzoni> getCanzoniFromPlaylist(String idPlaylist) throws MyServerException ;
 
     boolean inserisciEmozione (String titolo, String autore, int anno, String cf, 
             int amazement, int nostalgia, int calmness, int power, int joy, int tension, int sadness, int tenderness, int solemnity, 

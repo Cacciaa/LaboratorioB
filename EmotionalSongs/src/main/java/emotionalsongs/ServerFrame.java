@@ -4,6 +4,12 @@
  */
 package emotionalsongs;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 
@@ -17,7 +23,7 @@ public class ServerFrame extends javax.swing.JFrame {
      * Creates new form ServerFrame
      */
     private final static String user = "postgres";
-    private final static String pass = "password";
+    private final static String pass = "prova";
 
     public ServerFrame() {
         initComponents();
@@ -101,31 +107,64 @@ public class ServerFrame extends javax.swing.JFrame {
 
     private void BtnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnLoginActionPerformed
         // TODO add your handling code here:
-        
+
         //controllo se le credenziali inserite sono corrette
-        if (txtUsername.getText().equals(user) && String.valueOf(txtPassword.getPassword()).equals(pass)) {   
+        if (checkPsw()) {
             //creazione del nuovo panel
-            //reset dei campi di accesso
-            this.txtPassword.setText("");
-            this.txtUsername.setText("");
             final JDialog frame = new JDialog(this, "repositoryChoice_Gui", true);
             //aggiunta dell'istanza del nuovo JPanel ConsoleFrame al
-            frame.getContentPane().add(new ConsoleFrame(user, pass));
+            System.out.println(txtUsername.getText() + String.valueOf(txtPassword.getPassword()));
+            frame.getContentPane().add(new ConsoleFrame(txtUsername.getText(), String.valueOf(txtPassword.getPassword())));
             //packing del nuovo JPanel
             frame.pack();
             //visualizzazione del nuovo JPanel appena realizzato
             frame.setVisible(true);
-            
-        }
-        else{
+            //reset dei campi di accesso
+            this.txtPassword.setText("");
+            this.txtUsername.setText("");
+
+        } else {
             //pop up d'errore riguardo alle credenziali inserite
             JOptionPane.showMessageDialog(null, "Credenziali errate, riprovare.", "Erorre d'accesso", JOptionPane.ERROR_MESSAGE);
-             //reset dei campi di accesso
+            //reset dei campi di accesso
             this.txtPassword.setText("");
             this.txtUsername.setText("");
         }
 
     }//GEN-LAST:event_BtnLoginActionPerformed
+
+    private boolean checkPsw() {
+        try {
+            BufferedReader br = new BufferedReader(new FileReader("accessodb.csv"));
+
+            String text;
+            while ((text = br.readLine()) != null) {
+                String[] splittedline = text.split(";");
+                if (splittedline.length == 2) {
+                    if (splittedline[0].equals(txtUsername.getText()) && splittedline[1].equals(String.valueOf(txtPassword.getPassword()))) {
+                        return true;
+                    }
+                } else {
+                    //message dialog per file non trovato
+                    JOptionPane.showMessageDialog(null, "Errore durante lo splitting delle credenziali", "Eccezione in splitting", JOptionPane.ERROR_MESSAGE);
+                    break;
+                }
+            }
+
+        } catch (FileNotFoundException ex) {
+            //message dialog per file non trovato
+            JOptionPane.showMessageDialog(null, "File accessodb.csv non trovato.", "File non trovato", JOptionPane.ERROR_MESSAGE);
+
+        } catch (IOException ex) {
+            //message dialog per lettura errata
+            JOptionPane.showMessageDialog(null, "Eccezione invocata durante la lettura dal file.", "Eccezione in lettura", JOptionPane.ERROR_MESSAGE);
+
+        }
+        //reset dei campi di accesso
+        this.txtPassword.setText("");
+        this.txtUsername.setText("");
+        return false;
+    }
 
     /**
      * @param args the command line arguments
@@ -158,7 +197,7 @@ public class ServerFrame extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new ServerFrame().setVisible(true);
-                
+
             }
         });
     }
