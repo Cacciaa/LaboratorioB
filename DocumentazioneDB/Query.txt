@@ -1,0 +1,25 @@
+1.	Registrazione utente
+
+INSERT INTO utentiregistrati VALUES ('CCCMTT01P04I577M','Matteo', 'Cacciarino','Meda',20821,'Luigi Rho',27,'matcacciarino@gmail.com','ciao') 
+
+2.	Login utente (Su codice controlliamo se la password dell’utente inserita sia corretta)
+
+SELECT password FROM utentiregistrati WHERE LOWER(codicefiscale) = LOWER('CCCMTT01P04I577M')
+
+3.	getEmozioniFromBrano 1 - Selezione singole emozioni da EmozioniCanzone
+
+SELECT amazement, amazement_notes, nostalgia, nostalgia_notes, calmness, calmness_notes, power, power_notes, joy, joy_notes, tension, tension_notes, sadness, sadness_notes, tenderness, tenderness_notes, solemnity, solemnity_notes FROM emozionicanzone
+
+4.	getEmozioniFromBrano 2 - Ritorna la media delle emozioni da titolo, autore, anno
+
+SELECT AVG(amazement),AVG(nostalgia),AVG(calmness),AVG(power),AVG(joy),AVG(tension),AVG(sadness),AVG(tenderness),AVG(solemnity) 
+FROM emozionicanzone 
+WHERE LOWER(titolo) = LOWER('titolo') AND LOWER(autore) = LOWER('autore') AND anno = 1852
+
+5.	Filtra per titolo - ricerco in canzoni la canzone (do tutto)
+
+SELECT * FROM canzoni WHERE LOWER(titolo) LIKE LOWER('dale%')
+
+6.	Filtra per autore anno - ricerco in canzoni la canzone (do tutto)
+
+SELECT * FROM canzoni WHERE LOWER(autore) LIKE LOWER('ja%') AND anno = 2001 
