@@ -23,3 +23,33 @@ SELECT * FROM canzoni WHERE LOWER(titolo) LIKE LOWER('dale%')
 6.	Filtra per autore anno - ricerco in canzoni la canzone (do tutto)
 
 SELECT * FROM canzoni WHERE LOWER(autore) LIKE LOWER('ja%') AND anno = 2001 
+
+7. getCanzoniForPlaylist - ritorno tutte le canzoni contenute all'interno della tabella canzoni, da scegliere per la playlist
+
+SELECT * FROM canzoni
+
+8. createPlaylist 1 - creazione della playlist all'interno della tabella playlist
+
+INSERT INTO playlist (nomeplaylist, codicefiscale) VALUES ('ProvaPlaylist', 'CCCMTT01P04I577M')
+
+9. createPlaylist 2 - Inserimento delle canzoni all'interno della playlist tramite inserimento nella tabella contiene
+
+INSERT INTO contiene VALUES ((SELECT idplaylist FROM playlist WHERE LOWER(nomeplaylist) = LOWER('ProvaPlaylist') AND LOWER(codicefiscale)= LOWER('CCCMTT01P04I577M')), 'walk right in','cannon''s jug stompers',1929)  
+
+10. getPlaylist - ritorno le playlist associate al codice fiscale di un utente
+
+SELECT idplaylist, nomeplaylist FROM playlist WHERE LOWER(codicefiscale) = LOWER('CCCMTT01P04I577M')
+
+11. getCanzoniFromPlaylist - versione con nome della playlist (si può fare anche dando direttamente l id)
+
+SELECT titolo, autore, anno FROM contiene WHERE idplaylist = (SELECT idplaylist
+										  FROM playlist 
+										  WHERE LOWER(nomeplaylist) = LOWER('nome') AND LOWER(codicefiscale)= LOWER('CCCMTT01P04I577M'))
+
+12. inserisciEmozione - inserimento emozioni
+
+INSERT INTO emozionicanzone (titolo,autore,codicefiscale,amazement,nostalgia,calmness,power,joy,tension,sadness,
+							tenderness,solemnity,amazement_notes,nostalgia_notes,calmness_notes,power_notes,joy_notes,
+							tension_notes,sadness_notes,tenderness_notes,solemnity_notes,anno) 
+							VALUES ('walk right in','cannon''s jug stompers','CCCMTT01P04I577M',5,5,5,5,5,5,5,5,5,'nota',
+								   'nota','nota','nota','nota','nota','nota','nota','nota',1929)
