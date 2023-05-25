@@ -6,6 +6,7 @@ package server;
 
 import emotionalsongs.Common.*;
 import java.awt.Window;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -20,6 +21,7 @@ import javax.swing.SwingUtilities;
 public class ConsoleFrame extends javax.swing.JPanel implements InterfacciaServizio {
 
     private Database db;
+    private DataTables dt;
 
     /**
      * Creates new form ConsoleFrame
@@ -95,38 +97,63 @@ public class ConsoleFrame extends javax.swing.JPanel implements InterfacciaServi
     // End of variables declaration//GEN-END:variables
 
     @Override
-    public boolean login(String cf, String password) throws UtenteInesistente, PasswordErrata {
+    public synchronized void login(String cf, String password) throws UtenteInesistente, PasswordErrata, MyServerException {
+        try {
+            ResultSet rs = db.submitQuery("SELECT password FROM utentiregistrati WHERE LOWER(codicefiscale) = LOWER('" + cf + "');");
+            dt.checkLogin(rs, password);
 
+        } catch (SQLException ex) {
+            throw new MyServerException("LOGIN FAILED - SQL ERROR: " + ex.getSQLState());
+        }
     }
 
     @Override
-    public boolean registrazione(String cf, String nome, String cognome, String citta, int cap, String via, int civico, String email, String password) throws UtenteGiaRegistrato, DatiNonValidi {
+    public void registrazione(String cf, String nome, String cognome, String citta, int cap, String via, int civico, String email, String password) throws UtenteGiaRegistrato, DatiNonValidi, MyServerException {
 
         try {
             db.submitQueryUpdate("INSERT INTO utentiregistrati VALUES('" + cf + "','"
                     + nome + "','"
-                    + cognome + "','" 
-                    + citta + "'," 
-                    + cap  + ",'"
+                    + cognome + "','"
+                    + citta + "',"
+                    + cap + ",'"
                     + via + "',"
                     + civico + ",'"
                     + email + "','"
                     + password + "')");
+
         } catch (SQLException ex) {
-           
+
+            if (ex.getSQLState().equals("22001")) {
+                txtAreaConsole.append("INSERT ERROR - I dati inseriti non sono validi");
+                throw new DatiNonValidi("I dati inseriti non sono validi");
+            } else if (ex.getSQLState().equals("23505")) {
+                txtAreaConsole.append("INSERT ERROR - Duplicato della chiave primaria");
+                throw new UtenteGiaRegistrato("Duplicato della chiave primaria");
+            } else {
+                throw new MyServerException("INSERT ERROR - SQL ERROR: " + ex.getSQLState());
+            }
         }
 
-        return true;
     }
 
     @Override
-    public ArrayList<Canzoni> filtraPerTitolo(String titolo) throws CanzoneInesistente {
-
+    public ArrayList<Canzoni> filtraPerTitolo(String titolo) throws CanzoneInesistente, MyServerException {
+        try {
+            ResultSet rs = db.submitQuery("SELECT * FROM canzoni WHERE LOWER(titolo) LIKE LOWER('" + titolo + "%')");
+            return dt.handleCanzoniSet(rs);
+        } catch (SQLException ex) {
+            throw new MyServerException("FILTER BY TITLE FAILED - SQL ERROR: " + ex.getSQLState());
+        }
     }
 
     @Override
-    public ArrayList<Canzoni> filtraPerAutoreAnno(String autore, int anno) throws CanzoneInesistente {
-
+    public ArrayList<Canzoni> filtraPerAutoreAnno(String autore, int anno) throws CanzoneInesistente, MyServerException {
+        try {
+            ResultSet rs = db.submitQuery("SELECT * FROM canzoni WHERE LOWER(autore) LIKE LOWER('" + autore + "%') AND anno = " + anno);
+            return dt.handleCanzoniSet(rs);
+        } catch (SQLException ex) {
+            throw new MyServerException("FILTER BY AUTHOR AND YEAR FAILED - SQL ERROR: " + ex.getSQLState());
+        }
     }
 
     @Override
@@ -135,8 +162,13 @@ public class ConsoleFrame extends javax.swing.JPanel implements InterfacciaServi
     }
 
     @Override
-    public ArrayList<Canzoni> getCanzoniForPlaylist() throws MyServerException {
-
+    public ArrayList<Canzoni> getCanzoniForPlaylist() throws MyServerException, CanzoneInesistente {
+        try {
+            ResultSet rs = db.submitQuery("SELECT * FROM canzoni");
+            return dt.handleCanzoniSet(rs);
+        } catch (SQLException ex) {
+            throw new MyServerException("GET ALL SONGS FAILED - SQL ERROR: " + ex.getSQLState());
+        }
     }
 
     @Override

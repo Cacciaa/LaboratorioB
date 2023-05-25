@@ -14,17 +14,17 @@ import java.util.ArrayList;
  */
 public interface InterfacciaServizio extends Remote {
 
-    boolean login(String cf, String password) throws UtenteInesistente, PasswordErrata;
+    void login(String cf, String password) throws UtenteInesistente, PasswordErrata, MyServerException;
 
-    boolean registrazione(String cf, String nome, String cognome, String citta, int cap, String via, int civico, String email, String password) throws UtenteGiaRegistrato, DatiNonValidi;
+    void registrazione(String cf, String nome, String cognome, String citta, int cap, String via, int civico, String email, String password) throws UtenteGiaRegistrato, DatiNonValidi, MyServerException;
 
-    ArrayList<Canzoni> filtraPerTitolo(String titolo) throws CanzoneInesistente;
+    ArrayList<Canzoni> filtraPerTitolo(String titolo) throws CanzoneInesistente, MyServerException;
 
-    ArrayList<Canzoni> filtraPerAutoreAnno(String autore, int anno) throws CanzoneInesistente;
+    ArrayList<Canzoni> filtraPerAutoreAnno(String autore, int anno) throws CanzoneInesistente, MyServerException;
 
     Emozioni getEmozioniFromBrano(String titolo, String autore, int anno) throws EmozioniInesistenti;
 
-    ArrayList<Canzoni> getCanzoniForPlaylist() throws MyServerException;
+    ArrayList<Canzoni> getCanzoniForPlaylist() throws MyServerException, CanzoneInesistente;
 
     boolean createPlaylist(String nomeplaylist, ArrayList<Canzoni> canzoni, String cf) throws MyServerException;
 

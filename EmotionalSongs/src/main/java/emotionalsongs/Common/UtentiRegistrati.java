@@ -42,6 +42,8 @@ public class UtentiRegistrati implements Serializable {
         this.password = password;
     }
 
+    
+
     public String getCodiceFiscale() {
         return codiceFiscale;
     }
