@@ -156,10 +156,7 @@ public class ConsoleFrame extends javax.swing.JPanel implements InterfacciaServi
         }
     }
 
-    @Override
-    public Emozioni getEmozioniFromBrano(String titolo, String autore, int anno) throws EmozioniInesistenti {
-
-    }
+   
 
     @Override
     public ArrayList<Canzoni> getCanzoniForPlaylist() throws MyServerException, CanzoneInesistente {
@@ -169,6 +166,11 @@ public class ConsoleFrame extends javax.swing.JPanel implements InterfacciaServi
         } catch (SQLException ex) {
             throw new MyServerException("GET ALL SONGS FAILED - SQL ERROR: " + ex.getSQLState());
         }
+    }
+    
+     @Override
+    public Emozioni getEmozioniFromBrano(String titolo, String autore, int anno) throws EmozioniInesistenti {
+
     }
 
     @Override
