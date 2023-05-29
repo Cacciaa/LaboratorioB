@@ -40,7 +40,7 @@ INSERT INTO contiene VALUES ((SELECT idplaylist FROM playlist WHERE LOWER(nomepl
 
 10. getPlaylist - ritorno le playlist associate al codice fiscale di un utente
 
-SELECT idplaylist, nomeplaylist FROM playlist WHERE LOWER(codicefiscale) = LOWER('CCCMTT01P04I577M')
+SELECT * FROM playlist WHERE LOWER(codicefiscale) = LOWER('CCCMTT01P04I577M')
 
 11. getCanzoniFromPlaylist - versione con nome della playlist (si può fare anche dando direttamente l id)
 
