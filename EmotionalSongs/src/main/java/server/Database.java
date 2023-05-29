@@ -15,8 +15,8 @@ import java.sql.Connection;
  */
 public class Database {
    	private final static String protocol 	= "jdbc:postgresql" + "://";
-	private final static String host		= "localhost" + "/";
-	private final static String resource	= "EmotionalSongsDB";
+	private final static String host		= "emotionalsongs.c9bcs8galrpt.eu-north-1.rds.amazonaws.com:5432" + "/";
+	private final static String resource	= "EmotionalSongs";
 	
 	private final static String url  = protocol + host + resource;
 	private static String user;

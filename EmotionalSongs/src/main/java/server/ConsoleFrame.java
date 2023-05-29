@@ -108,7 +108,7 @@ public class ConsoleFrame extends javax.swing.JPanel implements InterfacciaServi
     }
 
     @Override
-    public void registrazione(String cf, String nome, String cognome, String citta, int cap, String via, int civico, String email, String password) throws UtenteGiaRegistrato, DatiNonValidi, MyServerException {
+    public void registrazione(String cf, String nome, String cognome, String citta, int cap, String via, int civico, String email, String password) throws ChiaveDuplicata, DatiNonValidi, MyServerException {
 
         try {
             db.submitQueryUpdate("INSERT INTO utentiregistrati VALUES('" + cf + "','"
@@ -128,7 +128,7 @@ public class ConsoleFrame extends javax.swing.JPanel implements InterfacciaServi
                 throw new DatiNonValidi("I dati inseriti non sono validi");
             } else if (ex.getSQLState().equals("23505")) {
                 txtAreaConsole.append("INSERT ERROR - Duplicato della chiave primaria");
-                throw new UtenteGiaRegistrato("Duplicato della chiave primaria");
+                throw new ChiaveDuplicata("Duplicato della chiave primaria");
             } else {
                 throw new MyServerException("INSERT ERROR - SQL ERROR: " + ex.getSQLState());
             }
@@ -156,8 +156,6 @@ public class ConsoleFrame extends javax.swing.JPanel implements InterfacciaServi
         }
     }
 
-   
-
     @Override
     public ArrayList<Canzoni> getCanzoniForPlaylist() throws MyServerException, CanzoneInesistente {
         try {
@@ -167,29 +165,115 @@ public class ConsoleFrame extends javax.swing.JPanel implements InterfacciaServi
             throw new MyServerException("GET ALL SONGS FAILED - SQL ERROR: " + ex.getSQLState());
         }
     }
-    
-     @Override
-    public Emozioni getEmozioniFromBrano(String titolo, String autore, int anno) throws EmozioniInesistenti {
+
+    @Override
+    public Emozioni getEmozioniFromBrano(String titolo, String autore, int anno) throws EmozioniInesistenti, MyServerException {
+        try {
+            ResultSet rsemovalori = db.submitQuery("SELECT idvalutazione, amazement, amazement_notes, nostalgia, nostalgia_notes, calmness, "
+                    + "calmness_notes, power, power_notes, joy, joy_notes, tension, tension_notes, sadness, sadness_notes, "
+                    + "tenderness, tenderness_notes, solemnity, solemnity_notes"
+                    + "FROM emozionicanzone "
+                    + " WHERE LOWER(titolo) = LOWER('" + titolo + "') AND  LOWER (autore) = LOWER('" + autore + "') AND  anno = " + anno);
+
+            ResultSet rsemomedie = db.submitQuery("SELECT AVG(amazement) AS avg_amazement ,AVG(nostalgia) AS avg_nostalgia , AVG(calmness) AS AVG_calmness, "
+                    + "AVG(power) AS avg_power ,AVG(joy) AS avg_joy ,AVG(tension) AS avg_tension , "
+                    + "AVG(sadness) AS avg_sadness ,AVG(tenderness) AS avg_tenderness ,AVG(solemnity) AS avg_solemnity "
+                    + "FROM emozionicanzone "
+                    + "WHERE LOWER(titolo) = LOWER('" + titolo + "') AND  LOWER (autore) = LOWER('" + autore + "') AND  anno = " + anno);
+
+            return dt.handleEmozioniSet(rsemovalori, rsemomedie);
+        } catch (SQLException ex) {
+            throw new MyServerException("GET EMOTION FAILED - SQL ERROR: " + ex.getSQLState());
+        }
+    }
+
+    @Override
+    public void createPlaylist(String nomeplaylist, ArrayList<Canzoni> canzoni, String cf) throws ChiaveDuplicata, DatiNonValidi, MyServerException {
+
+        try {
+            db.submitQueryUpdate("INSERT INTO playlist (nomeplaylist,codicefiscale) VALUES('" + nomeplaylist + "','" + cf + "')");
+            for (int i = 0; i < canzoni.size(); i++) {
+                db.submitQueryUpdate("INSERT INTO contiene VALUES('" + "(SELECT idplaylist FROM playlist WHERE LOWER(nomeplaylist) = LOWER('" + nomeplaylist + "') AND LOWER (codicefiscale) = LOWER('" + cf + "')) ','"
+                        + canzoni.get(i).getTitolo() + "','"
+                        + canzoni.get(i).getAutore() + "','"
+                        + canzoni.get(i).getAnno() + "')");
+            }
+
+
+        } catch (SQLException ex) {
+
+            if (ex.getSQLState().equals("22001")) {
+                txtAreaConsole.append("INSERT ERROR - I dati inseriti non sono validi");
+                throw new DatiNonValidi("I dati inseriti non sono validi");
+            } else if (ex.getSQLState().equals("23505")) {
+                txtAreaConsole.append("INSERT ERROR - Duplicato per la chiave.");
+                throw new ChiaveDuplicata("Chiave duplicata");
+            } else {
+                throw new MyServerException("INSERT ERROR - SQL ERROR: " + ex.getSQLState());
+            }
+        }
 
     }
 
     @Override
-    public boolean createPlaylist(String nomeplaylist, ArrayList<Canzoni> canzoni, String cf) throws MyServerException {
-
+    public ArrayList<Playlist> getPlaylist(String cf) throws MyServerException,PlaylistInesistenti {
+            try {
+            ResultSet rs = db.submitQuery("SELECT * FROM playlist WHERE LOWER(codicefiscale) = LOWER('" + cf + "')");
+            return dt.handlePlaylistSet(rs);
+        } catch (SQLException ex) {
+            throw new MyServerException("GET PLAYLIST ERROR - SQL ERROR: " + ex.getSQLState());
+        }
     }
 
     @Override
-    public ArrayList<Playlist> getPlaylist(String cf) throws PlaylistInesistenti {
-
+    public ArrayList<Canzoni> getCanzoniFromPlaylist(String idPlaylist) throws CanzoneInesistente, MyServerException {
+             try {
+            ResultSet rs = db.submitQuery("SELECT titolo,autore,anno FROM contiene  WHERE idplaylist = " + idPlaylist);
+            return dt.handleCanzoniSet(rs);
+        } catch (SQLException ex) {
+            throw new MyServerException("GET PLAYLIST ERROR - SQL ERROR: " + ex.getSQLState());
+        }
     }
 
     @Override
-    public ArrayList<Canzoni> getCanzoniFromPlaylist(String idPlaylist) throws MyServerException {
+    public void inserisciEmozione(String titolo, String autore, int anno, String cf, int amazement, int nostalgia, int calmness, int power, int joy, int tension, int sadness, int tenderness, int solemnity, String amazement_notes, String nostalgia_notes, String calmness_notes, String power_notes, String joy_notes, String tension_notes, String sadness_notes, String tenderness_notes, String solemnity_notes) throws DatiNonValidi, ChiaveDuplicata, MyServerException {
+            try {
+            db.submitQueryUpdate("INSERT INTO emozionicanzone (titolo,autore,codicefiscale,amazement,nostalgia,calmness,power,joy,tension,sadness," +
+                                "tenderness,solemnity,amazement_notes,nostalgia_notes,calmness_notes,power_notes,joy_notes," +
+                                "tension_notes,sadness_notes,tenderness_notes,solemnity_notes,anno) " +
+                                "VALUES ('" + titolo + "','"  + autore + "','"
+                    + cf + "',"
+                    + amazement + ",'"
+                    + nostalgia + "',"
+                    + calmness + ",'"
+                    + power + "','"
+                    + joy + "',"
+                    + tension + ",'"
+                    + sadness + "',"
+                    + tenderness + ",'"
+                    + solemnity + "','"
+                    + amazement_notes + "',"
+                    + nostalgia_notes + ",'"
+                    + calmness_notes + "',"
+                    + power_notes + ",'"
+                    + joy_notes + "','"
+                    + tension_notes + "',"
+                    + sadness_notes + ",'"
+                    + tenderness_notes + "',"
+                    + solemnity_notes + ",'"
+                    + anno + "')"); 
+ 
+        } catch (SQLException ex) {
 
-    }
-
-    @Override
-    public boolean inserisciEmozione(String titolo, String autore, int anno, String cf, int amazement, int nostalgia, int calmness, int power, int joy, int tension, int sadness, int tenderness, int solemnity, String amazament_notes, String nostalgia_notes, String calmness_notes, String power_notes, String joy_notes, String tension_notes, String sadness_notes, String tenderness_notes, String solemnity_notes) throws MyServerException {
-
+            if (ex.getSQLState().equals("22001")) {
+                txtAreaConsole.append("INSERT ERROR - I dati inseriti non sono validi");
+                throw new DatiNonValidi("I dati inseriti non sono validi");
+            } else if (ex.getSQLState().equals("23505")) {
+                txtAreaConsole.append("INSERT ERROR - Duplicato della chiave primaria");
+                throw new ChiaveDuplicata("Duplicato della chiave primaria");
+            } else {
+                throw new MyServerException("INSERT ERROR - SQL ERROR: " + ex.getSQLState());
+            }
+        }
     }
 }

@@ -8,9 +8,9 @@ package emotionalsongs.Common;
  *
  * @author Lorenzo
  */
-public class UtenteGiaRegistrato extends Exception {
+public class ChiaveDuplicata extends Exception {
 
-    public UtenteGiaRegistrato(String message) {
+    public ChiaveDuplicata(String message) {
         super(message);
     }
 }

@@ -16,6 +16,38 @@ public class Emozioni implements Serializable{
     private ArrayList<EmozioniCanzone> emozionicanzoni;
     private MediaEmozioni media;
     
+    public Emozioni(ArrayList<EmozioniCanzone> emozionicanzoni, MediaEmozioni media){
+        this.emozionicanzoni = emozionicanzoni;
+        this.media = media;
+    }
+    
+    public Emozioni(){
+        this.emozionicanzoni = new ArrayList<>();
+        this.media = media;
+    }
+
+    public ArrayList<EmozioniCanzone> getEmozionicanzoni() {
+        return emozionicanzoni;
+    }
+
+    public MediaEmozioni getMedia() {
+        return media;
+    }
+    
+    
+    public void aggiungiEmozione(EmozioniCanzone e){
+        this.emozionicanzoni.add(e);
+    }
+
+    public void setMedia(MediaEmozioni media) {
+        this.media = media;
+    }
+    
+    public int getNumeroEmozioni(){
+        return this.emozionicanzoni.size();
+    }
+    
+    
     
     
 }
