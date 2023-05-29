@@ -14,7 +14,7 @@ WHERE LOWER(titolo) = LOWER('walk right in') AND LOWER(autore) = LOWER('cannon''
 
 4.	getEmozioniFromBrano 2 - Ritorna la media delle emozioni da titolo, autore, anno
 
-SELECT AVG(amazement),AVG(nostalgia),AVG(calmness),AVG(power),AVG(joy),AVG(tension),AVG(sadness),AVG(tenderness),AVG(solemnity) 
+SELECT AVG(amazement) AS avg_amazement,AVG(nostalgia) AS avg_nostalgia,AVG(calmness) AS avg_calmness,AVG(power) AS avg_power,AVG(joy) AS avg_joy,AVG(tension) AS avg_tension,AVG(sadness) AS avg_sadness,AVG(tenderness) AS avg_tenderness,AVG(solemnity) AS avg_solemnity 
 FROM emozionicanzone 
 WHERE LOWER(titolo) = LOWER('walk right in') AND LOWER(autore) = LOWER('cannon''s jug stompers') AND anno = 1929
 
