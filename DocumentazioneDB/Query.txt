@@ -8,13 +8,15 @@ SELECT password FROM utentiregistrati WHERE LOWER(codicefiscale) = LOWER('CCCMTT
 
 3.	getEmozioniFromBrano 1 - Selezione singole emozioni da EmozioniCanzone
 
-SELECT amazement, amazement_notes, nostalgia, nostalgia_notes, calmness, calmness_notes, power, power_notes, joy, joy_notes, tension, tension_notes, sadness, sadness_notes, tenderness, tenderness_notes, solemnity, solemnity_notes FROM emozionicanzone
+SELECT idvalutazione, amazement, amazement_notes, nostalgia, nostalgia_notes, calmness, calmness_notes, power, power_notes, joy, joy_notes, tension, tension_notes, sadness, sadness_notes, tenderness, tenderness_notes, solemnity, solemnity_notes 
+FROM emozionicanzone
+WHERE LOWER(titolo) = LOWER('walk right in') AND LOWER(autore) = LOWER('cannon''s jug stompers') AND anno = 1929
 
 4.	getEmozioniFromBrano 2 - Ritorna la media delle emozioni da titolo, autore, anno
 
 SELECT AVG(amazement),AVG(nostalgia),AVG(calmness),AVG(power),AVG(joy),AVG(tension),AVG(sadness),AVG(tenderness),AVG(solemnity) 
 FROM emozionicanzone 
-WHERE LOWER(titolo) = LOWER('titolo') AND LOWER(autore) = LOWER('autore') AND anno = 1852
+WHERE LOWER(titolo) = LOWER('walk right in') AND LOWER(autore) = LOWER('cannon''s jug stompers') AND anno = 1929
 
 5.	Filtra per titolo - ricerco in canzoni la canzone (do tutto)
 
