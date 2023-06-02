@@ -4,7 +4,18 @@
  */
 package server;
 
-import emotionalsongs.Common.*;
+import common.Canzoni;
+import common.DatiNonValidi;
+import common.PasswordErrata;
+import common.PlaylistInesistenti;
+import common.InterfacciaServizio;
+import common.EmozioniInesistenti;
+import common.Emozioni;
+import common.CanzoneInesistente;
+import common.UtenteInesistente;
+import common.Playlist;
+import common.MyServerException;
+import common.ChiaveDuplicata;
 import java.awt.Window;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -111,6 +122,8 @@ public class ConsoleFrame extends javax.swing.JPanel implements InterfacciaServi
     public void registrazione(String cf, String nome, String cognome, String citta, int cap, String via, int civico, String email, String password) throws ChiaveDuplicata, DatiNonValidi, MyServerException {
 
         try {
+            nome.replace("'", "''");
+            cognome.replace("'", "''");
             db.submitQueryUpdate("INSERT INTO utentiregistrati VALUES('" + cf + "','"
                     + nome + "','"
                     + cognome + "','"
@@ -139,6 +152,7 @@ public class ConsoleFrame extends javax.swing.JPanel implements InterfacciaServi
     @Override
     public ArrayList<Canzoni> filtraPerTitolo(String titolo) throws CanzoneInesistente, MyServerException {
         try {
+            titolo.replace("'", "''");
             ResultSet rs = db.submitQuery("SELECT * FROM canzoni WHERE LOWER(titolo) LIKE LOWER('" + titolo + "%')");
             return dt.handleCanzoniSet(rs);
         } catch (SQLException ex) {
@@ -149,6 +163,7 @@ public class ConsoleFrame extends javax.swing.JPanel implements InterfacciaServi
     @Override
     public ArrayList<Canzoni> filtraPerAutoreAnno(String autore, int anno) throws CanzoneInesistente, MyServerException {
         try {
+            autore.replace("'", "''");
             ResultSet rs = db.submitQuery("SELECT * FROM canzoni WHERE LOWER(autore) LIKE LOWER('" + autore + "%') AND anno = " + anno);
             return dt.handleCanzoniSet(rs);
         } catch (SQLException ex) {
@@ -169,6 +184,8 @@ public class ConsoleFrame extends javax.swing.JPanel implements InterfacciaServi
     @Override
     public Emozioni getEmozioniFromBrano(String titolo, String autore, int anno) throws EmozioniInesistenti, MyServerException {
         try {
+            titolo.replace("'", "''");
+            autore.replace("'", "''");
             ResultSet rsemovalori = db.submitQuery("SELECT idvalutazione, amazement, amazement_notes, nostalgia, nostalgia_notes, calmness, "
                     + "calmness_notes, power, power_notes, joy, joy_notes, tension, tension_notes, sadness, sadness_notes, "
                     + "tenderness, tenderness_notes, solemnity, solemnity_notes"
@@ -191,6 +208,7 @@ public class ConsoleFrame extends javax.swing.JPanel implements InterfacciaServi
     public void createPlaylist(String nomeplaylist, ArrayList<Canzoni> canzoni, String cf) throws ChiaveDuplicata, DatiNonValidi, MyServerException {
 
         try {
+            nomeplaylist.replace("'", "''");
             db.submitQueryUpdate("INSERT INTO playlist (nomeplaylist,codicefiscale) VALUES('" + nomeplaylist + "','" + cf + "')");
             for (int i = 0; i < canzoni.size(); i++) {
                 db.submitQueryUpdate("INSERT INTO contiene VALUES('" + "(SELECT idplaylist FROM playlist WHERE LOWER(nomeplaylist) = LOWER('" + nomeplaylist + "') AND LOWER (codicefiscale) = LOWER('" + cf + "')) ','"
@@ -238,6 +256,8 @@ public class ConsoleFrame extends javax.swing.JPanel implements InterfacciaServi
     @Override
     public void inserisciEmozione(String titolo, String autore, int anno, String cf, int amazement, int nostalgia, int calmness, int power, int joy, int tension, int sadness, int tenderness, int solemnity, String amazement_notes, String nostalgia_notes, String calmness_notes, String power_notes, String joy_notes, String tension_notes, String sadness_notes, String tenderness_notes, String solemnity_notes) throws DatiNonValidi, ChiaveDuplicata, MyServerException {
             try {
+                titolo.replace("'", "''");
+                autore.replace("'", "''");
             db.submitQueryUpdate("INSERT INTO emozionicanzone (titolo,autore,codicefiscale,amazement,nostalgia,calmness,power,joy,tension,sadness," +
                                 "tenderness,solemnity,amazement_notes,nostalgia_notes,calmness_notes,power_notes,joy_notes," +
                                 "tension_notes,sadness_notes,tenderness_notes,solemnity_notes,anno) " +

@@ -5,7 +5,16 @@
  */
 package server;
 
-import emotionalsongs.Common.*;
+import common.PasswordErrata;
+import common.Canzoni;
+import common.PlaylistInesistenti;
+import common.EmozioniCanzone;
+import common.EmozioniInesistenti;
+import common.Emozioni;
+import common.UtenteInesistente;
+import common.MediaEmozioni;
+import common.CanzoneInesistente;
+import common.Playlist;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
