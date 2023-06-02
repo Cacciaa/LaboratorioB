@@ -15,6 +15,7 @@ import common.UtenteInesistente;
 import common.MediaEmozioni;
 import common.CanzoneInesistente;
 import common.Playlist;
+import common.UtentiRegistrati;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -98,6 +99,12 @@ public class DataTables {
         else{
             throw new PlaylistInesistenti("GET PLAYLIST FAILED -  Playlist non trovata");
         }
+    }
+    
+    
+    public UtentiRegistrati handleUtenteRegistrato(ResultSet rs) throws SQLException{
+        
+        return new UtentiRegistrati(rs.getString("nome"),rs.getString("cognome"));
     }
         
      public void checkLogin(ResultSet rs, String password) throws SQLException, PasswordErrata, UtenteInesistente {

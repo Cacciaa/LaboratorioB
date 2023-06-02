@@ -16,6 +16,8 @@ import common.UtenteInesistente;
 import common.Playlist;
 import common.MyServerException;
 import common.ChiaveDuplicata;
+import common.EmozioniCanzone;
+import common.UtentiRegistrati;
 import java.awt.Window;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -108,10 +110,11 @@ public class ConsoleFrame extends javax.swing.JPanel implements InterfacciaServi
     // End of variables declaration//GEN-END:variables
 
     @Override
-    public synchronized void login(String cf, String password) throws UtenteInesistente, PasswordErrata, MyServerException {
+    public synchronized UtentiRegistrati login(String cf, String password) throws UtenteInesistente, PasswordErrata, MyServerException {
         try {
-            ResultSet rs = db.submitQuery("SELECT password FROM utentiregistrati WHERE LOWER(codicefiscale) = LOWER('" + cf + "');");
+            ResultSet rs = db.submitQuery("SELECT nome,cognome,password FROM utentiregistrati WHERE LOWER(codicefiscale) = LOWER('" + cf + "');");
             dt.checkLogin(rs, password);
+            return dt.handleUtenteRegistrato(rs);
 
         } catch (SQLException ex) {
             throw new MyServerException("LOGIN FAILED - SQL ERROR: " + ex.getSQLState());
@@ -119,20 +122,20 @@ public class ConsoleFrame extends javax.swing.JPanel implements InterfacciaServi
     }
 
     @Override
-    public void registrazione(String cf, String nome, String cognome, String citta, int cap, String via, int civico, String email, String password) throws ChiaveDuplicata, DatiNonValidi, MyServerException {
+    public void registrazione(UtentiRegistrati utente) throws ChiaveDuplicata, DatiNonValidi, MyServerException {
 
         try {
-            nome.replace("'", "''");
-            cognome.replace("'", "''");
-            db.submitQueryUpdate("INSERT INTO utentiregistrati VALUES('" + cf + "','"
-                    + nome + "','"
-                    + cognome + "','"
-                    + citta + "',"
-                    + cap + ",'"
-                    + via + "',"
-                    + civico + ",'"
-                    + email + "','"
-                    + password + "')");
+            utente.setNome(utente.getNome().replace("'", "''"));
+             utente.setCognome(utente.getCognome().replace("'", "''"));
+            db.submitQueryUpdate("INSERT INTO utentiregistrati VALUES('" + utente.getCodiceFiscale() + "','"
+                    + utente.getNome() + "','"
+                    + utente.getCognome() + "','"
+                    + utente.getCitta() + "',"
+                    + utente.getCap() + ",'"
+                    + utente.getVia() + "',"
+                    + utente.getCivico() + ",'"
+                    + utente.getEmail() + "','"
+                    + utente.getPassword() + "')");
 
         } catch (SQLException ex) {
 
@@ -182,21 +185,21 @@ public class ConsoleFrame extends javax.swing.JPanel implements InterfacciaServi
     }
 
     @Override
-    public Emozioni getEmozioniFromBrano(String titolo, String autore, int anno) throws EmozioniInesistenti, MyServerException {
+    public Emozioni getEmozioniFromBrano(Canzoni canzone) throws EmozioniInesistenti, MyServerException {
         try {
-            titolo.replace("'", "''");
-            autore.replace("'", "''");
+            canzone.setTitolo(canzone.getTitolo().replace("'", "''"));
+            canzone.setAutore(canzone.getAutore().replace("'", "''"));
             ResultSet rsemovalori = db.submitQuery("SELECT idvalutazione, amazement, amazement_notes, nostalgia, nostalgia_notes, calmness, "
                     + "calmness_notes, power, power_notes, joy, joy_notes, tension, tension_notes, sadness, sadness_notes, "
                     + "tenderness, tenderness_notes, solemnity, solemnity_notes"
                     + "FROM emozionicanzone "
-                    + " WHERE LOWER(titolo) = LOWER('" + titolo + "') AND  LOWER (autore) = LOWER('" + autore + "') AND  anno = " + anno);
+                    + " WHERE LOWER(titolo) = LOWER('" + canzone.getTitolo() + "') AND  LOWER (autore) = LOWER('" + canzone.getAutore() + "') AND  anno = " + canzone.getAnno());
 
             ResultSet rsemomedie = db.submitQuery("SELECT AVG(amazement) AS avg_amazement ,AVG(nostalgia) AS avg_nostalgia , AVG(calmness) AS AVG_calmness, "
                     + "AVG(power) AS avg_power ,AVG(joy) AS avg_joy ,AVG(tension) AS avg_tension , "
                     + "AVG(sadness) AS avg_sadness ,AVG(tenderness) AS avg_tenderness ,AVG(solemnity) AS avg_solemnity "
                     + "FROM emozionicanzone "
-                    + "WHERE LOWER(titolo) = LOWER('" + titolo + "') AND  LOWER (autore) = LOWER('" + autore + "') AND  anno = " + anno);
+                    + "WHERE LOWER(titolo) = LOWER('" + canzone.getTitolo() + "') AND  LOWER (autore) = LOWER('" + canzone.getAutore() + "') AND  anno = " + canzone.getAnno());
 
             return dt.handleEmozioniSet(rsemovalori, rsemomedie);
         } catch (SQLException ex) {
@@ -254,7 +257,7 @@ public class ConsoleFrame extends javax.swing.JPanel implements InterfacciaServi
     }
 
     @Override
-    public void inserisciEmozione(String titolo, String autore, int anno, String cf, int amazement, int nostalgia, int calmness, int power, int joy, int tension, int sadness, int tenderness, int solemnity, String amazement_notes, String nostalgia_notes, String calmness_notes, String power_notes, String joy_notes, String tension_notes, String sadness_notes, String tenderness_notes, String solemnity_notes) throws DatiNonValidi, ChiaveDuplicata, MyServerException {
+    public void inserisciEmozione(String titolo, String autore, int anno, String cf, EmozioniCanzone emocanzone) throws DatiNonValidi, ChiaveDuplicata, MyServerException {
             try {
                 titolo.replace("'", "''");
                 autore.replace("'", "''");
@@ -263,24 +266,24 @@ public class ConsoleFrame extends javax.swing.JPanel implements InterfacciaServi
                                 "tension_notes,sadness_notes,tenderness_notes,solemnity_notes,anno) " +
                                 "VALUES ('" + titolo + "','"  + autore + "','"
                     + cf + "',"
-                    + amazement + ",'"
-                    + nostalgia + "',"
-                    + calmness + ",'"
-                    + power + "','"
-                    + joy + "',"
-                    + tension + ",'"
-                    + sadness + "',"
-                    + tenderness + ",'"
-                    + solemnity + "','"
-                    + amazement_notes + "',"
-                    + nostalgia_notes + ",'"
-                    + calmness_notes + "',"
-                    + power_notes + ",'"
-                    + joy_notes + "','"
-                    + tension_notes + "',"
-                    + sadness_notes + ",'"
-                    + tenderness_notes + "',"
-                    + solemnity_notes + ",'"
+                    + emocanzone.getAmazement() + ",'"
+                    + emocanzone.getNostalgia_notes()+ "',"
+                    + emocanzone.getCalmness() + ",'"
+                    + emocanzone.getPower() + "','"
+                    + emocanzone.getJoy()+ "',"
+                    + emocanzone.getTension() + ",'"
+                    + emocanzone.getSadness() + "',"
+                    + emocanzone.getTenderness()+ ",'"
+                    + emocanzone.getSolemnity() + "','"
+                    + emocanzone.getAmazement_notes() + "',"
+                    + emocanzone.getNostalgia_notes() + ",'"
+                    + emocanzone.getCalmness_notes() + "',"
+                    + emocanzone.getPower_notes() + ",'"
+                    + emocanzone.getJoy_notes() + "','"
+                    + emocanzone.getTension_notes() + "',"
+                    + emocanzone.getSadness_notes() + ",'"
+                    + emocanzone.getTenderness_notes() + "',"
+                    + emocanzone.getSolemnity_notes() + ",'"
                     + anno + "')"); 
  
         } catch (SQLException ex) {

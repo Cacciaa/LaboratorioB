@@ -41,7 +41,12 @@ public class UtentiRegistrati implements Serializable {
         this.email = email;
         this.password = password;
     }
-
+    
+    
+    public UtentiRegistrati(String nome, String cognome){
+        this.nome = nome;
+        this.cognome = cognome;
+    }
     
 
     public String getCodiceFiscale() {
