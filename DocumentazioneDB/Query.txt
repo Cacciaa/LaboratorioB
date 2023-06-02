@@ -4,7 +4,7 @@ INSERT INTO utentiregistrati VALUES ('CCCMTT01P04I577M','Matteo', 'Cacciarino','
 
 2.	Login utente (Su codice controlliamo se la password dell’utente inserita sia corretta)
 
-SELECT password FROM utentiregistrati WHERE LOWER(codicefiscale) = LOWER('CCCMTT01P04I577M')
+SELECT nome, cognome, password FROM utentiregistrati WHERE LOWER(codicefiscale) = LOWER('CCCMTT01P04I577M')
 
 3.	getEmozioniFromBrano 1 - Selezione singole emozioni da EmozioniCanzone
 
