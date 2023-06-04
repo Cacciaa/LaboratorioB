@@ -16,32 +16,31 @@ import common.MediaEmozioni;
 import common.CanzoneInesistente;
 import common.Playlist;
 import common.UtentiRegistrati;
+import java.io.Serializable;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
  *
- * @author Lorenzo
+ * @author Lorenzo Erba, 748702
+ *
+ * Lorenzo Erba, 748702,Ferialdo Elezi 749721,Alessandro Zancanella
+ * 751494,Matteo Cacciarino 748231, sede CO
+ *
+ * Classe rappresentante il datamodel dei resultset
  */
-public class DataTables {
+public class DataTables implements Serializable {
 
-    private ArrayList<Canzoni> canzonitable;
-    
-    private Emozioni emozionitable;
-    
-    private ArrayList<Playlist> playlistable;
-
-    public DataTables() {
-         this.canzonitable = new ArrayList<>();
-         this.emozionitable = new Emozioni();
-         this.playlistable = new ArrayList<>();
-    }
-
-   
-
+    /**
+     * @brief Metodo invocato per mappare il datamodel delle canzoni ottenute dall'esecuzione delle query
+     * @param rs oggetto di tipo ResultSet contenente il resultset ottenuto dall'esecuzione delle query
+     * @return oggetto di tipo ArrayList<Canzoni> contenente le canzoni ottenute come risultato dalle query
+     * @throws SQLException eccezione sollevata nel caso in cui il mapping produca errori
+     * @throws CanzoneInesistente eccezione sollevata nel caso in cui l'esecuzione della query non produca risultato
+     */
     public ArrayList<Canzoni> handleCanzoniSet(ResultSet rs) throws SQLException, CanzoneInesistente {
-        resetCanzoniTable();
+        ArrayList<Canzoni> canzonitable = new ArrayList<Canzoni>();
         while (rs.next()) {
 
             Canzoni canzone = new Canzoni(rs.getString("titolo"), rs.getString("autore"), rs.getInt("anno"));
@@ -57,8 +56,15 @@ public class DataTables {
         }
     }
     
-    public Emozioni handleEmozioniSet(ResultSet rs, ResultSet rsmedia) throws SQLException, EmozioniInesistenti{
-        resetEmozioni();
+    /**
+     * @brief Metodo invocato per mappare il datamodel delle emozioni ottenute dall'esecuzione delle query
+     * @param rs oggetto di tipo ResultSet contenente il resultset ottenuto dall'esecuzione delle query
+     * @return oggetto di tipo Emozioni contenente le emozioni ottenute come risultato dalle query
+     * @throws SQLException eccezione sollevata nel caso in cui il mapping produca errori
+     * @throws EmozioniInesistenti eccezione sollevata nel caso in cui l'esecuzione della query non produca risultato
+     */
+    public Emozioni handleEmozioniSet(ResultSet rs) throws SQLException, EmozioniInesistenti{
+        Emozioni emozionitable = new Emozioni();
         while (rs.next()) {
             EmozioniCanzone emocanzone = new EmozioniCanzone(rs.getInt("idvalutazione"), rs.getString("titolo"), rs.getString("autore"), 
                                         rs.getInt("anno"), rs.getString("codicefiscale"), rs.getInt("amazement"), rs.getInt("nostalgia"), 
@@ -69,23 +75,40 @@ public class DataTables {
            emozionitable.aggiungiEmozione(emocanzone);
         }
         
-        
-        MediaEmozioni media = new MediaEmozioni(rsmedia.getInt("avg_amazement"), rsmedia.getInt("avg_nostalgia"), rsmedia.getInt("avg_calmness"),
-                                            rsmedia.getInt("avg_power"), rsmedia.getInt("avg_joy"), rsmedia.getInt("avg_tension"),
-                                            rsmedia.getInt("avg_sadness"), rsmedia.getInt("avg_tenderness"), rsmedia.getInt("avg_solemnity"));
-        
-        emozionitable.setMedia(media);
-        
-        if(emozionitable.getNumeroEmozioni() > 0){
+         if(emozionitable.getNumeroEmozioni() > 0){
             return emozionitable;
         }
         else{
             throw new EmozioniInesistenti("GET EMOZIONI FAILED - Nessuna emozione trovata");
         }
+ 
     }
     
+    /**
+     * @brief Metodo invocato per mappare il datamodel delle medie emozioni ottenute dall'esecuzione delle query
+     * @param rsmedia oggetto di tipo ResultSet contenente il resultset ottenuto dall'esecuzione delle query
+     * @return oggetto di tipo MediaEmozioni contenente le medie delle emozioni ottenute come risultato dalle query
+     * @throws SQLException  eccezione sollevata nel caso in cui il mapping produca errori
+     */
+    public MediaEmozioni handleEmozioniMediaSet(ResultSet rsmedia) throws SQLException{
+        rsmedia.next();
+        MediaEmozioni media = new MediaEmozioni((int) rsmedia.getDouble("avg_amazement"), (int) rsmedia.getDouble("avg_nostalgia"), (int) rsmedia.getDouble("avg_calmness"),
+                                            (int) rsmedia.getDouble("avg_power"), (int) rsmedia.getDouble("avg_joy"), (int) rsmedia.getDouble("avg_tension"),
+                                            (int) rsmedia.getDouble("avg_sadness"), (int) rsmedia.getDouble("avg_tenderness"), (int) rsmedia.getDouble("avg_solemnity"));
+        
+        
+        return media;
+    }
+    
+    /**
+     * @brief Metodo invocato per mappare il datamodel delle playlist ottenute dall'esecuzione delle query
+     * @param rs oggetto di tipo ResultSet contenente il resultset ottenuto dall'esecuzione delle query
+     * @return oggetto di tipo ArrayList<Playlist> contenente le playlist ottenute come risultato dalle query
+     * @throws PlaylistInesistenti eccezione sollevata nel caso in cui l'esecuzione della query non produca risultato
+     * @throws SQLException eccezione sollevata nel caso in cui il mapping produca errori
+     */
     public ArrayList<Playlist> handlePlaylistSet(ResultSet rs) throws PlaylistInesistenti, SQLException{
-        resetPlaylistTable();
+        ArrayList<Playlist> playlistable = new ArrayList<Playlist>();
         
         while(rs.next()){
              Playlist pl = new Playlist(rs.getInt("idplaylist"), rs.getString("nomeplaylist"), rs.getString("codicefiscale"));
@@ -101,12 +124,25 @@ public class DataTables {
         }
     }
     
-    
+    /**
+     * @brief Metodo invocato per mappare il datamodel degli utenti registrati ottenuti dall'esecuzione delle query
+     * @param rs oggetto di tipo ResultSet contenente il resultset ottenuto dall'esecuzione delle query
+     * @return oggetto di tipoUtentiRegistrati contenente gli utenti registrati ottenuti come risultato dalle query
+     * @throws SQLException eccezione sollevata nel caso in cui il mapping produca errori
+     */
     public UtentiRegistrati handleUtenteRegistrato(ResultSet rs) throws SQLException{
         
         return new UtentiRegistrati(rs.getString("nome"),rs.getString("cognome"));
     }
-        
+      
+    /**
+     * @brief Metodo invocato per effettuare il login da parte dell'utente. Controlla se l'utente che ha richiesto l'accesso ha inserito le credenziali corrette
+     * @param rs oggetto di tipo ResultSet contenente il resultset ottenuto dall'esecuzione delle query
+     * @param password oggetto di tipo String contenente la password dell'utente
+     * @throws SQLException eccezione sollevata nel caso in cui il mapping produca errori
+     * @throws PasswordErrata eccezione sollevata nel caso la password inserita dall'utente è errata
+     * @throws UtenteInesistente eccezione sollevata nel caso l'utente che ha richiesto l'accesso non risulti registrato
+     */
      public void checkLogin(ResultSet rs, String password) throws SQLException, PasswordErrata, UtenteInesistente {
         if (rs.next()) {
             if (!(rs.getString("password").equals(password))) {
@@ -118,16 +154,6 @@ public class DataTables {
 
     }
      
-     public void resetCanzoniTable(){
-         canzonitable.clear();
-     }
-     
-     public void resetEmozioni(){
-         emozionitable = new Emozioni();
-     }
-     
-     public void resetPlaylistTable(){
-         playlistable.clear();
-     }
+   
      
 }

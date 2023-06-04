@@ -4,10 +4,16 @@
  */
 package server;
 
+import common.InterfacciaServizio;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.Serializable;
+import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JDialog;
@@ -15,16 +21,16 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Lorenzo
+ * @author Lorenzo Erba, 748702
+ *
+ * Lorenzo Erba, 748702,Ferialdo Elezi 749721,Alessandro Zancanella
+ * 751494,Matteo Cacciarino 748231, sede CO
+ *
+ * Classe rappresentante l'interfaccia di login al database
  */
-public class ServerFrame extends javax.swing.JFrame {
+public class ServerFrame extends javax.swing.JFrame implements Serializable{
 
-    /**
-     * Creates new form ServerFrame
-     */
-    private final static String user = "postgres";
-    private final static String pass = "prova";
-
+  
     public ServerFrame() {
         initComponents();
     }
@@ -52,6 +58,12 @@ public class ServerFrame extends javax.swing.JFrame {
         jLabel2.setText("Username database: ");
 
         jLabel3.setText("Password database:");
+
+        txtUsername.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUsernameActionPerformed(evt);
+            }
+        });
 
         BtnLogin.setText("Accedi");
         BtnLogin.addActionListener(new java.awt.event.ActionListener() {
@@ -106,15 +118,23 @@ public class ServerFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnLoginActionPerformed
-        // TODO add your handling code here:
+     
 
         //controllo se le credenziali inserite sono corrette
-        if (checkPsw()) {
+        if (checkPsw()) { 
             //creazione del nuovo panel
             final JDialog frame = new JDialog(this, "repositoryChoice_Gui", true);
-            //aggiunta dell'istanza del nuovo JPanel ConsoleFrame al
-            System.out.println(txtUsername.getText() + String.valueOf(txtPassword.getPassword()));
-            frame.getContentPane().add(new ConsoleFrame(txtUsername.getText(), String.valueOf(txtPassword.getPassword())));
+            //aggiunta dell'istanza del nuovo JPanel ConsoleFrame al         
+            ConsoleFrame cf = new ConsoleFrame(txtUsername.getText(), String.valueOf(txtPassword.getPassword()));
+            try {
+                InterfacciaServizio is = (InterfacciaServizio) UnicastRemoteObject.exportObject(cf, ConsoleFrame.PORT);
+                Registry r = LocateRegistry.createRegistry(ConsoleFrame.PORT);
+                r.rebind("interfacciaservizio", is);
+            } catch (RemoteException ex) {
+                ex.printStackTrace();
+                JOptionPane.showMessageDialog(null, "Errore durante il binding", "Errore", JOptionPane.ERROR_MESSAGE);
+            }
+            frame.getContentPane().add(cf);
             //packing del nuovo JPanel
             frame.pack();
             //visualizzazione del nuovo JPanel appena realizzato
@@ -133,13 +153,26 @@ public class ServerFrame extends javax.swing.JFrame {
 
     }//GEN-LAST:event_BtnLoginActionPerformed
 
+    private void txtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsernameActionPerformed
+    
+    /**
+     * @brief Metodo invocato per il controllo delle credenziali all'accesso al database
+     * @return true --> credenziali corrette
+     * @return false --> credenziali errate
+     */
     private boolean checkPsw() {
         try {
+            //istanzio un buffer per la lettura di stringhe dal file degli accessi
             BufferedReader br = new BufferedReader(new FileReader("accessodb.csv"));
 
             String text;
+            //lettura di ciascuna riga
             while ((text = br.readLine()) != null) {
+                //split sul campo ;
                 String[] splittedline = text.split(";");
+                //se ottengo 2 campi, controllo se coincidono con le credenziali
                 if (splittedline.length == 2) {
                     if (splittedline[0].equals(txtUsername.getText()) && splittedline[1].equals(String.valueOf(txtPassword.getPassword()))) {
                         return true;

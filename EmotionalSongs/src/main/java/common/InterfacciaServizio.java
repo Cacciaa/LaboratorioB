@@ -5,6 +5,7 @@
 package common;
 
 import java.rmi.Remote;
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 
 /**
@@ -29,7 +30,7 @@ public interface InterfacciaServizio extends Remote {
      * @throws MyServerException eccezzione generica sollevata durante la
      * comunicazione col DBMS.
      */
-    UtentiRegistrati login(String cf, String password) throws UtenteInesistente, PasswordErrata, MyServerException;
+    UtentiRegistrati login(String cf, String password) throws UtenteInesistente, PasswordErrata, MyServerException,RemoteException;
 
     /**
      * @brief Metodo per effettuare la registrazione al sistema
@@ -41,7 +42,7 @@ public interface InterfacciaServizio extends Remote {
      * @throws MyServerException eccezzione generica sollevata durante la
      * comunicazione col DBMS.
      */
-    void registrazione(UtentiRegistrati utente) throws ChiaveDuplicata, DatiNonValidi, MyServerException;
+    void registrazione(UtentiRegistrati utente) throws ChiaveDuplicata, DatiNonValidi, MyServerException,RemoteException;
 
     /**
      * @brief Metodo che filtra le canzoni per il titolo
@@ -54,7 +55,7 @@ public interface InterfacciaServizio extends Remote {
      * @throws MyServerException eccezzione generica sollevata durante la
      * comunicazione col DBMS.
      */
-    ArrayList<Canzoni> filtraPerTitolo(String titolo) throws CanzoneInesistente, MyServerException;
+    ArrayList<Canzoni> filtraPerTitolo(String titolo) throws CanzoneInesistente, MyServerException,RemoteException;
 
     /**
      * @brief Metodo che filtra le canzoni per autore e anno
@@ -69,7 +70,7 @@ public interface InterfacciaServizio extends Remote {
      * @throws MyServerException eccezzione generica sollevata durante la
      * comunicazione col DBMS
      */
-    ArrayList<Canzoni> filtraPerAutoreAnno(String autore, int anno) throws CanzoneInesistente, MyServerException;
+    ArrayList<Canzoni> filtraPerAutoreAnno(String autore, int anno) throws CanzoneInesistente, MyServerException,RemoteException;
 
     /**
      * @brief Metodo che restituisce le emozioni del brano specificato
@@ -81,7 +82,7 @@ public interface InterfacciaServizio extends Remote {
      * @throws MyServerException eccezzione generica sollevata durante la
      * comunicazione col DBMS
      */
-    Emozioni getEmozioniFromBrano(Canzoni canzone) throws EmozioniInesistenti, MyServerException;
+    Emozioni getEmozioniFromBrano(Canzoni canzone) throws EmozioniInesistenti, MyServerException,RemoteException;
 
     /**
      * @brief Metodo che restituisce le canzoni da inserire nella playlist
@@ -91,7 +92,7 @@ public interface InterfacciaServizio extends Remote {
      * @throws CanzoneInesistente eccezione sollevata nel caso la ricerca non
      * produca nessun risultato
      */
-    ArrayList<Canzoni> getCanzoniForPlaylist() throws MyServerException, CanzoneInesistente;
+    ArrayList<Canzoni> getCanzoniForPlaylist() throws MyServerException, CanzoneInesistente,RemoteException;
     
     /**
      * @brief Metodo che crea la playlist inserendo le canzoni scelte dall'utente
@@ -105,7 +106,7 @@ public interface InterfacciaServizio extends Remote {
      * @throws MyServerException eccezzione generica sollevata durante
      * la comunicazione col DBMS
      */
-    void createPlaylist(String nomeplaylist, ArrayList<Canzoni> canzoni, String cf) throws ChiaveDuplicata, DatiNonValidi, MyServerException;
+    void createPlaylist(String nomeplaylist, ArrayList<Canzoni> canzoni, String cf) throws ChiaveDuplicata, DatiNonValidi, MyServerException,RemoteException;
     
     /**
      * @brief Metodo che restituisce le playlist associate all'utente
@@ -115,22 +116,25 @@ public interface InterfacciaServizio extends Remote {
      * @throws MyServerException eccezzione generica sollevata durante
      * la comunicazione col DBMS
      */
-    ArrayList<Playlist> getPlaylist(String cf) throws PlaylistInesistenti, MyServerException;
+    ArrayList<Playlist> getPlaylist(String cf) throws PlaylistInesistenti, MyServerException,RemoteException;
     
     /**
      * @brief Metodo che restituisce le canzoni associate alla playlist
-     * @param idPlaylist oggetto di tipo String contenente l'id della playlist 
+     * @param idPlaylist oggetto di tipo int contenente l'id della playlist 
      * @return oggetto di tipo ArrayList<Canzoni> contenente la lista delle canzoni presenti nella playlist
      * @throws MyServerException eccezzione generica sollevata durante
      * la comunicazione col DBMS
      * @throws CanzoneInesistente eccezione sollevata nel caso la ricerca non
      * produca nessun risultato
      */
-    ArrayList<Canzoni> getCanzoniFromPlaylist(String idPlaylist) throws MyServerException, CanzoneInesistente;
+    ArrayList<Canzoni> getCanzoniFromPlaylist(int idPlaylist) throws MyServerException, CanzoneInesistente,RemoteException;
+    
     
     /**
      * @brief Metodo che inserisce l'emozione rilasciata dall'utente
-     * @param emocanzone oggetto di tipo EmozioniCanzone contenente le emozioni di una canzone rilasciate dall'utente
+     * @param canzone oggetto di tipo Canzoni contenente la canzone relativa all'emozione
+     * @param cf oggetto di String contenente il codice fiscale dell'utente
+     * @param emocanzone oggetto di tipo EmozionICanzone contenente l'emozione rilasciata dall'utente
      * @throws MyServerException eccezzione generica sollevata durante
      * la comunicazione col DBMS
      * @throws ChiaveDuplicata eccezione sollevata nel caso l'utente sia già
@@ -138,6 +142,6 @@ public interface InterfacciaServizio extends Remote {
      * @throws DatiNonValidi eccezione sollevata nel caso i dati inseriti non
      * rispettano i vincoli di integrità
      */
-    void inserisciEmozione(String titolo, String autore, int anno, String cf, EmozioniCanzone emocanzone) throws MyServerException, DatiNonValidi, ChiaveDuplicata;
+    void inserisciEmozione(Canzoni canzone, String cf, EmozioniCanzone emocanzone) throws MyServerException, DatiNonValidi, ChiaveDuplicata,RemoteException;
 
 }

@@ -29,12 +29,22 @@ import javax.swing.SwingUtilities;
 
 /**
  *
- * @author Lorenzo
+ * @author Lorenzo Erba, 748702
+ *
+ * Lorenzo Erba, 748702,Ferialdo Elezi 749721,Alessandro Zancanella
+ * 751494,Matteo Cacciarino 748231, sede CO
+ *
+ * Classe rappresentante l'implementazione dell'interfaccia del servizio
  */
 public class ConsoleFrame extends javax.swing.JPanel implements InterfacciaServizio {
 
+    //attributo privato di tipo Database rappresentante la connessione al database
     private Database db;
+    //attributo privato di tipo DataTables rappresentante il data model dei dati nel database
     private DataTables dt;
+
+    //variabile costante di tipo int contenente la porta di comunicazione
+    public static final int PORT = 11011;
 
     /**
      * Creates new form ConsoleFrame
@@ -45,13 +55,14 @@ public class ConsoleFrame extends javax.swing.JPanel implements InterfacciaServi
         try {
             //ottengo l'istanza singleton dell'oggetto per effettuare le chiamate al database
             this.db = Database.getInstance(user, pass);
-            //stampo sulla console visuale un messaggio di avvenuta connesione
-            this.txtAreaConsole.append("Connessione al database avvenuta correttamente.");
-
-        } catch (SQLException ex) {
+            //istanzio un datamodel
+            this.dt = new DataTables();
+            //stampo sulla console visuale un messaggio di avvenuta connesione 
+            System.out.println(this.getCanzoniFromPlaylist(12).get(0).getAnno());
+        } catch (Exception ex) {
+            ex.printStackTrace();
             //PopUp d'errore connessione al database
             JOptionPane.showConfirmDialog(null, "Errore di connessione al database", "Errore di connessione.", JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE);
-
             //chiusura del panel
             Window win = SwingUtilities.getWindowAncestor(this);
             win.dispose();
@@ -110,23 +121,47 @@ public class ConsoleFrame extends javax.swing.JPanel implements InterfacciaServi
     // End of variables declaration//GEN-END:variables
 
     @Override
+    /**
+     * @brief Metodo per effettuare il login dell'utente al sistema
+     * @param cf Oggetto di tipo String contenente il codicefiscale dell'utente
+     * @param password oggetto di tipo String contenente la password dell'utente
+     * @throws UtenteInesistente eccezione sollevata nel caso l'utente non sia
+     * già registrato
+     * @throws PasswordErrata eccezione sollevata nel caso la password inserita
+     * dall'utente sia errata
+     * @throws MyServerException eccezzione generica sollevata durante la
+     * comunicazione col DBMS.
+     */
     public synchronized UtentiRegistrati login(String cf, String password) throws UtenteInesistente, PasswordErrata, MyServerException {
         try {
             ResultSet rs = db.submitQuery("SELECT nome,cognome,password FROM utentiregistrati WHERE LOWER(codicefiscale) = LOWER('" + cf + "');");
             dt.checkLogin(rs, password);
+            this.txtAreaConsole.append("\nLogin effettuato da: " + cf);
             return dt.handleUtenteRegistrato(rs);
 
         } catch (SQLException ex) {
+            this.txtAreaConsole.append("LOGIN FAILED - SQL ERROR: " + ex.getSQLState());
             throw new MyServerException("LOGIN FAILED - SQL ERROR: " + ex.getSQLState());
         }
     }
 
+    /**
+     * @brief Metodo per effettuare la registrazione al sistema
+     * @param utente oggetto di classe UtentiRegistrati rappresentante l'utente
+     * da registrare
+     * @throws ChiaveDuplicata eccezione sollevata nel caso l'utente sia già
+     * registrato, chiave codicefiscale duplicata
+     * @throws DatiNonValidi eccezione sollevata nel caso i dati inseriti non
+     * rispettano i vincoli di integrità
+     * @throws MyServerException eccezzione generica sollevata durante la
+     * comunicazione col DBMS.
+     */
     @Override
-    public void registrazione(UtentiRegistrati utente) throws ChiaveDuplicata, DatiNonValidi, MyServerException {
+    public synchronized void registrazione(UtentiRegistrati utente) throws ChiaveDuplicata, DatiNonValidi, MyServerException {
 
         try {
             utente.setNome(utente.getNome().replace("'", "''"));
-             utente.setCognome(utente.getCognome().replace("'", "''"));
+            utente.setCognome(utente.getCognome().replace("'", "''"));
             db.submitQueryUpdate("INSERT INTO utentiregistrati VALUES('" + utente.getCodiceFiscale() + "','"
                     + utente.getNome() + "','"
                     + utente.getCognome() + "','"
@@ -136,7 +171,7 @@ public class ConsoleFrame extends javax.swing.JPanel implements InterfacciaServi
                     + utente.getCivico() + ",'"
                     + utente.getEmail() + "','"
                     + utente.getPassword() + "')");
-
+            this.txtAreaConsole.append("\nRegistrazione effettuata da: " + utente.getCodiceFiscale());
         } catch (SQLException ex) {
 
             if (ex.getSQLState().equals("22001")) {
@@ -152,74 +187,170 @@ public class ConsoleFrame extends javax.swing.JPanel implements InterfacciaServi
 
     }
 
+    /**
+     * @brief Metodo che filtra le canzoni per il titolo
+     * @param titolo oggetto di tipo String contenente il titolo della canzone
+     * da ricercare
+     * @return oggetto di tipo ArrayList<Canzoni> contenente la lista delle
+     * canzoni filtrate
+     * @throws CanzoneInesistente eccezione sollevata nel caso la ricerca non
+     * produca nessun risultato
+     * @throws MyServerException eccezzione generica sollevata durante la
+     * comunicazione col DBMS.
+     */
     @Override
-    public ArrayList<Canzoni> filtraPerTitolo(String titolo) throws CanzoneInesistente, MyServerException {
+    public synchronized ArrayList<Canzoni> filtraPerTitolo(String titolo) throws CanzoneInesistente, MyServerException {
         try {
             titolo.replace("'", "''");
             ResultSet rs = db.submitQuery("SELECT * FROM canzoni WHERE LOWER(titolo) LIKE LOWER('" + titolo + "%')");
+            this.txtAreaConsole.append("\nFiltra per titolo effettuato");
             return dt.handleCanzoniSet(rs);
         } catch (SQLException ex) {
             throw new MyServerException("FILTER BY TITLE FAILED - SQL ERROR: " + ex.getSQLState());
         }
     }
 
+    /**
+     * @brief Metodo che filtra le canzoni per autore e anno
+     * @param autore oggetto di tipo String contenente l'autore della canzone da
+     * ricercare
+     * @param anno oggetto di tipo int contenente l'anno della canzone da
+     * ricercare
+     * @return oggetto di tipo ArrayList<Canzoni> contenente la lista delle
+     * canzoni filtrate
+     * @throws CanzoneInesistente eccezione sollevata nel caso la ricerca non
+     * produca nessun risultato
+     * @throws MyServerException eccezzione generica sollevata durante la
+     * comunicazione col DBMS
+     */
     @Override
-    public ArrayList<Canzoni> filtraPerAutoreAnno(String autore, int anno) throws CanzoneInesistente, MyServerException {
+    public synchronized ArrayList<Canzoni> filtraPerAutoreAnno(String autore, int anno) throws CanzoneInesistente, MyServerException {
         try {
             autore.replace("'", "''");
             ResultSet rs = db.submitQuery("SELECT * FROM canzoni WHERE LOWER(autore) LIKE LOWER('" + autore + "%') AND anno = " + anno);
+            this.txtAreaConsole.append("\nFiltra per autore e anno effettuato");
             return dt.handleCanzoniSet(rs);
         } catch (SQLException ex) {
             throw new MyServerException("FILTER BY AUTHOR AND YEAR FAILED - SQL ERROR: " + ex.getSQLState());
         }
     }
 
+    /**
+     * @brief Metodo che restituisce le canzoni da inserire nella playlist
+     * dell'utente
+     * @return @throws MyServerException eccezzione generica sollevata durante
+     * la comunicazione col DBMS
+     * @throws CanzoneInesistente eccezione sollevata nel caso la ricerca non
+     * produca nessun risultato
+     */
     @Override
-    public ArrayList<Canzoni> getCanzoniForPlaylist() throws MyServerException, CanzoneInesistente {
+    public synchronized ArrayList<Canzoni> getCanzoniForPlaylist() throws MyServerException, CanzoneInesistente {
         try {
             ResultSet rs = db.submitQuery("SELECT * FROM canzoni");
+            this.txtAreaConsole.append("\nGet delle canzoni per le playlist effettuato");
             return dt.handleCanzoniSet(rs);
         } catch (SQLException ex) {
             throw new MyServerException("GET ALL SONGS FAILED - SQL ERROR: " + ex.getSQLState());
         }
     }
 
+    /**
+     * @brief Metodo che restituisce le emozioni del brano specificato
+     * @param canzone oggetto di tipo Canznoni rappresentante la canzone da cui
+     * ottenere le emozioni associate
+     * @return oggetto di tipo Emozioni contenente le emozioni associate al
+     * brano
+     * @throws EmozioniInesistenti eccezione sollevata nel caso la ricerca non
+     * produca nessun risultato
+     * @throws MyServerException eccezzione generica sollevata durante la
+     * comunicazione col DBMS
+     */
     @Override
-    public Emozioni getEmozioniFromBrano(Canzoni canzone) throws EmozioniInesistenti, MyServerException {
+    public synchronized Emozioni getEmozioniFromBrano(Canzoni canzone) throws EmozioniInesistenti, MyServerException {
         try {
             canzone.setTitolo(canzone.getTitolo().replace("'", "''"));
             canzone.setAutore(canzone.getAutore().replace("'", "''"));
-            ResultSet rsemovalori = db.submitQuery("SELECT idvalutazione, amazement, amazement_notes, nostalgia, nostalgia_notes, calmness, "
-                    + "calmness_notes, power, power_notes, joy, joy_notes, tension, tension_notes, sadness, sadness_notes, "
-                    + "tenderness, tenderness_notes, solemnity, solemnity_notes"
-                    + "FROM emozionicanzone "
-                    + " WHERE LOWER(titolo) = LOWER('" + canzone.getTitolo() + "') AND  LOWER (autore) = LOWER('" + canzone.getAutore() + "') AND  anno = " + canzone.getAnno());
 
-            ResultSet rsemomedie = db.submitQuery("SELECT AVG(amazement) AS avg_amazement ,AVG(nostalgia) AS avg_nostalgia , AVG(calmness) AS AVG_calmness, "
-                    + "AVG(power) AS avg_power ,AVG(joy) AS avg_joy ,AVG(tension) AS avg_tension , "
-                    + "AVG(sadness) AS avg_sadness ,AVG(tenderness) AS avg_tenderness ,AVG(solemnity) AS avg_solemnity "
-                    + "FROM emozionicanzone "
-                    + "WHERE LOWER(titolo) = LOWER('" + canzone.getTitolo() + "') AND  LOWER (autore) = LOWER('" + canzone.getAutore() + "') AND  anno = " + canzone.getAnno());
-
-            return dt.handleEmozioniSet(rsemovalori, rsemomedie);
+            Emozioni emo = dt.handleEmozioniSet(getEmozioni(canzone));
+            emo.setMedia(dt.handleEmozioniMediaSet(getMedie(canzone)));
+            this.txtAreaConsole.append("\nGet emozioni effettuato");
+            return emo;
         } catch (SQLException ex) {
             throw new MyServerException("GET EMOTION FAILED - SQL ERROR: " + ex.getSQLState());
         }
     }
 
+    /**
+     * @brief Metodo che calcola la media delle emozioni
+     * @param canzone oggetto di tipo Canzoni contenente la canzone su cui
+     * ricercare le medie delle emozioni
+     * @return oggetto di tipo ResultSet contenente il risultato dell'esecuzione
+     * della query
+     * @throws SQLException eccezzione sollevata nel caso in cui l'esecuzione
+     * della query non vada a buon fine
+     */
+    private ResultSet getMedie(Canzoni canzone) throws SQLException {
+
+        ResultSet rsemomedie = db.submitQuery("SELECT AVG(amazement) AS avg_amazement ,AVG(nostalgia) AS avg_nostalgia , AVG(calmness) AS AVG_calmness, "
+                + "AVG(power) AS avg_power ,AVG(joy) AS avg_joy ,AVG(tension) AS avg_tension , "
+                + "AVG(sadness) AS avg_sadness ,AVG(tenderness) AS avg_tenderness ,AVG(solemnity) AS avg_solemnity "
+                + " FROM emozionicanzone "
+                + " WHERE LOWER(titolo) = LOWER('" + canzone.getTitolo() + "') AND  LOWER (autore) = LOWER('" + canzone.getAutore() + "') AND  anno = " + canzone.getAnno());
+        return rsemomedie;
+    }
+
+    /**
+     * @brief Metodo che restituisce le emozioni relative a una canzone
+     * @param canzone oggetto di tipo Canzoni contenente la canzone su cui
+     * ricercare le emozioni
+     * @return oggetto di tipo ResultSet contenente il risultato dell'esecuzione
+     * della query
+     * @throws SQLException eccezzione sollevata nel caso in cui l'esecuzione
+     * della query non vada a buon fine
+     */
+    private ResultSet getEmozioni(Canzoni canzone) throws SQLException {
+        ResultSet rsemovalori;
+        rsemovalori = db.submitQuery("SELECT idvalutazione, amazement, amazement_notes, nostalgia, nostalgia_notes, calmness, "
+                + "calmness_notes, power, power_notes, joy, joy_notes, tension, tension_notes, sadness, sadness_notes, "
+                + "tenderness, tenderness_notes, solemnity, solemnity_notes,titolo,autore,anno,codicefiscale"
+                + " FROM emozionicanzone "
+                + " WHERE LOWER(titolo) = LOWER('" + canzone.getTitolo() + "') AND  LOWER (autore) = LOWER('" + canzone.getAutore() + "') AND  anno = " + canzone.getAnno());
+        return rsemovalori;
+    }
+
+    /**
+     * @brief Metodo che crea la playlist inserendo le canzoni scelte
+     * dall'utente
+     * @param nomeplaylist oggetto di tipo String contenente il nome della
+     * playlist
+     * @param canzoni oggetto di tipo ArrayList<Canzoni> contenente le canzoni
+     * da inserire nella playlist
+     * @param cf oggetto di tipo String contenente il codicefiscale dell'utente
+     * @throws ChiaveDuplicata eccezione sollevata nel caso l'utente sia già
+     * registrato, chiave codicefiscale duplicata
+     * @throws DatiNonValidi eccezione sollevata nel caso i dati inseriti non
+     * rispettano i vincoli di integrità
+     * @throws MyServerException eccezzione generica sollevata durante la
+     * comunicazione col DBMS
+     */
     @Override
-    public void createPlaylist(String nomeplaylist, ArrayList<Canzoni> canzoni, String cf) throws ChiaveDuplicata, DatiNonValidi, MyServerException {
+    public synchronized void createPlaylist(String nomeplaylist, ArrayList<Canzoni> canzoni, String cf) throws ChiaveDuplicata, DatiNonValidi, MyServerException {
 
         try {
             nomeplaylist.replace("'", "''");
+            for (int i = 0; i < canzoni.size(); i++) {
+                canzoni.get(i).setAutore(canzoni.get(i).getAutore().replace("'", "''"));
+                canzoni.get(i).setTitolo(canzoni.get(i).getTitolo().replace("'", "''"));
+            }
             db.submitQueryUpdate("INSERT INTO playlist (nomeplaylist,codicefiscale) VALUES('" + nomeplaylist + "','" + cf + "')");
             for (int i = 0; i < canzoni.size(); i++) {
-                db.submitQueryUpdate("INSERT INTO contiene VALUES('" + "(SELECT idplaylist FROM playlist WHERE LOWER(nomeplaylist) = LOWER('" + nomeplaylist + "') AND LOWER (codicefiscale) = LOWER('" + cf + "')) ','"
+                db.submitQueryUpdate("INSERT INTO contiene VALUES(" + "(SELECT idplaylist FROM playlist WHERE LOWER(nomeplaylist) = LOWER('" + nomeplaylist + "') AND LOWER (codicefiscale) = LOWER('" + cf + "')) ,'"
                         + canzoni.get(i).getTitolo() + "','"
-                        + canzoni.get(i).getAutore() + "','"
-                        + canzoni.get(i).getAnno() + "')");
+                        + canzoni.get(i).getAutore() + "',"
+                        + canzoni.get(i).getAnno() + ")");
             }
 
+            this.txtAreaConsole.append("\nCreazione della playlist da parte di: " + cf);
 
         } catch (SQLException ex) {
 
@@ -236,56 +367,91 @@ public class ConsoleFrame extends javax.swing.JPanel implements InterfacciaServi
 
     }
 
+    /**
+     * @brief Metodo che restituisce le playlist associate all'utente
+     * @param cf oggetto di tipo String contenente il codicefiscale dell'utente
+     * @return oggetto di tipo ArrayList<Playlist> contenente
+     * @throws PlaylistInesistenti eccezione sollevata nel caso in cui la
+     * ricerca non produca nessun risultato
+     * @throws MyServerException eccezzione generica sollevata durante la
+     * comunicazione col DBMS
+     */
     @Override
-    public ArrayList<Playlist> getPlaylist(String cf) throws MyServerException,PlaylistInesistenti {
-            try {
+    public synchronized ArrayList<Playlist> getPlaylist(String cf) throws MyServerException, PlaylistInesistenti {
+        try {
             ResultSet rs = db.submitQuery("SELECT * FROM playlist WHERE LOWER(codicefiscale) = LOWER('" + cf + "')");
+            this.txtAreaConsole.append("\nGet delle playlist da parte di: " + cf);
             return dt.handlePlaylistSet(rs);
         } catch (SQLException ex) {
             throw new MyServerException("GET PLAYLIST ERROR - SQL ERROR: " + ex.getSQLState());
         }
     }
 
+    /**
+     * @brief Metodo che restituisce le canzoni associate alla playlist
+     * @param idPlaylist oggetto di tipo int contenente l'id della playlist
+     * @return oggetto di tipo ArrayList<Canzoni> contenente la lista delle
+     * canzoni presenti nella playlist
+     * @throws MyServerException eccezzione generica sollevata durante la
+     * comunicazione col DBMS
+     * @throws CanzoneInesistente eccezione sollevata nel caso la ricerca non
+     * produca nessun risultato
+     */
     @Override
-    public ArrayList<Canzoni> getCanzoniFromPlaylist(String idPlaylist) throws CanzoneInesistente, MyServerException {
-             try {
+    public synchronized ArrayList<Canzoni> getCanzoniFromPlaylist(int idPlaylist) throws CanzoneInesistente, MyServerException {
+        try {
             ResultSet rs = db.submitQuery("SELECT titolo,autore,anno FROM contiene  WHERE idplaylist = " + idPlaylist);
+            this.txtAreaConsole.append("\nGet delle canzoni da playlist effettuato ");
             return dt.handleCanzoniSet(rs);
         } catch (SQLException ex) {
             throw new MyServerException("GET PLAYLIST ERROR - SQL ERROR: " + ex.getSQLState());
         }
     }
 
+    /**
+     * @brief Metodo che inserisce l'emozione rilasciata dall'utente
+     * @param canzone oggetto di tipo Canzoni contenente la canzone relativa
+     * all'emozione
+     * @param cf oggetto di String contenente il codice fiscale dell'utente
+     * @param emocanzone oggetto di tipo EmozionICanzone contenente l'emozione
+     * rilasciata dall'utente
+     * @throws MyServerException eccezzione generica sollevata durante la
+     * comunicazione col DBMS
+     * @throws ChiaveDuplicata eccezione sollevata nel caso l'utente sia già
+     * registrato, chiave codicefiscale duplicata
+     * @throws DatiNonValidi eccezione sollevata nel caso i dati inseriti non
+     * rispettano i vincoli di integrità
+     */
     @Override
-    public void inserisciEmozione(String titolo, String autore, int anno, String cf, EmozioniCanzone emocanzone) throws DatiNonValidi, ChiaveDuplicata, MyServerException {
-            try {
-                titolo.replace("'", "''");
-                autore.replace("'", "''");
-            db.submitQueryUpdate("INSERT INTO emozionicanzone (titolo,autore,codicefiscale,amazement,nostalgia,calmness,power,joy,tension,sadness," +
-                                "tenderness,solemnity,amazement_notes,nostalgia_notes,calmness_notes,power_notes,joy_notes," +
-                                "tension_notes,sadness_notes,tenderness_notes,solemnity_notes,anno) " +
-                                "VALUES ('" + titolo + "','"  + autore + "','"
+    public synchronized void inserisciEmozione(Canzoni canzone, String cf, EmozioniCanzone emocanzone) throws DatiNonValidi, ChiaveDuplicata, MyServerException {
+        try {
+            canzone.setTitolo(canzone.getTitolo().replace("'", "''"));
+            canzone.setAutore(canzone.getAutore().replace("'", "''"));
+            db.submitQueryUpdate("INSERT INTO emozionicanzone (titolo,autore,codicefiscale,amazement,nostalgia,calmness,power,joy,tension,sadness,"
+                    + "tenderness,solemnity,amazement_notes,nostalgia_notes,calmness_notes,power_notes,joy_notes,"
+                    + "tension_notes,sadness_notes,tenderness_notes,solemnity_notes,anno) "
+                    + "VALUES ('" + canzone.getTitolo() + "','" + canzone.getAutore() + "','"
                     + cf + "',"
-                    + emocanzone.getAmazement() + ",'"
-                    + emocanzone.getNostalgia_notes()+ "',"
-                    + emocanzone.getCalmness() + ",'"
-                    + emocanzone.getPower() + "','"
-                    + emocanzone.getJoy()+ "',"
-                    + emocanzone.getTension() + ",'"
-                    + emocanzone.getSadness() + "',"
-                    + emocanzone.getTenderness()+ ",'"
-                    + emocanzone.getSolemnity() + "','"
-                    + emocanzone.getAmazement_notes() + "',"
-                    + emocanzone.getNostalgia_notes() + ",'"
-                    + emocanzone.getCalmness_notes() + "',"
-                    + emocanzone.getPower_notes() + ",'"
+                    + emocanzone.getAmazement() + ","
+                    + emocanzone.getNostalgia() + ","
+                    + emocanzone.getCalmness() + ","
+                    + emocanzone.getPower() + ","
+                    + emocanzone.getJoy() + ","
+                    + emocanzone.getTension() + ","
+                    + emocanzone.getSadness() + ","
+                    + emocanzone.getTenderness() + ","
+                    + emocanzone.getSolemnity() + ",'"
+                    + emocanzone.getAmazement_notes() + "','"
+                    + emocanzone.getNostalgia_notes() + "','"
+                    + emocanzone.getCalmness_notes() + "','"
+                    + emocanzone.getPower_notes() + "','"
                     + emocanzone.getJoy_notes() + "','"
-                    + emocanzone.getTension_notes() + "',"
-                    + emocanzone.getSadness_notes() + ",'"
-                    + emocanzone.getTenderness_notes() + "',"
-                    + emocanzone.getSolemnity_notes() + ",'"
-                    + anno + "')"); 
- 
+                    + emocanzone.getTension_notes() + "','"
+                    + emocanzone.getSadness_notes() + "','"
+                    + emocanzone.getTenderness_notes() + "','"
+                    + emocanzone.getSolemnity_notes() + "',"
+                    + canzone.getAnno() + ")");
+            this.txtAreaConsole.append("\nEmozioni inserite da parte di: " + cf);
         } catch (SQLException ex) {
 
             if (ex.getSQLState().equals("22001")) {
