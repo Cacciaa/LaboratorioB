@@ -31,6 +31,10 @@ ALTER TABLE Playlist
 ADD CONSTRAINT fkPlaylistUtenti FOREIGN KEY (codiceFiscale) REFERENCES UtentiRegistrati(codiceFiscale) ON DELETE CASCADE ON UPDATE CASCADE;
 
 
+--Creazione del vincolo di integrità unique sulla tabella Playlist
+ALTER TABLE Playlist
+ADD CONSTRAINT uniquenomeplaylist UNIQUE (codicefiscale,nomeplaylist);
+
 --Creazione tabella UtentiRegistrati--
 
 CREATE TABLE UtentiRegistrati(
