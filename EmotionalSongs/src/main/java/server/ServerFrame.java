@@ -131,7 +131,7 @@ public class ServerFrame extends javax.swing.JFrame implements Serializable {
             ConsoleFrame cf = new ConsoleFrame(txtUsername.getText(), String.valueOf(txtPassword.getPassword()));
             try {
                 InterfacciaServizio is = (InterfacciaServizio) UnicastRemoteObject.exportObject(cf, ConsoleFrame.PORT);
-                Registry r = LocateRegistry.getRegistry();
+                Registry r = LocateRegistry.createRegistry(ConsoleFrame.PORT);
                 r.rebind("interfacciaservizio", is);
             } catch (RemoteException ex) {
                 ex.printStackTrace();

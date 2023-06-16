@@ -44,7 +44,7 @@ public class ConsoleFrame extends javax.swing.JPanel implements InterfacciaServi
     private DataTables dt;
 
     //variabile costante di tipo int contenente la porta di comunicazione
-    public static final int PORT = 11011;
+    public static final int PORT = 11012;
 
     /**
      * Creates new form ConsoleFrame
@@ -57,8 +57,7 @@ public class ConsoleFrame extends javax.swing.JPanel implements InterfacciaServi
             this.db = Database.getInstance(user, pass);
             //istanzio un datamodel
             this.dt = new DataTables();
-            //stampo sulla console visuale un messaggio di avvenuta connesione 
-            System.out.println(this.getCanzoniFromPlaylist(12).get(0).getAnno());
+            txtAreaConsole.append("Connessione al db avvenuta con successo.");
         } catch (Exception ex) {
             ex.printStackTrace();
             //PopUp d'errore connessione al database

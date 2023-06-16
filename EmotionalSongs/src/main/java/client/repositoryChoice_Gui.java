@@ -71,7 +71,7 @@ public class repositoryChoice_Gui extends javax.swing.JPanel {
         try {
             //parsing del documento contenente il repository
             ArrayList<Canzoni> canzoni = is.filtraPerTitolo(titolo);
-            return riempiTabella( canzoni, this.jTableAA);
+            return riempiTabella( canzoni, this.jTableT);
             
         } catch (CanzoneInesistente ex) {
             JOptionPane.showMessageDialog(null, "Canzone inesistente", "Errore", JOptionPane.WARNING_MESSAGE);
