@@ -494,10 +494,10 @@ public class PannelloEmozioni extends javax.swing.JPanel {
                             noteTensionVar, noteSadnessVar, noteTendernessVar, noteSolemnityVar);
                
                 Canzoni canzone = carcaCanzone(idPlaylist, titolo,autore,anno);
-                if(canzone != null) 
+                if(canzone == null) 
                     JOptionPane.showMessageDialog(null, "errore", "Errore", JOptionPane.ERROR_MESSAGE); // Output errore
                 else
-                    inserisciEmozioniBrano(canzone,emozioniCanzone);
+                    inserisciEmozioniBrano(canzone, emozioniCanzone);
             }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -548,7 +548,8 @@ public class PannelloEmozioni extends javax.swing.JPanel {
         }
         for (int i = 0; i < listaCanzoni.size(); i++) {
             if(titolo.equals(listaCanzoni.get(i).getTitolo()) && autore.equals(listaCanzoni.get(i).getAutore()) && anno==listaCanzoni.get(i).getAnno() ){
-                return listaCanzoni.get(i);
+                canzone = listaCanzoni.get(i);
+                return canzone;
             }
         }
         return canzone;

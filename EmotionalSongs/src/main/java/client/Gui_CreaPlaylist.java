@@ -314,7 +314,7 @@ public class Gui_CreaPlaylist extends javax.swing.JPanel {
         // TODO add your handling code here:
         if (!jTxtTitolo.getText().isEmpty() && !jTxtAutore.getText().isEmpty() && !jTxtAnno.getText().isEmpty() ) {
             DefaultListModel lstmd;
-            canzone = new Canzoni(jTxtTitolo.getText(), jTxtAutore.getText(), Integer.valueOf(jTxtAnno.getText()));
+            canzone = new Canzoni(jTxtTitolo.getText(), jTxtAutore.getText(), Integer.parseInt(jTxtAnno.getText())); 
             playlist.add(canzone);
 
             try {
@@ -322,7 +322,7 @@ public class Gui_CreaPlaylist extends javax.swing.JPanel {
             } catch (Exception e) {
                 lstmd = new DefaultListModel();
             }
-            anteprimaPlaylist = canzone.toString();
+            anteprimaPlaylist = canzone.getTitolo();
             lstmd.addElement(anteprimaPlaylist);
             this.jLstAnteprima.setModel(lstmd);
             cleanTextField();
@@ -341,7 +341,6 @@ public class Gui_CreaPlaylist extends javax.swing.JPanel {
      */
     public void RegistraPlaylist() {
         // TODO add your handling code here:
-        anteprimaPlaylist = "";
         if (this.jLstAnteprima.getModel().getSize() == 0) {
             JOptionPane.showMessageDialog(this, "Aggiungere almeno una canzone.", "Errore", JOptionPane.ERROR_MESSAGE);
         } else {

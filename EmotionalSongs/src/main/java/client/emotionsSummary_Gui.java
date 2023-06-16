@@ -7,6 +7,7 @@ package client;
 import common.*;
 import common.EmozioniCanzone;
 import java.io.IOException;
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.Vector;
 import javax.swing.JDialog;
@@ -67,7 +68,6 @@ public class emotionsSummary_Gui extends javax.swing.JPanel {
             if (objresult instanceof Emozioni) {
                 //controllo se il riempimento della tabella delle emozioni ha prodotto esito positivo
                 if (this.riempiTabella((Emozioni) objresult, jTblEmo).equals("1")) {
-
                     return true;
                 } else {
                     return false;
@@ -79,10 +79,14 @@ public class emotionsSummary_Gui extends javax.swing.JPanel {
                 return false;
             }
             //catch dell'eccezione in fase dell'inizializzazione della tabella
-        } catch (Exception E) {
+        } catch(EmozioniInesistenti e ){
+            JOptionPane.showMessageDialog(null, "Errore #A1016. Errore emozioni inesistenti", "Errore", JOptionPane.ERROR_MESSAGE);
+            return false;        
+        } catch (MyServerException|RemoteException e) {
             JOptionPane.showMessageDialog(null, "Errore #A1016. Errore durante l'inizializzazione della pagina emotionsSummary_Gui", "Errore", JOptionPane.ERROR_MESSAGE);
             return false;
         }
+        
     }
 
     /**

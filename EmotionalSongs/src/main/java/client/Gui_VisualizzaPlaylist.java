@@ -47,7 +47,9 @@ public class Gui_VisualizzaPlaylist extends javax.swing.JPanel {
 
         try {
             listaPlaylist = is.getPlaylist(userId);
-        }catch(PlaylistInesistenti | MyServerException | RemoteException ex){
+        }catch(PlaylistInesistenti ex){
+            JOptionPane.showMessageDialog(this, "Errore #A1023. Errore nessuna playlist presente nel profilo", "Errore", JOptionPane.ERROR_MESSAGE);
+        } catch(MyServerException | RemoteException ex){
             JOptionPane.showMessageDialog(this, "Errore #A1023. Errore durante la lettura del file playlist", "Errore", JOptionPane.ERROR_MESSAGE);
         } 
         

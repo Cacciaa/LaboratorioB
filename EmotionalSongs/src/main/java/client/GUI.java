@@ -338,20 +338,21 @@ public class GUI extends javax.swing.JFrame {
      * @return false--> input non valido
      */
     private boolean checkInputs(String cf, String nome, String cognome, String citta, int cap, String via, int civico, String email, String password) {
-        if (cf != null && !cf.isBlank() && cf.matches("^([A-Z]{6}[0-9LMNPQRSTUV]{2}[ABCDEHLMPRST]{1}[0-9LMNPQRSTUV]{2}[A-Z]{1}[0-9LMNPQRSTUV]{3}[A-Z]{1})$|([0-9]{11})$")) {
+        //^([A-Z]{6}[0-9LMNPQRSTUV]{2}[ABCDEHLMPRST]{1}[0-9LMNPQRSTUV]{2}[A-Z]{1}[0-9LMNPQRSTUV]{3}[A-Z]{1})$|([0-9]{11})$
+        if (cf != null && !cf.isBlank() && cf.matches("^[a-zA-Z]{6}[0-9]{2}[abcdehlmprstABCDEHLMPRST]{1}[0-9]{2}([a-zA-Z]{1}[0-9]{3})[a-zA-Z]{1}$")) {
             if (nome != null && !nome.equals("") && !nome.equals(" ") && !nome.matches(".*\\d.*")) {
                 if (cognome != null && !cognome.equals("") && !cognome.equals(" ") && !cognome.matches(".*\\d.*")) {
-                    if (citta != null && !citta.equals("") && !citta.equals(" ")) {
-                        if (cap!=0) {
-                            if (via != null && !via.equals("") && !via.equals(" ")) {
-                                if (cap!=0) {
-                                    if (isValidateEmailAddress(email) && password != null && !password.equals("") && !password.equals(" ")) {
+                    if (citta != null && !citta.equals("") && !citta.equals(" ") && !citta.matches(".*\\d.*")) {
+                       if (cap != 0 && cap>0) {
+                           if (via != null && !via.equals("") && !via.equals(" ") && !via.matches(".*\\d.*")) {
+                               if (civico != 0 && civico>0) {
+                                   if (isValidateEmailAddress(email) && password != null && !password.equals("") && !password.equals(" ")) {
                                         return true;
                                     }
                                 }
-                            }
-                        }
-                    }
+                           }
+                       } 
+                    } 
                 }
             }
         }

@@ -44,6 +44,7 @@ public class Gui_ElencoBrani extends javax.swing.JPanel {
         this.previousframe = emo; // Frame iniziale
         this.is=is;
         visualizzaBraniPlaylist(); // Chiama il metodo che riempe la tabella di brani della playlist
+        
     }
 
     /**
@@ -59,6 +60,7 @@ public class Gui_ElencoBrani extends javax.swing.JPanel {
         jTable2 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
 
+        jTable2.setAutoCreateRowSorter(true);
         jTable2.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -83,18 +85,13 @@ public class Gui_ElencoBrani extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        jTable2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jTable2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTable2MouseClicked(evt);
             }
         });
         jScrollPane2.setViewportView(jTable2);
-        if (jTable2.getColumnModel().getColumnCount() > 0) {
-            jTable2.getColumnModel().getColumn(0).setResizable(false);
-            jTable2.getColumnModel().getColumn(1).setResizable(false);
-            jTable2.getColumnModel().getColumn(2).setResizable(false);
-            jTable2.getColumnModel().getColumn(3).setResizable(false);
-        }
 
         jLabel1.setText("<html><h1 style=\"font-size:185%;color:green;\"><u>Elenco brani</h1></html>");
 
@@ -141,7 +138,7 @@ public class Gui_ElencoBrani extends javax.swing.JPanel {
 
         // Rendo il pannello successivo visibile
         JDialog pnlEmozioni = new JDialog(this.previousframe, "PannelloEmozioni", true);
-        pnlEmozioni.getContentPane().add(new PannelloEmozioni(idUtente, titolo, autore,Integer.valueOf(anno), previousframe, is, pl.getIdPlaylist()));
+        pnlEmozioni.getContentPane().add(new PannelloEmozioni(idUtente, titolo, autore,Integer.parseInt(anno), previousframe, is, pl.getIdPlaylist()));
         pnlEmozioni.pack();
         
         pnlEmozioni.setVisible(true); // Visualizzo pannello emozioni*/
@@ -153,9 +150,8 @@ public class Gui_ElencoBrani extends javax.swing.JPanel {
      * come parametro nel costruttore
      */
     public void visualizzaBraniPlaylist() {
-        
         //Creazione della tabella
-        DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
+        DefaultTableModel model = (DefaultTableModel) this.jTable2.getModel();
         // Arraylist di tipo canzone, conterrà i brani della playlist
         ArrayList<Canzoni> brani = new ArrayList<Canzoni>();
         

@@ -96,7 +96,7 @@ public class repositoryChoice_Gui extends javax.swing.JPanel {
     private Object cercaBranoMusicale(String anno, String autore) {
         try {
             //parsing del file contenente il repository
-            ArrayList<Canzoni> canzoni = is.filtraPerAutoreAnno(autore, Integer.valueOf(anno));
+            ArrayList<Canzoni> canzoni = is.filtraPerAutoreAnno(autore, Integer.parseInt(anno));
             return riempiTabella( canzoni, this.jTableAA);
             
         } catch (CanzoneInesistente ex) {
