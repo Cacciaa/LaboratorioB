@@ -72,7 +72,7 @@ public class GUI_login extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("<html> <h2>UserId");
+        jLabel1.setText("<html> <h2> Codice Fiscale");
 
         jLabel2.setText("<html> <h2>Password");
 
@@ -102,7 +102,7 @@ public class GUI_login extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(15, 15, 15)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(102, Short.MAX_VALUE))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

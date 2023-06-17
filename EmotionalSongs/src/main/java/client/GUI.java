@@ -295,11 +295,24 @@ public class GUI extends javax.swing.JFrame {
         //città
         String citta = txtCitta.getText();
         //cap
-        int cap = Integer.valueOf(txtCap.getText());
+        int cap;
+        if(txtCap.getText().isBlank()){
+            cap = 0;
+        }
+        else{
+            cap = Integer.parseInt(txtCap.getText());
+        }
         //via
         String via = txtVia.getText();
         //civico
-        int civico = Integer.valueOf(txtCivico.getText());
+        int civico;
+        if(txtCivico.getText().isBlank()){
+            civico = 0;
+        }
+        else{
+            civico =  Integer.valueOf(txtCivico.getText());
+        }
+       
         //emial
         String email = txtEmail.getText();      
         //Password

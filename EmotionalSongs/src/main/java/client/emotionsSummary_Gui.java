@@ -50,7 +50,7 @@ public class emotionsSummary_Gui extends javax.swing.JPanel {
         this.canzone = canzone;
         this.previousframe = previousframe;
         this.is=is;
-        visualizzaEmozioneBrano();
+        
     }
 
     /**
@@ -74,15 +74,14 @@ public class emotionsSummary_Gui extends javax.swing.JPanel {
                 }
 
             } else {
-                //stampa della JOptionPane contenente l'errore che si è verificato
-                JOptionPane.showMessageDialog(null, objresult, "Errore", JOptionPane.ERROR_MESSAGE);
+                
                 return false;
             }
             //catch dell'eccezione in fase dell'inizializzazione della tabella
         } catch(EmozioniInesistenti e ){
-            JOptionPane.showMessageDialog(null, "Errore #A1016. Errore emozioni inesistenti", "Errore", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Emozioni inesistenti relative al brano selezionato", "Errore", JOptionPane.ERROR_MESSAGE);
             return false;        
-        } catch (MyServerException|RemoteException e) {
+        } catch (MyServerException | RemoteException e) {
             JOptionPane.showMessageDialog(null, "Errore #A1016. Errore durante l'inizializzazione della pagina emotionsSummary_Gui", "Errore", JOptionPane.ERROR_MESSAGE);
             return false;
         }
