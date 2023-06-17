@@ -54,15 +54,22 @@ public class notes_Gui extends javax.swing.JPanel {
             //settings della jLabel con l'idutente ottenuto
             this.jLabel1.setText("<html> <h1 style='color:green;'><u>Note dell'utente</u>: " + idUtente + "</h1>");
             //ottengo tutte le note rilasciate dall'utente idutente relative a ogni emozione
-            String notes = this.emo_canzone.getEmozionicanzoni().get(selectedrow).getCodiceFiscale();
-            //rendo la textPane non modificale
-            this.jTextPane1.setEditable(false);
-            //settings del tipo di contenuto della textPane in formato html
-            this.jTextPane1.setContentType("text/html");
+            String notes = "Amazement : " + this.emo_canzone.getEmozionicanzoni().get(selectedrow).getAmazement_notes() + "\r\n"+"\r\n"+
+                            "Nostalgia : " + this.emo_canzone.getEmozionicanzoni().get(selectedrow).getNostalgia_notes() + "\r\n"+"\r\n"+
+                            "Calmness : " + this.emo_canzone.getEmozionicanzoni().get(selectedrow).getCalmness_notes() + "\r\n"+"\r\n"+
+                            "Power : " + this.emo_canzone.getEmozionicanzoni().get(selectedrow).getPower_notes() + "\r\n"+"\r\n"+
+                            "Joy : " + this.emo_canzone.getEmozionicanzoni().get(selectedrow).getJoy_notes() + "\r\n"+"\r\n"+
+                            "Tension : " + this.emo_canzone.getEmozionicanzoni().get(selectedrow).getTension_notes() + "\r\n"+"\r\n"+
+                            "Sadness : " + this.emo_canzone.getEmozionicanzoni().get(selectedrow).getSadness_notes() + "\r\n"+"\r\n"+
+                            "Tenderness : " + this.emo_canzone.getEmozionicanzoni().get(selectedrow).getTenderness_notes() + "\r\n"+"\r\n"+
+                            "Solemnity : " + this.emo_canzone.getEmozionicanzoni().get(selectedrow).getSolemnity_notes() + "\r\n";
+           
             //inserimento delle note nella textPane
-            this.jTextPane1.setText(notes);
+            this.jTextArea1.setText(notes);
+            //rendo la textPane non modificale
+            this.jTextArea1.setEditable(false);
             //setting della scrollbar all'inzio della textPane
-            this.jTextPane1.setCaretPosition(0);
+            this.jTextArea1.setCaretPosition(0);
         }
     }
 
@@ -76,41 +83,44 @@ public class notes_Gui extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
 
         jLabel1.setText("<html> <h1 style=\"color:green;\"><u>Note dell'utente:</u></h1>");
 
-        jScrollPane1.setViewportView(jTextPane1);
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane2.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(190, 190, 190)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 623, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(139, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(344, 344, 344))
+                .addContainerGap(160, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(372, 372, 372))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 651, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(141, 141, 141))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(21, 21, 21)
+                .addGap(40, 40, 40)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(76, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 416, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(59, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextPane jTextPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }
