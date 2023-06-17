@@ -1,12 +1,14 @@
 package client;
 
 import common.*;
+import java.awt.Window;
 import java.io.IOException;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 import org.xml.sax.SAXException;
 
 /*
@@ -48,9 +50,15 @@ public class Gui_VisualizzaPlaylist extends javax.swing.JPanel {
         try {
             listaPlaylist = is.getPlaylist(userId);
         }catch(PlaylistInesistenti ex){
-            JOptionPane.showMessageDialog(this, "Errore #A1023. Errore nessuna playlist presente nel profilo", "Errore", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Nessuna playlist presente nel profilo", "Errore", JOptionPane.ERROR_MESSAGE);
+            //chiusura del panel
+            Window win = SwingUtilities.getWindowAncestor(this);
+            win.dispose();
         } catch(MyServerException | RemoteException ex){
             JOptionPane.showMessageDialog(this, "Errore #A1023. Errore durante la lettura del file playlist", "Errore", JOptionPane.ERROR_MESSAGE);
+            //chiusura del panel
+            Window win = SwingUtilities.getWindowAncestor(this);
+            win.dispose();
         } 
         
             DefaultListModel modelloLista = new DefaultListModel<>();
