@@ -1,0 +1,16 @@
+<map id="cleanTextField" name="cleanTextField">
+<area shape="rect" id="Node000001" title=" " alt="" coords="933,35,1038,61"/>
+<area shape="rect" id="Node000002" href="$classclient_1_1_gui___crea_playlist.html#af9efd83cc290bebb2483414e79391879" title=" " alt="" coords="818,8,885,35"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="918,37,885,31,886,25,919,32"/>
+<area shape="rect" id="Node000007" href="$classclient_1_1_gui___crea_playlist.html#a7970866ddd254ec5592d2a6f130e566d" title=" " alt="" coords="587,56,770,99"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="918,57,770,71,770,66,918,52"/>
+<area shape="rect" id="Node000003" href="$classclient_1_1_gui___crea_playlist.html#a85f382658e6b9fdfde7863ef3e091069" title=" " alt="" coords="622,5,735,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="803,23,735,22,735,17,803,18"/>
+<area shape="rect" id="Node000004" href="$classclient_1_1_gui___crea_playlist.html#ae5ab527556e88a0b4ce1c9518db9cedf" title=" " alt="" coords="331,8,539,35"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="608,22,540,23,540,18,608,17"/>
+<area shape="rect" id="Node000005" href="$classclient_1_1_gui___crea_playlist.html#a77410fe5c5b5ddb55910cd7a2297bff7" title=" " alt="" coords="172,35,283,61"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="316,39,284,44,283,38,316,34"/>
+<area shape="rect" id="Node000006" href="$classclient_1_1_gui___crea_playlist.html#ac79b47ae5747b33ca7b7c3c03f88e532" title=" " alt="" coords="5,35,124,61"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="157,51,124,51,124,45,157,45"/>
+<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="573,73,283,54,284,49,573,68"/>
+</map>

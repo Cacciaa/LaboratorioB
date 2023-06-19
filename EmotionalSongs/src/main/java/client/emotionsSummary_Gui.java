@@ -56,8 +56,8 @@ public class emotionsSummary_Gui extends javax.swing.JPanel {
     /**
      * Metodo che permette di prelevare le emozioni relative al brano indicato
      *
-     * @return boolean true --> la tabella è stata riempita correttamente
-     * @return boolean false --> errore, implica la visualizzazione di una
+     * @return true --> la tabella è stata riempita correttamente
+     *         false --> errore, implica la visualizzazione di una
      * JOptionPane contenente il codice d'errore
      */
     public boolean visualizzaEmozioneBrano() {
@@ -97,7 +97,7 @@ public class emotionsSummary_Gui extends javax.swing.JPanel {
      * tabella presente nella pagina
      * @return Oggetto di tipo String --> "1" il riempimento è andato a buon
      * fine
-     * @return Oggetto di tipo String --> contenente l'errore generato in fase
+     *  Oggetto di tipo String --> contenente l'errore generato in fase
      * di popolamento della tabella
      */
     private Object riempiTabella(Emozioni emo_canzone, JTable tabella) {
@@ -169,7 +169,7 @@ public class emotionsSummary_Gui extends javax.swing.JPanel {
      * tabella presente nella pagina
      * @return boolean true -> settings della tabella avvenuto con esito
      * positivo
-     * @return boolean false -> settings della tabella ha prodotto un errore
+     *  boolean false -> settings della tabella ha prodotto un errore
      */
     private boolean setMedieTabella(JTable tabella) {
         MediaEmozioni media=null;

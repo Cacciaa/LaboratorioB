@@ -1,0 +1,11 @@
+<map id="transform" name="transform">
+<area shape="rect" id="Node000001" title=" " alt="" coords="602,47,678,73"/>
+<area shape="rect" id="Node000002" href="$classclient_1_1emotions_summary___gui.html#a310179e74b160c2cc815f52ee6cd2721" title=" " alt="" coords="457,47,554,73"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="587,63,555,63,555,57,587,57"/>
+<area shape="rect" id="Node000003" href="$classclient_1_1emotions_summary___gui.html#a1f6821bf85e6b5a41c287f82232b7d7e" title=" " alt="" coords="240,47,409,73"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="442,63,410,63,410,57,442,57"/>
+<area shape="rect" id="Node000004" href="$classclient_1_1repository_choice___gui.html#a8ac11cd567b799ade53c11e13192ac19" title=" " alt="" coords="5,5,192,48"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="225,48,192,43,193,38,225,43"/>
+<area shape="rect" id="Node000005" href="$classclient_1_1repository_choice___gui.html#a532a62757b61e85362ece5a42a5491ab" title=" " alt="" coords="11,72,186,115"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="225,77,187,83,186,78,225,72"/>
+</map>

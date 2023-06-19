@@ -1,0 +1,9 @@
+<map id="EmotionalSongs" name="EmotionalSongs">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,449,181,705"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="44,220,100,289"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="78,303,88,450,82,450,73,304"/>
+<area shape="rect" id="Node000003" href="$interfacecommon_1_1_interfaccia_servizio.html" title=" " alt="" coords="125,124,294,385"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="165,386,148,434,143,433,160,384"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="181,5,238,75"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="212,89,212,124,207,124,207,89"/>
+</map>

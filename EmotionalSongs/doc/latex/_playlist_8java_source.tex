@@ -1,0 +1,56 @@
+\doxysection{Playlist.\+java}
+\hypertarget{_playlist_8java_source}{}\label{_playlist_8java_source}\index{src/main/java/common/Playlist.java@{src/main/java/common/Playlist.java}}
+\mbox{\hyperlink{_playlist_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00002}00002\ \textcolor{comment}{\ *\ Click\ nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-\/default.txt\ to\ change\ this\ license}}
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00003}00003\ \textcolor{comment}{\ *\ Click\ nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java\ to\ edit\ this\ template}}
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00004}00004\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00005}00005\ \textcolor{keyword}{package\ }common;}
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00007}00007\ \textcolor{keyword}{import}\ java.io.Serializable;}
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00017}\mbox{\hyperlink{classcommon_1_1_playlist}{00017}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcommon_1_1_playlist}{Playlist}}\ \textcolor{keyword}{implements}\ Serializable\ \{}
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00018}00018\ \ \ \ \ \textcolor{comment}{//attributo\ privato\ di\ tipo\ int\ contenente\ l'id\ della\ playlist}}
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00019}\mbox{\hyperlink{classcommon_1_1_playlist_aa4afd42d381c975b0eeae73ce21bbc5f}{00019}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_playlist_aa4afd42d381c975b0eeae73ce21bbc5f}{idPlaylist}};}
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00020}00020\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00021}00021\ \ \ \ \ \textcolor{comment}{//attributo\ privato\ di\ tipo\ String\ contenente\ il\ nome\ della\ playlist}}
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00022}\mbox{\hyperlink{classcommon_1_1_playlist_ae5d97f04cf6bc56812aeb4f7cadb754a}{00022}}\ \ \ \ \ \textcolor{keyword}{private}\ String\ \mbox{\hyperlink{classcommon_1_1_playlist_ae5d97f04cf6bc56812aeb4f7cadb754a}{nomeplaylist}};}
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00023}00023\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00024}00024\ \ \ \ \ \textcolor{comment}{//attributo\ privato\ di\ tipo\ String\ contenente\ il\ codicefiscale\ dell'utente}}
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00025}\mbox{\hyperlink{classcommon_1_1_playlist_a89e28f6f7714a9b66a902a1aa74f9566}{00025}}\ \ \ \ \ \textcolor{keyword}{private}\ String\ \mbox{\hyperlink{classcommon_1_1_playlist_a89e28f6f7714a9b66a902a1aa74f9566}{codiceFiscale}};}
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00026}00026\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00033}\mbox{\hyperlink{classcommon_1_1_playlist_a886f849ed8f9d84740ab471be2ffca80}{00033}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classcommon_1_1_playlist_a886f849ed8f9d84740ab471be2ffca80}{Playlist}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_playlist_aa4afd42d381c975b0eeae73ce21bbc5f}{idPlaylist}},\ String\ \mbox{\hyperlink{classcommon_1_1_playlist_ae5d97f04cf6bc56812aeb4f7cadb754a}{nomeplaylist}},\ String\ \mbox{\hyperlink{classcommon_1_1_playlist_a89e28f6f7714a9b66a902a1aa74f9566}{codiceFiscale}})\ \{}
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00034}00034\ \ \ \ \ \ \ \ \ this.idPlaylist\ =\ \mbox{\hyperlink{classcommon_1_1_playlist_aa4afd42d381c975b0eeae73ce21bbc5f}{idPlaylist}};}
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00035}00035\ \ \ \ \ \ \ \ \ this.nomeplaylist\ =\ \mbox{\hyperlink{classcommon_1_1_playlist_ae5d97f04cf6bc56812aeb4f7cadb754a}{nomeplaylist}};}
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00036}00036\ \ \ \ \ \ \ \ \ this.codiceFiscale\ =\ \mbox{\hyperlink{classcommon_1_1_playlist_a89e28f6f7714a9b66a902a1aa74f9566}{codiceFiscale}};}
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00037}00037\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00043}\mbox{\hyperlink{classcommon_1_1_playlist_a9090123f9b91f7e3f56767d6038fedea}{00043}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_playlist_a9090123f9b91f7e3f56767d6038fedea}{getIdPlaylist}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcommon_1_1_playlist_aa4afd42d381c975b0eeae73ce21bbc5f}{idPlaylist}};}
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00045}00045\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00046}00046\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00051}\mbox{\hyperlink{classcommon_1_1_playlist_a826ef762f11ace17a08f91871450600f}{00051}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcommon_1_1_playlist_a826ef762f11ace17a08f91871450600f}{setIdPlaylist}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_playlist_aa4afd42d381c975b0eeae73ce21bbc5f}{idPlaylist}})\ \{}
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00052}00052\ \ \ \ \ \ \ \ \ this.idPlaylist\ =\ \mbox{\hyperlink{classcommon_1_1_playlist_aa4afd42d381c975b0eeae73ce21bbc5f}{idPlaylist}};}
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00053}00053\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00054}00054\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00059}\mbox{\hyperlink{classcommon_1_1_playlist_aec295b9baad7fee24e6e106b45a82d64}{00059}}\ \ \ \ \ \textcolor{keyword}{public}\ String\ \mbox{\hyperlink{classcommon_1_1_playlist_aec295b9baad7fee24e6e106b45a82d64}{getNomeplaylist}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcommon_1_1_playlist_ae5d97f04cf6bc56812aeb4f7cadb754a}{nomeplaylist}};}
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00061}00061\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00062}00062\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00067}\mbox{\hyperlink{classcommon_1_1_playlist_aa9b4fbcb7344cff31d11b2c19a237f60}{00067}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcommon_1_1_playlist_aa9b4fbcb7344cff31d11b2c19a237f60}{setNomeplaylist}}(String\ \mbox{\hyperlink{classcommon_1_1_playlist_ae5d97f04cf6bc56812aeb4f7cadb754a}{nomeplaylist}})\ \{}
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00068}00068\ \ \ \ \ \ \ \ \ this.nomeplaylist\ =\ \mbox{\hyperlink{classcommon_1_1_playlist_ae5d97f04cf6bc56812aeb4f7cadb754a}{nomeplaylist}};}
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00069}00069\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00075}\mbox{\hyperlink{classcommon_1_1_playlist_a2ff8ff110ded2818f271d6d4dcb99454}{00075}}\ \ \ \ \ \textcolor{keyword}{public}\ String\ \mbox{\hyperlink{classcommon_1_1_playlist_a2ff8ff110ded2818f271d6d4dcb99454}{getCodiceFiscale}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcommon_1_1_playlist_a89e28f6f7714a9b66a902a1aa74f9566}{codiceFiscale}};}
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00077}00077\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00078}00078\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00083}\mbox{\hyperlink{classcommon_1_1_playlist_ac42ccd775b8fd78bc1f6dae1a86cfc1a}{00083}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcommon_1_1_playlist_ac42ccd775b8fd78bc1f6dae1a86cfc1a}{setCodiceFiscale}}(String\ \mbox{\hyperlink{classcommon_1_1_playlist_a89e28f6f7714a9b66a902a1aa74f9566}{codiceFiscale}})\ \{}
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00084}00084\ \ \ \ \ \ \ \ \ this.codiceFiscale\ =\ \mbox{\hyperlink{classcommon_1_1_playlist_a89e28f6f7714a9b66a902a1aa74f9566}{codiceFiscale}};}
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00085}00085\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00086}00086\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00087}00087\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_playlist_8java_source_l00088}00088\ \}}
+
+\end{DoxyCode}

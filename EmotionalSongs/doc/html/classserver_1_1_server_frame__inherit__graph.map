@@ -1,0 +1,7 @@
+<map id="ServerFrame" name="ServerFrame">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,123,207,427"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="33,5,89,75"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="73,88,79,123,74,124,67,89"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="113,5,193,75"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="146,89,139,124,134,123,141,88"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="handleCanzoniSet" name="handleCanzoniSet">
+<area shape="rect" id="Node000001" title="Metodo invocato per mappare il datamodel delle canzoni ottenute dall&#39;esecuzione delle query." alt="" coords="266,113,392,140"/>
+<area shape="rect" id="Node000002" href="$classserver_1_1_console_frame.html#a4df018cf11f2509ef9c274cb734f3c3a" title="Metodo che filtra le canzoni per autore e anno." alt="" coords="26,5,197,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="295,107,258,84,217,62,188,51,190,46,219,58,261,80,298,103"/>
+<area shape="rect" id="Node000003" href="$classserver_1_1_console_frame.html#a5b8294026608668c8f915f834b607c22" title="Metodo che filtra le canzoni per il titolo." alt="" coords="26,72,197,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="251,117,197,109,198,104,252,112"/>
+<area shape="rect" id="Node000004" href="$classserver_1_1_console_frame.html#ad780c43371a910daafdf021982f32500" title="Metodo che restituisce le canzoni da inserire nella playlist dell&#39;utente." alt="" coords="5,139,218,181"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="252,141,218,146,218,141,251,136"/>
+<area shape="rect" id="Node000005" href="$classserver_1_1_console_frame.html#af5a428a63d28c6d7b3cf944bbdbe82ff" title="Metodo che restituisce le canzoni associate alla playlist." alt="" coords="5,205,218,248"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="298,151,261,174,219,196,190,207,188,202,217,191,258,169,295,146"/>
+</map>

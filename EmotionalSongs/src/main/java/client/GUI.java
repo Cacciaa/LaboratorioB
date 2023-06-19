@@ -348,7 +348,7 @@ public class GUI extends javax.swing.JFrame {
      * @param password -> variabile String contenente la password
      * 
      * @return  true--> input valido
-     * @return false--> input non valido
+     *  false--> input non valido
      */
     private boolean checkInputs(String cf, String nome, String cognome, String citta, int cap, String via, int civico, String email, String password) {
         //^([A-Z]{6}[0-9LMNPQRSTUV]{2}[ABCDEHLMPRST]{1}[0-9LMNPQRSTUV]{2}[A-Z]{1}[0-9LMNPQRSTUV]{3}[A-Z]{1})$|([0-9]{11})$
@@ -378,7 +378,7 @@ public class GUI extends javax.swing.JFrame {
      * @param emailStr -> stringa contenente la mail da validare
      * 
      * @return  true-> mail valida
-     * @return false-> mail non valida
+     *  false-> mail non valida
      */
     public static boolean isValidateEmailAddress(String emailStr) {
         Matcher matcher = VALID_EMAIL_ADDRESS_REGEX.matcher(emailStr);

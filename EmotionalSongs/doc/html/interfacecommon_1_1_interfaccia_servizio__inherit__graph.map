@@ -1,0 +1,7 @@
+<map id="InterfacciaServizio" name="InterfacciaServizio">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,123,175,384"/>
+<area shape="rect" id="Node000003" href="$classserver_1_1_console_frame.html" title=" " alt="" coords="5,432,175,885"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="93,398,93,432,87,432,87,398"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="61,5,119,75"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,89,93,123,87,123,87,89"/>
+</map>

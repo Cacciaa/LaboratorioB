@@ -63,7 +63,7 @@ public class repositoryChoice_Gui extends javax.swing.JPanel {
      * eccezzioni
      * @return String "Errore #A1001" --> errore, il file indicato non è un
      * file.
-     * @return String "Errore #A1002" --> errore, si è verificata un errore in
+     *  String "Errore #A1002" --> errore, si è verificata un errore in
      * fase di lettura.
      */
     private Object cercaBranoMusicale(String titolo) {
@@ -91,7 +91,7 @@ public class repositoryChoice_Gui extends javax.swing.JPanel {
      * filtro
      * @return oggetto di tipo Object instanceof Repository -> lista delle
      * canzoni filtrate
-     * @return oggetto di tipo Object instanceof String -> errore
+     *  oggetto di tipo Object instanceof String -> errore
      */
     private Object cercaBranoMusicale(String anno, String autore) {
         try {
@@ -116,7 +116,7 @@ public class repositoryChoice_Gui extends javax.swing.JPanel {
      *
      * @return String "1" --> esito positivo. L'inserimento dei dati nella
      * tabella non ha causato eccezzioni
-     * @return String "Errore #A1003" --> errore, l'inserimento dei dati in
+     *  String "Errore #A1003" --> errore, l'inserimento dei dati in
      * tabella ha causato un'eccezione.
      */
     private Object riempiTabella(ArrayList<Canzoni> canzoni, JTable tabella) {

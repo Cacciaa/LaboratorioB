@@ -1,0 +1,24 @@
+-classpath
+'C:/Users/Lorenzo/.m2/repository/org/postgresql/postgresql/42.6.0/postgresql-42.6.0.jar'
+-encoding
+'UTF-8'
+-protected
+-source
+'16'
+-sourcepath
+'D:/UnInsu/Lab.B/LaboratorioB/EmotionalSongs/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2023. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'D:/UnInsu/Lab.B/LaboratorioB/EmotionalSongs/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'EmotionalSongs 1.0 API'
+-use
+-version
+-windowtitle
+'EmotionalSongs 1.0 API'

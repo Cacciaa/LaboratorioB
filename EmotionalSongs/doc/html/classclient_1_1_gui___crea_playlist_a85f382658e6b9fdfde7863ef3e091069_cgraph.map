@@ -1,0 +1,9 @@
+<map id="RegistraPlaylist" name="RegistraPlaylist">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,35,118,61"/>
+<area shape="rect" id="Node000002" href="$classclient_1_1_gui___crea_playlist.html#af9efd83cc290bebb2483414e79391879" title=" " alt="" coords="242,5,309,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,38,226,23,227,28,119,43"/>
+<area shape="rect" id="Node000004" href="$interfacecommon_1_1_interfaccia_servizio.html#af4163a6b21c5a872c979a657a47d70eb" title="Metodo che crea la playlist inserendo le canzoni scelte dall&#39;utente." alt="" coords="166,56,385,99"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="119,53,151,58,151,63,118,58"/>
+<area shape="rect" id="Node000003" href="$classclient_1_1_gui___crea_playlist.html#a7a04e7f0e3d896f1cf3f38ce45efb4eb" title=" " alt="" coords="433,5,538,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="310,16,418,16,418,21,310,21"/>
+</map>

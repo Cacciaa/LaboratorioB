@@ -1,0 +1,11 @@
+<map id="createPlaylist" name="createPlaylist">
+<area shape="rect" id="Node000001" title="Metodo che crea la playlist inserendo le canzoni scelte dall&#39;utente." alt="" coords="892,13,992,40"/>
+<area shape="rect" id="Node000002" href="$classclient_1_1_gui___crea_playlist.html#a85f382658e6b9fdfde7863ef3e091069" title=" " alt="" coords="686,5,844,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="876,29,844,29,844,24,876,24"/>
+<area shape="rect" id="Node000003" href="$classclient_1_1_gui___crea_playlist.html#ae5ab527556e88a0b4ce1c9518db9cedf" title=" " alt="" coords="433,5,638,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="672,29,639,29,639,24,672,24"/>
+<area shape="rect" id="Node000004" href="$classclient_1_1_gui___crea_playlist.html#a77410fe5c5b5ddb55910cd7a2297bff7" title=" " alt="" coords="211,5,385,48"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="418,29,386,29,386,24,418,24"/>
+<area shape="rect" id="Node000005" href="$classclient_1_1_gui___crea_playlist.html#ac79b47ae5747b33ca7b7c3c03f88e532" title=" " alt="" coords="5,5,163,48"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="195,29,163,29,163,24,195,24"/>
+</map>

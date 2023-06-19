@@ -1,0 +1,182 @@
+\doxysection{Gui\+\_\+\+Elenco\+Brani.\+java}
+\hypertarget{_gui___elenco_brani_8java_source}{}\label{_gui___elenco_brani_8java_source}\index{src/main/java/client/Gui\_ElencoBrani.java@{src/main/java/client/Gui\_ElencoBrani.java}}
+\mbox{\hyperlink{_gui___elenco_brani_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00001}00001\ \textcolor{keyword}{package\ }client;}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00003}00003\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacecommon}{common}}.*;}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00004}00004\ \textcolor{keyword}{import}\ java.awt.Desktop;}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00005}00005\ \textcolor{keyword}{import}\ java.net.URI;}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00006}00006\ \textcolor{keyword}{import}\ java.rmi.\mbox{\hyperlink{classjava_1_1rmi_1_1_remote_exception}{RemoteException}};}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00007}00007\ \textcolor{keyword}{import}\ java.util.ArrayList;}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00008}00008\ \textcolor{keyword}{import}\ java.util.Vector;}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00009}00009\ \textcolor{keyword}{import}\ java.util.logging.Level;}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00010}00010\ \textcolor{keyword}{import}\ java.util.logging.Logger;}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00011}00011\ \textcolor{keyword}{import}\ javax.swing.JDialog;}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00012}00012\ \textcolor{keyword}{import}\ javax.swing.JOptionPane;}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00013}00013\ \textcolor{keyword}{import}\ javax.swing.JTable;}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00014}00014\ \textcolor{keyword}{import}\ javax.swing.event.ListSelectionEvent;}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00015}00015\ \textcolor{keyword}{import}\ javax.swing.table.DefaultTableModel;}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00025}\mbox{\hyperlink{classclient_1_1_gui___elenco_brani}{00025}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classclient_1_1_gui___elenco_brani}{Gui\_ElencoBrani}}\ \textcolor{keyword}{extends}\ javax.swing.JPanel\ \{}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00027}\mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a22afacadf2dac8db60bfd2a4e953b60a}{00027}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ String\ \mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a22afacadf2dac8db60bfd2a4e953b60a}{idUtente}};\ \textcolor{comment}{//\ Attributo\ contenente\ l'id\ utente}}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00028}\mbox{\hyperlink{classclient_1_1_gui___elenco_brani_aaedbebaa1ad73912443b3fb40e7cb302}{00028}}\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{classcommon_1_1_playlist}{Playlist}}\ \mbox{\hyperlink{classclient_1_1_gui___elenco_brani_aaedbebaa1ad73912443b3fb40e7cb302}{pl}};\ \textcolor{comment}{//\ Oggetto\ di\ tipo\ playlist,\ contiene\ la\ playlist\ selezionata}}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00029}\mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a3be0ddc23a2b1177681f10d32f038df7}{00029}}\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{classclient_1_1_emotional_songs}{EmotionalSongs}}\ \mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a3be0ddc23a2b1177681f10d32f038df7}{previousframe}};\ \textcolor{comment}{//\ Frame\ iniziale}}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00030}\mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a6a810c68843a0f123de03f49ffb925c0}{00030}}\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{interfacecommon_1_1_interfaccia_servizio}{InterfacciaServizio}}\ \mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a6a810c68843a0f123de03f49ffb925c0}{is}};}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00040}\mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a3ecac1a96e044d26a890d04c61a3c852}{00040}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a3ecac1a96e044d26a890d04c61a3c852}{Gui\_ElencoBrani}}(String\ userId,\ \mbox{\hyperlink{classcommon_1_1_playlist}{Playlist}}\ \mbox{\hyperlink{classclient_1_1_gui___elenco_brani_aaedbebaa1ad73912443b3fb40e7cb302}{pl}},\ \mbox{\hyperlink{classclient_1_1_emotional_songs}{EmotionalSongs}}\ emo,\ \mbox{\hyperlink{interfacecommon_1_1_interfaccia_servizio}{InterfacciaServizio}}\ \mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a6a810c68843a0f123de03f49ffb925c0}{is}})\ \{}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00041}00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a77410fe5c5b5ddb55910cd7a2297bff7}{initComponents}}();}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00042}00042\ \ \ \ \ \ \ \ \ this.idUtente\ =\ userId;}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00043}00043\ \ \ \ \ \ \ \ \ this.pl\ =\ \mbox{\hyperlink{classclient_1_1_gui___elenco_brani_aaedbebaa1ad73912443b3fb40e7cb302}{pl}};}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00044}00044\ \ \ \ \ \ \ \ \ this.previousframe\ =\ emo;\ \textcolor{comment}{//\ Frame\ iniziale}}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00045}00045\ \ \ \ \ \ \ \ \ this.is=\mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a6a810c68843a0f123de03f49ffb925c0}{is}};}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00046}00046\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a95ec5dc2d151540c4e79368afc96a94a}{visualizzaBraniPlaylist}}();\ \textcolor{comment}{//\ Chiama\ il\ metodo\ che\ riempe\ la\ tabella\ di\ brani\ della\ playlist}}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00047}00047\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00048}00048\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00055}00055\ \ \ \ \ @SuppressWarnings(\textcolor{stringliteral}{"{}unchecked"{}})}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00056}00056\ \ \ \ \ \textcolor{comment}{//\ <editor-\/fold\ defaultstate="{}collapsed"{}\ desc="{}Generated\ Code"{}>//GEN-\/BEGIN:initComponents}}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00057}\mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a77410fe5c5b5ddb55910cd7a2297bff7}{00057}}\ \ \ \ \ private\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a77410fe5c5b5ddb55910cd7a2297bff7}{initComponents}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00059}00059\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a3ff9eafda5b4cd0c2e725de32515928f}{jScrollPane2}}\ =\ \textcolor{keyword}{new}\ javax.swing.JScrollPane();}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00060}00060\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a19b692dc8dc39dc61a55e9dd69106215}{jTable2}}\ =\ \textcolor{keyword}{new}\ javax.swing.JTable();}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00061}00061\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a47066ebb7b751f52b9debcc4bd1b1ee4}{jLabel1}}\ =\ \textcolor{keyword}{new}\ javax.swing.JLabel();}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00063}00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a19b692dc8dc39dc61a55e9dd69106215}{jTable2}}.setAutoCreateRowSorter(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00064}00064\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a19b692dc8dc39dc61a55e9dd69106215}{jTable2}}.setFont(\textcolor{keyword}{new}\ java.awt.Font(\textcolor{stringliteral}{"{}Dialog"{}},\ 0,\ 18));\ \textcolor{comment}{//\ NOI18N}}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00065}00065\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a19b692dc8dc39dc61a55e9dd69106215}{jTable2}}.setModel(\textcolor{keyword}{new}\ javax.swing.table.DefaultTableModel(}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Object\ [][]\ \{}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ String\ []\ \{}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}<html>\ <h3>Nome\ brano"{}},\ \textcolor{stringliteral}{"{}<html>\ <h3>Autore"{}},\ \textcolor{stringliteral}{"{}<html>\ <h3>Anno"{}}}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00072}00072\ \ \ \ \ \ \ \ \ )\ \{}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ Class[]\ types\ =\ new\ Class\ []\ \{}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ java.lang.String.class,\ java.lang.String.class,\ java.lang.String.class}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{boolean}[]\ canEdit\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{boolean}\ []\ \{}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{false},\ \textcolor{keyword}{false},\ \textcolor{keyword}{false}}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ Class\ getColumnClass(\textcolor{keywordtype}{int}\ columnIndex)\ \{}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ types\ [columnIndex];}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{boolean}\ isCellEditable(\textcolor{keywordtype}{int}\ rowIndex,\ \textcolor{keywordtype}{int}\ columnIndex)\ \{}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ canEdit\ [columnIndex];}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00087}00087\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00088}00088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a19b692dc8dc39dc61a55e9dd69106215}{jTable2}}.setCursor(\textcolor{keyword}{new}\ java.awt.Cursor(java.awt.Cursor.DEFAULT\_CURSOR));}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00089}00089\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a19b692dc8dc39dc61a55e9dd69106215}{jTable2}}.addMouseListener(\textcolor{keyword}{new}\ java.awt.event.MouseAdapter()\ \{}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ mouseClicked(java.awt.event.MouseEvent\ evt)\ \{}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a7d809ec39a3bfd18942c19051358ae8b}{jTable2MouseClicked}}(evt);}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00093}00093\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00094}00094\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a3ff9eafda5b4cd0c2e725de32515928f}{jScrollPane2}}.setViewportView(\mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a19b692dc8dc39dc61a55e9dd69106215}{jTable2}});}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00096}00096\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a47066ebb7b751f52b9debcc4bd1b1ee4}{jLabel1}}.setText(\textcolor{stringliteral}{"{}<html><h1\ style=\(\backslash\)"{}font-\/size:185\%;color:green;\(\backslash\)"{}><u>Elenco\ brani</h1></html>"{}});}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00098}00098\ \ \ \ \ \ \ \ \ javax.swing.GroupLayout\ layout\ =\ \textcolor{keyword}{new}\ javax.swing.GroupLayout(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00099}00099\ \ \ \ \ \ \ \ \ this.setLayout(layout);}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00100}00100\ \ \ \ \ \ \ \ \ layout.setHorizontalGroup(}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(layout.createSequentialGroup()}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGap(227,\ 227,\ 227)}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a47066ebb7b751f52b9debcc4bd1b1ee4}{jLabel1}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ javax.swing.GroupLayout.DEFAULT\_SIZE,\ javax.swing.GroupLayout.PREFERRED\_SIZE)}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addContainerGap(228,\ Short.MAX\_VALUE))}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(layout.createSequentialGroup()}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addContainerGap()}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a3ff9eafda5b4cd0c2e725de32515928f}{jScrollPane2}}))}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00109}00109\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00110}00110\ \ \ \ \ \ \ \ \ layout.setVerticalGroup(}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,\ layout.createSequentialGroup()}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGap(89,\ 89,\ 89)}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a47066ebb7b751f52b9debcc4bd1b1ee4}{jLabel1}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ javax.swing.GroupLayout.DEFAULT\_SIZE,\ javax.swing.GroupLayout.PREFERRED\_SIZE)}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGap(45,\ 45,\ 45)}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a3ff9eafda5b4cd0c2e725de32515928f}{jScrollPane2}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ javax.swing.GroupLayout.DEFAULT\_SIZE,\ javax.swing.GroupLayout.PREFERRED\_SIZE)}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addContainerGap(122,\ Short.MAX\_VALUE))}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00118}00118\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00119}00119\ \ \ \ \ \}\textcolor{comment}{//\ </editor-\/fold>//GEN-\/END:initComponents}}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00127}\mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a7d809ec39a3bfd18942c19051358ae8b}{00127}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a7d809ec39a3bfd18942c19051358ae8b}{jTable2MouseClicked}}(java.awt.event.MouseEvent\ evt)\ \{\textcolor{comment}{//GEN-\/FIRST:event\_jTable2MouseClicked}}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00128}00128\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TODO\ add\ your\ handling\ code\ here:}}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00129}00129\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Getto\ la\ tabella}}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00130}00130\ \ \ \ \ \ \ \ \ JTable\ source\ =\ (JTable)\ evt.getSource();}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00131}00131\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Prendo\ la\ riga\ selezionata}}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00132}00132\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ row\ =\ source.rowAtPoint(evt.getPoint());}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00134}00134\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Prendo\ il\ titolo,\ autore\ e\ il\ link\ youtube\ del\ brano\ selezionato}}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00135}00135\ \ \ \ \ \ \ \ \ String\ titolo\ =\ source.getValueAt(row,\ 0).toString();}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00136}00136\ \ \ \ \ \ \ \ \ String\ autore\ =\ source.getValueAt(row,\ 1).toString();}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00137}00137\ \ \ \ \ \ \ \ \ String\ anno\ =\ source.getValueAt(row,\ 2).toString();}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00139}00139\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Rendo\ il\ pannello\ successivo\ visibile}}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00140}00140\ \ \ \ \ \ \ \ \ JDialog\ pnlEmozioni\ =\ \textcolor{keyword}{new}\ JDialog(this.previousframe,\ \textcolor{stringliteral}{"{}PannelloEmozioni"{}},\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00141}00141\ \ \ \ \ \ \ \ \ pnlEmozioni.getContentPane().add(\textcolor{keyword}{new}\ \mbox{\hyperlink{classclient_1_1_pannello_emozioni}{PannelloEmozioni}}(idUtente,\ titolo,\ autore,Integer.parseInt(anno),\ previousframe,\ is,\ pl.\mbox{\hyperlink{classcommon_1_1_playlist_a9090123f9b91f7e3f56767d6038fedea}{getIdPlaylist}}()));}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00142}00142\ \ \ \ \ \ \ \ \ pnlEmozioni.pack();}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00143}00143\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00144}00144\ \ \ \ \ \ \ \ \ pnlEmozioni.setVisible(\textcolor{keyword}{true});\ \textcolor{comment}{//\ Visualizzo\ pannello\ emozioni*/}}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00145}00145\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00146}00146\ \ \ \ \ \}\textcolor{comment}{//GEN-\/LAST:event\_jTable2MouseClicked}}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00152}\mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a95ec5dc2d151540c4e79368afc96a94a}{00152}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a95ec5dc2d151540c4e79368afc96a94a}{visualizzaBraniPlaylist}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00153}00153\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Creazione\ della\ tabella}}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00154}00154\ \ \ \ \ \ \ \ \ DefaultTableModel\ model\ =\ (DefaultTableModel)\ this.jTable2.getModel();}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00155}00155\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arraylist\ di\ tipo\ canzone,\ conterrà\ i\ brani\ della\ playlist}}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00156}00156\ \ \ \ \ \ \ \ \ ArrayList<Canzoni>\ brani\ =\ \textcolor{keyword}{new}\ ArrayList<Canzoni>();}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00157}00157\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00158}00158\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Chiamo\ il\ metodo\ getBrani\ sulla\ playlist,\ per\ ottenere\ i\ brani}}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ brani\ =\ is.\mbox{\hyperlink{interfacecommon_1_1_interfaccia_servizio_af624b6190c5806460ca8288863a7a30e}{getCanzoniFromPlaylist}}(pl.\mbox{\hyperlink{classcommon_1_1_playlist_a9090123f9b91f7e3f56767d6038fedea}{getIdPlaylist}}());}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00161}00161\ \ \ \ \ \ \ \ \ \}\ \ \textcolor{keywordflow}{catch}\ (\mbox{\hyperlink{classcommon_1_1_canzone_inesistente}{CanzoneInesistente}}\ ex)\ \{}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ JOptionPane.showMessageDialog(\textcolor{keyword}{null},\ \textcolor{stringliteral}{"{}Canzone\ inesistente"{}},\ \textcolor{stringliteral}{"{}Errore"{}},\ JOptionPane.WARNING\_MESSAGE);}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00163}00163\ \ \ \ \ \ \ \ \ \}\ \ \textcolor{keywordflow}{catch}\ (RemoteException\ |\mbox{\hyperlink{classcommon_1_1_my_server_exception}{MyServerException}}\ ex)\ \{}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ JOptionPane.showMessageDialog(\textcolor{keyword}{null},\ \textcolor{stringliteral}{"{}Errore"{}},\ \textcolor{stringliteral}{"{}Errore"{}},\ JOptionPane.WARNING\_MESSAGE);}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00165}00165\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00166}00166\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00167}00167\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Creo\ un\ Vector\ di\ tipo\ String,\ che\ serve\ per\ inserire\ i\ brani\ nella\ tabella}}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00168}00168\ \ \ \ \ \ \ \ \ Vector<String>\ vector\ =\ \textcolor{keyword}{new}\ Vector<>();}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00169}00169\ \ \ \ \ \ \ \ \ model.setRowCount(0);\ \textcolor{comment}{//\ Serve\ per\ resettare\ la\ tabella}}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00170}00170\ }
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00171}00171\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ For\ che\ inserisce\ tutti\ i\ brani\ nella\ tabella}}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00172}00172\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ brani.size();\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Metodo\ che\ trasforma\ l'ArrayList\ in\ un\ Vector}}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ vector\ =\ transform(i,\ brani);}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (vector.get(0).equals(\textcolor{stringliteral}{"{}Errore\ \#B0001.indexNonValido"{}}))\ \{}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ JOptionPane.showMessageDialog(\textcolor{keyword}{null},\ vector.get(0),\ \textcolor{stringliteral}{"{}Errore"{}},\ JOptionPane.ERROR\_MESSAGE);}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Aggiungo\ la\ riga}}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ model.addRow(vector);}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00182}00182\ }
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00183}00183\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00184}00184\ }
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00185}00185\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00186}00186\ }
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00193}\mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a8a325cceb146e97a296835946f882ef6}{00193}}\ \ \ \ \ \textcolor{keyword}{private}\ Vector<String>\ \mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a8a325cceb146e97a296835946f882ef6}{transform}}(\textcolor{keywordtype}{int}\ index,\ ArrayList<Canzoni>\ brani)\ \{}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00194}00194\ \ \ \ \ \ \ \ \ Vector<String>\ vector\ =\ \textcolor{keyword}{new}\ Vector<>();}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00195}00195\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ <\ brani.size())\ \{}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Aggiungo\ le\ varie\ informazioni\ del\ brano}}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ vector.add(brani.get(index).getTitolo());}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ vector.add(brani.get(index).getAutore());}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ vector.add(String.valueOf(brani.get(index).getAnno()));}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vector;}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00201}00201\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ vector.add(\textcolor{stringliteral}{"{}Errore\ \#B0001.indexNonValido"{}});\ \textcolor{comment}{//\ Errore\ }}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vector;}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00204}00204\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00205}00205\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00206}00206\ }
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00207}00207\ }
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00208}00208\ \ \ \ \ \textcolor{comment}{//\ Variables\ declaration\ -\/\ do\ not\ modify//GEN-\/BEGIN:variables}}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00209}\mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a47066ebb7b751f52b9debcc4bd1b1ee4}{00209}}\ \ \ \ \ \textcolor{keyword}{private}\ javax.swing.JLabel\ \mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a47066ebb7b751f52b9debcc4bd1b1ee4}{jLabel1}};}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00210}\mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a3ff9eafda5b4cd0c2e725de32515928f}{00210}}\ \ \ \ \ \textcolor{keyword}{private}\ javax.swing.JScrollPane\ \mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a3ff9eafda5b4cd0c2e725de32515928f}{jScrollPane2}};}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00211}\mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a19b692dc8dc39dc61a55e9dd69106215}{00211}}\ \ \ \ \ \textcolor{keyword}{private}\ javax.swing.JTable\ \mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a19b692dc8dc39dc61a55e9dd69106215}{jTable2}};}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00212}00212\ \ \ \ \ \textcolor{comment}{//\ End\ of\ variables\ declaration//GEN-\/END:variables}}
+\DoxyCodeLine{\Hypertarget{_gui___elenco_brani_8java_source_l00213}00213\ \}}
+
+\end{DoxyCode}

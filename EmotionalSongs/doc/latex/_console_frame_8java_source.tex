@@ -1,0 +1,325 @@
+\doxysection{Console\+Frame.\+java}
+\hypertarget{_console_frame_8java_source}{}\label{_console_frame_8java_source}\index{src/main/java/server/ConsoleFrame.java@{src/main/java/server/ConsoleFrame.java}}
+\mbox{\hyperlink{_console_frame_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00002}00002\ \textcolor{comment}{\ *\ Click\ nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-\/default.txt\ to\ change\ this\ license}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00003}00003\ \textcolor{comment}{\ *\ Click\ nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java\ to\ edit\ this\ template}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00004}00004\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00005}\mbox{\hyperlink{namespaceserver}{00005}}\ \textcolor{keyword}{package\ }server;}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00007}00007\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacecommon}{common}}.\mbox{\hyperlink{classcommon_1_1_canzoni}{Canzoni}};}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00008}00008\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacecommon}{common}}.\mbox{\hyperlink{classcommon_1_1_dati_non_validi}{DatiNonValidi}};}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00009}00009\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacecommon}{common}}.\mbox{\hyperlink{classcommon_1_1_password_errata}{PasswordErrata}};}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00010}00010\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacecommon}{common}}.\mbox{\hyperlink{classcommon_1_1_playlist_inesistenti}{PlaylistInesistenti}};}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00011}00011\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacecommon}{common}}.\mbox{\hyperlink{interfacecommon_1_1_interfaccia_servizio}{InterfacciaServizio}};}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00012}00012\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacecommon}{common}}.\mbox{\hyperlink{classcommon_1_1_emozioni_inesistenti}{EmozioniInesistenti}};}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00013}00013\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacecommon}{common}}.\mbox{\hyperlink{classcommon_1_1_emozioni}{Emozioni}};}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00014}00014\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacecommon}{common}}.\mbox{\hyperlink{classcommon_1_1_canzone_inesistente}{CanzoneInesistente}};}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00015}00015\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacecommon}{common}}.\mbox{\hyperlink{classcommon_1_1_utente_inesistente}{UtenteInesistente}};}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00016}00016\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacecommon}{common}}.\mbox{\hyperlink{classcommon_1_1_playlist}{Playlist}};}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00017}00017\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacecommon}{common}}.\mbox{\hyperlink{classcommon_1_1_my_server_exception}{MyServerException}};}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00018}00018\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacecommon}{common}}.\mbox{\hyperlink{classcommon_1_1_chiave_duplicata}{ChiaveDuplicata}};}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00019}00019\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacecommon}{common}}.\mbox{\hyperlink{classcommon_1_1_emozioni_canzone}{EmozioniCanzone}};}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00020}00020\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacecommon}{common}}.\mbox{\hyperlink{classcommon_1_1_utenti_registrati}{UtentiRegistrati}};}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00021}00021\ \textcolor{keyword}{import}\ java.awt.Window;}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00022}00022\ \textcolor{keyword}{import}\ java.sql.ResultSet;}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00023}00023\ \textcolor{keyword}{import}\ java.sql.SQLException;}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00024}00024\ \textcolor{keyword}{import}\ java.util.ArrayList;}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00025}00025\ \textcolor{keyword}{import}\ java.util.logging.Level;}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00026}00026\ \textcolor{keyword}{import}\ java.util.logging.Logger;}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00027}00027\ \textcolor{keyword}{import}\ javax.swing.JOptionPane;}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00028}00028\ \textcolor{keyword}{import}\ javax.swing.SwingUtilities;}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00039}\mbox{\hyperlink{classserver_1_1_console_frame}{00039}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classserver_1_1_console_frame}{ConsoleFrame}}\ \textcolor{keyword}{extends}\ javax.swing.JPanel\ implements\ \mbox{\hyperlink{interfacecommon_1_1_interfaccia_servizio}{InterfacciaServizio}}\ \{}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00041}00041\ \ \ \ \ \textcolor{comment}{//attributo\ privato\ di\ tipo\ Database\ rappresentante\ la\ connessione\ al\ database}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00042}\mbox{\hyperlink{classserver_1_1_console_frame_a85d663119c421cf6e056810a3ae37ac6}{00042}}\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{classserver_1_1_database}{Database}}\ \mbox{\hyperlink{classserver_1_1_console_frame_a85d663119c421cf6e056810a3ae37ac6}{db}};}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00043}00043\ \ \ \ \ \textcolor{comment}{//attributo\ privato\ di\ tipo\ DataTables\ rappresentante\ il\ data\ model\ dei\ dati\ nel\ database}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00044}\mbox{\hyperlink{classserver_1_1_console_frame_a7cc9a0e1eb39746de1a2eb9a60a874fb}{00044}}\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{classserver_1_1_data_tables}{DataTables}}\ \mbox{\hyperlink{classserver_1_1_console_frame_a7cc9a0e1eb39746de1a2eb9a60a874fb}{dt}};}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00046}00046\ \ \ \ \ \textcolor{comment}{//variabile\ costante\ di\ tipo\ int\ contenente\ la\ porta\ di\ comunicazione}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00047}\mbox{\hyperlink{classserver_1_1_console_frame_aa890d9fd10dbc9c090551a04b009e286}{00047}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{final}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classserver_1_1_console_frame_aa890d9fd10dbc9c090551a04b009e286}{PORT}}\ =\ 11012;}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00052}\mbox{\hyperlink{classserver_1_1_console_frame_a9d6858cf8842c98692cfedcc2abd0f15}{00052}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classserver_1_1_console_frame_a9d6858cf8842c98692cfedcc2abd0f15}{ConsoleFrame}}(String\ user,\ String\ pass)\ \{}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00053}00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classserver_1_1_console_frame_a77410fe5c5b5ddb55910cd7a2297bff7}{initComponents}}();}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//ottengo\ l'istanza\ singleton\ dell'oggetto\ per\ effettuare\ le\ chiamate\ al\ database}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ this.db\ =\ \mbox{\hyperlink{classserver_1_1_database}{Database}}.\mbox{\hyperlink{classserver_1_1_database_a5f04558a87c02a65442ec6eeba0b5929}{getInstance}}(user,\ pass);}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//istanzio\ un\ datamodel}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ this.dt\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classserver_1_1_data_tables}{DataTables}}();}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classserver_1_1_console_frame_aed4d7148c12b1a22b81316c97a558f72}{txtAreaConsole}}.append(\textcolor{stringliteral}{"{}Connessione\ al\ db\ avvenuta\ con\ successo."{}});}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00061}00061\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (Exception\ ex)\ \{}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ ex.printStackTrace();}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//PopUp\ d'errore\ connessione\ al\ database}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ JOptionPane.showConfirmDialog(\textcolor{keyword}{null},\ \textcolor{stringliteral}{"{}Errore\ di\ connessione\ al\ database"{}},\ \textcolor{stringliteral}{"{}Errore\ di\ connessione."{}},\ JOptionPane.DEFAULT\_OPTION,\ JOptionPane.ERROR\_MESSAGE);}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//chiusura\ del\ panel}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ Window\ win\ =\ SwingUtilities.getWindowAncestor(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ win.dispose();}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00068}00068\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00069}00069\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00076}00076\ \ \ \ \ @SuppressWarnings(\textcolor{stringliteral}{"{}unchecked"{}})}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00077}00077\ \ \ \ \ \textcolor{comment}{//\ <editor-\/fold\ defaultstate="{}collapsed"{}\ desc="{}Generated\ Code"{}>//GEN-\/BEGIN:initComponents}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00078}\mbox{\hyperlink{classserver_1_1_console_frame_a77410fe5c5b5ddb55910cd7a2297bff7}{00078}}\ \ \ \ \ private\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classserver_1_1_console_frame_a77410fe5c5b5ddb55910cd7a2297bff7}{initComponents}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00080}00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classserver_1_1_console_frame_aae4319d2cb4ac19c9a2c7d4d3a2549f4}{jScrollPane1}}\ =\ \textcolor{keyword}{new}\ javax.swing.JScrollPane();}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00081}00081\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classserver_1_1_console_frame_aed4d7148c12b1a22b81316c97a558f72}{txtAreaConsole}}\ =\ \textcolor{keyword}{new}\ javax.swing.JTextArea();}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00082}00082\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classserver_1_1_console_frame_a47066ebb7b751f52b9debcc4bd1b1ee4}{jLabel1}}\ =\ \textcolor{keyword}{new}\ javax.swing.JLabel();}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00084}00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classserver_1_1_console_frame_aed4d7148c12b1a22b81316c97a558f72}{txtAreaConsole}}.setEditable(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00085}00085\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classserver_1_1_console_frame_aed4d7148c12b1a22b81316c97a558f72}{txtAreaConsole}}.setColumns(20);}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00086}00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classserver_1_1_console_frame_aed4d7148c12b1a22b81316c97a558f72}{txtAreaConsole}}.setRows(5);}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00087}00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classserver_1_1_console_frame_aae4319d2cb4ac19c9a2c7d4d3a2549f4}{jScrollPane1}}.setViewportView(\mbox{\hyperlink{classserver_1_1_console_frame_aed4d7148c12b1a22b81316c97a558f72}{txtAreaConsole}});}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00089}00089\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classserver_1_1_console_frame_a47066ebb7b751f52b9debcc4bd1b1ee4}{jLabel1}}.setText(\textcolor{stringliteral}{"{}CONSOLE"{}});}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00091}00091\ \ \ \ \ \ \ \ \ javax.swing.GroupLayout\ layout\ =\ \textcolor{keyword}{new}\ javax.swing.GroupLayout(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00092}00092\ \ \ \ \ \ \ \ \ this.setLayout(layout);}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00093}00093\ \ \ \ \ \ \ \ \ layout.setHorizontalGroup(}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(layout.createSequentialGroup()}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGap(476,\ 476,\ 476)}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classserver_1_1_console_frame_a47066ebb7b751f52b9debcc4bd1b1ee4}{jLabel1}})}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addContainerGap(459,\ Short.MAX\_VALUE))}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,\ layout.createSequentialGroup()}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addContainerGap(javax.swing.GroupLayout.DEFAULT\_SIZE,\ Short.MAX\_VALUE)}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classserver_1_1_console_frame_aae4319d2cb4ac19c9a2c7d4d3a2549f4}{jScrollPane1}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ 604,\ javax.swing.GroupLayout.PREFERRED\_SIZE)}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGap(179,\ 179,\ 179))}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00103}00103\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00104}00104\ \ \ \ \ \ \ \ \ layout.setVerticalGroup(}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(layout.createSequentialGroup()}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGap(26,\ 26,\ 26)}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classserver_1_1_console_frame_a47066ebb7b751f52b9debcc4bd1b1ee4}{jLabel1}})}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGap(79,\ 79,\ 79)}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classserver_1_1_console_frame_aae4319d2cb4ac19c9a2c7d4d3a2549f4}{jScrollPane1}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ 256,\ javax.swing.GroupLayout.PREFERRED\_SIZE)}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addContainerGap(158,\ Short.MAX\_VALUE))}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00112}00112\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00113}00113\ \ \ \ \ \}\textcolor{comment}{//\ </editor-\/fold>//GEN-\/END:initComponents}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00116}00116\ \ \ \ \ \textcolor{comment}{//\ Variables\ declaration\ -\/\ do\ not\ modify//GEN-\/BEGIN:variables}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00117}\mbox{\hyperlink{classserver_1_1_console_frame_a47066ebb7b751f52b9debcc4bd1b1ee4}{00117}}\ \ \ \ \ \textcolor{keyword}{private}\ javax.swing.JLabel\ \mbox{\hyperlink{classserver_1_1_console_frame_a47066ebb7b751f52b9debcc4bd1b1ee4}{jLabel1}};}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00118}\mbox{\hyperlink{classserver_1_1_console_frame_aae4319d2cb4ac19c9a2c7d4d3a2549f4}{00118}}\ \ \ \ \ \textcolor{keyword}{private}\ javax.swing.JScrollPane\ \mbox{\hyperlink{classserver_1_1_console_frame_aae4319d2cb4ac19c9a2c7d4d3a2549f4}{jScrollPane1}};}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00119}\mbox{\hyperlink{classserver_1_1_console_frame_aed4d7148c12b1a22b81316c97a558f72}{00119}}\ \ \ \ \ \textcolor{keyword}{private}\ javax.swing.JTextArea\ \mbox{\hyperlink{classserver_1_1_console_frame_aed4d7148c12b1a22b81316c97a558f72}{txtAreaConsole}};}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00120}00120\ \ \ \ \ \textcolor{comment}{//\ End\ of\ variables\ declaration//GEN-\/END:variables}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00122}00122\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00134}\mbox{\hyperlink{classserver_1_1_console_frame_af55c6eedb634aeac81ceadf60c7a40bd}{00134}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{synchronized}\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati}{UtentiRegistrati}}\ \mbox{\hyperlink{classserver_1_1_console_frame_af55c6eedb634aeac81ceadf60c7a40bd}{login}}(String\ cf,\ String\ password)\ \textcolor{keywordflow}{throws}\ \mbox{\hyperlink{classcommon_1_1_utente_inesistente}{UtenteInesistente}},\ \mbox{\hyperlink{classcommon_1_1_password_errata}{PasswordErrata}},\ \mbox{\hyperlink{classcommon_1_1_my_server_exception}{MyServerException}}\ \{}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00135}00135\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ ResultSet\ rs\ =\ \mbox{\hyperlink{classserver_1_1_console_frame_a85d663119c421cf6e056810a3ae37ac6}{db}}.\mbox{\hyperlink{classserver_1_1_database_a63798edbcf11407baff763318dcedfe4}{submitQuery}}(\textcolor{stringliteral}{"{}SELECT\ nome,cognome,password\ FROM\ utentiregistrati\ WHERE\ LOWER(codicefiscale)\ =\ LOWER('"{}}\ +\ cf\ +\ \textcolor{stringliteral}{"{}');"{}});}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classserver_1_1_console_frame_a7cc9a0e1eb39746de1a2eb9a60a874fb}{dt}}.\mbox{\hyperlink{classserver_1_1_data_tables_a0e6f7209056feb473378536eae3ad5b2}{checkLogin}}(rs,\ password);}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ this.txtAreaConsole.append(\textcolor{stringliteral}{"{}\(\backslash\)nLogin\ effettuato\ da:\ "{}}\ +\ cf);}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classserver_1_1_console_frame_a7cc9a0e1eb39746de1a2eb9a60a874fb}{dt}}.\mbox{\hyperlink{classserver_1_1_data_tables_ac643d664a89366eee3c0addd82aae862}{handleUtenteRegistrato}}(rs);}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00140}00140\ }
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00141}00141\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (SQLException\ ex)\ \{}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ this.txtAreaConsole.append(\textcolor{stringliteral}{"{}LOGIN\ FAILED\ -\/\ SQL\ ERROR:\ "{}}\ +\ ex.getSQLState());}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcommon_1_1_my_server_exception}{MyServerException}}(\textcolor{stringliteral}{"{}LOGIN\ FAILED\ -\/\ SQL\ ERROR:\ "{}}\ +\ ex.getSQLState());}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00144}00144\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00145}00145\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00146}00146\ }
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00158}00158\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00159}\mbox{\hyperlink{classserver_1_1_console_frame_aab894772c77985d4af339ed01381a42f}{00159}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{synchronized}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classserver_1_1_console_frame_aab894772c77985d4af339ed01381a42f}{registrazione}}(\mbox{\hyperlink{classcommon_1_1_utenti_registrati}{UtentiRegistrati}}\ utente)\ \textcolor{keywordflow}{throws}\ \mbox{\hyperlink{classcommon_1_1_chiave_duplicata}{ChiaveDuplicata}},\ \mbox{\hyperlink{classcommon_1_1_dati_non_validi}{DatiNonValidi}},\ \mbox{\hyperlink{classcommon_1_1_my_server_exception}{MyServerException}}\ \{}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00160}00160\ }
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00161}00161\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ utente.setNome(utente.getNome().replace(\textcolor{stringliteral}{"{}'"{}},\ \textcolor{stringliteral}{"{}''"{}}));}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ utente.setCognome(utente.getCognome().replace(\textcolor{stringliteral}{"{}'"{}},\ \textcolor{stringliteral}{"{}''"{}}));}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classserver_1_1_console_frame_a85d663119c421cf6e056810a3ae37ac6}{db}}.\mbox{\hyperlink{classserver_1_1_database_a7b64023b56873602866a8fd818cd5ba9}{submitQueryUpdate}}(\textcolor{stringliteral}{"{}INSERT\ INTO\ utentiregistrati\ VALUES('"{}}\ +\ utente.getCodiceFiscale()\ +\ \textcolor{stringliteral}{"{}','"{}}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ utente.getNome()\ +\ \textcolor{stringliteral}{"{}','"{}}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ utente.getCognome()\ +\ \textcolor{stringliteral}{"{}','"{}}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ utente.getCitta()\ +\ \textcolor{stringliteral}{"{}',"{}}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ utente.getCap()\ +\ \textcolor{stringliteral}{"{},'"{}}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ utente.getVia()\ +\ \textcolor{stringliteral}{"{}',"{}}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ utente.getCivico()\ +\ \textcolor{stringliteral}{"{},'"{}}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ utente.getEmail()\ +\ \textcolor{stringliteral}{"{}','"{}}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ utente.getPassword()\ +\ \textcolor{stringliteral}{"{}')"{}});}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ this.txtAreaConsole.append(\textcolor{stringliteral}{"{}\(\backslash\)nRegistrazione\ effettuata\ da:\ "{}}\ +\ utente.getCodiceFiscale());}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00174}00174\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (SQLException\ ex)\ \{}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00175}00175\ }
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ex.getSQLState().equals(\textcolor{stringliteral}{"{}22001"{}}))\ \{}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classserver_1_1_console_frame_aed4d7148c12b1a22b81316c97a558f72}{txtAreaConsole}}.append(\textcolor{stringliteral}{"{}INSERT\ ERROR\ -\/\ I\ dati\ inseriti\ non\ sono\ validi"{}});}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcommon_1_1_dati_non_validi}{DatiNonValidi}}(\textcolor{stringliteral}{"{}I\ dati\ inseriti\ non\ sono\ validi"{}});}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (ex.getSQLState().equals(\textcolor{stringliteral}{"{}23505"{}}))\ \{}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classserver_1_1_console_frame_aed4d7148c12b1a22b81316c97a558f72}{txtAreaConsole}}.append(\textcolor{stringliteral}{"{}INSERT\ ERROR\ -\/\ Duplicato\ della\ chiave\ primaria"{}});}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcommon_1_1_chiave_duplicata}{ChiaveDuplicata}}(\textcolor{stringliteral}{"{}Duplicato\ della\ chiave\ primaria"{}});}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcommon_1_1_my_server_exception}{MyServerException}}(\textcolor{stringliteral}{"{}INSERT\ ERROR\ -\/\ SQL\ ERROR:\ "{}}\ +\ ex.getSQLState());}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00185}00185\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00186}00186\ }
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00187}00187\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00188}00188\ }
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00200}00200\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00201}\mbox{\hyperlink{classserver_1_1_console_frame_a5b8294026608668c8f915f834b607c22}{00201}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{synchronized}\ ArrayList<Canzoni>\ \mbox{\hyperlink{classserver_1_1_console_frame_a5b8294026608668c8f915f834b607c22}{filtraPerTitolo}}(String\ titolo)\ \textcolor{keywordflow}{throws}\ \mbox{\hyperlink{classcommon_1_1_canzone_inesistente}{CanzoneInesistente}},\ \mbox{\hyperlink{classcommon_1_1_my_server_exception}{MyServerException}}\ \{}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00202}00202\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ titolo.replace(\textcolor{stringliteral}{"{}'"{}},\ \textcolor{stringliteral}{"{}''"{}});}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ ResultSet\ rs\ =\ \mbox{\hyperlink{classserver_1_1_console_frame_a85d663119c421cf6e056810a3ae37ac6}{db}}.\mbox{\hyperlink{classserver_1_1_database_a63798edbcf11407baff763318dcedfe4}{submitQuery}}(\textcolor{stringliteral}{"{}SELECT\ *\ FROM\ canzoni\ WHERE\ LOWER(titolo)\ LIKE\ LOWER('"{}}\ +\ titolo\ +\ \textcolor{stringliteral}{"{}\%')"{}});}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ this.txtAreaConsole.append(\textcolor{stringliteral}{"{}\(\backslash\)nFiltra\ per\ titolo\ effettuato"{}});}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classserver_1_1_console_frame_a7cc9a0e1eb39746de1a2eb9a60a874fb}{dt}}.\mbox{\hyperlink{classserver_1_1_data_tables_a991a8d62a3ffa66c044f72b13a85868a}{handleCanzoniSet}}(rs);}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00207}00207\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (SQLException\ ex)\ \{}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcommon_1_1_my_server_exception}{MyServerException}}(\textcolor{stringliteral}{"{}FILTER\ BY\ TITLE\ FAILED\ -\/\ SQL\ ERROR:\ "{}}\ +\ ex.getSQLState());}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00209}00209\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00210}00210\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00211}00211\ }
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00225}00225\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00226}\mbox{\hyperlink{classserver_1_1_console_frame_a4df018cf11f2509ef9c274cb734f3c3a}{00226}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{synchronized}\ ArrayList<Canzoni>\ \mbox{\hyperlink{classserver_1_1_console_frame_a4df018cf11f2509ef9c274cb734f3c3a}{filtraPerAutoreAnno}}(String\ autore,\ \textcolor{keywordtype}{int}\ anno)\ \textcolor{keywordflow}{throws}\ \mbox{\hyperlink{classcommon_1_1_canzone_inesistente}{CanzoneInesistente}},\ \mbox{\hyperlink{classcommon_1_1_my_server_exception}{MyServerException}}\ \{}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00227}00227\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ autore.replace(\textcolor{stringliteral}{"{}'"{}},\ \textcolor{stringliteral}{"{}''"{}});}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ ResultSet\ rs\ =\ \mbox{\hyperlink{classserver_1_1_console_frame_a85d663119c421cf6e056810a3ae37ac6}{db}}.\mbox{\hyperlink{classserver_1_1_database_a63798edbcf11407baff763318dcedfe4}{submitQuery}}(\textcolor{stringliteral}{"{}SELECT\ *\ FROM\ canzoni\ WHERE\ LOWER(autore)\ LIKE\ LOWER('"{}}\ +\ autore\ +\ \textcolor{stringliteral}{"{}\%')\ AND\ anno\ =\ "{}}\ +\ anno);}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ this.txtAreaConsole.append(\textcolor{stringliteral}{"{}\(\backslash\)nFiltra\ per\ autore\ e\ anno\ effettuato"{}});}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classserver_1_1_console_frame_a7cc9a0e1eb39746de1a2eb9a60a874fb}{dt}}.\mbox{\hyperlink{classserver_1_1_data_tables_a991a8d62a3ffa66c044f72b13a85868a}{handleCanzoniSet}}(rs);}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00232}00232\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (SQLException\ ex)\ \{}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcommon_1_1_my_server_exception}{MyServerException}}(\textcolor{stringliteral}{"{}FILTER\ BY\ AUTHOR\ AND\ YEAR\ FAILED\ -\/\ SQL\ ERROR:\ "{}}\ +\ ex.getSQLState());}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00234}00234\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00235}00235\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00236}00236\ }
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00245}00245\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00246}\mbox{\hyperlink{classserver_1_1_console_frame_ad780c43371a910daafdf021982f32500}{00246}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{synchronized}\ ArrayList<Canzoni>\ \mbox{\hyperlink{classserver_1_1_console_frame_ad780c43371a910daafdf021982f32500}{getCanzoniForPlaylist}}()\ throws\ \mbox{\hyperlink{classcommon_1_1_my_server_exception}{MyServerException}},\ \mbox{\hyperlink{classcommon_1_1_canzone_inesistente}{CanzoneInesistente}}\ \{}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00247}00247\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ ResultSet\ rs\ =\ \mbox{\hyperlink{classserver_1_1_console_frame_a85d663119c421cf6e056810a3ae37ac6}{db}}.\mbox{\hyperlink{classserver_1_1_database_a63798edbcf11407baff763318dcedfe4}{submitQuery}}(\textcolor{stringliteral}{"{}SELECT\ *\ FROM\ canzoni"{}});}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00249}00249\ \ \ \ \ \ \ \ \ \ \ \ \ this.txtAreaConsole.append(\textcolor{stringliteral}{"{}\(\backslash\)nGet\ delle\ canzoni\ per\ le\ playlist\ effettuato"{}});}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00250}00250\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classserver_1_1_console_frame_a7cc9a0e1eb39746de1a2eb9a60a874fb}{dt}}.\mbox{\hyperlink{classserver_1_1_data_tables_a991a8d62a3ffa66c044f72b13a85868a}{handleCanzoniSet}}(rs);}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00251}00251\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (SQLException\ ex)\ \{}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00252}00252\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcommon_1_1_my_server_exception}{MyServerException}}(\textcolor{stringliteral}{"{}GET\ ALL\ SONGS\ FAILED\ -\/\ SQL\ ERROR:\ "{}}\ +\ ex.getSQLState());}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00253}00253\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00254}00254\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00255}00255\ }
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00267}00267\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00268}\mbox{\hyperlink{classserver_1_1_console_frame_ab853f77a8f5cd283bea964765761826f}{00268}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{synchronized}\ \mbox{\hyperlink{classcommon_1_1_emozioni}{Emozioni}}\ \mbox{\hyperlink{classserver_1_1_console_frame_ab853f77a8f5cd283bea964765761826f}{getEmozioniFromBrano}}(\mbox{\hyperlink{classcommon_1_1_canzoni}{Canzoni}}\ canzone)\ \textcolor{keywordflow}{throws}\ \mbox{\hyperlink{classcommon_1_1_emozioni_inesistenti}{EmozioniInesistenti}},\ \mbox{\hyperlink{classcommon_1_1_my_server_exception}{MyServerException}}\ \{}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00269}00269\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00270}00270\ \ \ \ \ \ \ \ \ \ \ \ \ canzone.setTitolo(canzone.getTitolo().replace(\textcolor{stringliteral}{"{}'"{}},\ \textcolor{stringliteral}{"{}''"{}}));}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00271}00271\ \ \ \ \ \ \ \ \ \ \ \ \ canzone.setAutore(canzone.getAutore().replace(\textcolor{stringliteral}{"{}'"{}},\ \textcolor{stringliteral}{"{}''"{}}));}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00272}00272\ }
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00273}00273\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcommon_1_1_emozioni}{Emozioni}}\ emo\ =\ \mbox{\hyperlink{classserver_1_1_console_frame_a7cc9a0e1eb39746de1a2eb9a60a874fb}{dt}}.\mbox{\hyperlink{classserver_1_1_data_tables_a131555d9ee80185bbbe2758af00accc3}{handleEmozioniSet}}(\mbox{\hyperlink{classserver_1_1_console_frame_a4e36e2a2f60c7b632247726669fb7fb8}{getEmozioni}}(canzone));}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00274}00274\ \ \ \ \ \ \ \ \ \ \ \ \ emo.\mbox{\hyperlink{classcommon_1_1_emozioni_a7903d39aea16f902e59f33d05a94d5f6}{setMedia}}(\mbox{\hyperlink{classserver_1_1_console_frame_a7cc9a0e1eb39746de1a2eb9a60a874fb}{dt}}.\mbox{\hyperlink{classserver_1_1_data_tables_acc2d867115d6f0ee4c6f5eaf8f830a45}{handleEmozioniMediaSet}}(\mbox{\hyperlink{classserver_1_1_console_frame_a5650e7c9e02506bdcee3d59954c9c7ea}{getMedie}}(canzone)));}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00275}00275\ \ \ \ \ \ \ \ \ \ \ \ \ this.txtAreaConsole.append(\textcolor{stringliteral}{"{}\(\backslash\)nGet\ emozioni\ effettuato"{}});}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00276}00276\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ emo;}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00277}00277\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (SQLException\ ex)\ \{}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00278}00278\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcommon_1_1_my_server_exception}{MyServerException}}(\textcolor{stringliteral}{"{}GET\ EMOTION\ FAILED\ -\/\ SQL\ ERROR:\ "{}}\ +\ ex.getSQLState());}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00279}00279\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00280}00280\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00281}00281\ }
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00291}\mbox{\hyperlink{classserver_1_1_console_frame_a5650e7c9e02506bdcee3d59954c9c7ea}{00291}}\ \ \ \ \ \textcolor{keyword}{private}\ ResultSet\ \mbox{\hyperlink{classserver_1_1_console_frame_a5650e7c9e02506bdcee3d59954c9c7ea}{getMedie}}(\mbox{\hyperlink{classcommon_1_1_canzoni}{Canzoni}}\ canzone)\ \textcolor{keywordflow}{throws}\ SQLException\ \{}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00292}00292\ }
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00293}00293\ \ \ \ \ \ \ \ \ ResultSet\ rsemomedie\ =\ \mbox{\hyperlink{classserver_1_1_console_frame_a85d663119c421cf6e056810a3ae37ac6}{db}}.\mbox{\hyperlink{classserver_1_1_database_a63798edbcf11407baff763318dcedfe4}{submitQuery}}(\textcolor{stringliteral}{"{}SELECT\ AVG(amazement)\ AS\ avg\_amazement\ ,AVG(nostalgia)\ AS\ avg\_nostalgia\ ,\ AVG(calmness)\ AS\ AVG\_calmness,\ "{}}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00294}00294\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ \textcolor{stringliteral}{"{}AVG(power)\ AS\ avg\_power\ ,AVG(joy)\ AS\ avg\_joy\ ,AVG(tension)\ AS\ avg\_tension\ ,\ "{}}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00295}00295\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ \textcolor{stringliteral}{"{}AVG(sadness)\ AS\ avg\_sadness\ ,AVG(tenderness)\ AS\ avg\_tenderness\ ,AVG(solemnity)\ AS\ avg\_solemnity\ "{}}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00296}00296\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ \textcolor{stringliteral}{"{}\ FROM\ emozionicanzone\ "{}}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00297}00297\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ \textcolor{stringliteral}{"{}\ WHERE\ LOWER(titolo)\ =\ LOWER('"{}}\ +\ canzone.getTitolo()\ +\ \textcolor{stringliteral}{"{}')\ AND\ \ LOWER\ (autore)\ =\ LOWER('"{}}\ +\ canzone.getAutore()\ +\ \textcolor{stringliteral}{"{}')\ AND\ \ anno\ =\ "{}}\ +\ canzone.getAnno());}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00298}00298\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ rsemomedie;}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00299}00299\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00300}00300\ }
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00310}\mbox{\hyperlink{classserver_1_1_console_frame_a4e36e2a2f60c7b632247726669fb7fb8}{00310}}\ \ \ \ \ \textcolor{keyword}{private}\ ResultSet\ \mbox{\hyperlink{classserver_1_1_console_frame_a4e36e2a2f60c7b632247726669fb7fb8}{getEmozioni}}(\mbox{\hyperlink{classcommon_1_1_canzoni}{Canzoni}}\ canzone)\ \textcolor{keywordflow}{throws}\ SQLException\ \{}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00311}00311\ \ \ \ \ \ \ \ \ ResultSet\ rsemovalori;}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00312}00312\ \ \ \ \ \ \ \ \ rsemovalori\ =\ \mbox{\hyperlink{classserver_1_1_console_frame_a85d663119c421cf6e056810a3ae37ac6}{db}}.\mbox{\hyperlink{classserver_1_1_database_a63798edbcf11407baff763318dcedfe4}{submitQuery}}(\textcolor{stringliteral}{"{}SELECT\ idvalutazione,\ amazement,\ amazement\_notes,\ nostalgia,\ nostalgia\_notes,\ calmness,\ "{}}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00313}00313\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ \textcolor{stringliteral}{"{}calmness\_notes,\ power,\ power\_notes,\ joy,\ joy\_notes,\ tension,\ tension\_notes,\ sadness,\ sadness\_notes,\ "{}}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00314}00314\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ \textcolor{stringliteral}{"{}tenderness,\ tenderness\_notes,\ solemnity,\ solemnity\_notes,titolo,autore,anno,codicefiscale"{}}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00315}00315\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ \textcolor{stringliteral}{"{}\ FROM\ emozionicanzone\ "{}}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00316}00316\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ \textcolor{stringliteral}{"{}\ WHERE\ LOWER(titolo)\ =\ LOWER('"{}}\ +\ canzone.getTitolo()\ +\ \textcolor{stringliteral}{"{}')\ AND\ \ LOWER\ (autore)\ =\ LOWER('"{}}\ +\ canzone.getAutore()\ +\ \textcolor{stringliteral}{"{}')\ AND\ \ anno\ =\ "{}}\ +\ canzone.getAnno());}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00317}00317\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ rsemovalori;}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00318}00318\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00319}00319\ }
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00335}00335\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00336}\mbox{\hyperlink{classserver_1_1_console_frame_af575af1ef9ed147af09e7ad877b9ebfd}{00336}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{synchronized}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classserver_1_1_console_frame_af575af1ef9ed147af09e7ad877b9ebfd}{createPlaylist}}(String\ nomeplaylist,\ ArrayList<Canzoni>\ canzoni,\ String\ cf)\ \textcolor{keywordflow}{throws}\ \mbox{\hyperlink{classcommon_1_1_chiave_duplicata}{ChiaveDuplicata}},\ \mbox{\hyperlink{classcommon_1_1_dati_non_validi}{DatiNonValidi}},\ \mbox{\hyperlink{classcommon_1_1_my_server_exception}{MyServerException}}\ \{}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00337}00337\ }
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00338}00338\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00339}00339\ \ \ \ \ \ \ \ \ \ \ \ \ nomeplaylist.replace(\textcolor{stringliteral}{"{}'"{}},\ \textcolor{stringliteral}{"{}''"{}});}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00340}00340\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ canzoni.size();\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00341}00341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ canzoni.get(i).setAutore(canzoni.get(i).getAutore().replace(\textcolor{stringliteral}{"{}'"{}},\ \textcolor{stringliteral}{"{}''"{}}));}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00342}00342\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ canzoni.get(i).setTitolo(canzoni.get(i).getTitolo().replace(\textcolor{stringliteral}{"{}'"{}},\ \textcolor{stringliteral}{"{}''"{}}));}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00343}00343\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00344}00344\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classserver_1_1_console_frame_a85d663119c421cf6e056810a3ae37ac6}{db}}.\mbox{\hyperlink{classserver_1_1_database_a7b64023b56873602866a8fd818cd5ba9}{submitQueryUpdate}}(\textcolor{stringliteral}{"{}INSERT\ INTO\ playlist\ (nomeplaylist,codicefiscale)\ VALUES('"{}}\ +\ nomeplaylist\ +\ \textcolor{stringliteral}{"{}','"{}}\ +\ cf\ +\ \textcolor{stringliteral}{"{}')"{}});}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00345}00345\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ canzoni.size();\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00346}00346\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classserver_1_1_console_frame_a85d663119c421cf6e056810a3ae37ac6}{db}}.\mbox{\hyperlink{classserver_1_1_database_a7b64023b56873602866a8fd818cd5ba9}{submitQueryUpdate}}(\textcolor{stringliteral}{"{}INSERT\ INTO\ contiene\ VALUES("{}}\ +\ \textcolor{stringliteral}{"{}(SELECT\ idplaylist\ FROM\ playlist\ WHERE\ LOWER(nomeplaylist)\ =\ LOWER('"{}}\ +\ nomeplaylist\ +\ \textcolor{stringliteral}{"{}')\ AND\ LOWER\ (codicefiscale)\ =\ LOWER('"{}}\ +\ cf\ +\ \textcolor{stringliteral}{"{}'))\ ,'"{}}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00347}00347\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ canzoni.get(i).getTitolo()\ +\ \textcolor{stringliteral}{"{}','"{}}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00348}00348\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ canzoni.get(i).getAutore()\ +\ \textcolor{stringliteral}{"{}',"{}}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00349}00349\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ canzoni.get(i).getAnno()\ +\ \textcolor{stringliteral}{"{})"{}});}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00350}00350\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00351}00351\ }
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00352}00352\ \ \ \ \ \ \ \ \ \ \ \ \ this.txtAreaConsole.append(\textcolor{stringliteral}{"{}\(\backslash\)nCreazione\ della\ playlist\ da\ parte\ di:\ "{}}\ +\ cf);}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00353}00353\ }
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00354}00354\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (SQLException\ ex)\ \{}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00355}00355\ }
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00356}00356\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ex.getSQLState().equals(\textcolor{stringliteral}{"{}22001"{}}))\ \{}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00357}00357\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classserver_1_1_console_frame_aed4d7148c12b1a22b81316c97a558f72}{txtAreaConsole}}.append(\textcolor{stringliteral}{"{}INSERT\ ERROR\ -\/\ I\ dati\ inseriti\ non\ sono\ validi"{}});}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00358}00358\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcommon_1_1_dati_non_validi}{DatiNonValidi}}(\textcolor{stringliteral}{"{}I\ dati\ inseriti\ non\ sono\ validi"{}});}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00359}00359\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (ex.getSQLState().equals(\textcolor{stringliteral}{"{}23505"{}}))\ \{}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00360}00360\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classserver_1_1_console_frame_aed4d7148c12b1a22b81316c97a558f72}{txtAreaConsole}}.append(\textcolor{stringliteral}{"{}INSERT\ ERROR\ -\/\ Duplicato\ per\ la\ chiave."{}});}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00361}00361\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcommon_1_1_chiave_duplicata}{ChiaveDuplicata}}(\textcolor{stringliteral}{"{}Chiave\ duplicata"{}});}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00362}00362\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00363}00363\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcommon_1_1_my_server_exception}{MyServerException}}(\textcolor{stringliteral}{"{}INSERT\ ERROR\ -\/\ SQL\ ERROR:\ "{}}\ +\ ex.getSQLState());}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00364}00364\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00365}00365\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00366}00366\ }
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00367}00367\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00368}00368\ }
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00378}00378\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00379}\mbox{\hyperlink{classserver_1_1_console_frame_a02b2d0d43bd14f14563ea914822de388}{00379}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{synchronized}\ ArrayList<Playlist>\ \mbox{\hyperlink{classserver_1_1_console_frame_a02b2d0d43bd14f14563ea914822de388}{getPlaylist}}(String\ cf)\ \textcolor{keywordflow}{throws}\ \mbox{\hyperlink{classcommon_1_1_my_server_exception}{MyServerException}},\ \mbox{\hyperlink{classcommon_1_1_playlist_inesistenti}{PlaylistInesistenti}}\ \{}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00380}00380\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00381}00381\ \ \ \ \ \ \ \ \ \ \ \ \ ResultSet\ rs\ =\ \mbox{\hyperlink{classserver_1_1_console_frame_a85d663119c421cf6e056810a3ae37ac6}{db}}.\mbox{\hyperlink{classserver_1_1_database_a63798edbcf11407baff763318dcedfe4}{submitQuery}}(\textcolor{stringliteral}{"{}SELECT\ *\ FROM\ playlist\ WHERE\ LOWER(codicefiscale)\ =\ LOWER('"{}}\ +\ cf\ +\ \textcolor{stringliteral}{"{}')"{}});}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00382}00382\ \ \ \ \ \ \ \ \ \ \ \ \ this.txtAreaConsole.append(\textcolor{stringliteral}{"{}\(\backslash\)nGet\ delle\ playlist\ da\ parte\ di:\ "{}}\ +\ cf);}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00383}00383\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classserver_1_1_console_frame_a7cc9a0e1eb39746de1a2eb9a60a874fb}{dt}}.\mbox{\hyperlink{classserver_1_1_data_tables_a753bf42ff30f0153db26f3463bc36dd4}{handlePlaylistSet}}(rs);}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00384}00384\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (SQLException\ ex)\ \{}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00385}00385\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcommon_1_1_my_server_exception}{MyServerException}}(\textcolor{stringliteral}{"{}GET\ PLAYLIST\ ERROR\ -\/\ SQL\ ERROR:\ "{}}\ +\ ex.getSQLState());}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00386}00386\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00387}00387\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00388}00388\ }
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00399}00399\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00400}\mbox{\hyperlink{classserver_1_1_console_frame_af5a428a63d28c6d7b3cf944bbdbe82ff}{00400}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{synchronized}\ ArrayList<Canzoni>\ \mbox{\hyperlink{classserver_1_1_console_frame_af5a428a63d28c6d7b3cf944bbdbe82ff}{getCanzoniFromPlaylist}}(\textcolor{keywordtype}{int}\ idPlaylist)\ \textcolor{keywordflow}{throws}\ \mbox{\hyperlink{classcommon_1_1_canzone_inesistente}{CanzoneInesistente}},\ \mbox{\hyperlink{classcommon_1_1_my_server_exception}{MyServerException}}\ \{}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00401}00401\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00402}00402\ \ \ \ \ \ \ \ \ \ \ \ \ ResultSet\ rs\ =\ \mbox{\hyperlink{classserver_1_1_console_frame_a85d663119c421cf6e056810a3ae37ac6}{db}}.\mbox{\hyperlink{classserver_1_1_database_a63798edbcf11407baff763318dcedfe4}{submitQuery}}(\textcolor{stringliteral}{"{}SELECT\ titolo,autore,anno\ FROM\ contiene\ \ WHERE\ idplaylist\ =\ "{}}\ +\ idPlaylist);}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00403}00403\ \ \ \ \ \ \ \ \ \ \ \ \ this.txtAreaConsole.append(\textcolor{stringliteral}{"{}\(\backslash\)nGet\ delle\ canzoni\ da\ playlist\ effettuato\ "{}});}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00404}00404\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classserver_1_1_console_frame_a7cc9a0e1eb39746de1a2eb9a60a874fb}{dt}}.\mbox{\hyperlink{classserver_1_1_data_tables_a991a8d62a3ffa66c044f72b13a85868a}{handleCanzoniSet}}(rs);}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00405}00405\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (SQLException\ ex)\ \{}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00406}00406\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcommon_1_1_my_server_exception}{MyServerException}}(\textcolor{stringliteral}{"{}GET\ PLAYLIST\ ERROR\ -\/\ SQL\ ERROR:\ "{}}\ +\ ex.getSQLState());}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00407}00407\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00408}00408\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00409}00409\ }
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00424}00424\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00425}\mbox{\hyperlink{classserver_1_1_console_frame_a704ea62ae5069c5151c201d29fe94ea0}{00425}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{synchronized}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classserver_1_1_console_frame_a704ea62ae5069c5151c201d29fe94ea0}{inserisciEmozione}}(\mbox{\hyperlink{classcommon_1_1_canzoni}{Canzoni}}\ canzone,\ String\ cf,\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone}{EmozioniCanzone}}\ emocanzone)\ \textcolor{keywordflow}{throws}\ \mbox{\hyperlink{classcommon_1_1_dati_non_validi}{DatiNonValidi}},\ \mbox{\hyperlink{classcommon_1_1_chiave_duplicata}{ChiaveDuplicata}},\ \mbox{\hyperlink{classcommon_1_1_my_server_exception}{MyServerException}}\ \{}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00426}00426\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00427}00427\ \ \ \ \ \ \ \ \ \ \ \ \ canzone.setTitolo(canzone.getTitolo().replace(\textcolor{stringliteral}{"{}'"{}},\ \textcolor{stringliteral}{"{}''"{}}));}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00428}00428\ \ \ \ \ \ \ \ \ \ \ \ \ canzone.setAutore(canzone.getAutore().replace(\textcolor{stringliteral}{"{}'"{}},\ \textcolor{stringliteral}{"{}''"{}}));}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00429}00429\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classserver_1_1_console_frame_a85d663119c421cf6e056810a3ae37ac6}{db}}.\mbox{\hyperlink{classserver_1_1_database_a7b64023b56873602866a8fd818cd5ba9}{submitQueryUpdate}}(\textcolor{stringliteral}{"{}INSERT\ INTO\ emozionicanzone\ (titolo,autore,codicefiscale,amazement,nostalgia,calmness,power,joy,tension,sadness,"{}}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00430}00430\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ \textcolor{stringliteral}{"{}tenderness,solemnity,amazement\_notes,nostalgia\_notes,calmness\_notes,power\_notes,joy\_notes,"{}}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00431}00431\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ \textcolor{stringliteral}{"{}tension\_notes,sadness\_notes,tenderness\_notes,solemnity\_notes,anno)\ "{}}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00432}00432\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ \textcolor{stringliteral}{"{}VALUES\ ('"{}}\ +\ canzone.getTitolo()\ +\ \textcolor{stringliteral}{"{}','"{}}\ +\ canzone.getAutore()\ +\ \textcolor{stringliteral}{"{}','"{}}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00433}00433\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ cf\ +\ \textcolor{stringliteral}{"{}',"{}}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00434}00434\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ emocanzone.getAmazement()\ +\ \textcolor{stringliteral}{"{},"{}}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00435}00435\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ emocanzone.getNostalgia()\ +\ \textcolor{stringliteral}{"{},"{}}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00436}00436\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ emocanzone.getCalmness()\ +\ \textcolor{stringliteral}{"{},"{}}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00437}00437\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ emocanzone.getPower()\ +\ \textcolor{stringliteral}{"{},"{}}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00438}00438\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ emocanzone.getJoy()\ +\ \textcolor{stringliteral}{"{},"{}}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00439}00439\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ emocanzone.getTension()\ +\ \textcolor{stringliteral}{"{},"{}}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00440}00440\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ emocanzone.getSadness()\ +\ \textcolor{stringliteral}{"{},"{}}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00441}00441\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ emocanzone.getTenderness()\ +\ \textcolor{stringliteral}{"{},"{}}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00442}00442\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ emocanzone.getSolemnity()\ +\ \textcolor{stringliteral}{"{},'"{}}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00443}00443\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ emocanzone.getAmazement\_notes()\ +\ \textcolor{stringliteral}{"{}','"{}}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00444}00444\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ emocanzone.getNostalgia\_notes()\ +\ \textcolor{stringliteral}{"{}','"{}}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00445}00445\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ emocanzone.getCalmness\_notes()\ +\ \textcolor{stringliteral}{"{}','"{}}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00446}00446\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ emocanzone.getPower\_notes()\ +\ \textcolor{stringliteral}{"{}','"{}}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00447}00447\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ emocanzone.getJoy\_notes()\ +\ \textcolor{stringliteral}{"{}','"{}}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00448}00448\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ emocanzone.getTension\_notes()\ +\ \textcolor{stringliteral}{"{}','"{}}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00449}00449\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ emocanzone.getSadness\_notes()\ +\ \textcolor{stringliteral}{"{}','"{}}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00450}00450\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ emocanzone.getTenderness\_notes()\ +\ \textcolor{stringliteral}{"{}','"{}}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00451}00451\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ emocanzone.getSolemnity\_notes()\ +\ \textcolor{stringliteral}{"{}',"{}}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00452}00452\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ canzone.getAnno()\ +\ \textcolor{stringliteral}{"{})"{}});}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00453}00453\ \ \ \ \ \ \ \ \ \ \ \ \ this.txtAreaConsole.append(\textcolor{stringliteral}{"{}\(\backslash\)nEmozioni\ inserite\ da\ parte\ di:\ "{}}\ +\ cf);}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00454}00454\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (SQLException\ ex)\ \{}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00455}00455\ }
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00456}00456\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ex.getSQLState().equals(\textcolor{stringliteral}{"{}22001"{}}))\ \{}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00457}00457\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classserver_1_1_console_frame_aed4d7148c12b1a22b81316c97a558f72}{txtAreaConsole}}.append(\textcolor{stringliteral}{"{}INSERT\ ERROR\ -\/\ I\ dati\ inseriti\ non\ sono\ validi"{}});}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00458}00458\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcommon_1_1_dati_non_validi}{DatiNonValidi}}(\textcolor{stringliteral}{"{}I\ dati\ inseriti\ non\ sono\ validi"{}});}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00459}00459\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (ex.getSQLState().equals(\textcolor{stringliteral}{"{}23505"{}}))\ \{}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00460}00460\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classserver_1_1_console_frame_aed4d7148c12b1a22b81316c97a558f72}{txtAreaConsole}}.append(\textcolor{stringliteral}{"{}INSERT\ ERROR\ -\/\ Duplicato\ della\ chiave\ primaria"{}});}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00461}00461\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcommon_1_1_chiave_duplicata}{ChiaveDuplicata}}(\textcolor{stringliteral}{"{}Duplicato\ della\ chiave\ primaria"{}});}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00462}00462\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00463}00463\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcommon_1_1_my_server_exception}{MyServerException}}(\textcolor{stringliteral}{"{}INSERT\ ERROR\ -\/\ SQL\ ERROR:\ "{}}\ +\ ex.getSQLState());}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00464}00464\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00465}00465\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00466}00466\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00467}00467\ \}}
+
+\end{DoxyCode}

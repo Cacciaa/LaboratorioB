@@ -1,0 +1,11 @@
+<map id="Gui_ElencoBrani" name="Gui_ElencoBrani">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,124,57"/>
+<area shape="rect" id="Node000002" href="$classclient_1_1_gui___elenco_brani.html#a77410fe5c5b5ddb55910cd7a2297bff7" title=" " alt="" coords="191,5,303,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="124,33,176,26,177,31,125,38"/>
+<area shape="rect" id="Node000003" href="$classclient_1_1_gui___elenco_brani.html#a95ec5dc2d151540c4e79368afc96a94a" title=" " alt="" coords="172,56,322,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="125,50,157,54,156,59,124,55"/>
+<area shape="rect" id="Node000004" href="$interfacecommon_1_1_interfaccia_servizio.html#af624b6190c5806460ca8288863a7a30e" title="Metodo che restituisce le canzoni associate alla playlist." alt="" coords="370,19,571,61"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="322,57,355,53,355,58,323,62"/>
+<area shape="rect" id="Node000005" href="$classcommon_1_1_playlist.html#a9090123f9b91f7e3f56767d6038fedea" title="Getter dell&#39;attributo idplaylist." alt="" coords="374,85,567,112"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="323,77,360,81,359,87,322,82"/>
+</map>

@@ -1,0 +1,284 @@
+\doxysection{Data\+Tables Class Reference}
+\hypertarget{classserver_1_1_data_tables}{}\label{classserver_1_1_data_tables}\index{DataTables@{DataTables}}
+
+
+Inheritance diagram for Data\+Tables\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{classserver_1_1_data_tables__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Data\+Tables\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{classserver_1_1_data_tables__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Array\+List$<$ \mbox{\hyperlink{classcommon_1_1_canzoni}{Canzoni}} $>$ \mbox{\hyperlink{classserver_1_1_data_tables_a991a8d62a3ffa66c044f72b13a85868a}{handle\+Canzoni\+Set}} (Result\+Set rs)  throws SQLException, \mbox{\hyperlink{classcommon_1_1_canzone_inesistente}{Canzone\+Inesistente}} 
+\begin{DoxyCompactList}\small\item\em Metodo invocato per mappare il datamodel delle canzoni ottenute dall\textquotesingle{}esecuzione delle query. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcommon_1_1_emozioni}{Emozioni}} \mbox{\hyperlink{classserver_1_1_data_tables_a131555d9ee80185bbbe2758af00accc3}{handle\+Emozioni\+Set}} (Result\+Set rs)  throws SQLException, \mbox{\hyperlink{classcommon_1_1_emozioni_inesistenti}{Emozioni\+Inesistenti}}
+\begin{DoxyCompactList}\small\item\em Metodo invocato per mappare il datamodel delle emozioni ottenute dall\textquotesingle{}esecuzione delle query. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcommon_1_1_media_emozioni}{Media\+Emozioni}} \mbox{\hyperlink{classserver_1_1_data_tables_acc2d867115d6f0ee4c6f5eaf8f830a45}{handle\+Emozioni\+Media\+Set}} (Result\+Set rsmedia)  throws SQLException
+\begin{DoxyCompactList}\small\item\em Metodo invocato per mappare il datamodel delle medie emozioni ottenute dall\textquotesingle{}esecuzione delle query. \end{DoxyCompactList}\item 
+Array\+List$<$ \mbox{\hyperlink{classcommon_1_1_playlist}{Playlist}} $>$ \mbox{\hyperlink{classserver_1_1_data_tables_a753bf42ff30f0153db26f3463bc36dd4}{handle\+Playlist\+Set}} (Result\+Set rs)  throws \mbox{\hyperlink{classcommon_1_1_playlist_inesistenti}{Playlist\+Inesistenti}}, SQLException
+\begin{DoxyCompactList}\small\item\em Metodo invocato per mappare il datamodel delle playlist ottenute dall\textquotesingle{}esecuzione delle query. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcommon_1_1_utenti_registrati}{Utenti\+Registrati}} \mbox{\hyperlink{classserver_1_1_data_tables_ac643d664a89366eee3c0addd82aae862}{handle\+Utente\+Registrato}} (Result\+Set rs)  throws SQLException
+\begin{DoxyCompactList}\small\item\em Metodo invocato per mappare il datamodel degli utenti registrati ottenuti dall\textquotesingle{}esecuzione delle query. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classserver_1_1_data_tables_a0e6f7209056feb473378536eae3ad5b2}{check\+Login}} (Result\+Set rs, String password)  throws SQLException, \mbox{\hyperlink{classcommon_1_1_password_errata}{Password\+Errata}}, \mbox{\hyperlink{classcommon_1_1_utente_inesistente}{Utente\+Inesistente}} 
+\begin{DoxyCompactList}\small\item\em Metodo invocato per effettuare il login da parte dell\textquotesingle{}utente. Controlla se l\textquotesingle{}utente che ha richiesto l\textquotesingle{}accesso ha inserito le credenziali corrette. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Lorenzo Erba, 748702
+\end{DoxyAuthor}
+Lorenzo Erba, 748702,Ferialdo Elezi 749721,Alessandro Zancanella 751494,Matteo Cacciarino 748231, sede CO
+
+Classe rappresentante il datamodel dei resultset 
+
+Definition at line \mbox{\hyperlink{_data_tables_8java_source_l00033}{33}} of file \mbox{\hyperlink{_data_tables_8java_source}{Data\+Tables.\+java}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classserver_1_1_data_tables_a0e6f7209056feb473378536eae3ad5b2}\label{classserver_1_1_data_tables_a0e6f7209056feb473378536eae3ad5b2} 
+\index{DataTables@{DataTables}!checkLogin@{checkLogin}}
+\index{checkLogin@{checkLogin}!DataTables@{DataTables}}
+\doxysubsubsection{\texorpdfstring{checkLogin()}{checkLogin()}}
+{\footnotesize\ttfamily void check\+Login (\begin{DoxyParamCaption}\item[{Result\+Set}]{rs,  }\item[{String}]{password }\end{DoxyParamCaption}) throws SQLException, \mbox{\hyperlink{classcommon_1_1_password_errata}{Password\+Errata}}, \mbox{\hyperlink{classcommon_1_1_utente_inesistente}{Utente\+Inesistente}}}
+
+
+
+Metodo invocato per effettuare il login da parte dell\textquotesingle{}utente. Controlla se l\textquotesingle{}utente che ha richiesto l\textquotesingle{}accesso ha inserito le credenziali corrette. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rs} & oggetto di tipo Result\+Set contenente il resultset ottenuto dall\textquotesingle{}esecuzione delle query \\
+\hline
+{\em password} & oggetto di tipo String contenente la password dell\textquotesingle{}utente \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & eccezione sollevata nel caso in cui il mapping produca errori \\
+\hline
+{\em Password\+Errata} & eccezione sollevata nel caso la password inserita dall\textquotesingle{}utente è errata \\
+\hline
+{\em Utente\+Inesistente} & eccezione sollevata nel caso l\textquotesingle{}utente che ha richiesto l\textquotesingle{}accesso non risulti registrato \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{_data_tables_8java_source_l00146}{146}} of file \mbox{\hyperlink{_data_tables_8java_source}{Data\+Tables.\+java}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{classserver_1_1_data_tables_a0e6f7209056feb473378536eae3ad5b2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classserver_1_1_data_tables_a991a8d62a3ffa66c044f72b13a85868a}\label{classserver_1_1_data_tables_a991a8d62a3ffa66c044f72b13a85868a} 
+\index{DataTables@{DataTables}!handleCanzoniSet@{handleCanzoniSet}}
+\index{handleCanzoniSet@{handleCanzoniSet}!DataTables@{DataTables}}
+\doxysubsubsection{\texorpdfstring{handleCanzoniSet()}{handleCanzoniSet()}}
+{\footnotesize\ttfamily Array\+List$<$ \mbox{\hyperlink{classcommon_1_1_canzoni}{Canzoni}} $>$ handle\+Canzoni\+Set (\begin{DoxyParamCaption}\item[{Result\+Set}]{rs }\end{DoxyParamCaption}) throws SQLException, \mbox{\hyperlink{classcommon_1_1_canzone_inesistente}{Canzone\+Inesistente}}}
+
+
+
+Metodo invocato per mappare il datamodel delle canzoni ottenute dall\textquotesingle{}esecuzione delle query. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rs} & oggetto di tipo Result\+Set contenente il resultset ottenuto dall\textquotesingle{}esecuzione delle query \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+oggetto di tipo Array\+List$<$\+Canzoni$>$ contenente le canzoni ottenute come risultato dalle query 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & eccezione sollevata nel caso in cui il mapping produca errori \\
+\hline
+{\em Canzone\+Inesistente} & eccezione sollevata nel caso in cui l\textquotesingle{}esecuzione della query non produca risultato \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{_data_tables_8java_source_l00042}{42}} of file \mbox{\hyperlink{_data_tables_8java_source}{Data\+Tables.\+java}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classserver_1_1_data_tables_a991a8d62a3ffa66c044f72b13a85868a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classserver_1_1_data_tables_acc2d867115d6f0ee4c6f5eaf8f830a45}\label{classserver_1_1_data_tables_acc2d867115d6f0ee4c6f5eaf8f830a45} 
+\index{DataTables@{DataTables}!handleEmozioniMediaSet@{handleEmozioniMediaSet}}
+\index{handleEmozioniMediaSet@{handleEmozioniMediaSet}!DataTables@{DataTables}}
+\doxysubsubsection{\texorpdfstring{handleEmozioniMediaSet()}{handleEmozioniMediaSet()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classcommon_1_1_media_emozioni}{Media\+Emozioni}} handle\+Emozioni\+Media\+Set (\begin{DoxyParamCaption}\item[{Result\+Set}]{rsmedia }\end{DoxyParamCaption}) throws SQLException}
+
+
+
+Metodo invocato per mappare il datamodel delle medie emozioni ottenute dall\textquotesingle{}esecuzione delle query. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rsmedia} & oggetto di tipo Result\+Set contenente il resultset ottenuto dall\textquotesingle{}esecuzione delle query \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+oggetto di tipo Media\+Emozioni contenente le medie delle emozioni ottenute come risultato dalle query 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & eccezione sollevata nel caso in cui il mapping produca errori \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{_data_tables_8java_source_l00093}{93}} of file \mbox{\hyperlink{_data_tables_8java_source}{Data\+Tables.\+java}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classserver_1_1_data_tables_acc2d867115d6f0ee4c6f5eaf8f830a45_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classserver_1_1_data_tables_a131555d9ee80185bbbe2758af00accc3}\label{classserver_1_1_data_tables_a131555d9ee80185bbbe2758af00accc3} 
+\index{DataTables@{DataTables}!handleEmozioniSet@{handleEmozioniSet}}
+\index{handleEmozioniSet@{handleEmozioniSet}!DataTables@{DataTables}}
+\doxysubsubsection{\texorpdfstring{handleEmozioniSet()}{handleEmozioniSet()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classcommon_1_1_emozioni}{Emozioni}} handle\+Emozioni\+Set (\begin{DoxyParamCaption}\item[{Result\+Set}]{rs }\end{DoxyParamCaption}) throws SQLException, \mbox{\hyperlink{classcommon_1_1_emozioni_inesistenti}{Emozioni\+Inesistenti}}}
+
+
+
+Metodo invocato per mappare il datamodel delle emozioni ottenute dall\textquotesingle{}esecuzione delle query. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rs} & oggetto di tipo Result\+Set contenente il resultset ottenuto dall\textquotesingle{}esecuzione delle query \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+oggetto di tipo Emozioni contenente le emozioni ottenute come risultato dalle query 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & eccezione sollevata nel caso in cui il mapping produca errori \\
+\hline
+{\em Emozioni\+Inesistenti} & eccezione sollevata nel caso in cui l\textquotesingle{}esecuzione della query non produca risultato \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{_data_tables_8java_source_l00066}{66}} of file \mbox{\hyperlink{_data_tables_8java_source}{Data\+Tables.\+java}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classserver_1_1_data_tables_a131555d9ee80185bbbe2758af00accc3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classserver_1_1_data_tables_a131555d9ee80185bbbe2758af00accc3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classserver_1_1_data_tables_a753bf42ff30f0153db26f3463bc36dd4}\label{classserver_1_1_data_tables_a753bf42ff30f0153db26f3463bc36dd4} 
+\index{DataTables@{DataTables}!handlePlaylistSet@{handlePlaylistSet}}
+\index{handlePlaylistSet@{handlePlaylistSet}!DataTables@{DataTables}}
+\doxysubsubsection{\texorpdfstring{handlePlaylistSet()}{handlePlaylistSet()}}
+{\footnotesize\ttfamily Array\+List$<$ \mbox{\hyperlink{classcommon_1_1_playlist}{Playlist}} $>$ handle\+Playlist\+Set (\begin{DoxyParamCaption}\item[{Result\+Set}]{rs }\end{DoxyParamCaption}) throws \mbox{\hyperlink{classcommon_1_1_playlist_inesistenti}{Playlist\+Inesistenti}}, SQLException}
+
+
+
+Metodo invocato per mappare il datamodel delle playlist ottenute dall\textquotesingle{}esecuzione delle query. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rs} & oggetto di tipo Result\+Set contenente il resultset ottenuto dall\textquotesingle{}esecuzione delle query \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+oggetto di tipo Array\+List$<$\+Playlist$>$ contenente le playlist ottenute come risultato dalle query 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Playlist\+Inesistenti} & eccezione sollevata nel caso in cui l\textquotesingle{}esecuzione della query non produca risultato \\
+\hline
+{\em SQLException} & eccezione sollevata nel caso in cui il mapping produca errori \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{_data_tables_8java_source_l00110}{110}} of file \mbox{\hyperlink{_data_tables_8java_source}{Data\+Tables.\+java}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classserver_1_1_data_tables_a753bf42ff30f0153db26f3463bc36dd4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classserver_1_1_data_tables_ac643d664a89366eee3c0addd82aae862}\label{classserver_1_1_data_tables_ac643d664a89366eee3c0addd82aae862} 
+\index{DataTables@{DataTables}!handleUtenteRegistrato@{handleUtenteRegistrato}}
+\index{handleUtenteRegistrato@{handleUtenteRegistrato}!DataTables@{DataTables}}
+\doxysubsubsection{\texorpdfstring{handleUtenteRegistrato()}{handleUtenteRegistrato()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classcommon_1_1_utenti_registrati}{Utenti\+Registrati}} handle\+Utente\+Registrato (\begin{DoxyParamCaption}\item[{Result\+Set}]{rs }\end{DoxyParamCaption}) throws SQLException}
+
+
+
+Metodo invocato per mappare il datamodel degli utenti registrati ottenuti dall\textquotesingle{}esecuzione delle query. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rs} & oggetto di tipo Result\+Set contenente il resultset ottenuto dall\textquotesingle{}esecuzione delle query \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+oggetto di tipo\+Utenti\+Registrati contenente gli utenti registrati ottenuti come risultato dalle query 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & eccezione sollevata nel caso in cui il mapping produca errori \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{_data_tables_8java_source_l00133}{133}} of file \mbox{\hyperlink{_data_tables_8java_source}{Data\+Tables.\+java}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classserver_1_1_data_tables_ac643d664a89366eee3c0addd82aae862_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/server/\mbox{\hyperlink{_data_tables_8java}{Data\+Tables.\+java}}\end{DoxyCompactItemize}

@@ -1,0 +1,18 @@
+<map id="PannelloEmozioni" name="PannelloEmozioni">
+<area shape="rect" id="Node000001" title=" " alt="" coords="218,897,394,1287"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,543,57,612"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="45,625,72,704,106,773,143,841,220,965,216,967,139,844,101,776,68,706,40,627"/>
+<area shape="rect" id="Node000003" href="$classclient_1_1_emotional_songs.html" title=" " alt="" coords="82,449,258,705"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="176,705,185,788,203,873,214,908,209,909,198,874,180,789,171,706"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="141,220,197,289"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="172,303,172,450,167,450,166,303"/>
+<area shape="rect" id="Node000005" href="$interfacecommon_1_1_interfaccia_servizio.html" title=" " alt="" coords="221,124,391,385"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="309,385,309,880,303,880,303,385"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="254,386,233,434,228,432,249,384"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="277,5,335,75"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="309,89,309,124,303,124,303,89"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="349,543,421,612"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="382,612,341,881,336,880,377,611"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="467,543,537,612"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="507,612,507,664,504,730,493,803,472,874,443,932,407,986,402,983,439,930,468,872,488,802,498,730,502,664,501,612"/>
+</map>

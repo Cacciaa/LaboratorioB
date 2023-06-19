@@ -1,0 +1,278 @@
+\doxysection{emotions\+Summary\+\_\+\+Gui.\+java}
+\hypertarget{emotions_summary___gui_8java_source}{}\label{emotions_summary___gui_8java_source}\index{src/main/java/client/emotionsSummary\_Gui.java@{src/main/java/client/emotionsSummary\_Gui.java}}
+\mbox{\hyperlink{emotions_summary___gui_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00002}00002\ \textcolor{comment}{\ *\ Click\ nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-\/default.txt\ to\ change\ this\ license}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00003}00003\ \textcolor{comment}{\ *\ Click\ nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java\ to\ edit\ this\ template}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00004}00004\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00005}00005\ \textcolor{keyword}{package\ }client;}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00007}00007\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacecommon}{common}}.*;}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00008}00008\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacecommon}{common}}.\mbox{\hyperlink{classcommon_1_1_emozioni_canzone}{EmozioniCanzone}};}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00009}00009\ \textcolor{keyword}{import}\ java.io.IOException;}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00010}00010\ \textcolor{keyword}{import}\ java.rmi.RemoteException;}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00011}00011\ \textcolor{keyword}{import}\ java.util.ArrayList;}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00012}00012\ \textcolor{keyword}{import}\ java.util.Vector;}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00013}00013\ \textcolor{keyword}{import}\ javax.swing.JDialog;}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00014}00014\ \textcolor{keyword}{import}\ javax.swing.JOptionPane;}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00015}00015\ \textcolor{keyword}{import}\ javax.swing.JTable;}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00016}00016\ \textcolor{keyword}{import}\ javax.swing.table.DefaultTableModel;}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00017}00017\ \textcolor{keyword}{import}\ javax.swing.table.TableColumnModel;}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00018}00018\ \textcolor{keyword}{import}\ javax.xml.parsers.ParserConfigurationException;}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00019}00019\ \textcolor{keyword}{import}\ org.xml.sax.SAXException;}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00030}\mbox{\hyperlink{classclient_1_1emotions_summary___gui}{00030}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classclient_1_1emotions_summary___gui}{emotionsSummary\_Gui}}\ \textcolor{keyword}{extends}\ javax.swing.JPanel\ \{}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00032}00032\ \ \ \ \ \textcolor{comment}{//attributo\ di\ tipo\ Emozioni\_Canzone\ rappresentante\ la\ lista\ delle\ emozioni\ relative\ alla\ canzone\ specificata}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00033}\mbox{\hyperlink{classclient_1_1emotions_summary___gui_a500a67d69d8b77ddc364bccf4064b3e1}{00033}}\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{classcommon_1_1_emozioni}{Emozioni}}\ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a500a67d69d8b77ddc364bccf4064b3e1}{emo\_canzone}};}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00034}00034\ \ \ \ \ \textcolor{comment}{//attributo\ di\ tipo\ Canzone\ contenente\ le\ informazioni\ delle\ canzone\ selezionata}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00035}\mbox{\hyperlink{classclient_1_1emotions_summary___gui_aa609b22b1e14162bed91d269cd1dafa9}{00035}}\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{classcommon_1_1_canzoni}{Canzoni}}\ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_aa609b22b1e14162bed91d269cd1dafa9}{canzone}};}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00036}00036\ \ \ \ \ \textcolor{comment}{//attributo\ costante\ di\ tipo\ EmotionalSongs\ contenente\ il\ riferimento\ al\ frame\ iniziale}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00037}\mbox{\hyperlink{classclient_1_1emotions_summary___gui_a131122caea7d48e89ae86cb86996b187}{00037}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{final}\ \mbox{\hyperlink{classclient_1_1_emotional_songs}{EmotionalSongs}}\ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a131122caea7d48e89ae86cb86996b187}{previousframe}};}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00038}00038\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00039}\mbox{\hyperlink{classclient_1_1emotions_summary___gui_a6a810c68843a0f123de03f49ffb925c0}{00039}}\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{interfacecommon_1_1_interfaccia_servizio}{InterfacciaServizio}}\ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a6a810c68843a0f123de03f49ffb925c0}{is}};}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00048}\mbox{\hyperlink{classclient_1_1emotions_summary___gui_a7bb7f4cd0e2a797d089c6474b5859218}{00048}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a7bb7f4cd0e2a797d089c6474b5859218}{emotionsSummary\_Gui}}(\mbox{\hyperlink{classcommon_1_1_canzoni}{Canzoni}}\ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_aa609b22b1e14162bed91d269cd1dafa9}{canzone}},\ \mbox{\hyperlink{classclient_1_1_emotional_songs}{EmotionalSongs}}\ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a131122caea7d48e89ae86cb86996b187}{previousframe}},\ \mbox{\hyperlink{interfacecommon_1_1_interfaccia_servizio}{InterfacciaServizio}}\ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a6a810c68843a0f123de03f49ffb925c0}{is}})\ \{}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00049}00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a77410fe5c5b5ddb55910cd7a2297bff7}{initComponents}}();}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00050}00050\ \ \ \ \ \ \ \ \ this.canzone\ =\ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_aa609b22b1e14162bed91d269cd1dafa9}{canzone}};}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00051}00051\ \ \ \ \ \ \ \ \ this.previousframe\ =\ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a131122caea7d48e89ae86cb86996b187}{previousframe}};}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00052}00052\ \ \ \ \ \ \ \ \ this.is=\mbox{\hyperlink{classclient_1_1emotions_summary___gui_a6a810c68843a0f123de03f49ffb925c0}{is}};}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00053}00053\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00054}00054\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00063}\mbox{\hyperlink{classclient_1_1emotions_summary___gui_a1f6821bf85e6b5a41c287f82232b7d7e}{00063}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{boolean}\ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a1f6821bf85e6b5a41c287f82232b7d7e}{visualizzaEmozioneBrano}}()\ \{}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//parsing\ del\ file\ contenente\ le\ emoozioni}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ Object\ objresult\ =\ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a6a810c68843a0f123de03f49ffb925c0}{is}}.\mbox{\hyperlink{interfacecommon_1_1_interfaccia_servizio_a3e5c329b85a7033e21ac2112b537132b}{getEmozioniFromBrano}}(\mbox{\hyperlink{classclient_1_1emotions_summary___gui_aa609b22b1e14162bed91d269cd1dafa9}{canzone}});}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//controllo\ se\ il\ risultato\ ottenuto\ è\ istanceof\ di\ Emozioni\_Canzone,\ implica\ che\ il\ parsing\ è\ andato\ a\ buon\ fine}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (objresult\ instanceof\ \mbox{\hyperlink{classcommon_1_1_emozioni}{Emozioni}})\ \{}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//controllo\ se\ il\ riempimento\ della\ tabella\ delle\ emozioni\ ha\ prodotto\ esito\ positivo}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this.\mbox{\hyperlink{classclient_1_1emotions_summary___gui_a310179e74b160c2cc815f52ee6cd2721}{riempiTabella}}((Emozioni)\ objresult,\ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a689abddd5ea4d8762f87f1f2cef0b3d2}{jTblEmo}}).equals(\textcolor{stringliteral}{"{}1"{}}))\ \{}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//catch\ dell'eccezione\ in\ fase\ dell'inizializzazione\ della\ tabella}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00081}00081\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}(\mbox{\hyperlink{classcommon_1_1_emozioni_inesistenti}{EmozioniInesistenti}}\ e\ )\{}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ JOptionPane.showMessageDialog(\textcolor{keyword}{null},\ \textcolor{stringliteral}{"{}Emozioni\ inesistenti\ relative\ al\ brano\ selezionato"{}},\ \textcolor{stringliteral}{"{}Errore"{}},\ JOptionPane.ERROR\_MESSAGE);}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00084}00084\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\mbox{\hyperlink{classcommon_1_1_my_server_exception}{MyServerException}}\ |\ RemoteException\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ JOptionPane.showMessageDialog(\textcolor{keyword}{null},\ \textcolor{stringliteral}{"{}Errore\ \#A1016.\ Errore\ durante\ l'inizializzazione\ della\ pagina\ emotionsSummary\_Gui"{}},\ \textcolor{stringliteral}{"{}Errore"{}},\ JOptionPane.ERROR\_MESSAGE);}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00087}00087\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00088}00088\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00089}00089\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00103}\mbox{\hyperlink{classclient_1_1emotions_summary___gui_a310179e74b160c2cc815f52ee6cd2721}{00103}}\ \ \ \ \ \textcolor{keyword}{private}\ Object\ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a310179e74b160c2cc815f52ee6cd2721}{riempiTabella}}(\mbox{\hyperlink{classcommon_1_1_emozioni}{Emozioni}}\ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a500a67d69d8b77ddc364bccf4064b3e1}{emo\_canzone}},\ JTable\ tabella)\ \{}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00104}00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//model\ della\ tabella}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ DefaultTableModel\ df\ =\ (DefaultTableModel)\ tabella.getModel();}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//setting\ dell'attributo\ emo\_canzone}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ this.emo\_canzone\ =\ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a500a67d69d8b77ddc364bccf4064b3e1}{emo\_canzone}};}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Creo\ un\ Vector\ di\ tipo\ String,\ che\ serve\ per\ inserire\ i\ brani\ nella\ tabella}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ Vector<String>\ vector\ =\ \textcolor{keyword}{new}\ Vector<>();}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ df.setRowCount(0);\ \textcolor{comment}{//\ Serve\ per\ resettare\ la\ tabella}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//for\ per\ il\ riempimento\ di\ ogni\ riga\ della\ tabella}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a500a67d69d8b77ddc364bccf4064b3e1}{emo\_canzone}}.\mbox{\hyperlink{classcommon_1_1_emozioni_ad88b850dc4c311a700d611497e7c7cf5}{getNumeroEmozioni}}();\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vector\ =\ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_aea57484bfccf7e0cc511b066b51a4a31}{transform}}(i,\ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a500a67d69d8b77ddc364bccf4064b3e1}{emo\_canzone}}.\mbox{\hyperlink{classcommon_1_1_emozioni_aefc10683816c035d47de9a95f6ab28f6}{getEmozionicanzoni}}());}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (vector.get(0).equals(\textcolor{stringliteral}{"{}Errore\ \#B0001.indexNonValido"{}}))\ \{}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ JOptionPane.showMessageDialog(\textcolor{keyword}{null},\ vector.get(0),\ \textcolor{stringliteral}{"{}Errore"{}},\ JOptionPane.ERROR\_MESSAGE);}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Aggiungo\ la\ riga}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ df.addRow(vector);}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//setting\ delle\ medie\ delle\ emozioni}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ this.\mbox{\hyperlink{classclient_1_1emotions_summary___gui_ab9bf3a317754f4f25734391084d8fb16}{setMedieTabella}}(tabella);}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ Object\ obj\ =\ \textcolor{stringliteral}{"{}1"{}};}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ obj;}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//catch\ dell'eccezione\ in\ fase\ di\ popolamento\ della\ tabella}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00130}00130\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (Exception\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ Object\ obj\ =\ \textcolor{stringliteral}{"{}Errore\ \#A1003.\ Errore\ durante\ il\ popolamento\ della\ tabella."{}};}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ obj;}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00133}00133\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00134}00134\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00135}00135\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00143}\mbox{\hyperlink{classclient_1_1emotions_summary___gui_aea57484bfccf7e0cc511b066b51a4a31}{00143}}\ \ \ \ \ \textcolor{keyword}{private}\ Vector<String>\ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_aea57484bfccf7e0cc511b066b51a4a31}{transform}}(\textcolor{keywordtype}{int}\ index,\ ArrayList<EmozioniCanzone>\ brani)\ \{}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00144}00144\ \ \ \ \ \ \ \ \ Vector<String>\ vector\ =\ \textcolor{keyword}{new}\ Vector<>();}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00145}00145\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ <\ brani.size())\ \{}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Aggiungo\ le\ varie\ informazioni\ del\ brano}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ vector.add(brani.get(index).getCodiceFiscale());}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ vector.add(Integer.toString(brani.get(index).getAmazement()));}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ vector.add(Integer.toString(brani.get(index).getSolemnity()));}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ vector.add(Integer.toString(brani.get(index).getTenderness()));}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ vector.add(Integer.toString(brani.get(index).getNostalgia()));}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ vector.add(Integer.toString(brani.get(index).getCalmness()));}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ vector.add(Integer.toString(brani.get(index).getPower()));}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ vector.add(Integer.toString(brani.get(index).getJoy()));}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ vector.add(Integer.toString(brani.get(index).getTension()));}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ vector.add(Integer.toString(brani.get(index).getSadness()));}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vector;}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00158}00158\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ vector.add(\textcolor{stringliteral}{"{}Errore\ \#B0001.indexNonValido"{}});\ \textcolor{comment}{//\ Errore\ }}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vector;}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00161}00161\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00162}00162\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00163}00163\ }
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00174}\mbox{\hyperlink{classclient_1_1emotions_summary___gui_ab9bf3a317754f4f25734391084d8fb16}{00174}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{boolean}\ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_ab9bf3a317754f4f25734391084d8fb16}{setMedieTabella}}(JTable\ tabella)\ \{}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00175}00175\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcommon_1_1_media_emozioni}{MediaEmozioni}}\ media=\textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00176}00176\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ avrg\ =\ -\/1;}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00177}00177\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//model\ delle\ colonne\ della\ tabella}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ TableColumnModel\ df\ =\ (TableColumnModel)\ tabella.getColumnModel();}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ media\ =\ this.emo\_canzone.\mbox{\hyperlink{classcommon_1_1_emozioni_a81094f0df2f6691d284d9c72a4ab6cef}{getMedia}}();}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//for\ per\ l'aggiornamento\ delle\ colonne\ della\ tabella\ con\ le\ medie\ di\ ogni\ emozioni}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <\ df.getColumnCount();\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//ottengo\ la\ media\ di\ ogni\ emozione\ specificata\ all'indice\ indicato}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}(i)\{}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 1\ :\ avrg\ =\ this.emo\_canzone.\mbox{\hyperlink{classcommon_1_1_emozioni_a81094f0df2f6691d284d9c72a4ab6cef}{getMedia}}().\mbox{\hyperlink{classcommon_1_1_media_emozioni_ae8b904075870842ca470d246f8eeadaf}{getAvg\_amazement}}();}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 2\ :\ avrg\ =\ this.emo\_canzone.\mbox{\hyperlink{classcommon_1_1_emozioni_a81094f0df2f6691d284d9c72a4ab6cef}{getMedia}}().\mbox{\hyperlink{classcommon_1_1_media_emozioni_a2efc702bd16705dd5335aa495e7b6513}{getAvg\_solemnity}}();}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 3\ :\ avrg\ =\ this.emo\_canzone.\mbox{\hyperlink{classcommon_1_1_emozioni_a81094f0df2f6691d284d9c72a4ab6cef}{getMedia}}().\mbox{\hyperlink{classcommon_1_1_media_emozioni_aba5c3923a652aa3366be4e23a0ec3a68}{getAvg\_tenderness}}();}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 4\ :\ avrg\ =\ this.emo\_canzone.\mbox{\hyperlink{classcommon_1_1_emozioni_a81094f0df2f6691d284d9c72a4ab6cef}{getMedia}}().\mbox{\hyperlink{classcommon_1_1_media_emozioni_a4aaee5dc0b2d21e6aefcaace30634c90}{getAvg\_nostalgia}}();}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 5\ :\ avrg\ =\ this.emo\_canzone.\mbox{\hyperlink{classcommon_1_1_emozioni_a81094f0df2f6691d284d9c72a4ab6cef}{getMedia}}().\mbox{\hyperlink{classcommon_1_1_media_emozioni_ae8480226fdd466acebc8d757081522f0}{getAvg\_calmness}}();}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 6\ :\ avrg\ =\ this.emo\_canzone.\mbox{\hyperlink{classcommon_1_1_emozioni_a81094f0df2f6691d284d9c72a4ab6cef}{getMedia}}().\mbox{\hyperlink{classcommon_1_1_media_emozioni_aab0b8057e094cd37083d07cfcc1e7e57}{getAvg\_power}}();}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 7\ :\ avrg\ =\ this.emo\_canzone.\mbox{\hyperlink{classcommon_1_1_emozioni_a81094f0df2f6691d284d9c72a4ab6cef}{getMedia}}().\mbox{\hyperlink{classcommon_1_1_media_emozioni_ac284467b45ec48bbf59c9708414759e9}{getAvg\_joy}}();}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 8\ :\ avrg\ =\ this.emo\_canzone.\mbox{\hyperlink{classcommon_1_1_emozioni_a81094f0df2f6691d284d9c72a4ab6cef}{getMedia}}().\mbox{\hyperlink{classcommon_1_1_media_emozioni_a671dbd2254582a8c70569ab4f9d1764a}{getAvg\_tension}}();}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 9\ :\ avrg\ =\ this.emo\_canzone.\mbox{\hyperlink{classcommon_1_1_emozioni_a81094f0df2f6691d284d9c72a4ab6cef}{getMedia}}().\mbox{\hyperlink{classcommon_1_1_media_emozioni_a44d9b5dd2838c7b19533f51c100a7238}{getAvg\_sadness}}();}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//nel\ caso\ in\ cui\ ottengo\ -\/1,\ errore\ durante\ l'invocazione\ del\ get\ delle\ medie}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (avrg\ ==\ -\/1)\ \{}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//setting\ della\ colonna\ i-\/esima\ col\ valore\ della\ media\ ottenuta}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ df.getColumn(i).setHeaderValue(tabella.getColumnName(i)\ +\ \textcolor{stringliteral}{"{}("{}}\ +\ avrg\ +\ \textcolor{stringliteral}{"{})"{}});}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00211}00211\ }
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//catch\ dell'eccezione\ in\ fase\ di\ popolamento\ delle\ colonne\ della\ tabella}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00215}00215\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (Exception\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00217}00217\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00218}00218\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00219}00219\ }
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00225}00225\ \ \ \ \ @SuppressWarnings(\textcolor{stringliteral}{"{}unchecked"{}})}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00226}00226\ \ \ \ \ \textcolor{comment}{//\ <editor-\/fold\ defaultstate="{}collapsed"{}\ desc="{}Generated\ Code"{}>//GEN-\/BEGIN:initComponents}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00227}\mbox{\hyperlink{classclient_1_1emotions_summary___gui_a77410fe5c5b5ddb55910cd7a2297bff7}{00227}}\ \ \ \ \ private\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a77410fe5c5b5ddb55910cd7a2297bff7}{initComponents}}()\ \{}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00228}00228\ }
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00229}00229\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a47066ebb7b751f52b9debcc4bd1b1ee4}{jLabel1}}\ =\ \textcolor{keyword}{new}\ javax.swing.JLabel();}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00230}00230\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_aae4319d2cb4ac19c9a2c7d4d3a2549f4}{jScrollPane1}}\ =\ \textcolor{keyword}{new}\ javax.swing.JScrollPane();}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00231}00231\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a689abddd5ea4d8762f87f1f2cef0b3d2}{jTblEmo}}\ =\ \textcolor{keyword}{new}\ javax.swing.JTable();}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00232}00232\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_aac4c74e7fdef17e600ac902cf40ee766}{jLabel2}}\ =\ \textcolor{keyword}{new}\ javax.swing.JLabel();}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00233}00233\ }
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00234}00234\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a47066ebb7b751f52b9debcc4bd1b1ee4}{jLabel1}}.setText(\textcolor{stringliteral}{"{}<html>\ <h1\ style=\(\backslash\)"{}color:green;\(\backslash\)"{}><u>Prospetto\ delle\ emozioni\ del\ brano</u></h1>"{}});}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00235}00235\ }
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00236}00236\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a689abddd5ea4d8762f87f1f2cef0b3d2}{jTblEmo}}.setFont(\textcolor{keyword}{new}\ java.awt.Font(\textcolor{stringliteral}{"{}Dialog"{}},\ 0,\ 18));\ \textcolor{comment}{//\ NOI18N}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00237}00237\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a689abddd5ea4d8762f87f1f2cef0b3d2}{jTblEmo}}.setModel(\textcolor{keyword}{new}\ javax.swing.table.DefaultTableModel(}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Object\ [][]\ \{}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00239}00239\ }
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ String\ []\ \{}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}<html>\ <h3>\ Utente</h4>"{}},\ \textcolor{stringliteral}{"{}<html>\ <h3>Amazement"{}},\ \textcolor{stringliteral}{"{}<html>\ <h3>Solemnity"{}},\ \textcolor{stringliteral}{"{}<html>\ <h3>Tenderness"{}},\ \textcolor{stringliteral}{"{}<html>\ <h3>Nostalgia"{}},\ \textcolor{stringliteral}{"{}<html>\ <h3>Calmness"{}},\ \textcolor{stringliteral}{"{}<html>\ <h3>Power"{}},\ \textcolor{stringliteral}{"{}<html>\ <h3>Joy"{}},\ \textcolor{stringliteral}{"{}<html>\ <h3>Tension"{}},\ \textcolor{stringliteral}{"{}<html>\ <h3>Sadness"{}}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00244}00244\ \ \ \ \ \ \ \ \ )\ \{}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ boolean[]\ canEdit\ =\ new\ boolean\ []\ \{}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ false,\ false,\ false,\ false,\ false,\ false,\ false,\ false,\ false,\ false}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00248}00248\ }
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00249}00249\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{boolean}\ isCellEditable(\textcolor{keywordtype}{int}\ rowIndex,\ \textcolor{keywordtype}{int}\ columnIndex)\ \{}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00250}00250\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ canEdit\ [columnIndex];}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00251}00251\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00252}00252\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00253}00253\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a689abddd5ea4d8762f87f1f2cef0b3d2}{jTblEmo}}.setSelectionBackground(\textcolor{keyword}{new}\ java.awt.Color(116,\ 153,\ 221));}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00254}00254\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a689abddd5ea4d8762f87f1f2cef0b3d2}{jTblEmo}}.getTableHeader().setReorderingAllowed(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00255}00255\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a689abddd5ea4d8762f87f1f2cef0b3d2}{jTblEmo}}.addMouseListener(\textcolor{keyword}{new}\ java.awt.event.MouseAdapter()\ \{}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ mouseClicked(java.awt.event.MouseEvent\ evt)\ \{}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00257}00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a6e71847d382ed74fda21f22868f93a44}{jTblEmoMouseClicked}}(evt);}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00259}00259\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00260}00260\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_aae4319d2cb4ac19c9a2c7d4d3a2549f4}{jScrollPane1}}.setViewportView(\mbox{\hyperlink{classclient_1_1emotions_summary___gui_a689abddd5ea4d8762f87f1f2cef0b3d2}{jTblEmo}});}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00261}00261\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classclient_1_1emotions_summary___gui_a689abddd5ea4d8762f87f1f2cef0b3d2}{jTblEmo}}.getColumnModel().getColumnCount()\ >\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00262}00262\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a689abddd5ea4d8762f87f1f2cef0b3d2}{jTblEmo}}.getColumnModel().getColumn(0).setResizable(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a689abddd5ea4d8762f87f1f2cef0b3d2}{jTblEmo}}.getColumnModel().getColumn(1).setResizable(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00264}00264\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a689abddd5ea4d8762f87f1f2cef0b3d2}{jTblEmo}}.getColumnModel().getColumn(2).setResizable(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00265}00265\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a689abddd5ea4d8762f87f1f2cef0b3d2}{jTblEmo}}.getColumnModel().getColumn(3).setResizable(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00266}00266\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a689abddd5ea4d8762f87f1f2cef0b3d2}{jTblEmo}}.getColumnModel().getColumn(3).setPreferredWidth(85);}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00267}00267\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a689abddd5ea4d8762f87f1f2cef0b3d2}{jTblEmo}}.getColumnModel().getColumn(4).setResizable(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00268}00268\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a689abddd5ea4d8762f87f1f2cef0b3d2}{jTblEmo}}.getColumnModel().getColumn(5).setResizable(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00269}00269\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a689abddd5ea4d8762f87f1f2cef0b3d2}{jTblEmo}}.getColumnModel().getColumn(6).setResizable(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00270}00270\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a689abddd5ea4d8762f87f1f2cef0b3d2}{jTblEmo}}.getColumnModel().getColumn(7).setResizable(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00271}00271\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a689abddd5ea4d8762f87f1f2cef0b3d2}{jTblEmo}}.getColumnModel().getColumn(8).setResizable(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00272}00272\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a689abddd5ea4d8762f87f1f2cef0b3d2}{jTblEmo}}.getColumnModel().getColumn(9).setResizable(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00273}00273\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00274}00274\ }
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00275}00275\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_aac4c74e7fdef17e600ac902cf40ee766}{jLabel2}}.setFont(\textcolor{keyword}{new}\ java.awt.Font(\textcolor{stringliteral}{"{}Dialog"{}},\ 0,\ 16));\ \textcolor{comment}{//\ NOI18N}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00276}00276\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_aac4c74e7fdef17e600ac902cf40ee766}{jLabel2}}.setText(\textcolor{stringliteral}{"{}<html>\ Di\ seguito\ vengono\ riportate\ le\ emozioni,\ di\ ogni\ utente,\ associate\ al\ brano:\ <br>\ In\ ogni\ colonna\ <b>tra\ parentesi\ tonde</b>\ viene\ riportata\ la\ <b>media</b>\ di\ ogni\ emozione.\ <br>Selezionare\ una\ riga\ per\ visualizzare\ i\ <b>commenti</b>\ rilasciati\ dal\ relativo\ utente."{}});}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00277}00277\ }
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00278}00278\ \ \ \ \ \ \ \ \ javax.swing.GroupLayout\ layout\ =\ \textcolor{keyword}{new}\ javax.swing.GroupLayout(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00279}00279\ \ \ \ \ \ \ \ \ this.setLayout(layout);}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00280}00280\ \ \ \ \ \ \ \ \ layout.setHorizontalGroup(}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00281}00281\ \ \ \ \ \ \ \ \ \ \ \ \ layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00282}00282\ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,\ layout.createSequentialGroup()}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00283}00283\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addContainerGap(javax.swing.GroupLayout.DEFAULT\_SIZE,\ Short.MAX\_VALUE)}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00284}00284\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1emotions_summary___gui_a47066ebb7b751f52b9debcc4bd1b1ee4}{jLabel1}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ javax.swing.GroupLayout.DEFAULT\_SIZE,\ javax.swing.GroupLayout.PREFERRED\_SIZE)}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00285}00285\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGap(348,\ 348,\ 348))}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00286}00286\ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(layout.createSequentialGroup()}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00287}00287\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addContainerGap()}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00288}00288\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00289}00289\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(layout.createSequentialGroup()}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00290}00290\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1emotions_summary___gui_aac4c74e7fdef17e600ac902cf40ee766}{jLabel2}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ javax.swing.GroupLayout.DEFAULT\_SIZE,\ javax.swing.GroupLayout.PREFERRED\_SIZE)}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00291}00291\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGap(0,\ 553,\ Short.MAX\_VALUE))}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00292}00292\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,\ layout.createSequentialGroup()}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00293}00293\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1emotions_summary___gui_aae4319d2cb4ac19c9a2c7d4d3a2549f4}{jScrollPane1}})}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00294}00294\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addContainerGap())))}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00295}00295\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00296}00296\ \ \ \ \ \ \ \ \ layout.setVerticalGroup(}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00297}00297\ \ \ \ \ \ \ \ \ \ \ \ \ layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00298}00298\ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(layout.createSequentialGroup()}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00299}00299\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGap(25,\ 25,\ 25)}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00300}00300\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1emotions_summary___gui_a47066ebb7b751f52b9debcc4bd1b1ee4}{jLabel1}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ javax.swing.GroupLayout.DEFAULT\_SIZE,\ javax.swing.GroupLayout.PREFERRED\_SIZE)}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00301}00301\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGap(38,\ 38,\ 38)}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00302}00302\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1emotions_summary___gui_aac4c74e7fdef17e600ac902cf40ee766}{jLabel2}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ javax.swing.GroupLayout.DEFAULT\_SIZE,\ javax.swing.GroupLayout.PREFERRED\_SIZE)}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00303}00303\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGap(34,\ 34,\ 34)}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00304}00304\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1emotions_summary___gui_aae4319d2cb4ac19c9a2c7d4d3a2549f4}{jScrollPane1}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ 234,\ javax.swing.GroupLayout.PREFERRED\_SIZE)}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00305}00305\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addContainerGap(131,\ Short.MAX\_VALUE))}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00306}00306\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00307}00307\ \ \ \ \ \}\textcolor{comment}{//\ </editor-\/fold>//GEN-\/END:initComponents}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00308}00308\ }
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00315}\mbox{\hyperlink{classclient_1_1emotions_summary___gui_a6e71847d382ed74fda21f22868f93a44}{00315}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a6e71847d382ed74fda21f22868f93a44}{jTblEmoMouseClicked}}(java.awt.event.MouseEvent\ evt)\ \{\textcolor{comment}{//GEN-\/FIRST:event\_jTblEmoMouseClicked}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00316}00316\ \ \ \ \ \ \ \ \ \textcolor{comment}{//ottengo\ l'indice\ della\ riga\ selezionata\ dalla\ tabella\ jTblEmo}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00317}00317\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ selectedRowIndex\ =\ this.jTblEmo.getSelectedRow();}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00318}00318\ \ \ \ \ \ \ \ \ \textcolor{comment}{//oggetto\ di\ tipo\ JDialog\ contenente\ il\ riferimento\ al\ nuovo\ JPanel,\ notes\_Gui}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00319}00319\ \ \ \ \ \ \ \ \ JDialog\ frame\ =\ \textcolor{keyword}{new}\ JDialog(this.previousframe,\ \textcolor{stringliteral}{"{}notes\_Gui"{}},\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00320}00320\ \ \ \ \ \ \ \ \ \textcolor{comment}{//aggiunta\ dell'istanza\ del\ nuovo\ JPanel\ notes\_Gui\ al\ JDialog.}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00321}00321\ \ \ \ \ \ \ \ \ frame.getContentPane().add(\textcolor{keyword}{new}\ \mbox{\hyperlink{classclient_1_1notes___gui}{notes\_Gui}}(this.emo\_canzone,\ selectedRowIndex,\ is));}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00322}00322\ \ \ \ \ \ \ \ \ \textcolor{comment}{//packing\ del\ nuovo\ JPanel}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00323}00323\ \ \ \ \ \ \ \ \ frame.pack();}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00324}00324\ \ \ \ \ \ \ \ \ \textcolor{comment}{//visualizzazione\ del\ nuovo\ JPanel\ appena\ realizzato}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00325}00325\ \ \ \ \ \ \ \ \ frame.setVisible(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00326}00326\ \ \ \ \ \}\textcolor{comment}{//GEN-\/LAST:event\_jTblEmoMouseClicked}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00327}00327\ }
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00328}00328\ }
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00329}00329\ \ \ \ \ \textcolor{comment}{//\ Variables\ declaration\ -\/\ do\ not\ modify//GEN-\/BEGIN:variables}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00330}\mbox{\hyperlink{classclient_1_1emotions_summary___gui_a47066ebb7b751f52b9debcc4bd1b1ee4}{00330}}\ \ \ \ \ \textcolor{keyword}{private}\ javax.swing.JLabel\ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a47066ebb7b751f52b9debcc4bd1b1ee4}{jLabel1}};}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00331}\mbox{\hyperlink{classclient_1_1emotions_summary___gui_aac4c74e7fdef17e600ac902cf40ee766}{00331}}\ \ \ \ \ \textcolor{keyword}{private}\ javax.swing.JLabel\ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_aac4c74e7fdef17e600ac902cf40ee766}{jLabel2}};}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00332}\mbox{\hyperlink{classclient_1_1emotions_summary___gui_aae4319d2cb4ac19c9a2c7d4d3a2549f4}{00332}}\ \ \ \ \ \textcolor{keyword}{private}\ javax.swing.JScrollPane\ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_aae4319d2cb4ac19c9a2c7d4d3a2549f4}{jScrollPane1}};}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00333}\mbox{\hyperlink{classclient_1_1emotions_summary___gui_a689abddd5ea4d8762f87f1f2cef0b3d2}{00333}}\ \ \ \ \ \textcolor{keyword}{private}\ javax.swing.JTable\ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a689abddd5ea4d8762f87f1f2cef0b3d2}{jTblEmo}};}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00334}00334\ \ \ \ \ \textcolor{comment}{//\ End\ of\ variables\ declaration//GEN-\/END:variables}}
+\DoxyCodeLine{\Hypertarget{emotions_summary___gui_8java_source_l00335}00335\ \}}
+
+\end{DoxyCode}

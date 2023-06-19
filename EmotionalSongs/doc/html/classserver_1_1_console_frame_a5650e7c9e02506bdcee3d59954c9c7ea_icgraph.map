@@ -1,0 +1,5 @@
+<map id="getMedie" name="getMedie">
+<area shape="rect" id="Node000001" title="Metodo che calcola la media delle emozioni." alt="" coords="211,5,285,32"/>
+<area shape="rect" id="Node000002" href="$classserver_1_1_console_frame.html#ab853f77a8f5cd283bea964765761826f" title="Metodo che restituisce le emozioni del brano specificato." alt="" coords="5,5,163,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="196,21,163,21,163,16,196,16"/>
+</map>

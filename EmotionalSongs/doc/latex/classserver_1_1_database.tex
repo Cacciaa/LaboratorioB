@@ -1,0 +1,304 @@
+\doxysection{Database Class Reference}
+\hypertarget{classserver_1_1_database}{}\label{classserver_1_1_database}\index{Database@{Database}}
+
+
+Inheritance diagram for Database\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{classserver_1_1_database__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Database\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classserver_1_1_database__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Result\+Set \mbox{\hyperlink{classserver_1_1_database_a63798edbcf11407baff763318dcedfe4}{submit\+Query}} (String query)  throws SQLException 
+\item 
+int \mbox{\hyperlink{classserver_1_1_database_a7b64023b56873602866a8fd818cd5ba9}{submit\+Query\+Update}} (String query)  throws SQLException 
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classserver_1_1_database}{Database}} \mbox{\hyperlink{classserver_1_1_database_a5f04558a87c02a65442ec6eeba0b5929}{get\+Instance}} (String \mbox{\hyperlink{classserver_1_1_database_ab7c6784a693ab3b1550486d8ecdd6a8d}{user}}, String \mbox{\hyperlink{classserver_1_1_database_a519725e0c97d7f502af54e1b185fbc09}{pass}})  throws SQLException 
+\item 
+static Connection \mbox{\hyperlink{classserver_1_1_database_ae35bfb821454e311d6c8849969ad109d}{get\+Connection}} ()  throws SQLException 
+\item 
+static void \mbox{\hyperlink{classserver_1_1_database_a711778433c684417c6a467e19118351f}{close\+Connection}} ()  throws SQLException 
+\item 
+static Statement \mbox{\hyperlink{classserver_1_1_database_a3e307c64531dfa9321371702a4576b9f}{get\+Statement}} ()  throws SQLException 
+\item 
+static void \mbox{\hyperlink{classserver_1_1_database_a08980ffc1c0fac8b59aa2877c5d3f8c6}{close\+Statement}} ()  throws SQLException 
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classserver_1_1_database_a299c9e4c9a75dcfb6eac0b9c8ec7858d}{Database}} (String username, String password)  throws SQLException 
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final String \mbox{\hyperlink{classserver_1_1_database_a116e805cc5f9e6194e93ab2754c3fd8b}{protocol}} = \"{}jdbc\+:postgresql\"{} + \"{}\+://\"{}
+\item 
+static final String \mbox{\hyperlink{classserver_1_1_database_afb5f10da1023919a7b41efd93012ce27}{host}} = \"{}emotionalsongs.\+c9bcs8galrpt.\+eu-\/north-\/1.rds.\+amazonaws.\+com\+:5432\"{} + \"{}/\"{}
+\item 
+static final String \mbox{\hyperlink{classserver_1_1_database_a9ab05825fba466bc0be361bf6906a515}{resource}} = \"{}Emotional\+Songs\"{}
+\item 
+static final String \mbox{\hyperlink{classserver_1_1_database_a2422d293e4ee9d02ee4d0e1885feb45f}{url}} = \mbox{\hyperlink{classserver_1_1_database_a116e805cc5f9e6194e93ab2754c3fd8b}{protocol}} + \mbox{\hyperlink{classserver_1_1_database_afb5f10da1023919a7b41efd93012ce27}{host}} + \mbox{\hyperlink{classserver_1_1_database_a9ab05825fba466bc0be361bf6906a515}{resource}}
+\item 
+static String \mbox{\hyperlink{classserver_1_1_database_ab7c6784a693ab3b1550486d8ecdd6a8d}{user}}
+\item 
+static String \mbox{\hyperlink{classserver_1_1_database_a519725e0c97d7f502af54e1b185fbc09}{pass}}
+\item 
+static \mbox{\hyperlink{classserver_1_1_database}{Database}} \mbox{\hyperlink{classserver_1_1_database_a781c289826d0041d9a1e4d7f746b20a2}{database}}
+\item 
+static Connection \mbox{\hyperlink{classserver_1_1_database_a35abe4ec1e0b2290a115a322647eb8c2}{connection}}
+\item 
+static Statement \mbox{\hyperlink{classserver_1_1_database_a32a4bcbdff49dbded9bbe514c9a1a016}{statement}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Lorenzo Erba, 748702
+\end{DoxyAuthor}
+Lorenzo Erba, 748702,Ferialdo Elezi 749721,Alessandro Zancanella 751494,Matteo Cacciarino 748231, sede CO
+
+Classe rappresentante la connessione al database 
+
+Definition at line \mbox{\hyperlink{_database_8java_source_l00023}{23}} of file \mbox{\hyperlink{_database_8java_source}{Database.\+java}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classserver_1_1_database_a299c9e4c9a75dcfb6eac0b9c8ec7858d}\label{classserver_1_1_database_a299c9e4c9a75dcfb6eac0b9c8ec7858d} 
+\index{Database@{Database}!Database@{Database}}
+\index{Database@{Database}!Database@{Database}}
+\doxysubsubsection{\texorpdfstring{Database()}{Database()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classserver_1_1_database}{Database}} (\begin{DoxyParamCaption}\item[{String}]{username,  }\item[{String}]{password }\end{DoxyParamCaption}) throws SQLException\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_database_8java_source_l00039}{39}} of file \mbox{\hyperlink{_database_8java_source}{Database.\+java}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classserver_1_1_database_a711778433c684417c6a467e19118351f}\label{classserver_1_1_database_a711778433c684417c6a467e19118351f} 
+\index{Database@{Database}!closeConnection@{closeConnection}}
+\index{closeConnection@{closeConnection}!Database@{Database}}
+\doxysubsubsection{\texorpdfstring{closeConnection()}{closeConnection()}}
+{\footnotesize\ttfamily static void close\+Connection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws SQLException\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_database_8java_source_l00079}{79}} of file \mbox{\hyperlink{_database_8java_source}{Database.\+java}}.
+
+\Hypertarget{classserver_1_1_database_a08980ffc1c0fac8b59aa2877c5d3f8c6}\label{classserver_1_1_database_a08980ffc1c0fac8b59aa2877c5d3f8c6} 
+\index{Database@{Database}!closeStatement@{closeStatement}}
+\index{closeStatement@{closeStatement}!Database@{Database}}
+\doxysubsubsection{\texorpdfstring{closeStatement()}{closeStatement()}}
+{\footnotesize\ttfamily static void close\+Statement (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws SQLException\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_database_8java_source_l00098}{98}} of file \mbox{\hyperlink{_database_8java_source}{Database.\+java}}.
+
+\Hypertarget{classserver_1_1_database_ae35bfb821454e311d6c8849969ad109d}\label{classserver_1_1_database_ae35bfb821454e311d6c8849969ad109d} 
+\index{Database@{Database}!getConnection@{getConnection}}
+\index{getConnection@{getConnection}!Database@{Database}}
+\doxysubsubsection{\texorpdfstring{getConnection()}{getConnection()}}
+{\footnotesize\ttfamily static Connection get\+Connection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws SQLException\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_database_8java_source_l00069}{69}} of file \mbox{\hyperlink{_database_8java_source}{Database.\+java}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=269pt]{classserver_1_1_database_ae35bfb821454e311d6c8849969ad109d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classserver_1_1_database_a5f04558a87c02a65442ec6eeba0b5929}\label{classserver_1_1_database_a5f04558a87c02a65442ec6eeba0b5929} 
+\index{Database@{Database}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!Database@{Database}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classserver_1_1_database}{Database}} get\+Instance (\begin{DoxyParamCaption}\item[{String}]{user,  }\item[{String}]{pass }\end{DoxyParamCaption}) throws SQLException\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_database_8java_source_l00049}{49}} of file \mbox{\hyperlink{_database_8java_source}{Database.\+java}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{classserver_1_1_database_a5f04558a87c02a65442ec6eeba0b5929_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classserver_1_1_database_a3e307c64531dfa9321371702a4576b9f}\label{classserver_1_1_database_a3e307c64531dfa9321371702a4576b9f} 
+\index{Database@{Database}!getStatement@{getStatement}}
+\index{getStatement@{getStatement}!Database@{Database}}
+\doxysubsubsection{\texorpdfstring{getStatement()}{getStatement()}}
+{\footnotesize\ttfamily static Statement get\+Statement (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws SQLException\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_database_8java_source_l00086}{86}} of file \mbox{\hyperlink{_database_8java_source}{Database.\+java}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=269pt]{classserver_1_1_database_a3e307c64531dfa9321371702a4576b9f_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classserver_1_1_database_a63798edbcf11407baff763318dcedfe4}\label{classserver_1_1_database_a63798edbcf11407baff763318dcedfe4} 
+\index{Database@{Database}!submitQuery@{submitQuery}}
+\index{submitQuery@{submitQuery}!Database@{Database}}
+\doxysubsubsection{\texorpdfstring{submitQuery()}{submitQuery()}}
+{\footnotesize\ttfamily Result\+Set submit\+Query (\begin{DoxyParamCaption}\item[{String}]{query }\end{DoxyParamCaption}) throws SQLException}
+
+
+
+Definition at line \mbox{\hyperlink{_database_8java_source_l00059}{59}} of file \mbox{\hyperlink{_database_8java_source}{Database.\+java}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classserver_1_1_database_a63798edbcf11407baff763318dcedfe4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classserver_1_1_database_a7b64023b56873602866a8fd818cd5ba9}\label{classserver_1_1_database_a7b64023b56873602866a8fd818cd5ba9} 
+\index{Database@{Database}!submitQueryUpdate@{submitQueryUpdate}}
+\index{submitQueryUpdate@{submitQueryUpdate}!Database@{Database}}
+\doxysubsubsection{\texorpdfstring{submitQueryUpdate()}{submitQueryUpdate()}}
+{\footnotesize\ttfamily int submit\+Query\+Update (\begin{DoxyParamCaption}\item[{String}]{query }\end{DoxyParamCaption}) throws SQLException}
+
+
+
+Definition at line \mbox{\hyperlink{_database_8java_source_l00064}{64}} of file \mbox{\hyperlink{_database_8java_source}{Database.\+java}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classserver_1_1_database_a7b64023b56873602866a8fd818cd5ba9_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classserver_1_1_database_a35abe4ec1e0b2290a115a322647eb8c2}\label{classserver_1_1_database_a35abe4ec1e0b2290a115a322647eb8c2} 
+\index{Database@{Database}!connection@{connection}}
+\index{connection@{connection}!Database@{Database}}
+\doxysubsubsection{\texorpdfstring{connection}{connection}}
+{\footnotesize\ttfamily Connection connection\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_database_8java_source_l00034}{34}} of file \mbox{\hyperlink{_database_8java_source}{Database.\+java}}.
+
+\Hypertarget{classserver_1_1_database_a781c289826d0041d9a1e4d7f746b20a2}\label{classserver_1_1_database_a781c289826d0041d9a1e4d7f746b20a2} 
+\index{Database@{Database}!database@{database}}
+\index{database@{database}!Database@{Database}}
+\doxysubsubsection{\texorpdfstring{database}{database}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classserver_1_1_database}{Database}} database\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_database_8java_source_l00033}{33}} of file \mbox{\hyperlink{_database_8java_source}{Database.\+java}}.
+
+\Hypertarget{classserver_1_1_database_afb5f10da1023919a7b41efd93012ce27}\label{classserver_1_1_database_afb5f10da1023919a7b41efd93012ce27} 
+\index{Database@{Database}!host@{host}}
+\index{host@{host}!Database@{Database}}
+\doxysubsubsection{\texorpdfstring{host}{host}}
+{\footnotesize\ttfamily final String host = \"{}emotionalsongs.\+c9bcs8galrpt.\+eu-\/north-\/1.rds.\+amazonaws.\+com\+:5432\"{} + \"{}/\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_database_8java_source_l00026}{26}} of file \mbox{\hyperlink{_database_8java_source}{Database.\+java}}.
+
+\Hypertarget{classserver_1_1_database_a519725e0c97d7f502af54e1b185fbc09}\label{classserver_1_1_database_a519725e0c97d7f502af54e1b185fbc09} 
+\index{Database@{Database}!pass@{pass}}
+\index{pass@{pass}!Database@{Database}}
+\doxysubsubsection{\texorpdfstring{pass}{pass}}
+{\footnotesize\ttfamily String pass\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_database_8java_source_l00031}{31}} of file \mbox{\hyperlink{_database_8java_source}{Database.\+java}}.
+
+\Hypertarget{classserver_1_1_database_a116e805cc5f9e6194e93ab2754c3fd8b}\label{classserver_1_1_database_a116e805cc5f9e6194e93ab2754c3fd8b} 
+\index{Database@{Database}!protocol@{protocol}}
+\index{protocol@{protocol}!Database@{Database}}
+\doxysubsubsection{\texorpdfstring{protocol}{protocol}}
+{\footnotesize\ttfamily final String protocol = \"{}jdbc\+:postgresql\"{} + \"{}\+://\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_database_8java_source_l00025}{25}} of file \mbox{\hyperlink{_database_8java_source}{Database.\+java}}.
+
+\Hypertarget{classserver_1_1_database_a9ab05825fba466bc0be361bf6906a515}\label{classserver_1_1_database_a9ab05825fba466bc0be361bf6906a515} 
+\index{Database@{Database}!resource@{resource}}
+\index{resource@{resource}!Database@{Database}}
+\doxysubsubsection{\texorpdfstring{resource}{resource}}
+{\footnotesize\ttfamily final String resource = \"{}Emotional\+Songs\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_database_8java_source_l00027}{27}} of file \mbox{\hyperlink{_database_8java_source}{Database.\+java}}.
+
+\Hypertarget{classserver_1_1_database_a32a4bcbdff49dbded9bbe514c9a1a016}\label{classserver_1_1_database_a32a4bcbdff49dbded9bbe514c9a1a016} 
+\index{Database@{Database}!statement@{statement}}
+\index{statement@{statement}!Database@{Database}}
+\doxysubsubsection{\texorpdfstring{statement}{statement}}
+{\footnotesize\ttfamily Statement statement\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_database_8java_source_l00035}{35}} of file \mbox{\hyperlink{_database_8java_source}{Database.\+java}}.
+
+\Hypertarget{classserver_1_1_database_a2422d293e4ee9d02ee4d0e1885feb45f}\label{classserver_1_1_database_a2422d293e4ee9d02ee4d0e1885feb45f} 
+\index{Database@{Database}!url@{url}}
+\index{url@{url}!Database@{Database}}
+\doxysubsubsection{\texorpdfstring{url}{url}}
+{\footnotesize\ttfamily final String url = \mbox{\hyperlink{classserver_1_1_database_a116e805cc5f9e6194e93ab2754c3fd8b}{protocol}} + \mbox{\hyperlink{classserver_1_1_database_afb5f10da1023919a7b41efd93012ce27}{host}} + \mbox{\hyperlink{classserver_1_1_database_a9ab05825fba466bc0be361bf6906a515}{resource}}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_database_8java_source_l00029}{29}} of file \mbox{\hyperlink{_database_8java_source}{Database.\+java}}.
+
+\Hypertarget{classserver_1_1_database_ab7c6784a693ab3b1550486d8ecdd6a8d}\label{classserver_1_1_database_ab7c6784a693ab3b1550486d8ecdd6a8d} 
+\index{Database@{Database}!user@{user}}
+\index{user@{user}!Database@{Database}}
+\doxysubsubsection{\texorpdfstring{user}{user}}
+{\footnotesize\ttfamily String user\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_database_8java_source_l00030}{30}} of file \mbox{\hyperlink{_database_8java_source}{Database.\+java}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/main/java/server/\mbox{\hyperlink{_database_8java}{Database.\+java}}\end{DoxyCompactItemize}

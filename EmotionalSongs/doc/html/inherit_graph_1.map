@@ -1,0 +1,29 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" title=" " alt="" coords="17,81,82,108"/>
+<area shape="rect" id="Node000001" href="$classclient_1_1_emotional_songs.html" title=" " alt="" coords="147,5,263,32"/>
+<area shape="poly" id="edge9_Node000000_Node000001" title=" " alt="" coords="85,71,140,42,167,30,169,35,143,46,88,76"/>
+<area shape="rect" id="Node000002" href="$classclient_1_1_g_u_i.html" title=" " alt="" coords="183,56,227,83"/>
+<area shape="poly" id="edge10_Node000000_Node000002" title=" " alt="" coords="96,84,182,70,183,75,97,90"/>
+<area shape="rect" id="Node000003" href="$classclient_1_1_g_u_i__login.html" title=" " alt="" coords="166,107,244,133"/>
+<area shape="poly" id="edge11_Node000000_Node000003" title=" " alt="" coords="96,100,166,111,165,116,96,105"/>
+<area shape="rect" id="Node000004" href="$classserver_1_1_server_frame.html" title=" " alt="" coords="158,157,252,184"/>
+<area shape="poly" id="edge12_Node000000_Node000004" title=" " alt="" coords="88,113,143,143,169,154,167,159,140,148,85,118"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="5,360,94,387"/>
+<area shape="poly" id="edge21_Node000005_Node000004" title=" " alt="" coords="56,345,67,311,85,271,109,230,140,194,157,182,160,187,143,198,113,233,90,273,72,313,61,347"/>
+<area shape="rect" id="Node000006" href="$classcommon_1_1_canzoni.html" title=" " alt="" coords="171,208,239,235"/>
+<area shape="poly" id="edge13_Node000005_Node000006" title=" " alt="" coords="62,345,93,295,115,268,140,245,169,229,171,233,143,249,119,272,98,298,66,348"/>
+<area shape="rect" id="Node000007" href="$classcommon_1_1_emozioni.html" title=" " alt="" coords="167,259,243,285"/>
+<area shape="poly" id="edge14_Node000005_Node000007" title=" " alt="" coords="73,348,104,321,140,295,165,283,168,287,143,300,107,325,77,352"/>
+<area shape="rect" id="Node000008" href="$classcommon_1_1_emozioni_canzone.html" title=" " alt="" coords="142,309,268,336"/>
+<area shape="poly" id="edge15_Node000005_Node000008" title=" " alt="" coords="106,352,161,334,162,339,107,357"/>
+<area shape="rect" id="Node000009" href="$classcommon_1_1_media_emozioni.html" title=" " alt="" coords="150,360,260,387"/>
+<area shape="poly" id="edge16_Node000005_Node000009" title=" " alt="" coords="109,371,149,371,149,376,109,376"/>
+<area shape="rect" id="Node000010" href="$classcommon_1_1_playlist.html" title=" " alt="" coords="173,411,237,437"/>
+<area shape="poly" id="edge17_Node000005_Node000010" title=" " alt="" coords="107,389,173,411,171,416,106,394"/>
+<area shape="rect" id="Node000011" href="$classcommon_1_1_utenti_registrati.html" title=" " alt="" coords="150,461,260,488"/>
+<area shape="poly" id="edge18_Node000005_Node000011" title=" " alt="" coords="77,395,107,422,143,447,166,459,163,463,140,452,104,426,73,399"/>
+<area shape="rect" id="Node000012" href="$classserver_1_1_data_tables.html" title=" " alt="" coords="162,512,248,539"/>
+<area shape="poly" id="edge19_Node000005_Node000012" title=" " alt="" coords="66,398,98,449,119,475,143,498,163,509,160,514,140,502,115,479,93,452,62,401"/>
+<area shape="rect" id="Node000013" href="$classserver_1_1_database.html" title=" " alt="" coords="167,563,243,589"/>
+<area shape="poly" id="edge20_Node000005_Node000013" title=" " alt="" coords="61,400,72,434,90,473,113,513,143,549,168,563,165,568,140,553,109,517,85,476,67,436,56,402"/>
+</map>

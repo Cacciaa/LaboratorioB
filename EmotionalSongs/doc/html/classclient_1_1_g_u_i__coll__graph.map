@@ -1,0 +1,11 @@
+<map id="GUI" name="GUI">
+<area shape="rect" id="Node000001" title=" " alt="" coords="11,465,216,897"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,220,61,289"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="45,303,75,465,70,466,40,304"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="86,220,141,289"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="116,289,116,448,111,448,111,289"/>
+<area shape="rect" id="Node000004" href="$interfacecommon_1_1_interfaccia_servizio.html" title=" " alt="" coords="225,124,394,385"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="299,386,282,442,258,494,228,543,223,540,253,491,278,440,294,384"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="281,5,338,75"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="312,89,312,124,307,124,307,89"/>
+</map>
