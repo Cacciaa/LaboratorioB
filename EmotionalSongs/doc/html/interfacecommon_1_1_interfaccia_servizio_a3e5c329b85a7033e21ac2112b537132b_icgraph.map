@@ -1,0 +1,9 @@
+<map id="getEmozioniFromBrano" name="getEmozioniFromBrano">
+<area shape="rect" id="Node000001" title="Metodo che restituisce le emozioni del brano specificato." alt="" coords="488,47,645,73"/>
+<area shape="rect" id="Node000002" href="$classclient_1_1emotions_summary___gui.html#a1f6821bf85e6b5a41c287f82232b7d7e" title=" " alt="" coords="240,39,440,81"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="473,63,441,63,441,57,473,57"/>
+<area shape="rect" id="Node000003" href="$classclient_1_1repository_choice___gui.html#a8ac11cd567b799ade53c11e13192ac19" title=" " alt="" coords="5,5,192,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="224,47,192,42,193,37,225,41"/>
+<area shape="rect" id="Node000004" href="$classclient_1_1repository_choice___gui.html#a532a62757b61e85362ece5a42a5491ab" title=" " alt="" coords="11,72,186,115"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="225,79,187,84,186,79,224,73"/>
+</map>

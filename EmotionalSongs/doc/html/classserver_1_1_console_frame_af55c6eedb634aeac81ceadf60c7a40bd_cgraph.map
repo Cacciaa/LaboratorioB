@@ -1,0 +1,9 @@
+<map id="login" name="login">
+<area shape="rect" id="Node000001" title="Metodo per effettuare il login dell&#39;utente al sistema." alt="" coords="5,64,54,91"/>
+<area shape="rect" id="Node000002" href="$classserver_1_1_data_tables.html#a0e6f7209056feb473378536eae3ad5b2" title="Metodo invocato per effettuare il login da parte dell&#39;utente. Controlla se l&#39;utente che ha richiesto ..." alt="" coords="102,5,296,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="53,63,101,42,124,34,125,39,103,46,55,68"/>
+<area shape="rect" id="Node000003" href="$classserver_1_1_data_tables.html#ac643d664a89366eee3c0addd82aae862" title="Metodo invocato per mappare il datamodel degli utenti registrati ottenuti dall&#39;esecuzione delle query..." alt="" coords="116,56,282,99"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="54,75,100,75,100,80,54,80"/>
+<area shape="rect" id="Node000004" href="$classserver_1_1_database.html#a63798edbcf11407baff763318dcedfe4" title=" " alt="" coords="103,123,295,149"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="55,87,103,108,125,116,124,121,101,113,53,92"/>
+</map>

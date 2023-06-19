@@ -1,0 +1,20 @@
+<map id="getEmozioniFromBrano" name="getEmozioniFromBrano">
+<area shape="rect" id="Node000001" title="Metodo che restituisce le emozioni del brano specificato." alt="" coords="5,115,163,141"/>
+<area shape="rect" id="Node000002" href="$classserver_1_1_console_frame.html#a4e36e2a2f60c7b632247726669fb7fb8" title="Metodo che restituisce le emozioni relative a una canzone." alt="" coords="257,5,351,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,112,148,77,210,42,242,30,244,35,212,46,151,82,104,116"/>
+<area shape="rect" id="Node000004" href="$classserver_1_1_console_frame.html#a5650e7c9e02506bdcee3d59954c9c7ea" title="Metodo che calcola la media delle emozioni." alt="" coords="267,56,341,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="136,112,251,80,253,86,137,117"/>
+<area shape="rect" id="Node000005" href="$classserver_1_1_data_tables.html#acc2d867115d6f0ee4c6f5eaf8f830a45" title="Metodo invocato per mappare il datamodel delle medie emozioni ottenute dall&#39;esecuzione delle query." alt="" coords="221,107,387,149"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="163,125,205,125,205,131,163,131"/>
+<area shape="rect" id="Node000006" href="$classserver_1_1_data_tables.html#a131555d9ee80185bbbe2758af00accc3" title="Metodo invocato per mappare il datamodel delle emozioni ottenute dall&#39;esecuzione delle query." alt="" coords="221,173,387,216"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="132,139,218,166,216,171,130,145"/>
+<area shape="rect" id="Node000009" href="$classcommon_1_1_emozioni.html#a7903d39aea16f902e59f33d05a94d5f6" title="Setter dell&#39;attributo media." alt="" coords="211,240,397,267"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="100,140,147,182,178,206,212,226,226,232,224,237,209,230,175,210,144,186,97,144"/>
+<area shape="rect" id="Node000003" href="$classserver_1_1_database.html#a63798edbcf11407baff763318dcedfe4" title=" " alt="" coords="447,31,639,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="351,21,432,30,432,35,351,26"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="341,63,432,53,432,58,342,68"/>
+<area shape="rect" id="Node000007" href="$classcommon_1_1_emozioni.html#a32e1283ebd4fa970b161df43e5bbeefd" title="Aggiunge l&#39;emozione rilasciata da un utente per una determinata canzone alla lista attributo emozioni..." alt="" coords="453,140,634,183"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="387,180,438,173,438,179,388,186"/>
+<area shape="rect" id="Node000008" href="$classcommon_1_1_emozioni.html#ad88b850dc4c311a700d611497e7c7cf5" title=" " alt="" coords="445,207,641,249"/>
+<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="388,204,430,210,430,215,387,209"/>
+</map>

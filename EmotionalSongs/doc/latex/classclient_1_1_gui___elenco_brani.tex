@@ -1,0 +1,261 @@
+\doxysection{Gui\+\_\+\+Elenco\+Brani Class Reference}
+\hypertarget{classclient_1_1_gui___elenco_brani}{}\label{classclient_1_1_gui___elenco_brani}\index{Gui\_ElencoBrani@{Gui\_ElencoBrani}}
+
+
+Inheritance diagram for Gui\+\_\+\+Elenco\+Brani\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{classclient_1_1_gui___elenco_brani__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Gui\+\_\+\+Elenco\+Brani\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classclient_1_1_gui___elenco_brani__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a3ecac1a96e044d26a890d04c61a3c852}{Gui\+\_\+\+Elenco\+Brani}} (String user\+Id, \mbox{\hyperlink{classcommon_1_1_playlist}{Playlist}} \mbox{\hyperlink{classclient_1_1_gui___elenco_brani_aaedbebaa1ad73912443b3fb40e7cb302}{pl}}, \mbox{\hyperlink{classclient_1_1_emotional_songs}{Emotional\+Songs}} emo, \mbox{\hyperlink{interfacecommon_1_1_interfaccia_servizio}{Interfaccia\+Servizio}} \mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a6a810c68843a0f123de03f49ffb925c0}{is}})
+\item 
+void \mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a95ec5dc2d151540c4e79368afc96a94a}{visualizza\+Brani\+Playlist}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a77410fe5c5b5ddb55910cd7a2297bff7}{init\+Components}} ()
+\item 
+void \mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a7d809ec39a3bfd18942c19051358ae8b}{j\+Table2\+Mouse\+Clicked}} (java.\+awt.\+event.\+Mouse\+Event evt)
+\item 
+Vector$<$ String $>$ \mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a8a325cceb146e97a296835946f882ef6}{transform}} (int index, Array\+List$<$ \mbox{\hyperlink{classcommon_1_1_canzoni}{Canzoni}} $>$ brani)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+final String \mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a22afacadf2dac8db60bfd2a4e953b60a}{id\+Utente}}
+\item 
+\mbox{\hyperlink{classcommon_1_1_playlist}{Playlist}} \mbox{\hyperlink{classclient_1_1_gui___elenco_brani_aaedbebaa1ad73912443b3fb40e7cb302}{pl}}
+\item 
+\mbox{\hyperlink{classclient_1_1_emotional_songs}{Emotional\+Songs}} \mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a3be0ddc23a2b1177681f10d32f038df7}{previousframe}}
+\item 
+\mbox{\hyperlink{interfacecommon_1_1_interfaccia_servizio}{Interfaccia\+Servizio}} \mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a6a810c68843a0f123de03f49ffb925c0}{is}}
+\item 
+javax.\+swing.\+JLabel \mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a47066ebb7b751f52b9debcc4bd1b1ee4}{j\+Label1}}
+\item 
+javax.\+swing.\+JScroll\+Pane \mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a3ff9eafda5b4cd0c2e725de32515928f}{j\+Scroll\+Pane2}}
+\item 
+javax.\+swing.\+JTable \mbox{\hyperlink{classclient_1_1_gui___elenco_brani_a19b692dc8dc39dc61a55e9dd69106215}{j\+Table2}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Matteo Cacciarino, 748231, Lorenzo Erba, 748702,Ferialdo Elezi 749721,Alessandro Zancanella 751494, sede CO
+\end{DoxyAuthor}
+Classe rappresentante il pannello che visualizza l\textquotesingle{}elenco dei brani della playlist. 
+
+Definition at line \mbox{\hyperlink{_gui___elenco_brani_8java_source_l00025}{25}} of file \mbox{\hyperlink{_gui___elenco_brani_8java_source}{Gui\+\_\+\+Elenco\+Brani.\+java}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classclient_1_1_gui___elenco_brani_a3ecac1a96e044d26a890d04c61a3c852}\label{classclient_1_1_gui___elenco_brani_a3ecac1a96e044d26a890d04c61a3c852} 
+\index{Gui\_ElencoBrani@{Gui\_ElencoBrani}!Gui\_ElencoBrani@{Gui\_ElencoBrani}}
+\index{Gui\_ElencoBrani@{Gui\_ElencoBrani}!Gui\_ElencoBrani@{Gui\_ElencoBrani}}
+\doxysubsubsection{\texorpdfstring{Gui\_ElencoBrani()}{Gui\_ElencoBrani()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classclient_1_1_gui___elenco_brani}{Gui\+\_\+\+Elenco\+Brani}} (\begin{DoxyParamCaption}\item[{String}]{user\+Id,  }\item[{\mbox{\hyperlink{classcommon_1_1_playlist}{Playlist}}}]{pl,  }\item[{\mbox{\hyperlink{classclient_1_1_emotional_songs}{Emotional\+Songs}}}]{emo,  }\item[{\mbox{\hyperlink{interfacecommon_1_1_interfaccia_servizio}{Interfaccia\+Servizio}}}]{is }\end{DoxyParamCaption})}
+
+Costruttore parametrico che inizializza tutti gli attributi
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Id} & parametro di tipo String contenente l\textquotesingle{}id dell\textquotesingle{}utente \\
+\hline
+{\em pl} & parametro di tipo Playlist, contenente la playlist selezionata \\
+\hline
+{\em emo} & parametro di tipo Emotional\+Songs contenente il riferimento al Frame iniziale \\
+\hline
+{\em is} & parametro di tipo Interfaccia\+Servizio, contenente i metodi messi a disposizione dal server \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_gui___elenco_brani_8java_source_l00040}{40}} of file \mbox{\hyperlink{_gui___elenco_brani_8java_source}{Gui\+\_\+\+Elenco\+Brani.\+java}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classclient_1_1_gui___elenco_brani_a3ecac1a96e044d26a890d04c61a3c852_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classclient_1_1_gui___elenco_brani_a77410fe5c5b5ddb55910cd7a2297bff7}\label{classclient_1_1_gui___elenco_brani_a77410fe5c5b5ddb55910cd7a2297bff7} 
+\index{Gui\_ElencoBrani@{Gui\_ElencoBrani}!initComponents@{initComponents}}
+\index{initComponents@{initComponents}!Gui\_ElencoBrani@{Gui\_ElencoBrani}}
+\doxysubsubsection{\texorpdfstring{initComponents()}{initComponents()}}
+{\footnotesize\ttfamily void init\+Components (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+This method is called from within the constructor to initialize the form. WARNING\+: Do NOT modify this code. The content of this method is always regenerated by the Form Editor. 
+
+Definition at line \mbox{\hyperlink{_gui___elenco_brani_8java_source_l00057}{57}} of file \mbox{\hyperlink{_gui___elenco_brani_8java_source}{Gui\+\_\+\+Elenco\+Brani.\+java}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{classclient_1_1_gui___elenco_brani_a77410fe5c5b5ddb55910cd7a2297bff7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classclient_1_1_gui___elenco_brani_a7d809ec39a3bfd18942c19051358ae8b}\label{classclient_1_1_gui___elenco_brani_a7d809ec39a3bfd18942c19051358ae8b} 
+\index{Gui\_ElencoBrani@{Gui\_ElencoBrani}!jTable2MouseClicked@{jTable2MouseClicked}}
+\index{jTable2MouseClicked@{jTable2MouseClicked}!Gui\_ElencoBrani@{Gui\_ElencoBrani}}
+\doxysubsubsection{\texorpdfstring{jTable2MouseClicked()}{jTable2MouseClicked()}}
+{\footnotesize\ttfamily void j\+Table2\+Mouse\+Clicked (\begin{DoxyParamCaption}\item[{java.\+awt.\+event.\+Mouse\+Event}]{evt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Metodo j\+Table2\+Mouse\+Clicked invocato al momento di un event click, il quale aprirà i JPanel successivo relativo al brano selezionato
+
+
+\begin{DoxyParams}{Parameters}
+{\em evt} & evento del click del bottone \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_gui___elenco_brani_8java_source_l00127}{127}} of file \mbox{\hyperlink{_gui___elenco_brani_8java_source}{Gui\+\_\+\+Elenco\+Brani.\+java}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classclient_1_1_gui___elenco_brani_a7d809ec39a3bfd18942c19051358ae8b_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classclient_1_1_gui___elenco_brani_a8a325cceb146e97a296835946f882ef6}\label{classclient_1_1_gui___elenco_brani_a8a325cceb146e97a296835946f882ef6} 
+\index{Gui\_ElencoBrani@{Gui\_ElencoBrani}!transform@{transform}}
+\index{transform@{transform}!Gui\_ElencoBrani@{Gui\_ElencoBrani}}
+\doxysubsubsection{\texorpdfstring{transform()}{transform()}}
+{\footnotesize\ttfamily Vector$<$ String $>$ transform (\begin{DoxyParamCaption}\item[{int}]{index,  }\item[{Array\+List$<$ \mbox{\hyperlink{classcommon_1_1_canzoni}{Canzoni}} $>$}]{brani }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Metodo che trasforma i brani in un Vector per poterli inserire in una j\+Table
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & parametro di tipo int contenente l\textquotesingle{}indice corrente \\
+\hline
+{\em brani} & Array\+List di tipo Canzone, che è da convertire \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_gui___elenco_brani_8java_source_l00193}{193}} of file \mbox{\hyperlink{_gui___elenco_brani_8java_source}{Gui\+\_\+\+Elenco\+Brani.\+java}}.
+
+\Hypertarget{classclient_1_1_gui___elenco_brani_a95ec5dc2d151540c4e79368afc96a94a}\label{classclient_1_1_gui___elenco_brani_a95ec5dc2d151540c4e79368afc96a94a} 
+\index{Gui\_ElencoBrani@{Gui\_ElencoBrani}!visualizzaBraniPlaylist@{visualizzaBraniPlaylist}}
+\index{visualizzaBraniPlaylist@{visualizzaBraniPlaylist}!Gui\_ElencoBrani@{Gui\_ElencoBrani}}
+\doxysubsubsection{\texorpdfstring{visualizzaBraniPlaylist()}{visualizzaBraniPlaylist()}}
+{\footnotesize\ttfamily void visualizza\+Brani\+Playlist (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Metodo che riempe la tabella con i brani contenuti nella playlist passata come parametro nel costruttore 
+
+Definition at line \mbox{\hyperlink{_gui___elenco_brani_8java_source_l00152}{152}} of file \mbox{\hyperlink{_gui___elenco_brani_8java_source}{Gui\+\_\+\+Elenco\+Brani.\+java}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classclient_1_1_gui___elenco_brani_a95ec5dc2d151540c4e79368afc96a94a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{classclient_1_1_gui___elenco_brani_a95ec5dc2d151540c4e79368afc96a94a_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classclient_1_1_gui___elenco_brani_a22afacadf2dac8db60bfd2a4e953b60a}\label{classclient_1_1_gui___elenco_brani_a22afacadf2dac8db60bfd2a4e953b60a} 
+\index{Gui\_ElencoBrani@{Gui\_ElencoBrani}!idUtente@{idUtente}}
+\index{idUtente@{idUtente}!Gui\_ElencoBrani@{Gui\_ElencoBrani}}
+\doxysubsubsection{\texorpdfstring{idUtente}{idUtente}}
+{\footnotesize\ttfamily final String id\+Utente\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_gui___elenco_brani_8java_source_l00027}{27}} of file \mbox{\hyperlink{_gui___elenco_brani_8java_source}{Gui\+\_\+\+Elenco\+Brani.\+java}}.
+
+\Hypertarget{classclient_1_1_gui___elenco_brani_a6a810c68843a0f123de03f49ffb925c0}\label{classclient_1_1_gui___elenco_brani_a6a810c68843a0f123de03f49ffb925c0} 
+\index{Gui\_ElencoBrani@{Gui\_ElencoBrani}!is@{is}}
+\index{is@{is}!Gui\_ElencoBrani@{Gui\_ElencoBrani}}
+\doxysubsubsection{\texorpdfstring{is}{is}}
+{\footnotesize\ttfamily \mbox{\hyperlink{interfacecommon_1_1_interfaccia_servizio}{Interfaccia\+Servizio}} is\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_gui___elenco_brani_8java_source_l00030}{30}} of file \mbox{\hyperlink{_gui___elenco_brani_8java_source}{Gui\+\_\+\+Elenco\+Brani.\+java}}.
+
+\Hypertarget{classclient_1_1_gui___elenco_brani_a47066ebb7b751f52b9debcc4bd1b1ee4}\label{classclient_1_1_gui___elenco_brani_a47066ebb7b751f52b9debcc4bd1b1ee4} 
+\index{Gui\_ElencoBrani@{Gui\_ElencoBrani}!jLabel1@{jLabel1}}
+\index{jLabel1@{jLabel1}!Gui\_ElencoBrani@{Gui\_ElencoBrani}}
+\doxysubsubsection{\texorpdfstring{jLabel1}{jLabel1}}
+{\footnotesize\ttfamily javax.\+swing.\+JLabel j\+Label1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_gui___elenco_brani_8java_source_l00209}{209}} of file \mbox{\hyperlink{_gui___elenco_brani_8java_source}{Gui\+\_\+\+Elenco\+Brani.\+java}}.
+
+\Hypertarget{classclient_1_1_gui___elenco_brani_a3ff9eafda5b4cd0c2e725de32515928f}\label{classclient_1_1_gui___elenco_brani_a3ff9eafda5b4cd0c2e725de32515928f} 
+\index{Gui\_ElencoBrani@{Gui\_ElencoBrani}!jScrollPane2@{jScrollPane2}}
+\index{jScrollPane2@{jScrollPane2}!Gui\_ElencoBrani@{Gui\_ElencoBrani}}
+\doxysubsubsection{\texorpdfstring{jScrollPane2}{jScrollPane2}}
+{\footnotesize\ttfamily javax.\+swing.\+JScroll\+Pane j\+Scroll\+Pane2\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_gui___elenco_brani_8java_source_l00210}{210}} of file \mbox{\hyperlink{_gui___elenco_brani_8java_source}{Gui\+\_\+\+Elenco\+Brani.\+java}}.
+
+\Hypertarget{classclient_1_1_gui___elenco_brani_a19b692dc8dc39dc61a55e9dd69106215}\label{classclient_1_1_gui___elenco_brani_a19b692dc8dc39dc61a55e9dd69106215} 
+\index{Gui\_ElencoBrani@{Gui\_ElencoBrani}!jTable2@{jTable2}}
+\index{jTable2@{jTable2}!Gui\_ElencoBrani@{Gui\_ElencoBrani}}
+\doxysubsubsection{\texorpdfstring{jTable2}{jTable2}}
+{\footnotesize\ttfamily javax.\+swing.\+JTable j\+Table2\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_gui___elenco_brani_8java_source_l00211}{211}} of file \mbox{\hyperlink{_gui___elenco_brani_8java_source}{Gui\+\_\+\+Elenco\+Brani.\+java}}.
+
+\Hypertarget{classclient_1_1_gui___elenco_brani_aaedbebaa1ad73912443b3fb40e7cb302}\label{classclient_1_1_gui___elenco_brani_aaedbebaa1ad73912443b3fb40e7cb302} 
+\index{Gui\_ElencoBrani@{Gui\_ElencoBrani}!pl@{pl}}
+\index{pl@{pl}!Gui\_ElencoBrani@{Gui\_ElencoBrani}}
+\doxysubsubsection{\texorpdfstring{pl}{pl}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classcommon_1_1_playlist}{Playlist}} pl\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_gui___elenco_brani_8java_source_l00028}{28}} of file \mbox{\hyperlink{_gui___elenco_brani_8java_source}{Gui\+\_\+\+Elenco\+Brani.\+java}}.
+
+\Hypertarget{classclient_1_1_gui___elenco_brani_a3be0ddc23a2b1177681f10d32f038df7}\label{classclient_1_1_gui___elenco_brani_a3be0ddc23a2b1177681f10d32f038df7} 
+\index{Gui\_ElencoBrani@{Gui\_ElencoBrani}!previousframe@{previousframe}}
+\index{previousframe@{previousframe}!Gui\_ElencoBrani@{Gui\_ElencoBrani}}
+\doxysubsubsection{\texorpdfstring{previousframe}{previousframe}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classclient_1_1_emotional_songs}{Emotional\+Songs}} previousframe\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_gui___elenco_brani_8java_source_l00029}{29}} of file \mbox{\hyperlink{_gui___elenco_brani_8java_source}{Gui\+\_\+\+Elenco\+Brani.\+java}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Un\+Insu/\+Lab.\+B/\+Laboratorio\+B/\+Emotional\+Songs/src/main/java/client/\mbox{\hyperlink{_gui___elenco_brani_8java}{Gui\+\_\+\+Elenco\+Brani.\+java}}\end{DoxyCompactItemize}

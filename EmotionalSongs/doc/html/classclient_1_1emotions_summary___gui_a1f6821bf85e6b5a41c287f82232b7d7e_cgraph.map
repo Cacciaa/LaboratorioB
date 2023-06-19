@@ -1,0 +1,35 @@
+<map id="visualizzaEmozioneBrano" name="visualizzaEmozioneBrano">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,255,175,281"/>
+<area shape="rect" id="Node000002" href="$interfacecommon_1_1_interfaccia_servizio.html#a3e5c329b85a7033e21ac2112b537132b" title="Metodo che restituisce le emozioni del brano specificato." alt="" coords="223,217,424,260"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="175,255,207,251,208,256,176,260"/>
+<area shape="rect" id="Node000003" href="$classclient_1_1emotions_summary___gui.html#a310179e74b160c2cc815f52ee6cd2721" title=" " alt="" coords="275,284,372,311"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="176,276,260,287,259,292,175,281"/>
+<area shape="rect" id="Node000004" href="$classcommon_1_1_emozioni.html#aefc10683816c035d47de9a95f6ab28f6" title="Getter dell&#39;attributo emozionicanzoni." alt="" coords="472,196,722,223"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="372,287,423,270,437,261,446,251,456,241,471,232,489,225,491,230,473,237,459,246,450,255,440,265,425,274,373,292"/>
+<area shape="rect" id="Node000005" href="$classcommon_1_1_emozioni.html#ad88b850dc4c311a700d611497e7c7cf5" title=" " alt="" coords="499,247,695,289"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="372,290,484,277,485,283,373,295"/>
+<area shape="rect" id="Node000006" href="$classclient_1_1emotions_summary___gui.html#ab9bf3a317754f4f25734391084d8fb16" title=" " alt="" coords="540,313,655,340"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="373,300,525,316,524,322,372,305"/>
+<area shape="rect" id="Node000017" href="$classclient_1_1emotions_summary___gui.html#aea57484bfccf7e0cc511b066b51a4a31" title=" " alt="" coords="560,364,635,391"/>
+<area shape="poly" id="edge16_Node000003_Node000017" title=" " alt="" coords="358,309,412,329,473,349,546,366,544,371,471,355,410,334,357,314"/>
+<area shape="rect" id="Node000007" href="$classcommon_1_1_media_emozioni.html#ae8b904075870842ca470d246f8eeadaf" title=" " alt="" coords="770,5,957,48"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="654,326,690,318,706,310,720,299,741,271,750,242,750,213,746,183,742,153,741,122,749,90,768,58,770,56,774,60,772,62,753,92,746,122,747,152,751,182,755,213,755,243,746,273,724,303,709,315,692,323,655,331"/>
+<area shape="rect" id="Node000008" href="$classcommon_1_1_media_emozioni.html#ae8480226fdd466acebc8d757081522f0" title=" " alt="" coords="770,72,957,115"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="654,325,690,317,706,310,720,299,737,279,744,259,746,237,745,216,745,171,753,148,768,125,771,122,775,126,772,128,757,150,751,172,751,215,752,238,750,260,741,282,724,303,709,314,692,322,655,330"/>
+<area shape="rect" id="Node000009" href="$classcommon_1_1_media_emozioni.html#ac284467b45ec48bbf59c9708414759e9" title=" " alt="" coords="770,139,957,181"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="654,324,689,316,721,299,732,287,739,275,745,248,750,220,757,205,768,191,773,188,776,192,772,195,761,208,755,222,750,249,744,277,737,290,724,303,691,321,656,329"/>
+<area shape="rect" id="Node000010" href="$classcommon_1_1_media_emozioni.html#a4aaee5dc0b2d21e6aefcaace30634c90" title=" " alt="" coords="770,205,957,248"/>
+<area shape="poly" id="edge9_Node000006_Node000010" title=" " alt="" coords="655,319,688,311,721,299,735,290,745,280,754,269,769,258,779,252,781,257,772,262,758,273,749,283,739,294,724,304,690,316,656,324"/>
+<area shape="rect" id="Node000011" href="$classcommon_1_1_media_emozioni.html#aab0b8057e094cd37083d07cfcc1e7e57" title=" " alt="" coords="770,272,957,315"/>
+<area shape="poly" id="edge10_Node000006_Node000011" title=" " alt="" coords="655,317,755,304,756,309,655,322"/>
+<area shape="rect" id="Node000012" href="$classcommon_1_1_media_emozioni.html#a44d9b5dd2838c7b19533f51c100a7238" title=" " alt="" coords="770,339,957,381"/>
+<area shape="poly" id="edge11_Node000006_Node000012" title=" " alt="" coords="655,331,756,344,755,349,655,336"/>
+<area shape="rect" id="Node000013" href="$classcommon_1_1_media_emozioni.html#a2efc702bd16705dd5335aa495e7b6513" title=" " alt="" coords="770,405,957,448"/>
+<area shape="poly" id="edge12_Node000006_Node000013" title=" " alt="" coords="656,330,690,337,724,350,739,360,749,370,758,381,772,391,781,396,779,401,769,396,754,385,745,374,735,364,721,354,688,342,655,335"/>
+<area shape="rect" id="Node000014" href="$classcommon_1_1_media_emozioni.html#aba5c3923a652aa3366be4e23a0ec3a68" title=" " alt="" coords="770,472,957,515"/>
+<area shape="poly" id="edge13_Node000006_Node000014" title=" " alt="" coords="656,325,691,333,724,350,737,363,744,377,750,404,755,432,761,445,772,458,776,462,773,466,768,462,757,448,750,433,745,405,739,379,732,366,721,354,689,338,654,330"/>
+<area shape="rect" id="Node000015" href="$classcommon_1_1_media_emozioni.html#a671dbd2254582a8c70569ab4f9d1764a" title=" " alt="" coords="770,539,957,581"/>
+<area shape="poly" id="edge14_Node000006_Node000015" title=" " alt="" coords="655,323,692,331,709,339,724,350,741,372,750,394,752,416,751,438,751,482,757,503,772,525,775,527,771,531,768,528,753,506,745,483,745,438,746,416,744,395,737,374,720,354,706,343,690,336,654,328"/>
+<area shape="rect" id="Node000016" href="$classcommon_1_1_emozioni.html#a81094f0df2f6691d284d9c72a4ab6cef" title="Getter dell&#39;attributo media." alt="" coords="770,605,957,632"/>
+<area shape="poly" id="edge15_Node000006_Node000016" title=" " alt="" coords="655,322,692,330,709,338,724,350,746,380,755,411,754,442,750,472,745,502,745,532,752,562,772,592,775,594,771,598,768,595,748,564,740,533,740,502,745,471,749,441,749,412,741,383,720,354,706,343,690,335,654,328"/>
+</map>

@@ -1,0 +1,16 @@
+<map id="Gui_Playlist" name="Gui_Playlist">
+<area shape="rect" id="Node000001" title=" " alt="" coords="143,769,363,1047"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,543,57,612"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="43,625,55,665,72,704,106,755,145,802,141,805,102,758,68,707,50,666,38,626"/>
+<area shape="rect" id="Node000003" href="$classclient_1_1_emotional_songs.html" title=" " alt="" coords="82,449,258,705"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="194,704,203,745,205,753,200,754,198,746,189,706"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="141,220,197,289"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="172,303,172,450,167,450,166,303"/>
+<area shape="rect" id="Node000005" href="$interfacecommon_1_1_interfaccia_servizio.html" title=" " alt="" coords="221,124,391,385"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="310,385,305,557,290,746,289,753,284,752,285,745,300,557,304,385"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="254,386,233,434,228,432,249,384"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="277,5,335,75"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="309,89,309,124,303,124,303,89"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="349,543,421,612"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="376,612,327,746,324,755,319,753,322,744,371,611"/>
+</map>

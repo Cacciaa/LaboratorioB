@@ -1,0 +1,7 @@
+<map id="handleEmozioniSet" name="handleEmozioniSet">
+<area shape="rect" id="Node000001" title="Metodo invocato per mappare il datamodel delle emozioni ottenute dall&#39;esecuzione delle query." alt="" coords="5,47,139,73"/>
+<area shape="rect" id="Node000002" href="$classcommon_1_1_emozioni.html#a32e1283ebd4fa970b161df43e5bbeefd" title="Aggiunge l&#39;emozione rilasciata da un utente per una determinata canzone alla lista attributo emozioni..." alt="" coords="194,5,376,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="139,47,179,41,180,46,140,52"/>
+<area shape="rect" id="Node000003" href="$classcommon_1_1_emozioni.html#ad88b850dc4c311a700d611497e7c7cf5" title=" " alt="" coords="187,72,383,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="140,68,172,73,172,78,139,73"/>
+</map>

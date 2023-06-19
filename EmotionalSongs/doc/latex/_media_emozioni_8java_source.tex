@@ -1,0 +1,108 @@
+\doxysection{Media\+Emozioni.\+java}
+\hypertarget{_media_emozioni_8java_source}{}\label{_media_emozioni_8java_source}\index{D:/UnInsu/Lab.B/LaboratorioB/EmotionalSongs/src/main/java/common/MediaEmozioni.java@{D:/UnInsu/Lab.B/LaboratorioB/EmotionalSongs/src/main/java/common/MediaEmozioni.java}}
+\mbox{\hyperlink{_media_emozioni_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00002}00002\ \textcolor{comment}{\ *\ Click\ nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-\/default.txt\ to\ change\ this\ license}}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00003}00003\ \textcolor{comment}{\ *\ Click\ nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java\ to\ edit\ this\ template}}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00004}00004\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00005}00005\ \textcolor{keyword}{package\ }common;}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00007}00007\ \textcolor{keyword}{import}\ java.io.Serializable;}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00018}\mbox{\hyperlink{classcommon_1_1_media_emozioni}{00018}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcommon_1_1_media_emozioni}{MediaEmozioni}}\ \textcolor{keyword}{implements}\ Serializable\ \{}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00019}00019\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00020}00020\ \ \ \ \ \textcolor{comment}{//attributo\ privato\ di\ tipo\ int\ rappresentante\ la\ media\ dell'emozione\ amazement}}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00021}\mbox{\hyperlink{classcommon_1_1_media_emozioni_abb747e485d5e6071b3f74112b1fd760b}{00021}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_media_emozioni_abb747e485d5e6071b3f74112b1fd760b}{avg\_amazement}};}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00022}00022\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00023}00023\ \ \ \ \ \textcolor{comment}{//attributo\ privato\ di\ tipo\ int\ rappresentante\ la\ media\ dell'emozione\ nostalgia}}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00024}\mbox{\hyperlink{classcommon_1_1_media_emozioni_ab5834a4dddb3b31c99e1bfe05cc6450a}{00024}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_media_emozioni_ab5834a4dddb3b31c99e1bfe05cc6450a}{avg\_nostalgia}};}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00025}00025\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00026}00026\ \ \ \ \ \textcolor{comment}{//attributo\ privato\ di\ tipo\ int\ rappresentante\ la\ media\ dell'emozione\ calmness}}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00027}\mbox{\hyperlink{classcommon_1_1_media_emozioni_adc8a16df5973e68b06a1a3ef79a9fc9d}{00027}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_media_emozioni_adc8a16df5973e68b06a1a3ef79a9fc9d}{avg\_calmness}};}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00028}00028\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00029}00029\ \ \ \ \ \textcolor{comment}{//attributo\ privato\ di\ tipo\ int\ rappresentante\ la\ media\ dell'emozione\ power}}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00030}\mbox{\hyperlink{classcommon_1_1_media_emozioni_a79580402d8e034e76f4989705e2c3e30}{00030}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_media_emozioni_a79580402d8e034e76f4989705e2c3e30}{avg\_power}};}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00031}00031\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00032}00032\ \ \ \ \ \textcolor{comment}{//attributo\ privato\ di\ tipo\ int\ rappresentante\ la\ media\ dell'emozione\ joy}}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00033}\mbox{\hyperlink{classcommon_1_1_media_emozioni_ab2f033a8109affd1d75962951e33afcd}{00033}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_media_emozioni_ab2f033a8109affd1d75962951e33afcd}{avg\_joy}};}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00034}00034\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00035}00035\ \ \ \ \ \textcolor{comment}{//attributo\ privato\ di\ tipo\ int\ rappresentante\ la\ media\ dell'emozione\ tension}}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00036}\mbox{\hyperlink{classcommon_1_1_media_emozioni_a63284f54eaf3ee164b030f54d95bea80}{00036}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_media_emozioni_a63284f54eaf3ee164b030f54d95bea80}{avg\_tension}};}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00037}00037\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00038}00038\ \ \ \ \ \textcolor{comment}{//attributo\ privato\ di\ tipo\ int\ rappresentante\ la\ media\ dell'emozione\ sadness}}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00039}\mbox{\hyperlink{classcommon_1_1_media_emozioni_ac5706bf3a77eb419130df23c74b46cbb}{00039}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_media_emozioni_ac5706bf3a77eb419130df23c74b46cbb}{avg\_sadness}};}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00040}00040\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00041}00041\ \ \ \ \ \textcolor{comment}{//attributo\ privato\ di\ tipo\ int\ rappresentante\ la\ media\ dell'emozione\ tenderness}}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00042}\mbox{\hyperlink{classcommon_1_1_media_emozioni_ae9917735a3b3c68ea13f4e373953811a}{00042}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_media_emozioni_ae9917735a3b3c68ea13f4e373953811a}{avg\_tenderness}};}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00043}00043\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00044}00044\ \ \ \ \ \textcolor{comment}{//attributo\ privato\ di\ tipo\ int\ rappresentante\ la\ media\ dell'emozione\ solemnity}}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00045}\mbox{\hyperlink{classcommon_1_1_media_emozioni_a40f4dc921f43d59c172a7869fb0198ba}{00045}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_media_emozioni_a40f4dc921f43d59c172a7869fb0198ba}{avg\_solemnity}};}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00046}00046\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00059}\mbox{\hyperlink{classcommon_1_1_media_emozioni_aefaab4b5ae8631d8d8bf264be87a29b1}{00059}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classcommon_1_1_media_emozioni_aefaab4b5ae8631d8d8bf264be87a29b1}{MediaEmozioni}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_media_emozioni_abb747e485d5e6071b3f74112b1fd760b}{avg\_amazement}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_media_emozioni_ab5834a4dddb3b31c99e1bfe05cc6450a}{avg\_nostalgia}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_media_emozioni_adc8a16df5973e68b06a1a3ef79a9fc9d}{avg\_calmness}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_media_emozioni_a79580402d8e034e76f4989705e2c3e30}{avg\_power}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_media_emozioni_ab2f033a8109affd1d75962951e33afcd}{avg\_joy}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_media_emozioni_a63284f54eaf3ee164b030f54d95bea80}{avg\_tension}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_media_emozioni_ac5706bf3a77eb419130df23c74b46cbb}{avg\_sadness}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_media_emozioni_ae9917735a3b3c68ea13f4e373953811a}{avg\_tenderness}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_media_emozioni_a40f4dc921f43d59c172a7869fb0198ba}{avg\_solemnity}})\ \{}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00060}00060\ \ \ \ \ \ \ \ \ this.avg\_amazement\ =\ \mbox{\hyperlink{classcommon_1_1_media_emozioni_abb747e485d5e6071b3f74112b1fd760b}{avg\_amazement}};}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00061}00061\ \ \ \ \ \ \ \ \ this.avg\_nostalgia\ =\ \mbox{\hyperlink{classcommon_1_1_media_emozioni_ab5834a4dddb3b31c99e1bfe05cc6450a}{avg\_nostalgia}};}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00062}00062\ \ \ \ \ \ \ \ \ this.avg\_calmness\ =\ \mbox{\hyperlink{classcommon_1_1_media_emozioni_adc8a16df5973e68b06a1a3ef79a9fc9d}{avg\_calmness}};}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00063}00063\ \ \ \ \ \ \ \ \ this.avg\_power\ =\ \mbox{\hyperlink{classcommon_1_1_media_emozioni_a79580402d8e034e76f4989705e2c3e30}{avg\_power}};}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00064}00064\ \ \ \ \ \ \ \ \ this.avg\_joy\ =\ \mbox{\hyperlink{classcommon_1_1_media_emozioni_ab2f033a8109affd1d75962951e33afcd}{avg\_joy}};}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00065}00065\ \ \ \ \ \ \ \ \ this.avg\_tension\ =\ \mbox{\hyperlink{classcommon_1_1_media_emozioni_a63284f54eaf3ee164b030f54d95bea80}{avg\_tension}};}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00066}00066\ \ \ \ \ \ \ \ \ this.avg\_sadness\ =\ \mbox{\hyperlink{classcommon_1_1_media_emozioni_ac5706bf3a77eb419130df23c74b46cbb}{avg\_sadness}};}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00067}00067\ \ \ \ \ \ \ \ \ this.avg\_tenderness\ =\ \mbox{\hyperlink{classcommon_1_1_media_emozioni_ae9917735a3b3c68ea13f4e373953811a}{avg\_tenderness}};}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00068}00068\ \ \ \ \ \ \ \ \ this.avg\_solemnity\ =\ \mbox{\hyperlink{classcommon_1_1_media_emozioni_a40f4dc921f43d59c172a7869fb0198ba}{avg\_solemnity}};}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00069}00069\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00070}00070\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00074}\mbox{\hyperlink{classcommon_1_1_media_emozioni_afb07d095aa9b83e8c3bf5ac1e260f98e}{00074}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classcommon_1_1_media_emozioni_afb07d095aa9b83e8c3bf5ac1e260f98e}{MediaEmozioni}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00075}00075\ \ \ \ \ \ \ \ \ this.avg\_amazement\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00076}00076\ \ \ \ \ \ \ \ \ this.avg\_nostalgia\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00077}00077\ \ \ \ \ \ \ \ \ this.avg\_calmness\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00078}00078\ \ \ \ \ \ \ \ \ this.avg\_power\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00079}00079\ \ \ \ \ \ \ \ \ this.avg\_joy\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00080}00080\ \ \ \ \ \ \ \ \ this.avg\_tension\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00081}00081\ \ \ \ \ \ \ \ \ this.avg\_sadness\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00082}00082\ \ \ \ \ \ \ \ \ this.avg\_tenderness\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00083}00083\ \ \ \ \ \ \ \ \ this.avg\_solemnity\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00084}00084\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00085}00085\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00086}00086\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00091}\mbox{\hyperlink{classcommon_1_1_media_emozioni_ae8b904075870842ca470d246f8eeadaf}{00091}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_media_emozioni_ae8b904075870842ca470d246f8eeadaf}{getAvg\_amazement}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00092}00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcommon_1_1_media_emozioni_abb747e485d5e6071b3f74112b1fd760b}{avg\_amazement}};}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00093}00093\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00094}00094\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00099}\mbox{\hyperlink{classcommon_1_1_media_emozioni_a4aaee5dc0b2d21e6aefcaace30634c90}{00099}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_media_emozioni_a4aaee5dc0b2d21e6aefcaace30634c90}{getAvg\_nostalgia}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00100}00100\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcommon_1_1_media_emozioni_ab5834a4dddb3b31c99e1bfe05cc6450a}{avg\_nostalgia}};}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00101}00101\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00102}00102\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00107}\mbox{\hyperlink{classcommon_1_1_media_emozioni_ae8480226fdd466acebc8d757081522f0}{00107}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_media_emozioni_ae8480226fdd466acebc8d757081522f0}{getAvg\_calmness}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00108}00108\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcommon_1_1_media_emozioni_adc8a16df5973e68b06a1a3ef79a9fc9d}{avg\_calmness}};}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00109}00109\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00110}00110\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00115}\mbox{\hyperlink{classcommon_1_1_media_emozioni_aab0b8057e094cd37083d07cfcc1e7e57}{00115}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_media_emozioni_aab0b8057e094cd37083d07cfcc1e7e57}{getAvg\_power}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00116}00116\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcommon_1_1_media_emozioni_a79580402d8e034e76f4989705e2c3e30}{avg\_power}};}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00117}00117\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00118}00118\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00123}\mbox{\hyperlink{classcommon_1_1_media_emozioni_ac284467b45ec48bbf59c9708414759e9}{00123}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_media_emozioni_ac284467b45ec48bbf59c9708414759e9}{getAvg\_joy}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00124}00124\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcommon_1_1_media_emozioni_ab2f033a8109affd1d75962951e33afcd}{avg\_joy}};}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00125}00125\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00126}00126\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00131}\mbox{\hyperlink{classcommon_1_1_media_emozioni_a671dbd2254582a8c70569ab4f9d1764a}{00131}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_media_emozioni_a671dbd2254582a8c70569ab4f9d1764a}{getAvg\_tension}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00132}00132\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcommon_1_1_media_emozioni_a63284f54eaf3ee164b030f54d95bea80}{avg\_tension}};}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00133}00133\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00134}00134\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00139}\mbox{\hyperlink{classcommon_1_1_media_emozioni_a44d9b5dd2838c7b19533f51c100a7238}{00139}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_media_emozioni_a44d9b5dd2838c7b19533f51c100a7238}{getAvg\_sadness}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00140}00140\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcommon_1_1_media_emozioni_ac5706bf3a77eb419130df23c74b46cbb}{avg\_sadness}};}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00141}00141\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00142}00142\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00147}\mbox{\hyperlink{classcommon_1_1_media_emozioni_aba5c3923a652aa3366be4e23a0ec3a68}{00147}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_media_emozioni_aba5c3923a652aa3366be4e23a0ec3a68}{getAvg\_tenderness}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00148}00148\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcommon_1_1_media_emozioni_ae9917735a3b3c68ea13f4e373953811a}{avg\_tenderness}};}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00149}00149\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00150}00150\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00155}\mbox{\hyperlink{classcommon_1_1_media_emozioni_a2efc702bd16705dd5335aa495e7b6513}{00155}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_media_emozioni_a2efc702bd16705dd5335aa495e7b6513}{getAvg\_solemnity}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00156}00156\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcommon_1_1_media_emozioni_a40f4dc921f43d59c172a7869fb0198ba}{avg\_solemnity}};}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00157}00157\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00158}00158\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00159}00159\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00160}00160\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00161}00161\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_media_emozioni_8java_source_l00162}00162\ \}}
+
+\end{DoxyCode}

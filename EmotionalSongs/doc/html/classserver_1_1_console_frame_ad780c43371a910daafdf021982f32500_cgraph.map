@@ -1,0 +1,7 @@
+<map id="getCanzoniForPlaylist" name="getCanzoniForPlaylist">
+<area shape="rect" id="Node000001" title="Metodo che restituisce le canzoni da inserire nella playlist dell&#39;utente." alt="" coords="5,43,154,69"/>
+<area shape="rect" id="Node000002" href="$classserver_1_1_data_tables.html#a991a8d62a3ffa66c044f72b13a85868a" title="Metodo invocato per mappare il datamodel delle canzoni ottenute dall&#39;esecuzione delle query." alt="" coords="215,5,381,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="153,43,200,37,200,42,154,49"/>
+<area shape="rect" id="Node000003" href="$classserver_1_1_database.html#a63798edbcf11407baff763318dcedfe4" title=" " alt="" coords="202,72,394,99"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="154,63,187,68,186,73,153,69"/>
+</map>

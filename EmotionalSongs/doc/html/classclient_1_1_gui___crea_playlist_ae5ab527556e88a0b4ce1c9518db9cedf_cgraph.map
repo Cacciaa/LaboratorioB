@@ -1,0 +1,11 @@
+<map id="jBtnSalvaSuFileActionPerformed" name="jBtnSalvaSuFileActionPerformed">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,35,214,61"/>
+<area shape="rect" id="Node000002" href="$classclient_1_1_gui___crea_playlist.html#a85f382658e6b9fdfde7863ef3e091069" title=" " alt="" coords="262,35,374,61"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="214,45,247,45,247,51,214,51"/>
+<area shape="rect" id="Node000003" href="$classclient_1_1_gui___crea_playlist.html#af9efd83cc290bebb2483414e79391879" title=" " alt="" coords="498,5,565,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="374,38,483,23,484,28,375,43"/>
+<area shape="rect" id="Node000005" href="$interfacecommon_1_1_interfaccia_servizio.html#af4163a6b21c5a872c979a657a47d70eb" title="Metodo che crea la playlist inserendo le canzoni scelte dall&#39;utente." alt="" coords="422,56,641,99"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="375,53,408,58,407,63,374,58"/>
+<area shape="rect" id="Node000004" href="$classclient_1_1_gui___crea_playlist.html#a7a04e7f0e3d896f1cf3f38ce45efb4eb" title=" " alt="" coords="689,5,795,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="566,16,674,16,674,21,566,21"/>
+</map>

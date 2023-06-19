@@ -1,0 +1,19 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,183,85,209"/>
+<area shape="rect" id="Node000001" href="$classcommon_1_1_canzone_inesistente.html" title=" " alt="" coords="133,5,268,32"/>
+<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="53,167,82,105,104,71,131,42,149,30,152,35,134,46,108,75,86,108,58,170"/>
+<area shape="rect" id="Node000002" href="$classcommon_1_1_chiave_duplicata.html" title=" " alt="" coords="144,56,257,83"/>
+<area shape="poly" id="edge2_Node000000_Node000002" title=" " alt="" coords="61,169,91,130,131,93,152,81,154,86,134,97,95,133,65,172"/>
+<area shape="rect" id="Node000003" href="$classcommon_1_1_dati_non_validi.html" title=" " alt="" coords="151,107,250,133"/>
+<area shape="poly" id="edge3_Node000000_Node000003" title=" " alt="" coords="79,172,131,143,158,131,160,136,134,148,81,177"/>
+<area shape="rect" id="Node000004" href="$classcommon_1_1_emozioni_inesistenti.html" title=" " alt="" coords="133,157,268,184"/>
+<area shape="poly" id="edge4_Node000000_Node000004" title=" " alt="" coords="99,185,132,179,133,184,100,190"/>
+<area shape="rect" id="Node000005" href="$classcommon_1_1_my_server_exception.html" title=" " alt="" coords="134,208,267,235"/>
+<area shape="poly" id="edge5_Node000000_Node000005" title=" " alt="" coords="100,202,134,208,133,213,99,207"/>
+<area shape="rect" id="Node000006" href="$classcommon_1_1_password_errata.html" title=" " alt="" coords="144,259,257,285"/>
+<area shape="poly" id="edge6_Node000000_Node000006" title=" " alt="" coords="81,215,134,244,160,256,158,261,131,249,79,220"/>
+<area shape="rect" id="Node000007" href="$classcommon_1_1_playlist_inesistenti.html" title=" " alt="" coords="139,309,262,336"/>
+<area shape="poly" id="edge7_Node000000_Node000007" title=" " alt="" coords="65,220,95,259,134,295,154,306,152,311,131,299,91,262,61,223"/>
+<area shape="rect" id="Node000008" href="$classcommon_1_1_utente_inesistente.html" title=" " alt="" coords="139,360,262,387"/>
+<area shape="poly" id="edge8_Node000000_Node000008" title=" " alt="" coords="58,222,86,284,108,317,134,346,152,357,149,362,131,350,104,321,82,287,53,225"/>
+</map>

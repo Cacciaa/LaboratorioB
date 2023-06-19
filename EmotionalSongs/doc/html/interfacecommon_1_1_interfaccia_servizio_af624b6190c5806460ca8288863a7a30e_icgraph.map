@@ -1,0 +1,9 @@
+<map id="getCanzoniFromPlaylist" name="getCanzoniFromPlaylist">
+<area shape="rect" id="Node000001" title="Metodo che restituisce le canzoni associate alla playlist." alt="" coords="492,47,651,73"/>
+<area shape="rect" id="Node000002" href="$classclient_1_1_pannello_emozioni.html#ae0274376267cdbe6e5287a6d7c86aa63" title=" " alt="" coords="239,5,436,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="477,49,436,43,436,38,478,44"/>
+<area shape="rect" id="Node000003" href="$classclient_1_1_gui___elenco_brani.html#a95ec5dc2d151540c4e79368afc96a94a" title=" " alt="" coords="231,72,444,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="478,76,445,81,444,75,477,71"/>
+<area shape="rect" id="Node000004" href="$classclient_1_1_gui___elenco_brani.html#a3ecac1a96e044d26a890d04c61a3c852" title=" " alt="" coords="5,72,183,115"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="216,96,183,96,183,91,216,91"/>
+</map>

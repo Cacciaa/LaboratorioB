@@ -1,0 +1,7 @@
+<map id="aggiungiEmozione" name="aggiungiEmozione">
+<area shape="rect" id="Node000001" title="Aggiunge l&#39;emozione rilasciata da un utente per una determinata canzone alla lista attributo emozioni..." alt="" coords="487,13,614,40"/>
+<area shape="rect" id="Node000002" href="$classserver_1_1_data_tables.html#a131555d9ee80185bbbe2758af00accc3" title="Metodo invocato per mappare il datamodel delle emozioni ottenute dall&#39;esecuzione delle query." alt="" coords="273,5,439,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="472,29,439,29,439,24,472,24"/>
+<area shape="rect" id="Node000003" href="$classserver_1_1_console_frame.html#ab853f77a8f5cd283bea964765761826f" title="Metodo che restituisce le emozioni del brano specificato." alt="" coords="5,5,225,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="258,29,225,29,225,24,258,24"/>
+</map>

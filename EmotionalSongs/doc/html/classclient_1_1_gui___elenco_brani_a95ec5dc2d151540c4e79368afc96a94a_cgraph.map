@@ -1,0 +1,7 @@
+<map id="visualizzaBraniPlaylist" name="visualizzaBraniPlaylist">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,43,156,69"/>
+<area shape="rect" id="Node000002" href="$interfacecommon_1_1_interfaccia_servizio.html#af624b6190c5806460ca8288863a7a30e" title="Metodo che restituisce le canzoni associate alla playlist." alt="" coords="204,5,405,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="156,44,188,39,189,44,156,49"/>
+<area shape="rect" id="Node000003" href="$classcommon_1_1_playlist.html#a9090123f9b91f7e3f56767d6038fedea" title="Getter dell&#39;attributo idplaylist." alt="" coords="208,72,401,99"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="156,63,194,68,193,73,156,68"/>
+</map>

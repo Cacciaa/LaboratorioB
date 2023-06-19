@@ -1,0 +1,7 @@
+<map id="jBtnAggiungiCanzoneActionPerformed" name="jBtnAggiungiCanzoneActionPerformed">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,23,188,65"/>
+<area shape="rect" id="Node000002" href="$classclient_1_1_gui___crea_playlist.html#a7a04e7f0e3d896f1cf3f38ce45efb4eb" title=" " alt="" coords="271,5,376,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="187,31,256,23,256,29,188,36"/>
+<area shape="rect" id="Node000003" href="$classcommon_1_1_canzoni.html#a4cbc29a766f8fc6991d673db72558b80" title="Getter dell&#39;attributo titolo." alt="" coords="236,56,411,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="188,52,221,55,220,61,187,57"/>
+</map>

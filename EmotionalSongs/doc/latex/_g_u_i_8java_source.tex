@@ -1,0 +1,407 @@
+\doxysection{GUI.\+java}
+\hypertarget{_g_u_i_8java_source}{}\label{_g_u_i_8java_source}\index{D:/UnInsu/Lab.B/LaboratorioB/EmotionalSongs/src/main/java/client/GUI.java@{D:/UnInsu/Lab.B/LaboratorioB/EmotionalSongs/src/main/java/client/GUI.java}}
+\mbox{\hyperlink{_g_u_i_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00001}00001\ \textcolor{keyword}{package\ }client;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00003}00003\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacecommon}{common}}.*;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00004}00004\ \textcolor{keyword}{import}\ java.io.File;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00005}00005\ \textcolor{keyword}{import}\ java.io.IOException;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00006}00006\ \textcolor{keyword}{import}\ java.rmi.\mbox{\hyperlink{classjava_1_1rmi_1_1_remote_exception}{RemoteException}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00007}00007\ \textcolor{keyword}{import}\ java.text.ParseException;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00008}00008\ \textcolor{keyword}{import}\ java.util.ArrayList;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00009}00009\ \textcolor{keyword}{import}\ java.util.List;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00010}00010\ \textcolor{keyword}{import}\ java.util.logging.Level;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00011}00011\ \textcolor{keyword}{import}\ java.util.logging.Logger;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00012}00012\ \textcolor{keyword}{import}\ java.util.regex.Matcher;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00013}00013\ \textcolor{keyword}{import}\ java.util.regex.Pattern;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00014}00014\ \textcolor{keyword}{import}\ javax.swing.JOptionPane;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00015}00015\ \textcolor{keyword}{import}\ javax.xml.parsers.ParserConfigurationException;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00016}00016\ \textcolor{keyword}{import}\ javax.xml.transform.TransformerException;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00017}00017\ \textcolor{keyword}{import}\ org.w3c.dom.Document;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00018}00018\ \textcolor{keyword}{import}\ org.xml.sax.SAXException;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00028}\mbox{\hyperlink{classclient_1_1_g_u_i}{00028}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classclient_1_1_g_u_i}{GUI}}\ \textcolor{keyword}{extends}\ javax.swing.JFrame\ \{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00031}\mbox{\hyperlink{classclient_1_1_g_u_i_a50b3a7868b3dc4642ab158d079ca8485}{00031}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{final}\ Pattern\ \mbox{\hyperlink{classclient_1_1_g_u_i_a50b3a7868b3dc4642ab158d079ca8485}{VALID\_EMAIL\_ADDRESS\_REGEX}}\ =\ Pattern.compile(\textcolor{stringliteral}{"{}\string^[A-\/Z0-\/9.\_\%+-\/]+@[A-\/Z0-\/9.-\/]+\(\backslash\)\(\backslash\).[A-\/Z]\{2,6\}\$"{}},\ Pattern.CASE\_INSENSITIVE);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00032}00032\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00033}\mbox{\hyperlink{classclient_1_1_g_u_i_a6a810c68843a0f123de03f49ffb925c0}{00033}}\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{interfacecommon_1_1_interfaccia_servizio}{InterfacciaServizio}}\ \mbox{\hyperlink{classclient_1_1_g_u_i_a6a810c68843a0f123de03f49ffb925c0}{is}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00034}00034\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00041}\mbox{\hyperlink{classclient_1_1_g_u_i_a7656234846651c45d6cc55dcf5bb121c}{00041}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classclient_1_1_g_u_i_a7656234846651c45d6cc55dcf5bb121c}{GUI}}(\ \mbox{\hyperlink{interfacecommon_1_1_interfaccia_servizio}{InterfacciaServizio}}\ \mbox{\hyperlink{classclient_1_1_g_u_i_a6a810c68843a0f123de03f49ffb925c0}{is}})\ \{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00042}00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_a77410fe5c5b5ddb55910cd7a2297bff7}{initComponents}}();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00043}00043\ \ \ \ \ \ \ \ \ this.is=\mbox{\hyperlink{classclient_1_1_g_u_i_a6a810c68843a0f123de03f49ffb925c0}{is}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00044}00044\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00045}00045\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00046}\mbox{\hyperlink{classclient_1_1_g_u_i_a7f2958645772900cfa3f992697f3cec0}{00046}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classclient_1_1_g_u_i_a7f2958645772900cfa3f992697f3cec0}{GUI}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ UnsupportedOperationException(\textcolor{stringliteral}{"{}Not\ supported\ yet."{}});\ \textcolor{comment}{//To\ change\ body\ of\ generated\ methods,\ choose\ Tools\ |\ Templates.}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00048}00048\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00049}00049\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00056}00056\ \ \ \ \ @SuppressWarnings(\textcolor{stringliteral}{"{}unchecked"{}})}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00057}00057\ \ \ \ \ \textcolor{comment}{//\ <editor-\/fold\ defaultstate="{}collapsed"{}\ desc="{}Generated\ Code"{}>//GEN-\/BEGIN:initComponents}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00058}\mbox{\hyperlink{classclient_1_1_g_u_i_a77410fe5c5b5ddb55910cd7a2297bff7}{00058}}\ \ \ \ \ private\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classclient_1_1_g_u_i_a77410fe5c5b5ddb55910cd7a2297bff7}{initComponents}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00060}00060\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_a8e20e099383dd88c23abcb8cc046447b}{txtPassword}}\ =\ \textcolor{keyword}{new}\ javax.swing.JPasswordField();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00061}00061\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_aae4319d2cb4ac19c9a2c7d4d3a2549f4}{jScrollPane1}}\ =\ \textcolor{keyword}{new}\ javax.swing.JScrollPane();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00062}00062\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_a9e2680355ee30242457a2b3566c2a9a0}{txtEmail}}\ =\ \textcolor{keyword}{new}\ javax.swing.JTextPane();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00063}00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_a3ff9eafda5b4cd0c2e725de32515928f}{jScrollPane2}}\ =\ \textcolor{keyword}{new}\ javax.swing.JScrollPane();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00064}00064\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_ad9a0b05e5eb4f24707039d1e7bf45200}{txtNome}}\ =\ \textcolor{keyword}{new}\ javax.swing.JTextPane();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00065}00065\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_a2efa5c12ff7251b743fdfa76d5141500}{jScrollPane3}}\ =\ \textcolor{keyword}{new}\ javax.swing.JScrollPane();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00066}00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_a14fb219dd38d45707caca021db104826}{txtCognome}}\ =\ \textcolor{keyword}{new}\ javax.swing.JTextPane();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00067}00067\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_a92b107c469a3bb46e6d8052621513bca}{jScrollPane4}}\ =\ \textcolor{keyword}{new}\ javax.swing.JScrollPane();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00068}00068\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_a27db760366378a4e3ec113a4deb55922}{txtCitta}}\ =\ \textcolor{keyword}{new}\ javax.swing.JTextPane();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00069}00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_a3a1ca3d330ec2cd7d16e2be9177bbdff}{jScrollPane5}}\ =\ \textcolor{keyword}{new}\ javax.swing.JScrollPane();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00070}00070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_abfe0cc8009e9b2d1802d4eaf76cdab4f}{txtcf}}\ =\ \textcolor{keyword}{new}\ javax.swing.JTextPane();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00071}00071\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_a92d9261432b219804de6e811b4fa07cd}{label}}\ =\ \textcolor{keyword}{new}\ javax.swing.JLabel();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00072}00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_a47066ebb7b751f52b9debcc4bd1b1ee4}{jLabel1}}\ =\ \textcolor{keyword}{new}\ javax.swing.JLabel();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00073}00073\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_aac4c74e7fdef17e600ac902cf40ee766}{jLabel2}}\ =\ \textcolor{keyword}{new}\ javax.swing.JLabel();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00074}00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_a7b8025d346156944b14ed972285012f2}{jLabel3}}\ =\ \textcolor{keyword}{new}\ javax.swing.JLabel();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00075}00075\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_abaf449b4e6e9562ab844bbb2f4d5f779}{jLabel4}}\ =\ \textcolor{keyword}{new}\ javax.swing.JLabel();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00076}00076\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_a8ad4e0013e4b113a715092ed0b516490}{jLabel5}}\ =\ \textcolor{keyword}{new}\ javax.swing.JLabel();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00077}00077\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_ad27c2b1c74d8ce1ad74a1c308b0d7d66}{jLabel6}}\ =\ \textcolor{keyword}{new}\ javax.swing.JLabel();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00078}00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_a86597916a2d9a68eb648cd759ea4d55a}{jLabel7}}\ =\ \textcolor{keyword}{new}\ javax.swing.JLabel();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00079}00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_a64bf56b0a7dd70935d252c21cbd90938}{jBtnRegistrati}}\ =\ \textcolor{keyword}{new}\ javax.swing.JButton();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00080}00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_a5c35649503422930b8ca9404a927ecd4}{jLabel8}}\ =\ \textcolor{keyword}{new}\ javax.swing.JLabel();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00081}00081\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_ad5e5e988e4925b2e8bd8e2095ca6cb97}{jScrollPane6}}\ =\ \textcolor{keyword}{new}\ javax.swing.JScrollPane();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00082}00082\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_a498d7f47675c414bb81438de065fde7e}{txtCap}}\ =\ \textcolor{keyword}{new}\ javax.swing.JTextPane();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00083}00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_aae76ec7156e4b36d2a59b15dc3acf5c7}{jLabel9}}\ =\ \textcolor{keyword}{new}\ javax.swing.JLabel();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00084}00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_a8c449387c187ff49de5a26f8dd6f9abd}{jScrollPane7}}\ =\ \textcolor{keyword}{new}\ javax.swing.JScrollPane();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00085}00085\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_a27105ddd5f99614f75a5cd75cc78ec5f}{txtVia}}\ =\ \textcolor{keyword}{new}\ javax.swing.JTextPane();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00086}00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_abc6e659b78143ee572fd18136c05134c}{jLabel10}}\ =\ \textcolor{keyword}{new}\ javax.swing.JLabel();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00087}00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_a9b29863e9936b2169d6c2eae774d01d3}{jScrollPane8}}\ =\ \textcolor{keyword}{new}\ javax.swing.JScrollPane();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00088}00088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_a74206f99fc8042d15cc7f26718ea00f8}{txtCivico}}\ =\ \textcolor{keyword}{new}\ javax.swing.JTextPane();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00090}00090\ \ \ \ \ \ \ \ \ setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE\_ON\_CLOSE);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00091}00091\ \ \ \ \ \ \ \ \ setResizable(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00093}00093\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_aae4319d2cb4ac19c9a2c7d4d3a2549f4}{jScrollPane1}}.setViewportView(\mbox{\hyperlink{classclient_1_1_g_u_i_a9e2680355ee30242457a2b3566c2a9a0}{txtEmail}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00095}00095\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_a3ff9eafda5b4cd0c2e725de32515928f}{jScrollPane2}}.setViewportView(\mbox{\hyperlink{classclient_1_1_g_u_i_ad9a0b05e5eb4f24707039d1e7bf45200}{txtNome}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00097}00097\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_a2efa5c12ff7251b743fdfa76d5141500}{jScrollPane3}}.setViewportView(\mbox{\hyperlink{classclient_1_1_g_u_i_a14fb219dd38d45707caca021db104826}{txtCognome}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00099}00099\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_a92b107c469a3bb46e6d8052621513bca}{jScrollPane4}}.setViewportView(\mbox{\hyperlink{classclient_1_1_g_u_i_a27db760366378a4e3ec113a4deb55922}{txtCitta}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00101}00101\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_a3a1ca3d330ec2cd7d16e2be9177bbdff}{jScrollPane5}}.setViewportView(\mbox{\hyperlink{classclient_1_1_g_u_i_abfe0cc8009e9b2d1802d4eaf76cdab4f}{txtcf}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00103}00103\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_a47066ebb7b751f52b9debcc4bd1b1ee4}{jLabel1}}.setText(\textcolor{stringliteral}{"{}<html>\ <h2>Cognome"{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00105}00105\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_aac4c74e7fdef17e600ac902cf40ee766}{jLabel2}}.setText(\textcolor{stringliteral}{"{}<html>\ <h2>Nome"{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00107}00107\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_a7b8025d346156944b14ed972285012f2}{jLabel3}}.setText(\textcolor{stringliteral}{"{}<html>\ <h2>Codice\ Fiscale"{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00109}00109\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_abaf449b4e6e9562ab844bbb2f4d5f779}{jLabel4}}.setText(\textcolor{stringliteral}{"{}<html>\ <h2>Città"{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00111}00111\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_a8ad4e0013e4b113a715092ed0b516490}{jLabel5}}.setText(\textcolor{stringliteral}{"{}<html>\ <h2>Email"{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00113}00113\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_ad27c2b1c74d8ce1ad74a1c308b0d7d66}{jLabel6}}.setText(\textcolor{stringliteral}{"{}<html>\ <h2>Password"{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00115}00115\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_a86597916a2d9a68eb648cd759ea4d55a}{jLabel7}}.setFont(\textcolor{keyword}{new}\ java.awt.Font(\textcolor{stringliteral}{"{}sansserif"{}},\ 0,\ 24));\ \textcolor{comment}{//\ NOI18N}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00116}00116\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_a86597916a2d9a68eb648cd759ea4d55a}{jLabel7}}.setForeground(\textcolor{keyword}{new}\ java.awt.Color(0,\ 153,\ 51));}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00117}00117\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_a86597916a2d9a68eb648cd759ea4d55a}{jLabel7}}.setText(\textcolor{stringliteral}{"{}<html>\ <h1\ style=\(\backslash\)"{}color:green;\(\backslash\)"{}><u>Registrazione"{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00118}00118\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_a86597916a2d9a68eb648cd759ea4d55a}{jLabel7}}.setIconTextGap(8);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00119}00119\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_a86597916a2d9a68eb648cd759ea4d55a}{jLabel7}}.setVerifyInputWhenFocusTarget(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00121}00121\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_a64bf56b0a7dd70935d252c21cbd90938}{jBtnRegistrati}}.setText(\textcolor{stringliteral}{"{}<html>\ <h2>\ Registrati\ </h2>\ </html>"{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00122}00122\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_a64bf56b0a7dd70935d252c21cbd90938}{jBtnRegistrati}}.setBorder(javax.swing.BorderFactory.createLineBorder(\textcolor{keyword}{new}\ java.awt.Color(51,\ 204,\ 0),\ 2));}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00123}00123\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_a64bf56b0a7dd70935d252c21cbd90938}{jBtnRegistrati}}.addActionListener(\textcolor{keyword}{new}\ java.awt.event.ActionListener()\ \{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ public\ void\ actionPerformed(java.awt.event.ActionEvent\ evt)\ \{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ jBtnRegistratiActionPerformed(evt);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00127}00127\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00129}00129\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_a5c35649503422930b8ca9404a927ecd4}{jLabel8}}.setText(\textcolor{stringliteral}{"{}<html>\ <h2>CAP"{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00131}00131\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_ad5e5e988e4925b2e8bd8e2095ca6cb97}{jScrollPane6}}.setViewportView(\mbox{\hyperlink{classclient_1_1_g_u_i_a498d7f47675c414bb81438de065fde7e}{txtCap}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00133}00133\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_aae76ec7156e4b36d2a59b15dc3acf5c7}{jLabel9}}.setText(\textcolor{stringliteral}{"{}<html>\ <h2>Via"{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00135}00135\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_a8c449387c187ff49de5a26f8dd6f9abd}{jScrollPane7}}.setViewportView(\mbox{\hyperlink{classclient_1_1_g_u_i_a27105ddd5f99614f75a5cd75cc78ec5f}{txtVia}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00136}00136\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00137}00137\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_abc6e659b78143ee572fd18136c05134c}{jLabel10}}.setText(\textcolor{stringliteral}{"{}<html>\ <h2>Civico"{}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00139}00139\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classclient_1_1_g_u_i_a9b29863e9936b2169d6c2eae774d01d3}{jScrollPane8}}.setViewportView(\mbox{\hyperlink{classclient_1_1_g_u_i_a74206f99fc8042d15cc7f26718ea00f8}{txtCivico}});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00140}00140\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00141}00141\ \ \ \ \ \ \ \ \ javax.swing.GroupLayout\ layout\ =\ \textcolor{keyword}{new}\ javax.swing.GroupLayout(getContentPane());}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00142}00142\ \ \ \ \ \ \ \ \ getContentPane().setLayout(layout);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00143}00143\ \ \ \ \ \ \ \ \ layout.setHorizontalGroup(}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(layout.createSequentialGroup()}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(layout.createSequentialGroup()}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addContainerGap()}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(layout.createSequentialGroup()}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1_g_u_i_aac4c74e7fdef17e600ac902cf40ee766}{jLabel2}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ javax.swing.GroupLayout.DEFAULT\_SIZE,\ javax.swing.GroupLayout.PREFERRED\_SIZE)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1_g_u_i_a47066ebb7b751f52b9debcc4bd1b1ee4}{jLabel1}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ javax.swing.GroupLayout.DEFAULT\_SIZE,\ javax.swing.GroupLayout.PREFERRED\_SIZE))}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGap(44,\ 44,\ 44))}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,\ layout.createSequentialGroup()}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1_g_u_i_a7b8025d346156944b14ed972285012f2}{jLabel3}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ javax.swing.GroupLayout.DEFAULT\_SIZE,\ javax.swing.GroupLayout.PREFERRED\_SIZE)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGap(18,\ 18,\ 18)))}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1_g_u_i_a3ff9eafda5b4cd0c2e725de32515928f}{jScrollPane2}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ 308,\ javax.swing.GroupLayout.PREFERRED\_SIZE)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1_g_u_i_a2efa5c12ff7251b743fdfa76d5141500}{jScrollPane3}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ 308,\ javax.swing.GroupLayout.PREFERRED\_SIZE)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1_g_u_i_a3a1ca3d330ec2cd7d16e2be9177bbdff}{jScrollPane5}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ 347,\ javax.swing.GroupLayout.PREFERRED\_SIZE))}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGap(51,\ 51,\ 51)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(layout.createSequentialGroup()}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1_g_u_i_abc6e659b78143ee572fd18136c05134c}{jLabel10}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ javax.swing.GroupLayout.DEFAULT\_SIZE,\ javax.swing.GroupLayout.PREFERRED\_SIZE)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1_g_u_i_a9b29863e9936b2169d6c2eae774d01d3}{jScrollPane8}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ 380,\ javax.swing.GroupLayout.PREFERRED\_SIZE))}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(layout.createSequentialGroup()}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1_g_u_i_aae76ec7156e4b36d2a59b15dc3acf5c7}{jLabel9}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ javax.swing.GroupLayout.DEFAULT\_SIZE,\ javax.swing.GroupLayout.PREFERRED\_SIZE)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGap(32,\ 32,\ 32)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1_g_u_i_a8c449387c187ff49de5a26f8dd6f9abd}{jScrollPane7}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ 380,\ javax.swing.GroupLayout.PREFERRED\_SIZE)))}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(layout.createSequentialGroup()}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1_g_u_i_abaf449b4e6e9562ab844bbb2f4d5f779}{jLabel4}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ javax.swing.GroupLayout.DEFAULT\_SIZE,\ javax.swing.GroupLayout.PREFERRED\_SIZE)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGap(10,\ 10,\ 10)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1_g_u_i_a92b107c469a3bb46e6d8052621513bca}{jScrollPane4}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ 251,\ javax.swing.GroupLayout.PREFERRED\_SIZE)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGap(14,\ 14,\ 14)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1_g_u_i_a5c35649503422930b8ca9404a927ecd4}{jLabel8}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ javax.swing.GroupLayout.DEFAULT\_SIZE,\ javax.swing.GroupLayout.PREFERRED\_SIZE)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGap(8,\ 8,\ 8)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1_g_u_i_ad5e5e988e4925b2e8bd8e2095ca6cb97}{jScrollPane6}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ 91,\ javax.swing.GroupLayout.PREFERRED\_SIZE))))}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(layout.createSequentialGroup()}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGap(106,\ 106,\ 106)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1_g_u_i_a92d9261432b219804de6e811b4fa07cd}{label}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ 146,\ javax.swing.GroupLayout.PREFERRED\_SIZE))}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(layout.createSequentialGroup()}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addContainerGap()}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1_g_u_i_a86597916a2d9a68eb648cd759ea4d55a}{jLabel7}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ 246,\ javax.swing.GroupLayout.PREFERRED\_SIZE))}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(layout.createSequentialGroup()}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGap(108,\ 108,\ 108)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1_g_u_i_a8ad4e0013e4b113a715092ed0b516490}{jLabel5}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ javax.swing.GroupLayout.DEFAULT\_SIZE,\ javax.swing.GroupLayout.PREFERRED\_SIZE)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1_g_u_i_ad27c2b1c74d8ce1ad74a1c308b0d7d66}{jLabel6}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ javax.swing.GroupLayout.DEFAULT\_SIZE,\ javax.swing.GroupLayout.PREFERRED\_SIZE))}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGap(18,\ 18,\ 18)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1_g_u_i_a8e20e099383dd88c23abcb8cc046447b}{txtPassword}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ 605,\ javax.swing.GroupLayout.PREFERRED\_SIZE)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1_g_u_i_aae4319d2cb4ac19c9a2c7d4d3a2549f4}{jScrollPane1}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ 605,\ javax.swing.GroupLayout.PREFERRED\_SIZE))))}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addContainerGap(96,\ Short.MAX\_VALUE))}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,\ layout.createSequentialGroup()}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGap(0,\ 0,\ Short.MAX\_VALUE)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1_g_u_i_a64bf56b0a7dd70935d252c21cbd90938}{jBtnRegistrati}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ 123,\ javax.swing.GroupLayout.PREFERRED\_SIZE)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGap(439,\ 439,\ 439))}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00201}00201\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00202}00202\ \ \ \ \ \ \ \ \ layout.setVerticalGroup(}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(layout.createSequentialGroup()}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(layout.createSequentialGroup()}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(layout.createSequentialGroup()}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGap(7,\ 7,\ 7)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1_g_u_i_a86597916a2d9a68eb648cd759ea4d55a}{jLabel7}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ 47,\ javax.swing.GroupLayout.PREFERRED\_SIZE)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1_g_u_i_aac4c74e7fdef17e600ac902cf40ee766}{jLabel2}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ javax.swing.GroupLayout.DEFAULT\_SIZE,\ javax.swing.GroupLayout.PREFERRED\_SIZE)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1_g_u_i_a47066ebb7b751f52b9debcc4bd1b1ee4}{jLabel1}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ javax.swing.GroupLayout.DEFAULT\_SIZE,\ javax.swing.GroupLayout.PREFERRED\_SIZE))}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(layout.createSequentialGroup()}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(layout.createSequentialGroup()}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00218}00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGap(66,\ 66,\ 66)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00219}00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1_g_u_i_a92b107c469a3bb46e6d8052621513bca}{jScrollPane4}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ javax.swing.GroupLayout.DEFAULT\_SIZE,\ javax.swing.GroupLayout.PREFERRED\_SIZE)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGap(24,\ 24,\ 24))}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,\ layout.createSequentialGroup()}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addContainerGap()}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1_g_u_i_a5c35649503422930b8ca9404a927ecd4}{jLabel8}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ javax.swing.GroupLayout.DEFAULT\_SIZE,\ javax.swing.GroupLayout.PREFERRED\_SIZE)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGap(14,\ 14,\ 14)))}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1_g_u_i_a8c449387c187ff49de5a26f8dd6f9abd}{jScrollPane7}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ javax.swing.GroupLayout.DEFAULT\_SIZE,\ javax.swing.GroupLayout.PREFERRED\_SIZE))}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(layout.createSequentialGroup()}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGap(65,\ 65,\ 65)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1_g_u_i_ad5e5e988e4925b2e8bd8e2095ca6cb97}{jScrollPane6}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ javax.swing.GroupLayout.DEFAULT\_SIZE,\ javax.swing.GroupLayout.PREFERRED\_SIZE)))}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(layout.createSequentialGroup()}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGap(15,\ 15,\ 15)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1_g_u_i_a3a1ca3d330ec2cd7d16e2be9177bbdff}{jScrollPane5}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ javax.swing.GroupLayout.DEFAULT\_SIZE,\ javax.swing.GroupLayout.PREFERRED\_SIZE))}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(layout.createSequentialGroup()}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1_g_u_i_a7b8025d346156944b14ed972285012f2}{jLabel3}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ javax.swing.GroupLayout.DEFAULT\_SIZE,\ javax.swing.GroupLayout.PREFERRED\_SIZE))}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(layout.createSequentialGroup()}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGap(10,\ 10,\ 10)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1_g_u_i_a9b29863e9936b2169d6c2eae774d01d3}{jScrollPane8}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ javax.swing.GroupLayout.DEFAULT\_SIZE,\ javax.swing.GroupLayout.PREFERRED\_SIZE))))}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(layout.createSequentialGroup()}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(layout.createSequentialGroup()}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGap(52,\ 52,\ 52)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1_g_u_i_abaf449b4e6e9562ab844bbb2f4d5f779}{jLabel4}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ javax.swing.GroupLayout.DEFAULT\_SIZE,\ javax.swing.GroupLayout.PREFERRED\_SIZE)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1_g_u_i_aae76ec7156e4b36d2a59b15dc3acf5c7}{jLabel9}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ javax.swing.GroupLayout.DEFAULT\_SIZE,\ javax.swing.GroupLayout.PREFERRED\_SIZE))}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(layout.createSequentialGroup()}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGap(67,\ 67,\ 67)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1_g_u_i_a3ff9eafda5b4cd0c2e725de32515928f}{jScrollPane2}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ javax.swing.GroupLayout.DEFAULT\_SIZE,\ javax.swing.GroupLayout.PREFERRED\_SIZE)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00249}00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGap(28,\ 28,\ 28)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00250}00250\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1_g_u_i_a2efa5c12ff7251b743fdfa76d5141500}{jScrollPane3}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ javax.swing.GroupLayout.DEFAULT\_SIZE,\ javax.swing.GroupLayout.PREFERRED\_SIZE)))}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00251}00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00252}00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1_g_u_i_abc6e659b78143ee572fd18136c05134c}{jLabel10}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ javax.swing.GroupLayout.DEFAULT\_SIZE,\ javax.swing.GroupLayout.PREFERRED\_SIZE)))}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00253}00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(layout.createSequentialGroup()}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00255}00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGap(30,\ 30,\ 30)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1_g_u_i_a8ad4e0013e4b113a715092ed0b516490}{jLabel5}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ javax.swing.GroupLayout.DEFAULT\_SIZE,\ javax.swing.GroupLayout.PREFERRED\_SIZE))}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00257}00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(layout.createSequentialGroup()}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGap(42,\ 42,\ 42)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00259}00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1_g_u_i_aae4319d2cb4ac19c9a2c7d4d3a2549f4}{jScrollPane1}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ javax.swing.GroupLayout.DEFAULT\_SIZE,\ javax.swing.GroupLayout.PREFERRED\_SIZE)))}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00260}00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGap(23,\ 23,\ 23)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00261}00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00262}00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1_g_u_i_a8e20e099383dd88c23abcb8cc046447b}{txtPassword}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ javax.swing.GroupLayout.DEFAULT\_SIZE,\ javax.swing.GroupLayout.PREFERRED\_SIZE)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1_g_u_i_ad27c2b1c74d8ce1ad74a1c308b0d7d66}{jLabel6}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ javax.swing.GroupLayout.DEFAULT\_SIZE,\ javax.swing.GroupLayout.PREFERRED\_SIZE))}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00264}00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addGap(100,\ 100,\ 100)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00265}00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1_g_u_i_a92d9261432b219804de6e811b4fa07cd}{label}})}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00266}00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00267}00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addComponent(\mbox{\hyperlink{classclient_1_1_g_u_i_a64bf56b0a7dd70935d252c21cbd90938}{jBtnRegistrati}},\ javax.swing.GroupLayout.PREFERRED\_SIZE,\ 48,\ javax.swing.GroupLayout.PREFERRED\_SIZE)}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00268}00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .addContainerGap(javax.swing.GroupLayout.DEFAULT\_SIZE,\ Short.MAX\_VALUE))}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00269}00269\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00270}00270\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00271}00271\ \ \ \ \ \ \ \ \ pack();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00272}00272\ \ \ \ \ \}\textcolor{comment}{//\ </editor-\/fold>//GEN-\/END:initComponents}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00273}00273\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00278}\mbox{\hyperlink{classclient_1_1_g_u_i_a62a614a28ad0881de70b7613317b0561}{00278}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classclient_1_1_g_u_i_a62a614a28ad0881de70b7613317b0561}{jBtnRegistratiActionPerformed}}(java.awt.event.ActionEvent\ evt)\ \{\textcolor{comment}{//GEN-\/FIRST:event\_jBtnRegistratiActionPerformed}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00279}00279\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TODO\ add\ your\ handling\ code\ here:Utente\ utent\ =\ new\ Utente();}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00280}00280\ \ \ \ \ \ \ \ \ this.Registrazione();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00281}00281\ \ \ \ \ \}\textcolor{comment}{//GEN-\/LAST:event\_jBtnRegistratiActionPerformed}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00282}00282\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00287}\mbox{\hyperlink{classclient_1_1_g_u_i_aa81be9624eed062ca90ab9842cc96793}{00287}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classclient_1_1_g_u_i_aa81be9624eed062ca90ab9842cc96793}{Registrazione}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00288}00288\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Assegnamento\ delle\ variabile\ dai\ valori\ presi\ dalle\ textbox}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00289}00289\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Nome}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00290}00290\ \ \ \ \ \ \ \ \ String\ nome\ =\ txtNome.getText();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00291}00291\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Cognome}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00292}00292\ \ \ \ \ \ \ \ \ String\ cognome\ =\ txtCognome.getText();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00293}00293\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Codice\ fiscale}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00294}00294\ \ \ \ \ \ \ \ \ String\ cf\ =\ txtcf.getText();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00295}00295\ \ \ \ \ \ \ \ \ \textcolor{comment}{//città}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00296}00296\ \ \ \ \ \ \ \ \ String\ citta\ =\ txtCitta.getText();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00297}00297\ \ \ \ \ \ \ \ \ \textcolor{comment}{//cap}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00298}00298\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ cap;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00299}00299\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(txtCap.getText().isBlank())\{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00300}00300\ \ \ \ \ \ \ \ \ \ \ \ \ cap\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00301}00301\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00302}00302\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00303}00303\ \ \ \ \ \ \ \ \ \ \ \ \ cap\ =\ Integer.parseInt(txtCap.getText());}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00304}00304\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00305}00305\ \ \ \ \ \ \ \ \ \textcolor{comment}{//via}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00306}00306\ \ \ \ \ \ \ \ \ String\ via\ =\ txtVia.getText();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00307}00307\ \ \ \ \ \ \ \ \ \textcolor{comment}{//civico}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00308}00308\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ civico;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00309}00309\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(txtCivico.getText().isBlank())\{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00310}00310\ \ \ \ \ \ \ \ \ \ \ \ \ civico\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00311}00311\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00312}00312\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00313}00313\ \ \ \ \ \ \ \ \ \ \ \ \ civico\ =\ \ Integer.valueOf(txtCivico.getText());}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00314}00314\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00315}00315\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00316}00316\ \ \ \ \ \ \ \ \ \textcolor{comment}{//emial}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00317}00317\ \ \ \ \ \ \ \ \ String\ email\ =\ txtEmail.getText();\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00318}00318\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Password}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00319}00319\ \ \ \ \ \ \ \ \ String\ password\ =\ String.valueOf(txtPassword.getPassword());}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00320}00320\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00321}00321\ \ \ \ \ \ \ \ \ \textcolor{comment}{//prima\ di\ salvare\ i\ dati\ verifo\ che\ l'utente\ abbia\ completato\ ogni\ campo}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00322}00322\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (checkInputs\ (cf,\ \ nome,\ \ cognome,\ \ citta,\ \ cap,\ \ via,\ \ civico,\ \ email,\ password))\ \{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00323}00323\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00324}00324\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcommon_1_1_utenti_registrati}{UtentiRegistrati}}\ ur\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati}{UtentiRegistrati}}(cf,\ \ nome,\ \ cognome,\ \ citta,\ \ cap,\ \ via,\ \ civico,\ \ email,\ password);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00325}00325\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ is.\mbox{\hyperlink{interfacecommon_1_1_interfaccia_servizio_a510bdec2f4ffb0c0471729ed42a29175}{registrazione}}(ur);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00326}00326\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ JOptionPane.showMessageDialog(\textcolor{keyword}{null},\ \textcolor{stringliteral}{"{}Utente\ registrato\ Correttamente.\ Benvenuto:\ "{}}\ +\ cognome\ +\ \textcolor{stringliteral}{"{}\ "{}}\ +\ nome\ ,\textcolor{stringliteral}{"{}Benvenuto"{}},\ JOptionPane.INFORMATION\_MESSAGE);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00327}00327\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this.dispose();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00328}00328\ \ \ \ \ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{catch}(\mbox{\hyperlink{classcommon_1_1_chiave_duplicata}{ChiaveDuplicata}}\ |\ \mbox{\hyperlink{classcommon_1_1_dati_non_validi}{DatiNonValidi}}\ |\ \mbox{\hyperlink{classcommon_1_1_my_server_exception}{MyServerException}}\ |\ RemoteException\ ex)\{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00329}00329\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ JOptionPane.showMessageDialog(\textcolor{keyword}{null},\ \textcolor{stringliteral}{"{}Uno\ o\ più\ dati\ inseriti\ non\ sono\ corretti."{}},\ \textcolor{stringliteral}{"{}Errore"{}},\ JOptionPane.WARNING\_MESSAGE);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00330}00330\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00331}00331\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00332}00332\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00333}00333\ \ \ \ \ \ \ \ \ \ \ \ \ JOptionPane.showMessageDialog(\textcolor{keyword}{null},\ \textcolor{stringliteral}{"{}Uno\ o\ più\ dati\ inseriti\ non\ sono\ corretti."{}},\ \textcolor{stringliteral}{"{}Errore"{}},\ JOptionPane.WARNING\_MESSAGE);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00334}00334\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00335}00335\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00336}00336\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00353}\mbox{\hyperlink{classclient_1_1_g_u_i_a7908f527e96ed12f5cdc4d220ac51f1d}{00353}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{boolean}\ \mbox{\hyperlink{classclient_1_1_g_u_i_a7908f527e96ed12f5cdc4d220ac51f1d}{checkInputs}}(String\ cf,\ String\ nome,\ String\ cognome,\ String\ citta,\ \textcolor{keywordtype}{int}\ cap,\ String\ via,\ \textcolor{keywordtype}{int}\ civico,\ String\ email,\ String\ password)\ \{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00354}00354\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\string^([A-\/Z]\{6\}[0-\/9LMNPQRSTUV]\{2\}[ABCDEHLMPRST]\{1\}[0-\/9LMNPQRSTUV]\{2\}[A-\/Z]\{1\}[0-\/9LMNPQRSTUV]\{3\}[A-\/Z]\{1\})\$|([0-\/9]\{11\})\$}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00355}00355\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cf\ !=\ \textcolor{keyword}{null}\ \&\&\ !cf.isBlank()\ \&\&\ cf.matches(\textcolor{stringliteral}{"{}\string^[a-\/zA-\/Z]\{6\}[0-\/9]\{2\}[abcdehlmprstABCDEHLMPRST]\{1\}[0-\/9]\{2\}([a-\/zA-\/Z]\{1\}[0-\/9]\{3\})[a-\/zA-\/Z]\{1\}\$"{}}))\ \{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00356}00356\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (nome\ !=\ \textcolor{keyword}{null}\ \&\&\ !nome.equals(\textcolor{stringliteral}{"{}"{}})\ \&\&\ !nome.equals(\textcolor{stringliteral}{"{}\ "{}})\ \&\&\ !nome.matches(\textcolor{stringliteral}{"{}.*\(\backslash\)\(\backslash\)d.*"{}}))\ \{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00357}00357\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cognome\ !=\ \textcolor{keyword}{null}\ \&\&\ !cognome.equals(\textcolor{stringliteral}{"{}"{}})\ \&\&\ !cognome.equals(\textcolor{stringliteral}{"{}\ "{}})\ \&\&\ !cognome.matches(\textcolor{stringliteral}{"{}.*\(\backslash\)\(\backslash\)d.*"{}}))\ \{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00358}00358\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (citta\ !=\ \textcolor{keyword}{null}\ \&\&\ !citta.equals(\textcolor{stringliteral}{"{}"{}})\ \&\&\ !citta.equals(\textcolor{stringliteral}{"{}\ "{}})\ \&\&\ !citta.matches(\textcolor{stringliteral}{"{}.*\(\backslash\)\(\backslash\)d.*"{}}))\ \{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00359}00359\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cap\ !=\ 0\ \&\&\ cap>0)\ \{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00360}00360\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (via\ !=\ \textcolor{keyword}{null}\ \&\&\ !via.equals(\textcolor{stringliteral}{"{}"{}})\ \&\&\ !via.equals(\textcolor{stringliteral}{"{}\ "{}})\ \&\&\ !via.matches(\textcolor{stringliteral}{"{}.*\(\backslash\)\(\backslash\)d.*"{}}))\ \{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00361}00361\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (civico\ !=\ 0\ \&\&\ civico>0)\ \{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00362}00362\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isValidateEmailAddress(email)\ \&\&\ password\ !=\ \textcolor{keyword}{null}\ \&\&\ !password.equals(\textcolor{stringliteral}{"{}"{}})\ \&\&\ !password.equals(\textcolor{stringliteral}{"{}\ "{}}))\ \{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00363}00363\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00364}00364\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00365}00365\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00366}00366\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00367}00367\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00368}00368\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00369}00369\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00370}00370\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00371}00371\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00372}00372\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00373}00373\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00374}00374\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00383}\mbox{\hyperlink{classclient_1_1_g_u_i_a4d6c3cdfc183382126f95d648704ef2b}{00383}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{boolean}\ \mbox{\hyperlink{classclient_1_1_g_u_i_a4d6c3cdfc183382126f95d648704ef2b}{isValidateEmailAddress}}(String\ emailStr)\ \{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00384}00384\ \ \ \ \ \ \ \ \ Matcher\ matcher\ =\ VALID\_EMAIL\_ADDRESS\_REGEX.matcher(emailStr);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00385}00385\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ matcher.find();}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00386}00386\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00387}00387\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00391}\mbox{\hyperlink{classclient_1_1_g_u_i_a75988cf84fc6ee7a2ebff36e363021aa}{00391}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classclient_1_1_g_u_i_a75988cf84fc6ee7a2ebff36e363021aa}{main}}(String\ args[])\ \{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00392}00392\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Set\ the\ Nimbus\ look\ and\ feel\ */}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00393}00393\ \ \ \ \ \ \ \ \ \textcolor{comment}{//<editor-\/fold\ defaultstate="{}collapsed"{}\ desc="{}\ Look\ and\ feel\ setting\ code\ (optional)\ "{}>}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00394}00394\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ If\ Nimbus\ (introduced\ in\ Java\ SE\ 6)\ is\ not\ available,\ stay\ with\ the\ default\ look\ and\ feel.}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00395}00395\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ *\ For\ details\ see\ http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html\ }}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00396}00396\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00397}00397\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00398}00398\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (javax.swing.UIManager.LookAndFeelInfo\ info\ :\ javax.swing.UIManager.getInstalledLookAndFeels())\ \{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00399}00399\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{stringliteral}{"{}Nimbus"{}}.equals(info.getName()))\ \{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00400}00400\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ javax.swing.UIManager.setLookAndFeel(info.getClassName());}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00401}00401\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00402}00402\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00403}00403\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00404}00404\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (ClassNotFoundException\ ex)\ \{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00405}00405\ \ \ \ \ \ \ \ \ \ \ \ \ java.util.logging.Logger.getLogger(\mbox{\hyperlink{classclient_1_1_g_u_i}{GUI}}.class.getName()).log(java.util.logging.Level.SEVERE,\ \textcolor{keyword}{null},\ ex);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00406}00406\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (InstantiationException\ ex)\ \{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00407}00407\ \ \ \ \ \ \ \ \ \ \ \ \ java.util.logging.Logger.getLogger(\mbox{\hyperlink{classclient_1_1_g_u_i}{GUI}}.class.getName()).log(java.util.logging.Level.SEVERE,\ \textcolor{keyword}{null},\ ex);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00408}00408\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (IllegalAccessException\ ex)\ \{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00409}00409\ \ \ \ \ \ \ \ \ \ \ \ \ java.util.logging.Logger.getLogger(\mbox{\hyperlink{classclient_1_1_g_u_i}{GUI}}.class.getName()).log(java.util.logging.Level.SEVERE,\ \textcolor{keyword}{null},\ ex);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00410}00410\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (javax.swing.UnsupportedLookAndFeelException\ ex)\ \{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00411}00411\ \ \ \ \ \ \ \ \ \ \ \ \ java.util.logging.Logger.getLogger(\mbox{\hyperlink{classclient_1_1_g_u_i}{GUI}}.class.getName()).log(java.util.logging.Level.SEVERE,\ \textcolor{keyword}{null},\ ex);}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00412}00412\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00413}00413\ \ \ \ \ \ \ \ \ \textcolor{comment}{//</editor-\/fold>}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00414}00414\ \ \ \ \ \ \ \ \ \textcolor{comment}{//</editor-\/fold>}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00415}00415\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00416}00416\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Create\ and\ display\ the\ form\ */}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00417}00417\ \ \ \ \ \ \ \ \ java.awt.EventQueue.invokeLater(\textcolor{keyword}{new}\ Runnable()\ \{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00418}00418\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ run()\ \{}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00419}00419\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classclient_1_1_g_u_i}{GUI}}().setVisible(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00420}00420\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00421}00421\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00422}00422\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00423}00423\ }
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00424}00424\ \ \ \ \ \textcolor{comment}{//\ Variables\ declaration\ -\/\ do\ not\ modify//GEN-\/BEGIN:variables}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00425}\mbox{\hyperlink{classclient_1_1_g_u_i_a64bf56b0a7dd70935d252c21cbd90938}{00425}}\ \ \ \ \ \textcolor{keyword}{private}\ javax.swing.JButton\ \mbox{\hyperlink{classclient_1_1_g_u_i_a64bf56b0a7dd70935d252c21cbd90938}{jBtnRegistrati}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00426}\mbox{\hyperlink{classclient_1_1_g_u_i_a47066ebb7b751f52b9debcc4bd1b1ee4}{00426}}\ \ \ \ \ \textcolor{keyword}{private}\ javax.swing.JLabel\ \mbox{\hyperlink{classclient_1_1_g_u_i_a47066ebb7b751f52b9debcc4bd1b1ee4}{jLabel1}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00427}\mbox{\hyperlink{classclient_1_1_g_u_i_abc6e659b78143ee572fd18136c05134c}{00427}}\ \ \ \ \ \textcolor{keyword}{private}\ javax.swing.JLabel\ \mbox{\hyperlink{classclient_1_1_g_u_i_abc6e659b78143ee572fd18136c05134c}{jLabel10}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00428}\mbox{\hyperlink{classclient_1_1_g_u_i_aac4c74e7fdef17e600ac902cf40ee766}{00428}}\ \ \ \ \ \textcolor{keyword}{private}\ javax.swing.JLabel\ \mbox{\hyperlink{classclient_1_1_g_u_i_aac4c74e7fdef17e600ac902cf40ee766}{jLabel2}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00429}\mbox{\hyperlink{classclient_1_1_g_u_i_a7b8025d346156944b14ed972285012f2}{00429}}\ \ \ \ \ \textcolor{keyword}{private}\ javax.swing.JLabel\ \mbox{\hyperlink{classclient_1_1_g_u_i_a7b8025d346156944b14ed972285012f2}{jLabel3}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00430}\mbox{\hyperlink{classclient_1_1_g_u_i_abaf449b4e6e9562ab844bbb2f4d5f779}{00430}}\ \ \ \ \ \textcolor{keyword}{private}\ javax.swing.JLabel\ \mbox{\hyperlink{classclient_1_1_g_u_i_abaf449b4e6e9562ab844bbb2f4d5f779}{jLabel4}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00431}\mbox{\hyperlink{classclient_1_1_g_u_i_a8ad4e0013e4b113a715092ed0b516490}{00431}}\ \ \ \ \ \textcolor{keyword}{private}\ javax.swing.JLabel\ \mbox{\hyperlink{classclient_1_1_g_u_i_a8ad4e0013e4b113a715092ed0b516490}{jLabel5}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00432}\mbox{\hyperlink{classclient_1_1_g_u_i_ad27c2b1c74d8ce1ad74a1c308b0d7d66}{00432}}\ \ \ \ \ \textcolor{keyword}{private}\ javax.swing.JLabel\ \mbox{\hyperlink{classclient_1_1_g_u_i_ad27c2b1c74d8ce1ad74a1c308b0d7d66}{jLabel6}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00433}\mbox{\hyperlink{classclient_1_1_g_u_i_a86597916a2d9a68eb648cd759ea4d55a}{00433}}\ \ \ \ \ \textcolor{keyword}{private}\ javax.swing.JLabel\ \mbox{\hyperlink{classclient_1_1_g_u_i_a86597916a2d9a68eb648cd759ea4d55a}{jLabel7}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00434}\mbox{\hyperlink{classclient_1_1_g_u_i_a5c35649503422930b8ca9404a927ecd4}{00434}}\ \ \ \ \ \textcolor{keyword}{private}\ javax.swing.JLabel\ \mbox{\hyperlink{classclient_1_1_g_u_i_a5c35649503422930b8ca9404a927ecd4}{jLabel8}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00435}\mbox{\hyperlink{classclient_1_1_g_u_i_aae76ec7156e4b36d2a59b15dc3acf5c7}{00435}}\ \ \ \ \ \textcolor{keyword}{private}\ javax.swing.JLabel\ \mbox{\hyperlink{classclient_1_1_g_u_i_aae76ec7156e4b36d2a59b15dc3acf5c7}{jLabel9}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00436}\mbox{\hyperlink{classclient_1_1_g_u_i_aae4319d2cb4ac19c9a2c7d4d3a2549f4}{00436}}\ \ \ \ \ \textcolor{keyword}{private}\ javax.swing.JScrollPane\ \mbox{\hyperlink{classclient_1_1_g_u_i_aae4319d2cb4ac19c9a2c7d4d3a2549f4}{jScrollPane1}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00437}\mbox{\hyperlink{classclient_1_1_g_u_i_a3ff9eafda5b4cd0c2e725de32515928f}{00437}}\ \ \ \ \ \textcolor{keyword}{private}\ javax.swing.JScrollPane\ \mbox{\hyperlink{classclient_1_1_g_u_i_a3ff9eafda5b4cd0c2e725de32515928f}{jScrollPane2}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00438}\mbox{\hyperlink{classclient_1_1_g_u_i_a2efa5c12ff7251b743fdfa76d5141500}{00438}}\ \ \ \ \ \textcolor{keyword}{private}\ javax.swing.JScrollPane\ \mbox{\hyperlink{classclient_1_1_g_u_i_a2efa5c12ff7251b743fdfa76d5141500}{jScrollPane3}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00439}\mbox{\hyperlink{classclient_1_1_g_u_i_a92b107c469a3bb46e6d8052621513bca}{00439}}\ \ \ \ \ \textcolor{keyword}{private}\ javax.swing.JScrollPane\ \mbox{\hyperlink{classclient_1_1_g_u_i_a92b107c469a3bb46e6d8052621513bca}{jScrollPane4}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00440}\mbox{\hyperlink{classclient_1_1_g_u_i_a3a1ca3d330ec2cd7d16e2be9177bbdff}{00440}}\ \ \ \ \ \textcolor{keyword}{private}\ javax.swing.JScrollPane\ \mbox{\hyperlink{classclient_1_1_g_u_i_a3a1ca3d330ec2cd7d16e2be9177bbdff}{jScrollPane5}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00441}\mbox{\hyperlink{classclient_1_1_g_u_i_ad5e5e988e4925b2e8bd8e2095ca6cb97}{00441}}\ \ \ \ \ \textcolor{keyword}{private}\ javax.swing.JScrollPane\ \mbox{\hyperlink{classclient_1_1_g_u_i_ad5e5e988e4925b2e8bd8e2095ca6cb97}{jScrollPane6}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00442}\mbox{\hyperlink{classclient_1_1_g_u_i_a8c449387c187ff49de5a26f8dd6f9abd}{00442}}\ \ \ \ \ \textcolor{keyword}{private}\ javax.swing.JScrollPane\ \mbox{\hyperlink{classclient_1_1_g_u_i_a8c449387c187ff49de5a26f8dd6f9abd}{jScrollPane7}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00443}\mbox{\hyperlink{classclient_1_1_g_u_i_a9b29863e9936b2169d6c2eae774d01d3}{00443}}\ \ \ \ \ \textcolor{keyword}{private}\ javax.swing.JScrollPane\ \mbox{\hyperlink{classclient_1_1_g_u_i_a9b29863e9936b2169d6c2eae774d01d3}{jScrollPane8}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00444}\mbox{\hyperlink{classclient_1_1_g_u_i_a92d9261432b219804de6e811b4fa07cd}{00444}}\ \ \ \ \ \textcolor{keyword}{private}\ javax.swing.JLabel\ \mbox{\hyperlink{classclient_1_1_g_u_i_a92d9261432b219804de6e811b4fa07cd}{label}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00445}\mbox{\hyperlink{classclient_1_1_g_u_i_a498d7f47675c414bb81438de065fde7e}{00445}}\ \ \ \ \ \textcolor{keyword}{private}\ javax.swing.JTextPane\ \mbox{\hyperlink{classclient_1_1_g_u_i_a498d7f47675c414bb81438de065fde7e}{txtCap}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00446}\mbox{\hyperlink{classclient_1_1_g_u_i_a27db760366378a4e3ec113a4deb55922}{00446}}\ \ \ \ \ \textcolor{keyword}{private}\ javax.swing.JTextPane\ \mbox{\hyperlink{classclient_1_1_g_u_i_a27db760366378a4e3ec113a4deb55922}{txtCitta}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00447}\mbox{\hyperlink{classclient_1_1_g_u_i_a74206f99fc8042d15cc7f26718ea00f8}{00447}}\ \ \ \ \ \textcolor{keyword}{private}\ javax.swing.JTextPane\ \mbox{\hyperlink{classclient_1_1_g_u_i_a74206f99fc8042d15cc7f26718ea00f8}{txtCivico}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00448}\mbox{\hyperlink{classclient_1_1_g_u_i_a14fb219dd38d45707caca021db104826}{00448}}\ \ \ \ \ \textcolor{keyword}{private}\ javax.swing.JTextPane\ \mbox{\hyperlink{classclient_1_1_g_u_i_a14fb219dd38d45707caca021db104826}{txtCognome}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00449}\mbox{\hyperlink{classclient_1_1_g_u_i_a9e2680355ee30242457a2b3566c2a9a0}{00449}}\ \ \ \ \ \textcolor{keyword}{private}\ javax.swing.JTextPane\ \mbox{\hyperlink{classclient_1_1_g_u_i_a9e2680355ee30242457a2b3566c2a9a0}{txtEmail}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00450}\mbox{\hyperlink{classclient_1_1_g_u_i_ad9a0b05e5eb4f24707039d1e7bf45200}{00450}}\ \ \ \ \ \textcolor{keyword}{private}\ javax.swing.JTextPane\ \mbox{\hyperlink{classclient_1_1_g_u_i_ad9a0b05e5eb4f24707039d1e7bf45200}{txtNome}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00451}\mbox{\hyperlink{classclient_1_1_g_u_i_a8e20e099383dd88c23abcb8cc046447b}{00451}}\ \ \ \ \ \textcolor{keyword}{private}\ javax.swing.JPasswordField\ \mbox{\hyperlink{classclient_1_1_g_u_i_a8e20e099383dd88c23abcb8cc046447b}{txtPassword}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00452}\mbox{\hyperlink{classclient_1_1_g_u_i_a27105ddd5f99614f75a5cd75cc78ec5f}{00452}}\ \ \ \ \ \textcolor{keyword}{private}\ javax.swing.JTextPane\ \mbox{\hyperlink{classclient_1_1_g_u_i_a27105ddd5f99614f75a5cd75cc78ec5f}{txtVia}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00453}\mbox{\hyperlink{classclient_1_1_g_u_i_abfe0cc8009e9b2d1802d4eaf76cdab4f}{00453}}\ \ \ \ \ \textcolor{keyword}{private}\ javax.swing.JTextPane\ \mbox{\hyperlink{classclient_1_1_g_u_i_abfe0cc8009e9b2d1802d4eaf76cdab4f}{txtcf}};}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00454}00454\ \ \ \ \ \textcolor{comment}{//\ End\ of\ variables\ declaration//GEN-\/END:variables}}
+\DoxyCodeLine{\Hypertarget{_g_u_i_8java_source_l00455}00455\ \}}
+
+\end{DoxyCode}

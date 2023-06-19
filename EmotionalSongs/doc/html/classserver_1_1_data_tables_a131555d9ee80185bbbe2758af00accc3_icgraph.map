@@ -1,0 +1,5 @@
+<map id="handleEmozioniSet" name="handleEmozioniSet">
+<area shape="rect" id="Node000001" title="Metodo invocato per mappare il datamodel delle emozioni ottenute dall&#39;esecuzione delle query." alt="" coords="273,13,406,40"/>
+<area shape="rect" id="Node000002" href="$classserver_1_1_console_frame.html#ab853f77a8f5cd283bea964765761826f" title="Metodo che restituisce le emozioni del brano specificato." alt="" coords="5,5,225,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="258,29,225,29,225,24,258,24"/>
+</map>

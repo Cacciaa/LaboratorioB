@@ -1,0 +1,699 @@
+\doxysection{Console\+Frame Class Reference}
+\hypertarget{classserver_1_1_console_frame}{}\label{classserver_1_1_console_frame}\index{ConsoleFrame@{ConsoleFrame}}
+
+
+Inheritance diagram for Console\+Frame\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classserver_1_1_console_frame__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Console\+Frame\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classserver_1_1_console_frame__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classserver_1_1_console_frame_a9d6858cf8842c98692cfedcc2abd0f15}{Console\+Frame}} (String user, String pass)
+\item 
+synchronized \mbox{\hyperlink{classcommon_1_1_utenti_registrati}{Utenti\+Registrati}} \mbox{\hyperlink{classserver_1_1_console_frame_af55c6eedb634aeac81ceadf60c7a40bd}{login}} (String cf, String password)  throws \mbox{\hyperlink{classcommon_1_1_utente_inesistente}{Utente\+Inesistente}}, \mbox{\hyperlink{classcommon_1_1_password_errata}{Password\+Errata}}, \mbox{\hyperlink{classcommon_1_1_my_server_exception}{My\+Server\+Exception}} 
+\begin{DoxyCompactList}\small\item\em Metodo per effettuare il login dell\textquotesingle{}utente al sistema. \end{DoxyCompactList}\item 
+synchronized void \mbox{\hyperlink{classserver_1_1_console_frame_aab894772c77985d4af339ed01381a42f}{registrazione}} (\mbox{\hyperlink{classcommon_1_1_utenti_registrati}{Utenti\+Registrati}} utente)  throws \mbox{\hyperlink{classcommon_1_1_chiave_duplicata}{Chiave\+Duplicata}}, \mbox{\hyperlink{classcommon_1_1_dati_non_validi}{Dati\+Non\+Validi}}, \mbox{\hyperlink{classcommon_1_1_my_server_exception}{My\+Server\+Exception}} 
+\begin{DoxyCompactList}\small\item\em Metodo per effettuare la registrazione al sistema. \end{DoxyCompactList}\item 
+synchronized Array\+List$<$ \mbox{\hyperlink{classcommon_1_1_canzoni}{Canzoni}} $>$ \mbox{\hyperlink{classserver_1_1_console_frame_a5b8294026608668c8f915f834b607c22}{filtra\+Per\+Titolo}} (String titolo)  throws \mbox{\hyperlink{classcommon_1_1_canzone_inesistente}{Canzone\+Inesistente}}, \mbox{\hyperlink{classcommon_1_1_my_server_exception}{My\+Server\+Exception}} 
+\begin{DoxyCompactList}\small\item\em Metodo che filtra le canzoni per il titolo. \end{DoxyCompactList}\item 
+synchronized Array\+List$<$ \mbox{\hyperlink{classcommon_1_1_canzoni}{Canzoni}} $>$ \mbox{\hyperlink{classserver_1_1_console_frame_a4df018cf11f2509ef9c274cb734f3c3a}{filtra\+Per\+Autore\+Anno}} (String autore, int anno)  throws \mbox{\hyperlink{classcommon_1_1_canzone_inesistente}{Canzone\+Inesistente}}, \mbox{\hyperlink{classcommon_1_1_my_server_exception}{My\+Server\+Exception}} 
+\begin{DoxyCompactList}\small\item\em Metodo che filtra le canzoni per autore e anno. \end{DoxyCompactList}\item 
+synchronized Array\+List$<$ \mbox{\hyperlink{classcommon_1_1_canzoni}{Canzoni}} $>$ \mbox{\hyperlink{classserver_1_1_console_frame_ad780c43371a910daafdf021982f32500}{get\+Canzoni\+For\+Playlist}} ()  throws \mbox{\hyperlink{classcommon_1_1_my_server_exception}{My\+Server\+Exception}}, \mbox{\hyperlink{classcommon_1_1_canzone_inesistente}{Canzone\+Inesistente}} 
+\begin{DoxyCompactList}\small\item\em Metodo che restituisce le canzoni da inserire nella playlist dell\textquotesingle{}utente. \end{DoxyCompactList}\item 
+synchronized \mbox{\hyperlink{classcommon_1_1_emozioni}{Emozioni}} \mbox{\hyperlink{classserver_1_1_console_frame_ab853f77a8f5cd283bea964765761826f}{get\+Emozioni\+From\+Brano}} (\mbox{\hyperlink{classcommon_1_1_canzoni}{Canzoni}} canzone)  throws \mbox{\hyperlink{classcommon_1_1_emozioni_inesistenti}{Emozioni\+Inesistenti}}, \mbox{\hyperlink{classcommon_1_1_my_server_exception}{My\+Server\+Exception}} 
+\begin{DoxyCompactList}\small\item\em Metodo che restituisce le emozioni del brano specificato. \end{DoxyCompactList}\item 
+synchronized void \mbox{\hyperlink{classserver_1_1_console_frame_af575af1ef9ed147af09e7ad877b9ebfd}{create\+Playlist}} (String nomeplaylist, Array\+List$<$ \mbox{\hyperlink{classcommon_1_1_canzoni}{Canzoni}} $>$ canzoni, String cf)  throws \mbox{\hyperlink{classcommon_1_1_chiave_duplicata}{Chiave\+Duplicata}}, \mbox{\hyperlink{classcommon_1_1_dati_non_validi}{Dati\+Non\+Validi}}, \mbox{\hyperlink{classcommon_1_1_my_server_exception}{My\+Server\+Exception}} 
+\begin{DoxyCompactList}\small\item\em Metodo che crea la playlist inserendo le canzoni scelte dall\textquotesingle{}utente. \end{DoxyCompactList}\item 
+synchronized Array\+List$<$ \mbox{\hyperlink{classcommon_1_1_playlist}{Playlist}} $>$ \mbox{\hyperlink{classserver_1_1_console_frame_a02b2d0d43bd14f14563ea914822de388}{get\+Playlist}} (String cf)  throws \mbox{\hyperlink{classcommon_1_1_my_server_exception}{My\+Server\+Exception}}, \mbox{\hyperlink{classcommon_1_1_playlist_inesistenti}{Playlist\+Inesistenti}} 
+\begin{DoxyCompactList}\small\item\em Metodo che restituisce le playlist associate all\textquotesingle{}utente. \end{DoxyCompactList}\item 
+synchronized Array\+List$<$ \mbox{\hyperlink{classcommon_1_1_canzoni}{Canzoni}} $>$ \mbox{\hyperlink{classserver_1_1_console_frame_af5a428a63d28c6d7b3cf944bbdbe82ff}{get\+Canzoni\+From\+Playlist}} (int id\+Playlist)  throws \mbox{\hyperlink{classcommon_1_1_canzone_inesistente}{Canzone\+Inesistente}}, \mbox{\hyperlink{classcommon_1_1_my_server_exception}{My\+Server\+Exception}} 
+\begin{DoxyCompactList}\small\item\em Metodo che restituisce le canzoni associate alla playlist. \end{DoxyCompactList}\item 
+synchronized void \mbox{\hyperlink{classserver_1_1_console_frame_a704ea62ae5069c5151c201d29fe94ea0}{inserisci\+Emozione}} (\mbox{\hyperlink{classcommon_1_1_canzoni}{Canzoni}} canzone, String cf, \mbox{\hyperlink{classcommon_1_1_emozioni_canzone}{Emozioni\+Canzone}} emocanzone)  throws \mbox{\hyperlink{classcommon_1_1_dati_non_validi}{Dati\+Non\+Validi}}, \mbox{\hyperlink{classcommon_1_1_chiave_duplicata}{Chiave\+Duplicata}}, \mbox{\hyperlink{classcommon_1_1_my_server_exception}{My\+Server\+Exception}} 
+\begin{DoxyCompactList}\small\item\em Metodo che inserisce l\textquotesingle{}emozione rilasciata dall\textquotesingle{}utente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcommon_1_1_utenti_registrati}{Utenti\+Registrati}} \mbox{\hyperlink{interfacecommon_1_1_interfaccia_servizio_a21229791e28aa63ebddca156cd5c2533}{login}} (String cf, String password)  throws \mbox{\hyperlink{classcommon_1_1_utente_inesistente}{Utente\+Inesistente}}, \mbox{\hyperlink{classcommon_1_1_password_errata}{Password\+Errata}}, \mbox{\hyperlink{classcommon_1_1_my_server_exception}{My\+Server\+Exception}},Remote\+Exception
+\begin{DoxyCompactList}\small\item\em Metodo per effettuare il login dell\textquotesingle{}utente al sistema. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interfacecommon_1_1_interfaccia_servizio_a510bdec2f4ffb0c0471729ed42a29175}{registrazione}} (\mbox{\hyperlink{classcommon_1_1_utenti_registrati}{Utenti\+Registrati}} utente)  throws \mbox{\hyperlink{classcommon_1_1_chiave_duplicata}{Chiave\+Duplicata}}, \mbox{\hyperlink{classcommon_1_1_dati_non_validi}{Dati\+Non\+Validi}}, \mbox{\hyperlink{classcommon_1_1_my_server_exception}{My\+Server\+Exception}},Remote\+Exception
+\begin{DoxyCompactList}\small\item\em Metodo per effettuare la registrazione al sistema. \end{DoxyCompactList}\item 
+Array\+List$<$ \mbox{\hyperlink{classcommon_1_1_canzoni}{Canzoni}} $>$ \mbox{\hyperlink{interfacecommon_1_1_interfaccia_servizio_ad4c7d88cbbe23924721871d415501f5b}{filtra\+Per\+Titolo}} (String titolo)  throws \mbox{\hyperlink{classcommon_1_1_canzone_inesistente}{Canzone\+Inesistente}}, \mbox{\hyperlink{classcommon_1_1_my_server_exception}{My\+Server\+Exception}},Remote\+Exception
+\begin{DoxyCompactList}\small\item\em Metodo che filtra le canzoni per il titolo. \end{DoxyCompactList}\item 
+Array\+List$<$ \mbox{\hyperlink{classcommon_1_1_canzoni}{Canzoni}} $>$ \mbox{\hyperlink{interfacecommon_1_1_interfaccia_servizio_a8df9edcc1e9a83588ef85ed2cad459d0}{filtra\+Per\+Autore\+Anno}} (String autore, int anno)  throws \mbox{\hyperlink{classcommon_1_1_canzone_inesistente}{Canzone\+Inesistente}}, \mbox{\hyperlink{classcommon_1_1_my_server_exception}{My\+Server\+Exception}},Remote\+Exception
+\begin{DoxyCompactList}\small\item\em Metodo che filtra le canzoni per autore e anno. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcommon_1_1_emozioni}{Emozioni}} \mbox{\hyperlink{interfacecommon_1_1_interfaccia_servizio_a3e5c329b85a7033e21ac2112b537132b}{get\+Emozioni\+From\+Brano}} (\mbox{\hyperlink{classcommon_1_1_canzoni}{Canzoni}} canzone)  throws \mbox{\hyperlink{classcommon_1_1_emozioni_inesistenti}{Emozioni\+Inesistenti}}, \mbox{\hyperlink{classcommon_1_1_my_server_exception}{My\+Server\+Exception}},Remote\+Exception
+\begin{DoxyCompactList}\small\item\em Metodo che restituisce le emozioni del brano specificato. \end{DoxyCompactList}\item 
+Array\+List$<$ \mbox{\hyperlink{classcommon_1_1_canzoni}{Canzoni}} $>$ \mbox{\hyperlink{interfacecommon_1_1_interfaccia_servizio_a3e494b90263ca54a39e60cfbb9a1edf5}{get\+Canzoni\+For\+Playlist}} ()  throws \mbox{\hyperlink{classcommon_1_1_my_server_exception}{My\+Server\+Exception}}, \mbox{\hyperlink{classcommon_1_1_canzone_inesistente}{Canzone\+Inesistente}},Remote\+Exception
+\begin{DoxyCompactList}\small\item\em Metodo che restituisce le canzoni da inserire nella playlist dell\textquotesingle{}utente. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interfacecommon_1_1_interfaccia_servizio_af4163a6b21c5a872c979a657a47d70eb}{create\+Playlist}} (String nomeplaylist, Array\+List$<$ \mbox{\hyperlink{classcommon_1_1_canzoni}{Canzoni}} $>$ canzoni, String cf)  throws \mbox{\hyperlink{classcommon_1_1_chiave_duplicata}{Chiave\+Duplicata}}, \mbox{\hyperlink{classcommon_1_1_dati_non_validi}{Dati\+Non\+Validi}}, \mbox{\hyperlink{classcommon_1_1_my_server_exception}{My\+Server\+Exception}},Remote\+Exception
+\begin{DoxyCompactList}\small\item\em Metodo che crea la playlist inserendo le canzoni scelte dall\textquotesingle{}utente. \end{DoxyCompactList}\item 
+Array\+List$<$ \mbox{\hyperlink{classcommon_1_1_playlist}{Playlist}} $>$ \mbox{\hyperlink{interfacecommon_1_1_interfaccia_servizio_ada9f30a90ee18efd99b59b5e7fbb329d}{get\+Playlist}} (String cf)  throws \mbox{\hyperlink{classcommon_1_1_playlist_inesistenti}{Playlist\+Inesistenti}}, \mbox{\hyperlink{classcommon_1_1_my_server_exception}{My\+Server\+Exception}},Remote\+Exception
+\begin{DoxyCompactList}\small\item\em Metodo che restituisce le playlist associate all\textquotesingle{}utente. \end{DoxyCompactList}\item 
+Array\+List$<$ \mbox{\hyperlink{classcommon_1_1_canzoni}{Canzoni}} $>$ \mbox{\hyperlink{interfacecommon_1_1_interfaccia_servizio_af624b6190c5806460ca8288863a7a30e}{get\+Canzoni\+From\+Playlist}} (int id\+Playlist)  throws \mbox{\hyperlink{classcommon_1_1_my_server_exception}{My\+Server\+Exception}}, \mbox{\hyperlink{classcommon_1_1_canzone_inesistente}{Canzone\+Inesistente}},Remote\+Exception
+\begin{DoxyCompactList}\small\item\em Metodo che restituisce le canzoni associate alla playlist. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interfacecommon_1_1_interfaccia_servizio_a9675630069e0c5d0c7bb048047650afd}{inserisci\+Emozione}} (\mbox{\hyperlink{classcommon_1_1_canzoni}{Canzoni}} canzone, String cf, \mbox{\hyperlink{classcommon_1_1_emozioni_canzone}{Emozioni\+Canzone}} emocanzone)  throws \mbox{\hyperlink{classcommon_1_1_my_server_exception}{My\+Server\+Exception}}, \mbox{\hyperlink{classcommon_1_1_dati_non_validi}{Dati\+Non\+Validi}}, \mbox{\hyperlink{classcommon_1_1_chiave_duplicata}{Chiave\+Duplicata}},Remote\+Exception
+\begin{DoxyCompactList}\small\item\em Metodo che inserisce l\textquotesingle{}emozione rilasciata dall\textquotesingle{}utente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final int \mbox{\hyperlink{classserver_1_1_console_frame_aa890d9fd10dbc9c090551a04b009e286}{PORT}} = 11012
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classserver_1_1_console_frame_a77410fe5c5b5ddb55910cd7a2297bff7}{init\+Components}} ()
+\item 
+Result\+Set \mbox{\hyperlink{classserver_1_1_console_frame_a5650e7c9e02506bdcee3d59954c9c7ea}{get\+Medie}} (\mbox{\hyperlink{classcommon_1_1_canzoni}{Canzoni}} canzone)  throws SQLException 
+\begin{DoxyCompactList}\small\item\em Metodo che calcola la media delle emozioni. \end{DoxyCompactList}\item 
+Result\+Set \mbox{\hyperlink{classserver_1_1_console_frame_a4e36e2a2f60c7b632247726669fb7fb8}{get\+Emozioni}} (\mbox{\hyperlink{classcommon_1_1_canzoni}{Canzoni}} canzone)  throws SQLException 
+\begin{DoxyCompactList}\small\item\em Metodo che restituisce le emozioni relative a una canzone. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classserver_1_1_database}{Database}} \mbox{\hyperlink{classserver_1_1_console_frame_a85d663119c421cf6e056810a3ae37ac6}{db}}
+\item 
+\mbox{\hyperlink{classserver_1_1_data_tables}{Data\+Tables}} \mbox{\hyperlink{classserver_1_1_console_frame_a7cc9a0e1eb39746de1a2eb9a60a874fb}{dt}}
+\item 
+javax.\+swing.\+JLabel \mbox{\hyperlink{classserver_1_1_console_frame_a47066ebb7b751f52b9debcc4bd1b1ee4}{j\+Label1}}
+\item 
+javax.\+swing.\+JScroll\+Pane \mbox{\hyperlink{classserver_1_1_console_frame_aae4319d2cb4ac19c9a2c7d4d3a2549f4}{j\+Scroll\+Pane1}}
+\item 
+javax.\+swing.\+JText\+Area \mbox{\hyperlink{classserver_1_1_console_frame_aed4d7148c12b1a22b81316c97a558f72}{txt\+Area\+Console}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Lorenzo Erba, 748702
+\end{DoxyAuthor}
+Lorenzo Erba, 748702,Ferialdo Elezi 749721,Alessandro Zancanella 751494,Matteo Cacciarino 748231, sede CO
+
+Classe rappresentante l\textquotesingle{}implementazione dell\textquotesingle{}interfaccia del servizio 
+
+Definition at line \mbox{\hyperlink{_console_frame_8java_source_l00039}{39}} of file \mbox{\hyperlink{_console_frame_8java_source}{Console\+Frame.\+java}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classserver_1_1_console_frame_a9d6858cf8842c98692cfedcc2abd0f15}\label{classserver_1_1_console_frame_a9d6858cf8842c98692cfedcc2abd0f15} 
+\index{ConsoleFrame@{ConsoleFrame}!ConsoleFrame@{ConsoleFrame}}
+\index{ConsoleFrame@{ConsoleFrame}!ConsoleFrame@{ConsoleFrame}}
+\doxysubsubsection{\texorpdfstring{ConsoleFrame()}{ConsoleFrame()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classserver_1_1_console_frame}{Console\+Frame}} (\begin{DoxyParamCaption}\item[{String}]{user,  }\item[{String}]{pass }\end{DoxyParamCaption})}
+
+Creates new form Console\+Frame 
+
+Definition at line \mbox{\hyperlink{_console_frame_8java_source_l00052}{52}} of file \mbox{\hyperlink{_console_frame_8java_source}{Console\+Frame.\+java}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{classserver_1_1_console_frame_a9d6858cf8842c98692cfedcc2abd0f15_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classserver_1_1_console_frame_af575af1ef9ed147af09e7ad877b9ebfd}\label{classserver_1_1_console_frame_af575af1ef9ed147af09e7ad877b9ebfd} 
+\index{ConsoleFrame@{ConsoleFrame}!createPlaylist@{createPlaylist}}
+\index{createPlaylist@{createPlaylist}!ConsoleFrame@{ConsoleFrame}}
+\doxysubsubsection{\texorpdfstring{createPlaylist()}{createPlaylist()}}
+{\footnotesize\ttfamily synchronized void create\+Playlist (\begin{DoxyParamCaption}\item[{String}]{nomeplaylist,  }\item[{Array\+List$<$ \mbox{\hyperlink{classcommon_1_1_canzoni}{Canzoni}} $>$}]{canzoni,  }\item[{String}]{cf }\end{DoxyParamCaption}) throws \mbox{\hyperlink{classcommon_1_1_chiave_duplicata}{Chiave\+Duplicata}}, \mbox{\hyperlink{classcommon_1_1_dati_non_validi}{Dati\+Non\+Validi}}, \mbox{\hyperlink{classcommon_1_1_my_server_exception}{My\+Server\+Exception}}}
+
+
+
+Metodo che crea la playlist inserendo le canzoni scelte dall\textquotesingle{}utente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nomeplaylist} & oggetto di tipo String contenente il nome della playlist \\
+\hline
+{\em canzoni} & oggetto di tipo Array\+List$<$\+Canzoni$>$ contenente le canzoni da inserire nella playlist \\
+\hline
+{\em cf} & oggetto di tipo String contenente il codicefiscale dell\textquotesingle{}utente \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Chiave\+Duplicata} & eccezione sollevata nel caso l\textquotesingle{}utente sia già registrato, chiave codicefiscale duplicata \\
+\hline
+{\em Dati\+Non\+Validi} & eccezione sollevata nel caso i dati inseriti non rispettano i vincoli di integrità \\
+\hline
+{\em My\+Server\+Exception} & eccezzione generica sollevata durante la comunicazione col DBMS \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{interfacecommon_1_1_interfaccia_servizio_af4163a6b21c5a872c979a657a47d70eb}{Interfaccia\+Servizio}}.
+
+
+
+Definition at line \mbox{\hyperlink{_console_frame_8java_source_l00336}{336}} of file \mbox{\hyperlink{_console_frame_8java_source}{Console\+Frame.\+java}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{classserver_1_1_console_frame_af575af1ef9ed147af09e7ad877b9ebfd_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classserver_1_1_console_frame_a4df018cf11f2509ef9c274cb734f3c3a}\label{classserver_1_1_console_frame_a4df018cf11f2509ef9c274cb734f3c3a} 
+\index{ConsoleFrame@{ConsoleFrame}!filtraPerAutoreAnno@{filtraPerAutoreAnno}}
+\index{filtraPerAutoreAnno@{filtraPerAutoreAnno}!ConsoleFrame@{ConsoleFrame}}
+\doxysubsubsection{\texorpdfstring{filtraPerAutoreAnno()}{filtraPerAutoreAnno()}}
+{\footnotesize\ttfamily synchronized Array\+List$<$ \mbox{\hyperlink{classcommon_1_1_canzoni}{Canzoni}} $>$ filtra\+Per\+Autore\+Anno (\begin{DoxyParamCaption}\item[{String}]{autore,  }\item[{int}]{anno }\end{DoxyParamCaption}) throws \mbox{\hyperlink{classcommon_1_1_canzone_inesistente}{Canzone\+Inesistente}}, \mbox{\hyperlink{classcommon_1_1_my_server_exception}{My\+Server\+Exception}}}
+
+
+
+Metodo che filtra le canzoni per autore e anno. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em autore} & oggetto di tipo String contenente l\textquotesingle{}autore della canzone da ricercare \\
+\hline
+{\em anno} & oggetto di tipo int contenente l\textquotesingle{}anno della canzone da ricercare \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+oggetto di tipo Array\+List$<$\+Canzoni$>$ contenente la lista delle canzoni filtrate 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Canzone\+Inesistente} & eccezione sollevata nel caso la ricerca non produca nessun risultato \\
+\hline
+{\em My\+Server\+Exception} & eccezzione generica sollevata durante la comunicazione col DBMS \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{interfacecommon_1_1_interfaccia_servizio_a8df9edcc1e9a83588ef85ed2cad459d0}{Interfaccia\+Servizio}}.
+
+
+
+Definition at line \mbox{\hyperlink{_console_frame_8java_source_l00226}{226}} of file \mbox{\hyperlink{_console_frame_8java_source}{Console\+Frame.\+java}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classserver_1_1_console_frame_a4df018cf11f2509ef9c274cb734f3c3a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classserver_1_1_console_frame_a5b8294026608668c8f915f834b607c22}\label{classserver_1_1_console_frame_a5b8294026608668c8f915f834b607c22} 
+\index{ConsoleFrame@{ConsoleFrame}!filtraPerTitolo@{filtraPerTitolo}}
+\index{filtraPerTitolo@{filtraPerTitolo}!ConsoleFrame@{ConsoleFrame}}
+\doxysubsubsection{\texorpdfstring{filtraPerTitolo()}{filtraPerTitolo()}}
+{\footnotesize\ttfamily synchronized Array\+List$<$ \mbox{\hyperlink{classcommon_1_1_canzoni}{Canzoni}} $>$ filtra\+Per\+Titolo (\begin{DoxyParamCaption}\item[{String}]{titolo }\end{DoxyParamCaption}) throws \mbox{\hyperlink{classcommon_1_1_canzone_inesistente}{Canzone\+Inesistente}}, \mbox{\hyperlink{classcommon_1_1_my_server_exception}{My\+Server\+Exception}}}
+
+
+
+Metodo che filtra le canzoni per il titolo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em titolo} & oggetto di tipo String contenente il titolo della canzone da ricercare \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+oggetto di tipo Array\+List$<$\+Canzoni$>$ contenente la lista delle canzoni filtrate 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Canzone\+Inesistente} & eccezione sollevata nel caso la ricerca non produca nessun risultato \\
+\hline
+{\em My\+Server\+Exception} & eccezzione generica sollevata durante la comunicazione col DBMS. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{interfacecommon_1_1_interfaccia_servizio_ad4c7d88cbbe23924721871d415501f5b}{Interfaccia\+Servizio}}.
+
+
+
+Definition at line \mbox{\hyperlink{_console_frame_8java_source_l00201}{201}} of file \mbox{\hyperlink{_console_frame_8java_source}{Console\+Frame.\+java}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{classserver_1_1_console_frame_a5b8294026608668c8f915f834b607c22_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classserver_1_1_console_frame_ad780c43371a910daafdf021982f32500}\label{classserver_1_1_console_frame_ad780c43371a910daafdf021982f32500} 
+\index{ConsoleFrame@{ConsoleFrame}!getCanzoniForPlaylist@{getCanzoniForPlaylist}}
+\index{getCanzoniForPlaylist@{getCanzoniForPlaylist}!ConsoleFrame@{ConsoleFrame}}
+\doxysubsubsection{\texorpdfstring{getCanzoniForPlaylist()}{getCanzoniForPlaylist()}}
+{\footnotesize\ttfamily synchronized Array\+List$<$ \mbox{\hyperlink{classcommon_1_1_canzoni}{Canzoni}} $>$ get\+Canzoni\+For\+Playlist (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws \mbox{\hyperlink{classcommon_1_1_my_server_exception}{My\+Server\+Exception}}, \mbox{\hyperlink{classcommon_1_1_canzone_inesistente}{Canzone\+Inesistente}}}
+
+
+
+Metodo che restituisce le canzoni da inserire nella playlist dell\textquotesingle{}utente. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em My\+Server\+Exception} & eccezzione generica sollevata durante la comunicazione col DBMS \\
+\hline
+{\em Canzone\+Inesistente} & eccezione sollevata nel caso la ricerca non produca nessun risultato \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{interfacecommon_1_1_interfaccia_servizio_a3e494b90263ca54a39e60cfbb9a1edf5}{Interfaccia\+Servizio}}.
+
+
+
+Definition at line \mbox{\hyperlink{_console_frame_8java_source_l00246}{246}} of file \mbox{\hyperlink{_console_frame_8java_source}{Console\+Frame.\+java}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classserver_1_1_console_frame_ad780c43371a910daafdf021982f32500_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classserver_1_1_console_frame_af5a428a63d28c6d7b3cf944bbdbe82ff}\label{classserver_1_1_console_frame_af5a428a63d28c6d7b3cf944bbdbe82ff} 
+\index{ConsoleFrame@{ConsoleFrame}!getCanzoniFromPlaylist@{getCanzoniFromPlaylist}}
+\index{getCanzoniFromPlaylist@{getCanzoniFromPlaylist}!ConsoleFrame@{ConsoleFrame}}
+\doxysubsubsection{\texorpdfstring{getCanzoniFromPlaylist()}{getCanzoniFromPlaylist()}}
+{\footnotesize\ttfamily synchronized Array\+List$<$ \mbox{\hyperlink{classcommon_1_1_canzoni}{Canzoni}} $>$ get\+Canzoni\+From\+Playlist (\begin{DoxyParamCaption}\item[{int}]{id\+Playlist }\end{DoxyParamCaption}) throws \mbox{\hyperlink{classcommon_1_1_canzone_inesistente}{Canzone\+Inesistente}}, \mbox{\hyperlink{classcommon_1_1_my_server_exception}{My\+Server\+Exception}}}
+
+
+
+Metodo che restituisce le canzoni associate alla playlist. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Playlist} & oggetto di tipo int contenente l\textquotesingle{}id della playlist \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+oggetto di tipo Array\+List$<$\+Canzoni$>$ contenente la lista delle canzoni presenti nella playlist 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em My\+Server\+Exception} & eccezzione generica sollevata durante la comunicazione col DBMS \\
+\hline
+{\em Canzone\+Inesistente} & eccezione sollevata nel caso la ricerca non produca nessun risultato \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{interfacecommon_1_1_interfaccia_servizio_af624b6190c5806460ca8288863a7a30e}{Interfaccia\+Servizio}}.
+
+
+
+Definition at line \mbox{\hyperlink{_console_frame_8java_source_l00400}{400}} of file \mbox{\hyperlink{_console_frame_8java_source}{Console\+Frame.\+java}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classserver_1_1_console_frame_af5a428a63d28c6d7b3cf944bbdbe82ff_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classserver_1_1_console_frame_a4e36e2a2f60c7b632247726669fb7fb8}\label{classserver_1_1_console_frame_a4e36e2a2f60c7b632247726669fb7fb8} 
+\index{ConsoleFrame@{ConsoleFrame}!getEmozioni@{getEmozioni}}
+\index{getEmozioni@{getEmozioni}!ConsoleFrame@{ConsoleFrame}}
+\doxysubsubsection{\texorpdfstring{getEmozioni()}{getEmozioni()}}
+{\footnotesize\ttfamily Result\+Set get\+Emozioni (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcommon_1_1_canzoni}{Canzoni}}}]{canzone }\end{DoxyParamCaption}) throws SQLException\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Metodo che restituisce le emozioni relative a una canzone. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em canzone} & oggetto di tipo Canzoni contenente la canzone su cui ricercare le emozioni \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+oggetto di tipo Result\+Set contenente il risultato dell\textquotesingle{}esecuzione della query 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & eccezzione sollevata nel caso in cui l\textquotesingle{}esecuzione della query non vada a buon fine \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{_console_frame_8java_source_l00310}{310}} of file \mbox{\hyperlink{_console_frame_8java_source}{Console\+Frame.\+java}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{classserver_1_1_console_frame_a4e36e2a2f60c7b632247726669fb7fb8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{classserver_1_1_console_frame_a4e36e2a2f60c7b632247726669fb7fb8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classserver_1_1_console_frame_ab853f77a8f5cd283bea964765761826f}\label{classserver_1_1_console_frame_ab853f77a8f5cd283bea964765761826f} 
+\index{ConsoleFrame@{ConsoleFrame}!getEmozioniFromBrano@{getEmozioniFromBrano}}
+\index{getEmozioniFromBrano@{getEmozioniFromBrano}!ConsoleFrame@{ConsoleFrame}}
+\doxysubsubsection{\texorpdfstring{getEmozioniFromBrano()}{getEmozioniFromBrano()}}
+{\footnotesize\ttfamily synchronized \mbox{\hyperlink{classcommon_1_1_emozioni}{Emozioni}} get\+Emozioni\+From\+Brano (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcommon_1_1_canzoni}{Canzoni}}}]{canzone }\end{DoxyParamCaption}) throws \mbox{\hyperlink{classcommon_1_1_emozioni_inesistenti}{Emozioni\+Inesistenti}}, \mbox{\hyperlink{classcommon_1_1_my_server_exception}{My\+Server\+Exception}}}
+
+
+
+Metodo che restituisce le emozioni del brano specificato. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em canzone} & oggetto di tipo Canznoni rappresentante la canzone da cui ottenere le emozioni associate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+oggetto di tipo Emozioni contenente le emozioni associate al brano 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Emozioni\+Inesistenti} & eccezione sollevata nel caso la ricerca non produca nessun risultato \\
+\hline
+{\em My\+Server\+Exception} & eccezzione generica sollevata durante la comunicazione col DBMS \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{interfacecommon_1_1_interfaccia_servizio_a3e5c329b85a7033e21ac2112b537132b}{Interfaccia\+Servizio}}.
+
+
+
+Definition at line \mbox{\hyperlink{_console_frame_8java_source_l00268}{268}} of file \mbox{\hyperlink{_console_frame_8java_source}{Console\+Frame.\+java}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classserver_1_1_console_frame_ab853f77a8f5cd283bea964765761826f_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classserver_1_1_console_frame_a5650e7c9e02506bdcee3d59954c9c7ea}\label{classserver_1_1_console_frame_a5650e7c9e02506bdcee3d59954c9c7ea} 
+\index{ConsoleFrame@{ConsoleFrame}!getMedie@{getMedie}}
+\index{getMedie@{getMedie}!ConsoleFrame@{ConsoleFrame}}
+\doxysubsubsection{\texorpdfstring{getMedie()}{getMedie()}}
+{\footnotesize\ttfamily Result\+Set get\+Medie (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcommon_1_1_canzoni}{Canzoni}}}]{canzone }\end{DoxyParamCaption}) throws SQLException\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Metodo che calcola la media delle emozioni. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em canzone} & oggetto di tipo Canzoni contenente la canzone su cui ricercare le medie delle emozioni \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+oggetto di tipo Result\+Set contenente il risultato dell\textquotesingle{}esecuzione della query 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em SQLException} & eccezzione sollevata nel caso in cui l\textquotesingle{}esecuzione della query non vada a buon fine \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{_console_frame_8java_source_l00291}{291}} of file \mbox{\hyperlink{_console_frame_8java_source}{Console\+Frame.\+java}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{classserver_1_1_console_frame_a5650e7c9e02506bdcee3d59954c9c7ea_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{classserver_1_1_console_frame_a5650e7c9e02506bdcee3d59954c9c7ea_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classserver_1_1_console_frame_a02b2d0d43bd14f14563ea914822de388}\label{classserver_1_1_console_frame_a02b2d0d43bd14f14563ea914822de388} 
+\index{ConsoleFrame@{ConsoleFrame}!getPlaylist@{getPlaylist}}
+\index{getPlaylist@{getPlaylist}!ConsoleFrame@{ConsoleFrame}}
+\doxysubsubsection{\texorpdfstring{getPlaylist()}{getPlaylist()}}
+{\footnotesize\ttfamily synchronized Array\+List$<$ \mbox{\hyperlink{classcommon_1_1_playlist}{Playlist}} $>$ get\+Playlist (\begin{DoxyParamCaption}\item[{String}]{cf }\end{DoxyParamCaption}) throws \mbox{\hyperlink{classcommon_1_1_my_server_exception}{My\+Server\+Exception}}, \mbox{\hyperlink{classcommon_1_1_playlist_inesistenti}{Playlist\+Inesistenti}}}
+
+
+
+Metodo che restituisce le playlist associate all\textquotesingle{}utente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cf} & oggetto di tipo String contenente il codicefiscale dell\textquotesingle{}utente \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+oggetto di tipo Array\+List$<$\+Playlist$>$ contenente 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Playlist\+Inesistenti} & eccezione sollevata nel caso in cui la ricerca non produca nessun risultato \\
+\hline
+{\em My\+Server\+Exception} & eccezzione generica sollevata durante la comunicazione col DBMS \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{interfacecommon_1_1_interfaccia_servizio_ada9f30a90ee18efd99b59b5e7fbb329d}{Interfaccia\+Servizio}}.
+
+
+
+Definition at line \mbox{\hyperlink{_console_frame_8java_source_l00379}{379}} of file \mbox{\hyperlink{_console_frame_8java_source}{Console\+Frame.\+java}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{classserver_1_1_console_frame_a02b2d0d43bd14f14563ea914822de388_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classserver_1_1_console_frame_a77410fe5c5b5ddb55910cd7a2297bff7}\label{classserver_1_1_console_frame_a77410fe5c5b5ddb55910cd7a2297bff7} 
+\index{ConsoleFrame@{ConsoleFrame}!initComponents@{initComponents}}
+\index{initComponents@{initComponents}!ConsoleFrame@{ConsoleFrame}}
+\doxysubsubsection{\texorpdfstring{initComponents()}{initComponents()}}
+{\footnotesize\ttfamily void init\+Components (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+This method is called from within the constructor to initialize the form. WARNING\+: Do NOT modify this code. The content of this method is always regenerated by the Form Editor. 
+
+Definition at line \mbox{\hyperlink{_console_frame_8java_source_l00078}{78}} of file \mbox{\hyperlink{_console_frame_8java_source}{Console\+Frame.\+java}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{classserver_1_1_console_frame_a77410fe5c5b5ddb55910cd7a2297bff7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classserver_1_1_console_frame_a704ea62ae5069c5151c201d29fe94ea0}\label{classserver_1_1_console_frame_a704ea62ae5069c5151c201d29fe94ea0} 
+\index{ConsoleFrame@{ConsoleFrame}!inserisciEmozione@{inserisciEmozione}}
+\index{inserisciEmozione@{inserisciEmozione}!ConsoleFrame@{ConsoleFrame}}
+\doxysubsubsection{\texorpdfstring{inserisciEmozione()}{inserisciEmozione()}}
+{\footnotesize\ttfamily synchronized void inserisci\+Emozione (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcommon_1_1_canzoni}{Canzoni}}}]{canzone,  }\item[{String}]{cf,  }\item[{\mbox{\hyperlink{classcommon_1_1_emozioni_canzone}{Emozioni\+Canzone}}}]{emocanzone }\end{DoxyParamCaption}) throws \mbox{\hyperlink{classcommon_1_1_dati_non_validi}{Dati\+Non\+Validi}}, \mbox{\hyperlink{classcommon_1_1_chiave_duplicata}{Chiave\+Duplicata}}, \mbox{\hyperlink{classcommon_1_1_my_server_exception}{My\+Server\+Exception}}}
+
+
+
+Metodo che inserisce l\textquotesingle{}emozione rilasciata dall\textquotesingle{}utente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em canzone} & oggetto di tipo Canzoni contenente la canzone relativa all\textquotesingle{}emozione \\
+\hline
+{\em cf} & oggetto di String contenente il codice fiscale dell\textquotesingle{}utente \\
+\hline
+{\em emocanzone} & oggetto di tipo Emozion\+ICanzone contenente l\textquotesingle{}emozione rilasciata dall\textquotesingle{}utente \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em My\+Server\+Exception} & eccezzione generica sollevata durante la comunicazione col DBMS \\
+\hline
+{\em Chiave\+Duplicata} & eccezione sollevata nel caso l\textquotesingle{}utente sia già registrato, chiave codicefiscale duplicata \\
+\hline
+{\em Dati\+Non\+Validi} & eccezione sollevata nel caso i dati inseriti non rispettano i vincoli di integrità \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{interfacecommon_1_1_interfaccia_servizio_a9675630069e0c5d0c7bb048047650afd}{Interfaccia\+Servizio}}.
+
+
+
+Definition at line \mbox{\hyperlink{_console_frame_8java_source_l00425}{425}} of file \mbox{\hyperlink{_console_frame_8java_source}{Console\+Frame.\+java}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classserver_1_1_console_frame_a704ea62ae5069c5151c201d29fe94ea0_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classserver_1_1_console_frame_af55c6eedb634aeac81ceadf60c7a40bd}\label{classserver_1_1_console_frame_af55c6eedb634aeac81ceadf60c7a40bd} 
+\index{ConsoleFrame@{ConsoleFrame}!login@{login}}
+\index{login@{login}!ConsoleFrame@{ConsoleFrame}}
+\doxysubsubsection{\texorpdfstring{login()}{login()}}
+{\footnotesize\ttfamily synchronized \mbox{\hyperlink{classcommon_1_1_utenti_registrati}{Utenti\+Registrati}} login (\begin{DoxyParamCaption}\item[{String}]{cf,  }\item[{String}]{password }\end{DoxyParamCaption}) throws \mbox{\hyperlink{classcommon_1_1_utente_inesistente}{Utente\+Inesistente}}, \mbox{\hyperlink{classcommon_1_1_password_errata}{Password\+Errata}}, \mbox{\hyperlink{classcommon_1_1_my_server_exception}{My\+Server\+Exception}}}
+
+
+
+Metodo per effettuare il login dell\textquotesingle{}utente al sistema. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cf} & Oggetto di tipo String contenente il codicefiscale dell\textquotesingle{}utente \\
+\hline
+{\em password} & oggetto di tipo String contenente la password dell\textquotesingle{}utente \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Utente\+Inesistente} & eccezione sollevata nel caso l\textquotesingle{}utente non sia già registrato \\
+\hline
+{\em Password\+Errata} & eccezione sollevata nel caso la password inserita dall\textquotesingle{}utente sia errata \\
+\hline
+{\em My\+Server\+Exception} & eccezzione generica sollevata durante la comunicazione col DBMS. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{interfacecommon_1_1_interfaccia_servizio_a21229791e28aa63ebddca156cd5c2533}{Interfaccia\+Servizio}}.
+
+
+
+Definition at line \mbox{\hyperlink{_console_frame_8java_source_l00134}{134}} of file \mbox{\hyperlink{_console_frame_8java_source}{Console\+Frame.\+java}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{classserver_1_1_console_frame_af55c6eedb634aeac81ceadf60c7a40bd_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classserver_1_1_console_frame_aab894772c77985d4af339ed01381a42f}\label{classserver_1_1_console_frame_aab894772c77985d4af339ed01381a42f} 
+\index{ConsoleFrame@{ConsoleFrame}!registrazione@{registrazione}}
+\index{registrazione@{registrazione}!ConsoleFrame@{ConsoleFrame}}
+\doxysubsubsection{\texorpdfstring{registrazione()}{registrazione()}}
+{\footnotesize\ttfamily synchronized void registrazione (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcommon_1_1_utenti_registrati}{Utenti\+Registrati}}}]{utente }\end{DoxyParamCaption}) throws \mbox{\hyperlink{classcommon_1_1_chiave_duplicata}{Chiave\+Duplicata}}, \mbox{\hyperlink{classcommon_1_1_dati_non_validi}{Dati\+Non\+Validi}}, \mbox{\hyperlink{classcommon_1_1_my_server_exception}{My\+Server\+Exception}}}
+
+
+
+Metodo per effettuare la registrazione al sistema. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em utente} & oggetto di classe Utenti\+Registrati rappresentante l\textquotesingle{}utente da registrare \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Chiave\+Duplicata} & eccezione sollevata nel caso l\textquotesingle{}utente sia già registrato, chiave codicefiscale duplicata \\
+\hline
+{\em Dati\+Non\+Validi} & eccezione sollevata nel caso i dati inseriti non rispettano i vincoli di integrità \\
+\hline
+{\em My\+Server\+Exception} & eccezzione generica sollevata durante la comunicazione col DBMS. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{interfacecommon_1_1_interfaccia_servizio_a510bdec2f4ffb0c0471729ed42a29175}{Interfaccia\+Servizio}}.
+
+
+
+Definition at line \mbox{\hyperlink{_console_frame_8java_source_l00159}{159}} of file \mbox{\hyperlink{_console_frame_8java_source}{Console\+Frame.\+java}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{classserver_1_1_console_frame_aab894772c77985d4af339ed01381a42f_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classserver_1_1_console_frame_a85d663119c421cf6e056810a3ae37ac6}\label{classserver_1_1_console_frame_a85d663119c421cf6e056810a3ae37ac6} 
+\index{ConsoleFrame@{ConsoleFrame}!db@{db}}
+\index{db@{db}!ConsoleFrame@{ConsoleFrame}}
+\doxysubsubsection{\texorpdfstring{db}{db}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classserver_1_1_database}{Database}} db\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_console_frame_8java_source_l00042}{42}} of file \mbox{\hyperlink{_console_frame_8java_source}{Console\+Frame.\+java}}.
+
+\Hypertarget{classserver_1_1_console_frame_a7cc9a0e1eb39746de1a2eb9a60a874fb}\label{classserver_1_1_console_frame_a7cc9a0e1eb39746de1a2eb9a60a874fb} 
+\index{ConsoleFrame@{ConsoleFrame}!dt@{dt}}
+\index{dt@{dt}!ConsoleFrame@{ConsoleFrame}}
+\doxysubsubsection{\texorpdfstring{dt}{dt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classserver_1_1_data_tables}{Data\+Tables}} dt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_console_frame_8java_source_l00044}{44}} of file \mbox{\hyperlink{_console_frame_8java_source}{Console\+Frame.\+java}}.
+
+\Hypertarget{classserver_1_1_console_frame_a47066ebb7b751f52b9debcc4bd1b1ee4}\label{classserver_1_1_console_frame_a47066ebb7b751f52b9debcc4bd1b1ee4} 
+\index{ConsoleFrame@{ConsoleFrame}!jLabel1@{jLabel1}}
+\index{jLabel1@{jLabel1}!ConsoleFrame@{ConsoleFrame}}
+\doxysubsubsection{\texorpdfstring{jLabel1}{jLabel1}}
+{\footnotesize\ttfamily javax.\+swing.\+JLabel j\+Label1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_console_frame_8java_source_l00117}{117}} of file \mbox{\hyperlink{_console_frame_8java_source}{Console\+Frame.\+java}}.
+
+\Hypertarget{classserver_1_1_console_frame_aae4319d2cb4ac19c9a2c7d4d3a2549f4}\label{classserver_1_1_console_frame_aae4319d2cb4ac19c9a2c7d4d3a2549f4} 
+\index{ConsoleFrame@{ConsoleFrame}!jScrollPane1@{jScrollPane1}}
+\index{jScrollPane1@{jScrollPane1}!ConsoleFrame@{ConsoleFrame}}
+\doxysubsubsection{\texorpdfstring{jScrollPane1}{jScrollPane1}}
+{\footnotesize\ttfamily javax.\+swing.\+JScroll\+Pane j\+Scroll\+Pane1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_console_frame_8java_source_l00118}{118}} of file \mbox{\hyperlink{_console_frame_8java_source}{Console\+Frame.\+java}}.
+
+\Hypertarget{classserver_1_1_console_frame_aa890d9fd10dbc9c090551a04b009e286}\label{classserver_1_1_console_frame_aa890d9fd10dbc9c090551a04b009e286} 
+\index{ConsoleFrame@{ConsoleFrame}!PORT@{PORT}}
+\index{PORT@{PORT}!ConsoleFrame@{ConsoleFrame}}
+\doxysubsubsection{\texorpdfstring{PORT}{PORT}}
+{\footnotesize\ttfamily final int PORT = 11012\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_console_frame_8java_source_l00047}{47}} of file \mbox{\hyperlink{_console_frame_8java_source}{Console\+Frame.\+java}}.
+
+\Hypertarget{classserver_1_1_console_frame_aed4d7148c12b1a22b81316c97a558f72}\label{classserver_1_1_console_frame_aed4d7148c12b1a22b81316c97a558f72} 
+\index{ConsoleFrame@{ConsoleFrame}!txtAreaConsole@{txtAreaConsole}}
+\index{txtAreaConsole@{txtAreaConsole}!ConsoleFrame@{ConsoleFrame}}
+\doxysubsubsection{\texorpdfstring{txtAreaConsole}{txtAreaConsole}}
+{\footnotesize\ttfamily javax.\+swing.\+JText\+Area txt\+Area\+Console\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_console_frame_8java_source_l00119}{119}} of file \mbox{\hyperlink{_console_frame_8java_source}{Console\+Frame.\+java}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Un\+Insu/\+Lab.\+B/\+Laboratorio\+B/\+Emotional\+Songs/src/main/java/server/\mbox{\hyperlink{_console_frame_8java}{Console\+Frame.\+java}}\end{DoxyCompactItemize}

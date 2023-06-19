@@ -1,0 +1,208 @@
+\doxysection{Emozioni\+Canzone.\+java}
+\hypertarget{_emozioni_canzone_8java_source}{}\label{_emozioni_canzone_8java_source}\index{D:/UnInsu/Lab.B/LaboratorioB/EmotionalSongs/src/main/java/common/EmozioniCanzone.java@{D:/UnInsu/Lab.B/LaboratorioB/EmotionalSongs/src/main/java/common/EmozioniCanzone.java}}
+\mbox{\hyperlink{_emozioni_canzone_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00002}00002\ \textcolor{comment}{\ *\ Click\ nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-\/default.txt\ to\ change\ this\ license}}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00003}00003\ \textcolor{comment}{\ *\ Click\ nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java\ to\ edit\ this\ template}}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00004}00004\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00005}00005\ \textcolor{keyword}{package\ }common;}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00007}00007\ \textcolor{keyword}{import}\ java.io.Serializable;}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00017}\mbox{\hyperlink{classcommon_1_1_emozioni_canzone}{00017}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcommon_1_1_emozioni_canzone}{EmozioniCanzone}}\ \textcolor{keyword}{implements}\ Serializable\ \{}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00018}00018\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00019}00019\ \ \ \ \ \textcolor{comment}{//atributo\ privato\ di\ tipo\ int\ rappresentante\ l'id\ dell'emozione\ rilasciata}}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00020}\mbox{\hyperlink{classcommon_1_1_emozioni_canzone_adbab0305c14bcd1a4837bb5b68341890}{00020}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_adbab0305c14bcd1a4837bb5b68341890}{idValutazione}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00021}00021\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00022}00022\ \ \ \ \ \textcolor{comment}{//attributo\ privato\ di\ tipo\ String\ rappresentante\ il\ titolo\ della\ canzone}}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00023}\mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a0f780b4a773832c742971f13e9caece7}{00023}}\ \ \ \ \ \textcolor{keyword}{private}\ String\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a0f780b4a773832c742971f13e9caece7}{titolo}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00025}00025\ \ \ \ \ \textcolor{comment}{//attributo\ privato\ di\ tipo\ String\ rappresentante\ l'autore\ della\ canzone}}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00026}\mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a779a97c7138f356d680f4fdc32c97254}{00026}}\ \ \ \ \ \textcolor{keyword}{private}\ String\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a779a97c7138f356d680f4fdc32c97254}{autore}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00027}00027\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00028}00028\ \ \ \ \ \textcolor{comment}{//attributo\ privato\ di\ tipo\ int\ rappresentante\ l'anno\ di\ rilascio\ della\ canzone}}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00029}\mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a641e63fefd1baea5836b5e70c74c5aa3}{00029}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a641e63fefd1baea5836b5e70c74c5aa3}{anno}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00030}00030\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00031}00031\ \ \ \ \ \textcolor{comment}{//attributo\ privato\ di\ tipo\ String\ rappresentante\ il\ codicefiscale\ dell'utente}}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00032}\mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a89e28f6f7714a9b66a902a1aa74f9566}{00032}}\ \ \ \ \ \textcolor{keyword}{private}\ String\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a89e28f6f7714a9b66a902a1aa74f9566}{codiceFiscale}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00033}00033\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00034}00034\ \ \ \ \ \textcolor{comment}{//attributo\ privato\ di\ tipo\ int\ rappresentante\ l'emozione\ amazement}}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00035}\mbox{\hyperlink{classcommon_1_1_emozioni_canzone_ac70ccb2b3be29992c4cd5e8afcdbf2d7}{00035}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_ac70ccb2b3be29992c4cd5e8afcdbf2d7}{amazement}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00036}00036\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00037}00037\ \ \ \ \ \textcolor{comment}{//attributo\ privato\ di\ tipo\ int\ rappresentante\ l'emozione\ nostalgia}}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00038}\mbox{\hyperlink{classcommon_1_1_emozioni_canzone_ab49cdc91732bc135181d861c52826217}{00038}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_ab49cdc91732bc135181d861c52826217}{nostalgia}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00039}00039\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00040}00040\ \ \ \ \ \textcolor{comment}{//attributo\ privato\ di\ tipo\ int\ rappresentante\ l'emozione\ calmness}}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00041}\mbox{\hyperlink{classcommon_1_1_emozioni_canzone_ad54ad6edb9026868a8da1a412f6355bb}{00041}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_ad54ad6edb9026868a8da1a412f6355bb}{calmness}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00042}00042\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00043}00043\ \ \ \ \ \textcolor{comment}{//attributo\ privato\ di\ tipo\ int\ rappresentante\ l'emozione\ power}}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00044}\mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a0a923163c4d4ac8a2ecbf16f95d21fe2}{00044}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a0a923163c4d4ac8a2ecbf16f95d21fe2}{power}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00045}00045\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00046}00046\ \ \ \ \ \textcolor{comment}{//attributo\ privato\ di\ tipo\ int\ rappresentante\ l'emozione\ joy\ }}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00047}\mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a04af5b970228cb035e87f15450df4b8e}{00047}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a04af5b970228cb035e87f15450df4b8e}{joy}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00048}00048\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00049}00049\ \ \ \ \ \textcolor{comment}{//attributo\ privato\ di\ tipo\ int\ rappresentante\ l'emozione\ tension}}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00050}\mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a2713902b0226f2dbc30c828d0ca5b000}{00050}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a2713902b0226f2dbc30c828d0ca5b000}{tension}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00051}00051\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00052}00052\ \ \ \ \ \textcolor{comment}{//attributo\ privato\ di\ tipo\ int\ rappresentante\ l'emozione\ sadness}}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00053}\mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a15b31cd4ed709cd1a65f5571ab4dceb9}{00053}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a15b31cd4ed709cd1a65f5571ab4dceb9}{sadness}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00054}00054\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00055}00055\ \ \ \ \ \textcolor{comment}{//attributo\ privato\ di\ tipo\ int\ rappresentante\ l'emozione\ tenderness}}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00056}\mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a7f299fe4ff0342831fc535a1d87856fc}{00056}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a7f299fe4ff0342831fc535a1d87856fc}{tenderness}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00057}00057\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00058}00058\ \ \ \ \ \textcolor{comment}{//attributo\ privato\ di\ tipo\ int\ rappresentante\ l'emozione\ solemnity}}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00059}\mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a57bc0633925b35135dfaa5819a9edc94}{00059}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a57bc0633925b35135dfaa5819a9edc94}{solemnity}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00060}00060\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00061}00061\ \ \ \ \ \textcolor{comment}{//attributo\ privato\ di\ tipo\ String\ rappresentante\ le\ note\ dell'emozione\ amazement\ }}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00062}\mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a3c8502b75ccb3184e6ff6de393aa5d81}{00062}}\ \ \ \ \ \textcolor{keyword}{private}\ String\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a3c8502b75ccb3184e6ff6de393aa5d81}{amazement\_notes}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00063}00063\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00064}00064\ \ \ \ \ \textcolor{comment}{//attributo\ privato\ di\ tipo\ String\ rappresentante\ le\ note\ dell'emozione\ nostalgia\ \ }}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00065}\mbox{\hyperlink{classcommon_1_1_emozioni_canzone_aff69f84bb09a75fd8f03868efeb2e277}{00065}}\ \ \ \ \ \textcolor{keyword}{private}\ String\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_aff69f84bb09a75fd8f03868efeb2e277}{nostalgia\_notes}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00066}00066\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00067}00067\ \ \ \ \ \textcolor{comment}{//attributo\ privato\ di\ tipo\ String\ rappresentante\ le\ note\ dell'emozione\ calmness}}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00068}\mbox{\hyperlink{classcommon_1_1_emozioni_canzone_ac42ac851999b43ca671f483e4d037b8b}{00068}}\ \ \ \ \ \textcolor{keyword}{private}\ String\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_ac42ac851999b43ca671f483e4d037b8b}{calmness\_notes}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00069}00069\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00070}00070\ \ \ \ \ \textcolor{comment}{//attributo\ privato\ di\ tipo\ String\ rappresentante\ le\ note\ dell'emozione\ power}}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00071}\mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a0b7cdcec531a7011b05aff83f135e237}{00071}}\ \ \ \ \ \textcolor{keyword}{private}\ String\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a0b7cdcec531a7011b05aff83f135e237}{power\_notes}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00072}00072\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00073}00073\ \ \ \ \ \textcolor{comment}{//attributo\ privato\ di\ tipo\ String\ rappresentante\ le\ note\ dell'emozione\ joy}}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00074}\mbox{\hyperlink{classcommon_1_1_emozioni_canzone_ae789c10b047d8286ddf5f7b394dd1d07}{00074}}\ \ \ \ \ \textcolor{keyword}{private}\ String\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_ae789c10b047d8286ddf5f7b394dd1d07}{joy\_notes}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00075}00075\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00076}00076\ \ \ \ \ \textcolor{comment}{//attributo\ privato\ di\ tipo\ String\ rappresentante\ le\ note\ dell'emozione\ tension}}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00077}\mbox{\hyperlink{classcommon_1_1_emozioni_canzone_aa0b6ca99f67d6a361a972a43986fe7ae}{00077}}\ \ \ \ \ \textcolor{keyword}{private}\ String\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_aa0b6ca99f67d6a361a972a43986fe7ae}{tension\_notes}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00078}00078\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00079}00079\ \ \ \ \ \textcolor{comment}{//attributo\ privato\ di\ tipo\ String\ rappresentante\ le\ note\ dell'emozione\ sadness}}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00080}\mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a418f6c43891ff82078c4b22d193c563d}{00080}}\ \ \ \ \ \textcolor{keyword}{private}\ String\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a418f6c43891ff82078c4b22d193c563d}{sadness\_notes}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00081}00081\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00082}00082\ \ \ \ \ \textcolor{comment}{//attributo\ privato\ di\ tipo\ String\ rappresentante\ le\ note\ dell'emozione\ tenderness}}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00083}\mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a7a0fbf9a06761c7b365d63b7a8f1d202}{00083}}\ \ \ \ \ \textcolor{keyword}{private}\ String\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a7a0fbf9a06761c7b365d63b7a8f1d202}{tenderness\_notes}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00084}00084\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00085}00085\ \ \ \ \ \textcolor{comment}{//attributo\ privato\ di\ tipo\ String\ rappresentante\ le\ note\ dell'emozione\ solemnity}}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00086}\mbox{\hyperlink{classcommon_1_1_emozioni_canzone_ac911b079decb198a81ced0ff713a7e2c}{00086}}\ \ \ \ \ \textcolor{keyword}{private}\ String\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_ac911b079decb198a81ced0ff713a7e2c}{solemnity\_notes}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00087}00087\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00114}\mbox{\hyperlink{classcommon_1_1_emozioni_canzone_adddce74548709d05ed110b5ec095ada4}{00114}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_adddce74548709d05ed110b5ec095ada4}{EmozioniCanzone}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_adbab0305c14bcd1a4837bb5b68341890}{idValutazione}},\ String\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a0f780b4a773832c742971f13e9caece7}{titolo}},\ String\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a779a97c7138f356d680f4fdc32c97254}{autore}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a641e63fefd1baea5836b5e70c74c5aa3}{anno}},\ String\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a89e28f6f7714a9b66a902a1aa74f9566}{codiceFiscale}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_ac70ccb2b3be29992c4cd5e8afcdbf2d7}{amazement}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_ab49cdc91732bc135181d861c52826217}{nostalgia}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_ad54ad6edb9026868a8da1a412f6355bb}{calmness}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a0a923163c4d4ac8a2ecbf16f95d21fe2}{power}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a04af5b970228cb035e87f15450df4b8e}{joy}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a2713902b0226f2dbc30c828d0ca5b000}{tension}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a15b31cd4ed709cd1a65f5571ab4dceb9}{sadness}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a7f299fe4ff0342831fc535a1d87856fc}{tenderness}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a57bc0633925b35135dfaa5819a9edc94}{solemnity}},\ String\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a3c8502b75ccb3184e6ff6de393aa5d81}{amazement\_notes}},\ String\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_aff69f84bb09a75fd8f03868efeb2e277}{nostalgia\_notes}},\ String\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_ac42ac851999b43ca671f483e4d037b8b}{calmness\_notes}},\ String\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a0b7cdcec531a7011b05aff83f135e237}{power\_notes}},\ String\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_ae789c10b047d8286ddf5f7b394dd1d07}{joy\_notes}},\ String\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_aa0b6ca99f67d6a361a972a43986fe7ae}{tension\_notes}},\ String\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a418f6c43891ff82078c4b22d193c563d}{sadness\_notes}},\ String\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a7a0fbf9a06761c7b365d63b7a8f1d202}{tenderness\_notes}},\ String\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_ac911b079decb198a81ced0ff713a7e2c}{solemnity\_notes}})\ \{}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00115}00115\ \ \ \ \ \ \ \ \ this.idValutazione\ =\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_adbab0305c14bcd1a4837bb5b68341890}{idValutazione}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00116}00116\ \ \ \ \ \ \ \ \ this.titolo\ =\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a0f780b4a773832c742971f13e9caece7}{titolo}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00117}00117\ \ \ \ \ \ \ \ \ this.autore\ =\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a779a97c7138f356d680f4fdc32c97254}{autore}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00118}00118\ \ \ \ \ \ \ \ \ this.anno\ =\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a641e63fefd1baea5836b5e70c74c5aa3}{anno}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00119}00119\ \ \ \ \ \ \ \ \ this.codiceFiscale\ =\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a89e28f6f7714a9b66a902a1aa74f9566}{codiceFiscale}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00120}00120\ \ \ \ \ \ \ \ \ this.amazement\ =\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_ac70ccb2b3be29992c4cd5e8afcdbf2d7}{amazement}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00121}00121\ \ \ \ \ \ \ \ \ this.nostalgia\ =\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_ab49cdc91732bc135181d861c52826217}{nostalgia}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00122}00122\ \ \ \ \ \ \ \ \ this.calmness\ =\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_ad54ad6edb9026868a8da1a412f6355bb}{calmness}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00123}00123\ \ \ \ \ \ \ \ \ this.power\ =\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a0a923163c4d4ac8a2ecbf16f95d21fe2}{power}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00124}00124\ \ \ \ \ \ \ \ \ this.joy\ =\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a04af5b970228cb035e87f15450df4b8e}{joy}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00125}00125\ \ \ \ \ \ \ \ \ this.tension\ =\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a2713902b0226f2dbc30c828d0ca5b000}{tension}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00126}00126\ \ \ \ \ \ \ \ \ this.sadness\ =\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a15b31cd4ed709cd1a65f5571ab4dceb9}{sadness}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00127}00127\ \ \ \ \ \ \ \ \ this.tenderness\ =\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a7f299fe4ff0342831fc535a1d87856fc}{tenderness}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00128}00128\ \ \ \ \ \ \ \ \ this.solemnity\ =\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a57bc0633925b35135dfaa5819a9edc94}{solemnity}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00129}00129\ \ \ \ \ \ \ \ \ this.amazement\_notes\ =\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a3c8502b75ccb3184e6ff6de393aa5d81}{amazement\_notes}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00130}00130\ \ \ \ \ \ \ \ \ this.nostalgia\_notes\ =\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_aff69f84bb09a75fd8f03868efeb2e277}{nostalgia\_notes}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00131}00131\ \ \ \ \ \ \ \ \ this.calmness\_notes\ =\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_ac42ac851999b43ca671f483e4d037b8b}{calmness\_notes}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00132}00132\ \ \ \ \ \ \ \ \ this.power\_notes\ =\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a0b7cdcec531a7011b05aff83f135e237}{power\_notes}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00133}00133\ \ \ \ \ \ \ \ \ this.joy\_notes\ =\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_ae789c10b047d8286ddf5f7b394dd1d07}{joy\_notes}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00134}00134\ \ \ \ \ \ \ \ \ this.tension\_notes\ =\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_aa0b6ca99f67d6a361a972a43986fe7ae}{tension\_notes}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00135}00135\ \ \ \ \ \ \ \ \ this.sadness\_notes\ =\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a418f6c43891ff82078c4b22d193c563d}{sadness\_notes}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00136}00136\ \ \ \ \ \ \ \ \ this.tenderness\_notes\ =\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a7a0fbf9a06761c7b365d63b7a8f1d202}{tenderness\_notes}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00137}00137\ \ \ \ \ \ \ \ \ this.solemnity\_notes\ =\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_ac911b079decb198a81ced0ff713a7e2c}{solemnity\_notes}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00138}00138\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00139}00139\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00144}\mbox{\hyperlink{classcommon_1_1_emozioni_canzone_acddaae1f47b985176168a1aab17395bc}{00144}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_acddaae1f47b985176168a1aab17395bc}{getIdValutazione}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00145}00145\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_adbab0305c14bcd1a4837bb5b68341890}{idValutazione}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00146}00146\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00147}00147\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00152}\mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a4cbc29a766f8fc6991d673db72558b80}{00152}}\ \ \ \ \ \textcolor{keyword}{public}\ String\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a4cbc29a766f8fc6991d673db72558b80}{getTitolo}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00153}00153\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a0f780b4a773832c742971f13e9caece7}{titolo}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00154}00154\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00155}00155\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00160}\mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a91607777bf6f1737ffa0e3eb7ee2fbd3}{00160}}\ \ \ \ \ \textcolor{keyword}{public}\ String\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a91607777bf6f1737ffa0e3eb7ee2fbd3}{getAutore}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00161}00161\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a779a97c7138f356d680f4fdc32c97254}{autore}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00162}00162\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00163}00163\ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00168}\mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a202dc4792a5438b1c7413ae31dedac7b}{00168}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a202dc4792a5438b1c7413ae31dedac7b}{getAnno}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00169}00169\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a641e63fefd1baea5836b5e70c74c5aa3}{anno}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00170}00170\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00171}00171\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00176}\mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a2ff8ff110ded2818f271d6d4dcb99454}{00176}}\ \ \ \ \ \textcolor{keyword}{public}\ String\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a2ff8ff110ded2818f271d6d4dcb99454}{getCodiceFiscale}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00177}00177\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a89e28f6f7714a9b66a902a1aa74f9566}{codiceFiscale}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00178}00178\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00179}00179\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00184}\mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a69557eb929d930af37d928c7d9d7e721}{00184}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a69557eb929d930af37d928c7d9d7e721}{getAmazement}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00185}00185\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_ac70ccb2b3be29992c4cd5e8afcdbf2d7}{amazement}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00186}00186\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00187}00187\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00192}\mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a91b44da70963406a4e8568ee19824b48}{00192}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a91b44da70963406a4e8568ee19824b48}{getNostalgia}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00193}00193\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_ab49cdc91732bc135181d861c52826217}{nostalgia}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00194}00194\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00195}00195\ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00200}\mbox{\hyperlink{classcommon_1_1_emozioni_canzone_ad42ae58c3d7c96d11567f3f4ceddc8eb}{00200}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_ad42ae58c3d7c96d11567f3f4ceddc8eb}{getCalmness}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00201}00201\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_ad54ad6edb9026868a8da1a412f6355bb}{calmness}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00202}00202\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00203}00203\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00208}\mbox{\hyperlink{classcommon_1_1_emozioni_canzone_aaac958ffb1e607c3cfe32d0c864663ab}{00208}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_aaac958ffb1e607c3cfe32d0c864663ab}{getPower}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00209}00209\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a0a923163c4d4ac8a2ecbf16f95d21fe2}{power}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00210}00210\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00211}00211\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00216}\mbox{\hyperlink{classcommon_1_1_emozioni_canzone_aa2a8472ed12ffc3aa499f1627a34d30a}{00216}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_aa2a8472ed12ffc3aa499f1627a34d30a}{getJoy}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00217}00217\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a04af5b970228cb035e87f15450df4b8e}{joy}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00218}00218\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00219}00219\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00224}\mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a1eb2eedd887303e364099dd9f9a77061}{00224}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a1eb2eedd887303e364099dd9f9a77061}{getTension}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00225}00225\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a2713902b0226f2dbc30c828d0ca5b000}{tension}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00226}00226\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00227}00227\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00232}\mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a0205a20087d21cc176357fc7610074e5}{00232}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a0205a20087d21cc176357fc7610074e5}{getSadness}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00233}00233\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a15b31cd4ed709cd1a65f5571ab4dceb9}{sadness}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00234}00234\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00235}00235\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00240}\mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a154b0703ba5fe98f9492611688020e77}{00240}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a154b0703ba5fe98f9492611688020e77}{getTenderness}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00241}00241\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a7f299fe4ff0342831fc535a1d87856fc}{tenderness}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00242}00242\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00243}00243\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00248}\mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a2b5469719d31c0cf96094b828805161e}{00248}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a2b5469719d31c0cf96094b828805161e}{getSolemnity}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00249}00249\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a57bc0633925b35135dfaa5819a9edc94}{solemnity}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00250}00250\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00251}00251\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00256}\mbox{\hyperlink{classcommon_1_1_emozioni_canzone_aceb318b7c275c604f4180a955e55d7cf}{00256}}\ \ \ \ \ \textcolor{keyword}{public}\ String\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_aceb318b7c275c604f4180a955e55d7cf}{getAmazement\_notes}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00257}00257\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a3c8502b75ccb3184e6ff6de393aa5d81}{amazement\_notes}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00258}00258\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00259}00259\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00264}\mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a077103a664f33115448fb1ac7df79654}{00264}}\ \ \ \ \ \textcolor{keyword}{public}\ String\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a077103a664f33115448fb1ac7df79654}{getNostalgia\_notes}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00265}00265\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_aff69f84bb09a75fd8f03868efeb2e277}{nostalgia\_notes}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00266}00266\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00267}00267\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00272}\mbox{\hyperlink{classcommon_1_1_emozioni_canzone_aab7d406408b1fb161d31d62faa83de98}{00272}}\ \ \ \ \ \textcolor{keyword}{public}\ String\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_aab7d406408b1fb161d31d62faa83de98}{getCalmness\_notes}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00273}00273\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_ac42ac851999b43ca671f483e4d037b8b}{calmness\_notes}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00274}00274\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00275}00275\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00280}\mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a90809b11ef84a1cea9b8f9bfac019b4d}{00280}}\ \ \ \ \ \textcolor{keyword}{public}\ String\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a90809b11ef84a1cea9b8f9bfac019b4d}{getPower\_notes}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00281}00281\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a0b7cdcec531a7011b05aff83f135e237}{power\_notes}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00282}00282\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00283}00283\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00288}\mbox{\hyperlink{classcommon_1_1_emozioni_canzone_ac247bfb31a91e67a1f2cc2ebecc8a399}{00288}}\ \ \ \ \ \textcolor{keyword}{public}\ String\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_ac247bfb31a91e67a1f2cc2ebecc8a399}{getJoy\_notes}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00289}00289\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_ae789c10b047d8286ddf5f7b394dd1d07}{joy\_notes}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00290}00290\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00291}00291\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00296}\mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a2cbadd77a41e73ba5efde7a94d7dbd65}{00296}}\ \ \ \ \ \textcolor{keyword}{public}\ String\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a2cbadd77a41e73ba5efde7a94d7dbd65}{getTension\_notes}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00297}00297\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_aa0b6ca99f67d6a361a972a43986fe7ae}{tension\_notes}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00298}00298\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00299}00299\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00305}\mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a3360d304cccd5085bfd21c7db75ed10e}{00305}}\ \ \ \ \ \textcolor{keyword}{public}\ String\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a3360d304cccd5085bfd21c7db75ed10e}{getSadness\_notes}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00306}00306\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a418f6c43891ff82078c4b22d193c563d}{sadness\_notes}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00307}00307\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00308}00308\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00313}\mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a3e8c323e34e66eddf9b9669cfeb3b96e}{00313}}\ \ \ \ \ \textcolor{keyword}{public}\ String\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a3e8c323e34e66eddf9b9669cfeb3b96e}{getTenderness\_notes}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00314}00314\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a7a0fbf9a06761c7b365d63b7a8f1d202}{tenderness\_notes}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00315}00315\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00316}00316\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00321}\mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a103fe845e04ffa500ff4de54b54967ac}{00321}}\ \ \ \ \ \textcolor{keyword}{public}\ String\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_a103fe845e04ffa500ff4de54b54967ac}{getSolemnity\_notes}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00322}00322\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone_ac911b079decb198a81ced0ff713a7e2c}{solemnity\_notes}};}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00323}00323\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00324}00324\ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00325}00325\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00326}00326\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00327}00327\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00328}00328\ }
+\DoxyCodeLine{\Hypertarget{_emozioni_canzone_8java_source_l00329}00329\ \}}
+
+\end{DoxyCode}

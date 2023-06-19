@@ -1,0 +1,5 @@
+<map id="createPlaylist" name="createPlaylist">
+<area shape="rect" id="Node000001" title="Metodo che crea la playlist inserendo le canzoni scelte dall&#39;utente." alt="" coords="5,13,106,40"/>
+<area shape="rect" id="Node000002" href="$classserver_1_1_database.html#a7b64023b56873602866a8fd818cd5ba9" title=" " alt="" coords="154,5,346,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,24,139,24,139,29,106,29"/>
+</map>

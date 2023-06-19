@@ -1,0 +1,596 @@
+\doxysection{GUI Class Reference}
+\hypertarget{classclient_1_1_g_u_i}{}\label{classclient_1_1_g_u_i}\index{GUI@{GUI}}
+
+
+Inheritance diagram for GUI\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{classclient_1_1_g_u_i__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for GUI\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classclient_1_1_g_u_i__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classclient_1_1_g_u_i_a7656234846651c45d6cc55dcf5bb121c}{GUI}} (\mbox{\hyperlink{interfacecommon_1_1_interfaccia_servizio}{Interfaccia\+Servizio}} \mbox{\hyperlink{classclient_1_1_g_u_i_a6a810c68843a0f123de03f49ffb925c0}{is}})
+\item 
+\mbox{\hyperlink{classclient_1_1_g_u_i_a7f2958645772900cfa3f992697f3cec0}{GUI}} ()
+\item 
+void \mbox{\hyperlink{classclient_1_1_g_u_i_aa81be9624eed062ca90ab9842cc96793}{Registrazione}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static boolean \mbox{\hyperlink{classclient_1_1_g_u_i_a4d6c3cdfc183382126f95d648704ef2b}{is\+Validate\+Email\+Address}} (String email\+Str)
+\item 
+static void \mbox{\hyperlink{classclient_1_1_g_u_i_a75988cf84fc6ee7a2ebff36e363021aa}{main}} (String args\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final Pattern \mbox{\hyperlink{classclient_1_1_g_u_i_a50b3a7868b3dc4642ab158d079ca8485}{VALID\+\_\+\+EMAIL\+\_\+\+ADDRESS\+\_\+\+REGEX}} = Pattern.\+compile(\"{}\texorpdfstring{$^\wedge$}{\string^}\mbox{[}A-\/Z0-\/9.\+\_\+\%+-\/\mbox{]}+@\mbox{[}A-\/Z0-\/9.-\/\mbox{]}+\textbackslash{}\textbackslash{}.\mbox{[}A-\/Z\mbox{]}\{2,6\}\$\"{}, Pattern.\+CASE\+\_\+\+INSENSITIVE)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classclient_1_1_g_u_i_a77410fe5c5b5ddb55910cd7a2297bff7}{init\+Components}} ()
+\item 
+void \mbox{\hyperlink{classclient_1_1_g_u_i_a62a614a28ad0881de70b7613317b0561}{j\+Btn\+Registrati\+Action\+Performed}} (java.\+awt.\+event.\+Action\+Event evt)
+\item 
+boolean \mbox{\hyperlink{classclient_1_1_g_u_i_a7908f527e96ed12f5cdc4d220ac51f1d}{check\+Inputs}} (String cf, String nome, String cognome, String citta, int cap, String via, int civico, String email, String password)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{interfacecommon_1_1_interfaccia_servizio}{Interfaccia\+Servizio}} \mbox{\hyperlink{classclient_1_1_g_u_i_a6a810c68843a0f123de03f49ffb925c0}{is}}
+\item 
+javax.\+swing.\+JButton \mbox{\hyperlink{classclient_1_1_g_u_i_a64bf56b0a7dd70935d252c21cbd90938}{j\+Btn\+Registrati}}
+\item 
+javax.\+swing.\+JLabel \mbox{\hyperlink{classclient_1_1_g_u_i_a47066ebb7b751f52b9debcc4bd1b1ee4}{j\+Label1}}
+\item 
+javax.\+swing.\+JLabel \mbox{\hyperlink{classclient_1_1_g_u_i_abc6e659b78143ee572fd18136c05134c}{j\+Label10}}
+\item 
+javax.\+swing.\+JLabel \mbox{\hyperlink{classclient_1_1_g_u_i_aac4c74e7fdef17e600ac902cf40ee766}{j\+Label2}}
+\item 
+javax.\+swing.\+JLabel \mbox{\hyperlink{classclient_1_1_g_u_i_a7b8025d346156944b14ed972285012f2}{j\+Label3}}
+\item 
+javax.\+swing.\+JLabel \mbox{\hyperlink{classclient_1_1_g_u_i_abaf449b4e6e9562ab844bbb2f4d5f779}{j\+Label4}}
+\item 
+javax.\+swing.\+JLabel \mbox{\hyperlink{classclient_1_1_g_u_i_a8ad4e0013e4b113a715092ed0b516490}{j\+Label5}}
+\item 
+javax.\+swing.\+JLabel \mbox{\hyperlink{classclient_1_1_g_u_i_ad27c2b1c74d8ce1ad74a1c308b0d7d66}{j\+Label6}}
+\item 
+javax.\+swing.\+JLabel \mbox{\hyperlink{classclient_1_1_g_u_i_a86597916a2d9a68eb648cd759ea4d55a}{j\+Label7}}
+\item 
+javax.\+swing.\+JLabel \mbox{\hyperlink{classclient_1_1_g_u_i_a5c35649503422930b8ca9404a927ecd4}{j\+Label8}}
+\item 
+javax.\+swing.\+JLabel \mbox{\hyperlink{classclient_1_1_g_u_i_aae76ec7156e4b36d2a59b15dc3acf5c7}{j\+Label9}}
+\item 
+javax.\+swing.\+JScroll\+Pane \mbox{\hyperlink{classclient_1_1_g_u_i_aae4319d2cb4ac19c9a2c7d4d3a2549f4}{j\+Scroll\+Pane1}}
+\item 
+javax.\+swing.\+JScroll\+Pane \mbox{\hyperlink{classclient_1_1_g_u_i_a3ff9eafda5b4cd0c2e725de32515928f}{j\+Scroll\+Pane2}}
+\item 
+javax.\+swing.\+JScroll\+Pane \mbox{\hyperlink{classclient_1_1_g_u_i_a2efa5c12ff7251b743fdfa76d5141500}{j\+Scroll\+Pane3}}
+\item 
+javax.\+swing.\+JScroll\+Pane \mbox{\hyperlink{classclient_1_1_g_u_i_a92b107c469a3bb46e6d8052621513bca}{j\+Scroll\+Pane4}}
+\item 
+javax.\+swing.\+JScroll\+Pane \mbox{\hyperlink{classclient_1_1_g_u_i_a3a1ca3d330ec2cd7d16e2be9177bbdff}{j\+Scroll\+Pane5}}
+\item 
+javax.\+swing.\+JScroll\+Pane \mbox{\hyperlink{classclient_1_1_g_u_i_ad5e5e988e4925b2e8bd8e2095ca6cb97}{j\+Scroll\+Pane6}}
+\item 
+javax.\+swing.\+JScroll\+Pane \mbox{\hyperlink{classclient_1_1_g_u_i_a8c449387c187ff49de5a26f8dd6f9abd}{j\+Scroll\+Pane7}}
+\item 
+javax.\+swing.\+JScroll\+Pane \mbox{\hyperlink{classclient_1_1_g_u_i_a9b29863e9936b2169d6c2eae774d01d3}{j\+Scroll\+Pane8}}
+\item 
+javax.\+swing.\+JLabel \mbox{\hyperlink{classclient_1_1_g_u_i_a92d9261432b219804de6e811b4fa07cd}{label}}
+\item 
+javax.\+swing.\+JText\+Pane \mbox{\hyperlink{classclient_1_1_g_u_i_a498d7f47675c414bb81438de065fde7e}{txt\+Cap}}
+\item 
+javax.\+swing.\+JText\+Pane \mbox{\hyperlink{classclient_1_1_g_u_i_a27db760366378a4e3ec113a4deb55922}{txt\+Citta}}
+\item 
+javax.\+swing.\+JText\+Pane \mbox{\hyperlink{classclient_1_1_g_u_i_a74206f99fc8042d15cc7f26718ea00f8}{txt\+Civico}}
+\item 
+javax.\+swing.\+JText\+Pane \mbox{\hyperlink{classclient_1_1_g_u_i_a14fb219dd38d45707caca021db104826}{txt\+Cognome}}
+\item 
+javax.\+swing.\+JText\+Pane \mbox{\hyperlink{classclient_1_1_g_u_i_a9e2680355ee30242457a2b3566c2a9a0}{txt\+Email}}
+\item 
+javax.\+swing.\+JText\+Pane \mbox{\hyperlink{classclient_1_1_g_u_i_ad9a0b05e5eb4f24707039d1e7bf45200}{txt\+Nome}}
+\item 
+javax.\+swing.\+JPassword\+Field \mbox{\hyperlink{classclient_1_1_g_u_i_a8e20e099383dd88c23abcb8cc046447b}{txt\+Password}}
+\item 
+javax.\+swing.\+JText\+Pane \mbox{\hyperlink{classclient_1_1_g_u_i_a27105ddd5f99614f75a5cd75cc78ec5f}{txt\+Via}}
+\item 
+javax.\+swing.\+JText\+Pane \mbox{\hyperlink{classclient_1_1_g_u_i_abfe0cc8009e9b2d1802d4eaf76cdab4f}{txtcf}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Ferialdo Elezi, 749721
+\end{DoxyAuthor}
+Lorenzo Erba, 748702,Ferialdo Elezi 749721,Alessandro Zancanella 751494,Matteo Cacciarino 748231, sede CO 
+
+Definition at line \mbox{\hyperlink{_g_u_i_8java_source_l00028}{28}} of file \mbox{\hyperlink{_g_u_i_8java_source}{GUI.\+java}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classclient_1_1_g_u_i_a7656234846651c45d6cc55dcf5bb121c}\label{classclient_1_1_g_u_i_a7656234846651c45d6cc55dcf5bb121c} 
+\index{GUI@{GUI}!GUI@{GUI}}
+\index{GUI@{GUI}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{GUI()}{GUI()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classclient_1_1_g_u_i}{GUI}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfacecommon_1_1_interfaccia_servizio}{Interfaccia\+Servizio}}}]{is }\end{DoxyParamCaption})}
+
+Metodo costruttore che crea la nuova interfaccia GUI, inizializzando le variabili e i componenti
+
+
+\begin{DoxyParams}{Parameters}
+{\em is} & contenente il riferimento all\textquotesingle{}oggetto contentente i servizi del server \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8java_source_l00041}{41}} of file \mbox{\hyperlink{_g_u_i_8java_source}{GUI.\+java}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classclient_1_1_g_u_i_a7656234846651c45d6cc55dcf5bb121c_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classclient_1_1_g_u_i_a7f2958645772900cfa3f992697f3cec0}\label{classclient_1_1_g_u_i_a7f2958645772900cfa3f992697f3cec0} 
+\index{GUI@{GUI}!GUI@{GUI}}
+\index{GUI@{GUI}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{GUI()}{GUI()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classclient_1_1_g_u_i}{GUI}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8java_source_l00046}{46}} of file \mbox{\hyperlink{_g_u_i_8java_source}{GUI.\+java}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classclient_1_1_g_u_i_a7908f527e96ed12f5cdc4d220ac51f1d}\label{classclient_1_1_g_u_i_a7908f527e96ed12f5cdc4d220ac51f1d} 
+\index{GUI@{GUI}!checkInputs@{checkInputs}}
+\index{checkInputs@{checkInputs}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{checkInputs()}{checkInputs()}}
+{\footnotesize\ttfamily boolean check\+Inputs (\begin{DoxyParamCaption}\item[{String}]{cf,  }\item[{String}]{nome,  }\item[{String}]{cognome,  }\item[{String}]{citta,  }\item[{int}]{cap,  }\item[{String}]{via,  }\item[{int}]{civico,  }\item[{String}]{email,  }\item[{String}]{password }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Metodo che controlla se l\textquotesingle{}input utente è valido
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome} & -\/\texorpdfstring{$>$}{>} variabile String contenente il nome \\
+\hline
+{\em cognome} & -\/\texorpdfstring{$>$}{>} variabile String contenente il cognome \\
+\hline
+{\em cf} & -\/\texorpdfstring{$>$}{>} variabile String contenente il cf \\
+\hline
+{\em città} & -\/\texorpdfstring{$>$}{>} variabile String contenente la città \\
+\hline
+{\em cap} & -\/\texorpdfstring{$>$}{>} variabile String contenente il cap \\
+\hline
+{\em via} & -\/\texorpdfstring{$>$}{>} variabile String contenente la via \\
+\hline
+{\em civico} & -\/\texorpdfstring{$>$}{>} variabile String contenente il civico \\
+\hline
+{\em email} & -\/\texorpdfstring{$>$}{>} variabile String contenente l\textquotesingle{}email \\
+\hline
+{\em password} & -\/\texorpdfstring{$>$}{>} variabile String contenente la password\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true-\/-\/\texorpdfstring{$>$}{>} input valido false-\/-\/\texorpdfstring{$>$}{>} input non valido 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8java_source_l00353}{353}} of file \mbox{\hyperlink{_g_u_i_8java_source}{GUI.\+java}}.
+
+\Hypertarget{classclient_1_1_g_u_i_a77410fe5c5b5ddb55910cd7a2297bff7}\label{classclient_1_1_g_u_i_a77410fe5c5b5ddb55910cd7a2297bff7} 
+\index{GUI@{GUI}!initComponents@{initComponents}}
+\index{initComponents@{initComponents}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{initComponents()}{initComponents()}}
+{\footnotesize\ttfamily void init\+Components (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+This method is called from within the constructor to initialize the form. WARNING\+: Do NOT modify this code. The content of this method is always regenerated by the Form Editor. 
+
+Definition at line \mbox{\hyperlink{_g_u_i_8java_source_l00058}{58}} of file \mbox{\hyperlink{_g_u_i_8java_source}{GUI.\+java}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classclient_1_1_g_u_i_a77410fe5c5b5ddb55910cd7a2297bff7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classclient_1_1_g_u_i_a4d6c3cdfc183382126f95d648704ef2b}\label{classclient_1_1_g_u_i_a4d6c3cdfc183382126f95d648704ef2b} 
+\index{GUI@{GUI}!isValidateEmailAddress@{isValidateEmailAddress}}
+\index{isValidateEmailAddress@{isValidateEmailAddress}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{isValidateEmailAddress()}{isValidateEmailAddress()}}
+{\footnotesize\ttfamily static boolean is\+Validate\+Email\+Address (\begin{DoxyParamCaption}\item[{String}]{email\+Str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Metodo che controlla se la mail passata come parametro è valida
+
+
+\begin{DoxyParams}{Parameters}
+{\em email\+Str} & -\/\texorpdfstring{$>$}{>} stringa contenente la mail da validare\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true-\/\texorpdfstring{$>$}{>} mail valida false-\/\texorpdfstring{$>$}{>} mail non valida 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8java_source_l00383}{383}} of file \mbox{\hyperlink{_g_u_i_8java_source}{GUI.\+java}}.
+
+\Hypertarget{classclient_1_1_g_u_i_a62a614a28ad0881de70b7613317b0561}\label{classclient_1_1_g_u_i_a62a614a28ad0881de70b7613317b0561} 
+\index{GUI@{GUI}!jBtnRegistratiActionPerformed@{jBtnRegistratiActionPerformed}}
+\index{jBtnRegistratiActionPerformed@{jBtnRegistratiActionPerformed}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{jBtnRegistratiActionPerformed()}{jBtnRegistratiActionPerformed()}}
+{\footnotesize\ttfamily void j\+Btn\+Registrati\+Action\+Performed (\begin{DoxyParamCaption}\item[{java.\+awt.\+event.\+Action\+Event}]{evt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Metodo invocato al click del bottone \"{}\+Registrati\"{}, prende tutti i dati inseriti dall\textquotesingle{}utente e li salva nel databse 
+
+Definition at line \mbox{\hyperlink{_g_u_i_8java_source_l00278}{278}} of file \mbox{\hyperlink{_g_u_i_8java_source}{GUI.\+java}}.
+
+\Hypertarget{classclient_1_1_g_u_i_a75988cf84fc6ee7a2ebff36e363021aa}\label{classclient_1_1_g_u_i_a75988cf84fc6ee7a2ebff36e363021aa} 
+\index{GUI@{GUI}!main@{main}}
+\index{main@{main}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily static void main (\begin{DoxyParamCaption}\item[{String}]{args\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & the command line arguments \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8java_source_l00391}{391}} of file \mbox{\hyperlink{_g_u_i_8java_source}{GUI.\+java}}.
+
+\Hypertarget{classclient_1_1_g_u_i_aa81be9624eed062ca90ab9842cc96793}\label{classclient_1_1_g_u_i_aa81be9624eed062ca90ab9842cc96793} 
+\index{GUI@{GUI}!Registrazione@{Registrazione}}
+\index{Registrazione@{Registrazione}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{Registrazione()}{Registrazione()}}
+{\footnotesize\ttfamily void Registrazione (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Metodo registrazione il quale leggerà tutti i JText\+Pane con il quale realizzarà l\textquotesingle{}oggetto Utenti\+Registrati da passare al server attraverso l\textquotesingle{}oggetto Interfaccia\+Servizio 
+
+Definition at line \mbox{\hyperlink{_g_u_i_8java_source_l00287}{287}} of file \mbox{\hyperlink{_g_u_i_8java_source}{GUI.\+java}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classclient_1_1_g_u_i_aa81be9624eed062ca90ab9842cc96793_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classclient_1_1_g_u_i_a6a810c68843a0f123de03f49ffb925c0}\label{classclient_1_1_g_u_i_a6a810c68843a0f123de03f49ffb925c0} 
+\index{GUI@{GUI}!is@{is}}
+\index{is@{is}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{is}{is}}
+{\footnotesize\ttfamily \mbox{\hyperlink{interfacecommon_1_1_interfaccia_servizio}{Interfaccia\+Servizio}} is\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8java_source_l00033}{33}} of file \mbox{\hyperlink{_g_u_i_8java_source}{GUI.\+java}}.
+
+\Hypertarget{classclient_1_1_g_u_i_a64bf56b0a7dd70935d252c21cbd90938}\label{classclient_1_1_g_u_i_a64bf56b0a7dd70935d252c21cbd90938} 
+\index{GUI@{GUI}!jBtnRegistrati@{jBtnRegistrati}}
+\index{jBtnRegistrati@{jBtnRegistrati}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{jBtnRegistrati}{jBtnRegistrati}}
+{\footnotesize\ttfamily javax.\+swing.\+JButton j\+Btn\+Registrati\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8java_source_l00425}{425}} of file \mbox{\hyperlink{_g_u_i_8java_source}{GUI.\+java}}.
+
+\Hypertarget{classclient_1_1_g_u_i_a47066ebb7b751f52b9debcc4bd1b1ee4}\label{classclient_1_1_g_u_i_a47066ebb7b751f52b9debcc4bd1b1ee4} 
+\index{GUI@{GUI}!jLabel1@{jLabel1}}
+\index{jLabel1@{jLabel1}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{jLabel1}{jLabel1}}
+{\footnotesize\ttfamily javax.\+swing.\+JLabel j\+Label1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8java_source_l00426}{426}} of file \mbox{\hyperlink{_g_u_i_8java_source}{GUI.\+java}}.
+
+\Hypertarget{classclient_1_1_g_u_i_abc6e659b78143ee572fd18136c05134c}\label{classclient_1_1_g_u_i_abc6e659b78143ee572fd18136c05134c} 
+\index{GUI@{GUI}!jLabel10@{jLabel10}}
+\index{jLabel10@{jLabel10}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{jLabel10}{jLabel10}}
+{\footnotesize\ttfamily javax.\+swing.\+JLabel j\+Label10\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8java_source_l00427}{427}} of file \mbox{\hyperlink{_g_u_i_8java_source}{GUI.\+java}}.
+
+\Hypertarget{classclient_1_1_g_u_i_aac4c74e7fdef17e600ac902cf40ee766}\label{classclient_1_1_g_u_i_aac4c74e7fdef17e600ac902cf40ee766} 
+\index{GUI@{GUI}!jLabel2@{jLabel2}}
+\index{jLabel2@{jLabel2}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{jLabel2}{jLabel2}}
+{\footnotesize\ttfamily javax.\+swing.\+JLabel j\+Label2\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8java_source_l00428}{428}} of file \mbox{\hyperlink{_g_u_i_8java_source}{GUI.\+java}}.
+
+\Hypertarget{classclient_1_1_g_u_i_a7b8025d346156944b14ed972285012f2}\label{classclient_1_1_g_u_i_a7b8025d346156944b14ed972285012f2} 
+\index{GUI@{GUI}!jLabel3@{jLabel3}}
+\index{jLabel3@{jLabel3}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{jLabel3}{jLabel3}}
+{\footnotesize\ttfamily javax.\+swing.\+JLabel j\+Label3\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8java_source_l00429}{429}} of file \mbox{\hyperlink{_g_u_i_8java_source}{GUI.\+java}}.
+
+\Hypertarget{classclient_1_1_g_u_i_abaf449b4e6e9562ab844bbb2f4d5f779}\label{classclient_1_1_g_u_i_abaf449b4e6e9562ab844bbb2f4d5f779} 
+\index{GUI@{GUI}!jLabel4@{jLabel4}}
+\index{jLabel4@{jLabel4}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{jLabel4}{jLabel4}}
+{\footnotesize\ttfamily javax.\+swing.\+JLabel j\+Label4\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8java_source_l00430}{430}} of file \mbox{\hyperlink{_g_u_i_8java_source}{GUI.\+java}}.
+
+\Hypertarget{classclient_1_1_g_u_i_a8ad4e0013e4b113a715092ed0b516490}\label{classclient_1_1_g_u_i_a8ad4e0013e4b113a715092ed0b516490} 
+\index{GUI@{GUI}!jLabel5@{jLabel5}}
+\index{jLabel5@{jLabel5}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{jLabel5}{jLabel5}}
+{\footnotesize\ttfamily javax.\+swing.\+JLabel j\+Label5\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8java_source_l00431}{431}} of file \mbox{\hyperlink{_g_u_i_8java_source}{GUI.\+java}}.
+
+\Hypertarget{classclient_1_1_g_u_i_ad27c2b1c74d8ce1ad74a1c308b0d7d66}\label{classclient_1_1_g_u_i_ad27c2b1c74d8ce1ad74a1c308b0d7d66} 
+\index{GUI@{GUI}!jLabel6@{jLabel6}}
+\index{jLabel6@{jLabel6}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{jLabel6}{jLabel6}}
+{\footnotesize\ttfamily javax.\+swing.\+JLabel j\+Label6\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8java_source_l00432}{432}} of file \mbox{\hyperlink{_g_u_i_8java_source}{GUI.\+java}}.
+
+\Hypertarget{classclient_1_1_g_u_i_a86597916a2d9a68eb648cd759ea4d55a}\label{classclient_1_1_g_u_i_a86597916a2d9a68eb648cd759ea4d55a} 
+\index{GUI@{GUI}!jLabel7@{jLabel7}}
+\index{jLabel7@{jLabel7}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{jLabel7}{jLabel7}}
+{\footnotesize\ttfamily javax.\+swing.\+JLabel j\+Label7\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8java_source_l00433}{433}} of file \mbox{\hyperlink{_g_u_i_8java_source}{GUI.\+java}}.
+
+\Hypertarget{classclient_1_1_g_u_i_a5c35649503422930b8ca9404a927ecd4}\label{classclient_1_1_g_u_i_a5c35649503422930b8ca9404a927ecd4} 
+\index{GUI@{GUI}!jLabel8@{jLabel8}}
+\index{jLabel8@{jLabel8}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{jLabel8}{jLabel8}}
+{\footnotesize\ttfamily javax.\+swing.\+JLabel j\+Label8\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8java_source_l00434}{434}} of file \mbox{\hyperlink{_g_u_i_8java_source}{GUI.\+java}}.
+
+\Hypertarget{classclient_1_1_g_u_i_aae76ec7156e4b36d2a59b15dc3acf5c7}\label{classclient_1_1_g_u_i_aae76ec7156e4b36d2a59b15dc3acf5c7} 
+\index{GUI@{GUI}!jLabel9@{jLabel9}}
+\index{jLabel9@{jLabel9}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{jLabel9}{jLabel9}}
+{\footnotesize\ttfamily javax.\+swing.\+JLabel j\+Label9\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8java_source_l00435}{435}} of file \mbox{\hyperlink{_g_u_i_8java_source}{GUI.\+java}}.
+
+\Hypertarget{classclient_1_1_g_u_i_aae4319d2cb4ac19c9a2c7d4d3a2549f4}\label{classclient_1_1_g_u_i_aae4319d2cb4ac19c9a2c7d4d3a2549f4} 
+\index{GUI@{GUI}!jScrollPane1@{jScrollPane1}}
+\index{jScrollPane1@{jScrollPane1}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{jScrollPane1}{jScrollPane1}}
+{\footnotesize\ttfamily javax.\+swing.\+JScroll\+Pane j\+Scroll\+Pane1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8java_source_l00436}{436}} of file \mbox{\hyperlink{_g_u_i_8java_source}{GUI.\+java}}.
+
+\Hypertarget{classclient_1_1_g_u_i_a3ff9eafda5b4cd0c2e725de32515928f}\label{classclient_1_1_g_u_i_a3ff9eafda5b4cd0c2e725de32515928f} 
+\index{GUI@{GUI}!jScrollPane2@{jScrollPane2}}
+\index{jScrollPane2@{jScrollPane2}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{jScrollPane2}{jScrollPane2}}
+{\footnotesize\ttfamily javax.\+swing.\+JScroll\+Pane j\+Scroll\+Pane2\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8java_source_l00437}{437}} of file \mbox{\hyperlink{_g_u_i_8java_source}{GUI.\+java}}.
+
+\Hypertarget{classclient_1_1_g_u_i_a2efa5c12ff7251b743fdfa76d5141500}\label{classclient_1_1_g_u_i_a2efa5c12ff7251b743fdfa76d5141500} 
+\index{GUI@{GUI}!jScrollPane3@{jScrollPane3}}
+\index{jScrollPane3@{jScrollPane3}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{jScrollPane3}{jScrollPane3}}
+{\footnotesize\ttfamily javax.\+swing.\+JScroll\+Pane j\+Scroll\+Pane3\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8java_source_l00438}{438}} of file \mbox{\hyperlink{_g_u_i_8java_source}{GUI.\+java}}.
+
+\Hypertarget{classclient_1_1_g_u_i_a92b107c469a3bb46e6d8052621513bca}\label{classclient_1_1_g_u_i_a92b107c469a3bb46e6d8052621513bca} 
+\index{GUI@{GUI}!jScrollPane4@{jScrollPane4}}
+\index{jScrollPane4@{jScrollPane4}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{jScrollPane4}{jScrollPane4}}
+{\footnotesize\ttfamily javax.\+swing.\+JScroll\+Pane j\+Scroll\+Pane4\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8java_source_l00439}{439}} of file \mbox{\hyperlink{_g_u_i_8java_source}{GUI.\+java}}.
+
+\Hypertarget{classclient_1_1_g_u_i_a3a1ca3d330ec2cd7d16e2be9177bbdff}\label{classclient_1_1_g_u_i_a3a1ca3d330ec2cd7d16e2be9177bbdff} 
+\index{GUI@{GUI}!jScrollPane5@{jScrollPane5}}
+\index{jScrollPane5@{jScrollPane5}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{jScrollPane5}{jScrollPane5}}
+{\footnotesize\ttfamily javax.\+swing.\+JScroll\+Pane j\+Scroll\+Pane5\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8java_source_l00440}{440}} of file \mbox{\hyperlink{_g_u_i_8java_source}{GUI.\+java}}.
+
+\Hypertarget{classclient_1_1_g_u_i_ad5e5e988e4925b2e8bd8e2095ca6cb97}\label{classclient_1_1_g_u_i_ad5e5e988e4925b2e8bd8e2095ca6cb97} 
+\index{GUI@{GUI}!jScrollPane6@{jScrollPane6}}
+\index{jScrollPane6@{jScrollPane6}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{jScrollPane6}{jScrollPane6}}
+{\footnotesize\ttfamily javax.\+swing.\+JScroll\+Pane j\+Scroll\+Pane6\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8java_source_l00441}{441}} of file \mbox{\hyperlink{_g_u_i_8java_source}{GUI.\+java}}.
+
+\Hypertarget{classclient_1_1_g_u_i_a8c449387c187ff49de5a26f8dd6f9abd}\label{classclient_1_1_g_u_i_a8c449387c187ff49de5a26f8dd6f9abd} 
+\index{GUI@{GUI}!jScrollPane7@{jScrollPane7}}
+\index{jScrollPane7@{jScrollPane7}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{jScrollPane7}{jScrollPane7}}
+{\footnotesize\ttfamily javax.\+swing.\+JScroll\+Pane j\+Scroll\+Pane7\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8java_source_l00442}{442}} of file \mbox{\hyperlink{_g_u_i_8java_source}{GUI.\+java}}.
+
+\Hypertarget{classclient_1_1_g_u_i_a9b29863e9936b2169d6c2eae774d01d3}\label{classclient_1_1_g_u_i_a9b29863e9936b2169d6c2eae774d01d3} 
+\index{GUI@{GUI}!jScrollPane8@{jScrollPane8}}
+\index{jScrollPane8@{jScrollPane8}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{jScrollPane8}{jScrollPane8}}
+{\footnotesize\ttfamily javax.\+swing.\+JScroll\+Pane j\+Scroll\+Pane8\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8java_source_l00443}{443}} of file \mbox{\hyperlink{_g_u_i_8java_source}{GUI.\+java}}.
+
+\Hypertarget{classclient_1_1_g_u_i_a92d9261432b219804de6e811b4fa07cd}\label{classclient_1_1_g_u_i_a92d9261432b219804de6e811b4fa07cd} 
+\index{GUI@{GUI}!label@{label}}
+\index{label@{label}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{label}{label}}
+{\footnotesize\ttfamily javax.\+swing.\+JLabel label\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8java_source_l00444}{444}} of file \mbox{\hyperlink{_g_u_i_8java_source}{GUI.\+java}}.
+
+\Hypertarget{classclient_1_1_g_u_i_a498d7f47675c414bb81438de065fde7e}\label{classclient_1_1_g_u_i_a498d7f47675c414bb81438de065fde7e} 
+\index{GUI@{GUI}!txtCap@{txtCap}}
+\index{txtCap@{txtCap}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{txtCap}{txtCap}}
+{\footnotesize\ttfamily javax.\+swing.\+JText\+Pane txt\+Cap\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8java_source_l00445}{445}} of file \mbox{\hyperlink{_g_u_i_8java_source}{GUI.\+java}}.
+
+\Hypertarget{classclient_1_1_g_u_i_abfe0cc8009e9b2d1802d4eaf76cdab4f}\label{classclient_1_1_g_u_i_abfe0cc8009e9b2d1802d4eaf76cdab4f} 
+\index{GUI@{GUI}!txtcf@{txtcf}}
+\index{txtcf@{txtcf}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{txtcf}{txtcf}}
+{\footnotesize\ttfamily javax.\+swing.\+JText\+Pane txtcf\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8java_source_l00453}{453}} of file \mbox{\hyperlink{_g_u_i_8java_source}{GUI.\+java}}.
+
+\Hypertarget{classclient_1_1_g_u_i_a27db760366378a4e3ec113a4deb55922}\label{classclient_1_1_g_u_i_a27db760366378a4e3ec113a4deb55922} 
+\index{GUI@{GUI}!txtCitta@{txtCitta}}
+\index{txtCitta@{txtCitta}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{txtCitta}{txtCitta}}
+{\footnotesize\ttfamily javax.\+swing.\+JText\+Pane txt\+Citta\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8java_source_l00446}{446}} of file \mbox{\hyperlink{_g_u_i_8java_source}{GUI.\+java}}.
+
+\Hypertarget{classclient_1_1_g_u_i_a74206f99fc8042d15cc7f26718ea00f8}\label{classclient_1_1_g_u_i_a74206f99fc8042d15cc7f26718ea00f8} 
+\index{GUI@{GUI}!txtCivico@{txtCivico}}
+\index{txtCivico@{txtCivico}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{txtCivico}{txtCivico}}
+{\footnotesize\ttfamily javax.\+swing.\+JText\+Pane txt\+Civico\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8java_source_l00447}{447}} of file \mbox{\hyperlink{_g_u_i_8java_source}{GUI.\+java}}.
+
+\Hypertarget{classclient_1_1_g_u_i_a14fb219dd38d45707caca021db104826}\label{classclient_1_1_g_u_i_a14fb219dd38d45707caca021db104826} 
+\index{GUI@{GUI}!txtCognome@{txtCognome}}
+\index{txtCognome@{txtCognome}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{txtCognome}{txtCognome}}
+{\footnotesize\ttfamily javax.\+swing.\+JText\+Pane txt\+Cognome\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8java_source_l00448}{448}} of file \mbox{\hyperlink{_g_u_i_8java_source}{GUI.\+java}}.
+
+\Hypertarget{classclient_1_1_g_u_i_a9e2680355ee30242457a2b3566c2a9a0}\label{classclient_1_1_g_u_i_a9e2680355ee30242457a2b3566c2a9a0} 
+\index{GUI@{GUI}!txtEmail@{txtEmail}}
+\index{txtEmail@{txtEmail}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{txtEmail}{txtEmail}}
+{\footnotesize\ttfamily javax.\+swing.\+JText\+Pane txt\+Email\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8java_source_l00449}{449}} of file \mbox{\hyperlink{_g_u_i_8java_source}{GUI.\+java}}.
+
+\Hypertarget{classclient_1_1_g_u_i_ad9a0b05e5eb4f24707039d1e7bf45200}\label{classclient_1_1_g_u_i_ad9a0b05e5eb4f24707039d1e7bf45200} 
+\index{GUI@{GUI}!txtNome@{txtNome}}
+\index{txtNome@{txtNome}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{txtNome}{txtNome}}
+{\footnotesize\ttfamily javax.\+swing.\+JText\+Pane txt\+Nome\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8java_source_l00450}{450}} of file \mbox{\hyperlink{_g_u_i_8java_source}{GUI.\+java}}.
+
+\Hypertarget{classclient_1_1_g_u_i_a8e20e099383dd88c23abcb8cc046447b}\label{classclient_1_1_g_u_i_a8e20e099383dd88c23abcb8cc046447b} 
+\index{GUI@{GUI}!txtPassword@{txtPassword}}
+\index{txtPassword@{txtPassword}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{txtPassword}{txtPassword}}
+{\footnotesize\ttfamily javax.\+swing.\+JPassword\+Field txt\+Password\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8java_source_l00451}{451}} of file \mbox{\hyperlink{_g_u_i_8java_source}{GUI.\+java}}.
+
+\Hypertarget{classclient_1_1_g_u_i_a27105ddd5f99614f75a5cd75cc78ec5f}\label{classclient_1_1_g_u_i_a27105ddd5f99614f75a5cd75cc78ec5f} 
+\index{GUI@{GUI}!txtVia@{txtVia}}
+\index{txtVia@{txtVia}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{txtVia}{txtVia}}
+{\footnotesize\ttfamily javax.\+swing.\+JText\+Pane txt\+Via\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8java_source_l00452}{452}} of file \mbox{\hyperlink{_g_u_i_8java_source}{GUI.\+java}}.
+
+\Hypertarget{classclient_1_1_g_u_i_a50b3a7868b3dc4642ab158d079ca8485}\label{classclient_1_1_g_u_i_a50b3a7868b3dc4642ab158d079ca8485} 
+\index{GUI@{GUI}!VALID\_EMAIL\_ADDRESS\_REGEX@{VALID\_EMAIL\_ADDRESS\_REGEX}}
+\index{VALID\_EMAIL\_ADDRESS\_REGEX@{VALID\_EMAIL\_ADDRESS\_REGEX}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{VALID\_EMAIL\_ADDRESS\_REGEX}{VALID\_EMAIL\_ADDRESS\_REGEX}}
+{\footnotesize\ttfamily final Pattern VALID\+\_\+\+EMAIL\+\_\+\+ADDRESS\+\_\+\+REGEX = Pattern.\+compile(\"{}\texorpdfstring{$^\wedge$}{\string^}\mbox{[}A-\/Z0-\/9.\+\_\+\%+-\/\mbox{]}+@\mbox{[}A-\/Z0-\/9.-\/\mbox{]}+\textbackslash{}\textbackslash{}.\mbox{[}A-\/Z\mbox{]}\{2,6\}\$\"{}, Pattern.\+CASE\+\_\+\+INSENSITIVE)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_g_u_i_8java_source_l00031}{31}} of file \mbox{\hyperlink{_g_u_i_8java_source}{GUI.\+java}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Un\+Insu/\+Lab.\+B/\+Laboratorio\+B/\+Emotional\+Songs/src/main/java/client/\mbox{\hyperlink{_g_u_i_8java}{GUI.\+java}}\end{DoxyCompactItemize}

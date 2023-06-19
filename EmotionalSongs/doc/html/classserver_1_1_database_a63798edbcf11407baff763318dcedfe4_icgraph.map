@@ -1,0 +1,22 @@
+<map id="submitQuery" name="submitQuery">
+<area shape="rect" id="Node000001" title=" " alt="" coords="540,243,635,269"/>
+<area shape="rect" id="Node000002" href="$classserver_1_1_console_frame.html#a4df018cf11f2509ef9c274cb734f3c3a" title="Metodo che filtra le canzoni per autore e anno." alt="" coords="297,5,468,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="578,229,567,191,549,146,524,101,490,62,467,47,470,43,494,58,529,98,554,144,572,189,583,227"/>
+<area shape="rect" id="Node000003" href="$classserver_1_1_console_frame.html#a5b8294026608668c8f915f834b607c22" title="Metodo che filtra le canzoni per il titolo." alt="" coords="297,72,468,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="571,231,539,179,516,152,490,129,467,116,470,111,494,124,520,148,543,175,576,228"/>
+<area shape="rect" id="Node000004" href="$classserver_1_1_console_frame.html#ad780c43371a910daafdf021982f32500" title="Metodo che restituisce le canzoni da inserire nella playlist dell&#39;utente." alt="" coords="276,139,489,181"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="556,236,525,215,491,196,463,184,465,179,493,191,528,210,559,231"/>
+<area shape="rect" id="Node000005" href="$classserver_1_1_console_frame.html#af5a428a63d28c6d7b3cf944bbdbe82ff" title="Metodo che restituisce le canzoni associate alla playlist." alt="" coords="276,205,489,248"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="525,250,489,245,489,239,526,245"/>
+<area shape="rect" id="Node000006" href="$classserver_1_1_console_frame.html#a4e36e2a2f60c7b632247726669fb7fb8" title="Metodo che restituisce le emozioni relative a una canzone." alt="" coords="273,272,492,299"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="526,267,481,274,480,269,525,262"/>
+<area shape="rect" id="Node000008" href="$classserver_1_1_console_frame.html#a5650e7c9e02506bdcee3d59954c9c7ea" title="Metodo che calcola la media delle emozioni." alt="" coords="282,323,483,349"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="556,280,493,313,458,325,456,319,491,308,553,275"/>
+<area shape="rect" id="Node000009" href="$classserver_1_1_console_frame.html#a02b2d0d43bd14f14563ea914822de388" title="Metodo che restituisce le playlist associate all&#39;utente." alt="" coords="278,373,487,400"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="572,284,539,325,518,346,493,364,468,375,466,370,491,359,514,342,535,322,568,280"/>
+<area shape="rect" id="Node000010" href="$classserver_1_1_console_frame.html#af55c6eedb634aeac81ceadf60c7a40bd" title="Metodo per effettuare il login dell&#39;utente al sistema." alt="" coords="295,424,470,451"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="580,284,567,315,549,350,524,385,494,414,471,426,469,422,490,410,520,381,544,347,562,313,575,282"/>
+<area shape="rect" id="Node000007" href="$classserver_1_1_console_frame.html#ab853f77a8f5cd283bea964765761826f" title="Metodo che restituisce le emozioni del brano specificato." alt="" coords="5,289,225,332"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="258,300,225,303,225,298,258,294"/>
+<area shape="poly" id="edge8_Node000008_Node000007" title=" " alt="" coords="267,328,225,324,225,318,267,322"/>
+</map>

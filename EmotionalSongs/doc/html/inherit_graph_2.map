@@ -1,0 +1,25 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" title=" " alt="" coords="152,208,213,235"/>
+<area shape="rect" id="Node000001" href="$classclient_1_1_gui___crea_playlist.html" title=" " alt="" coords="313,5,431,32"/>
+<area shape="poly" id="edge22_Node000000_Node000001" title=" " alt="" coords="191,193,206,159,228,118,256,77,291,42,311,30,314,35,295,46,260,81,232,121,211,161,196,195"/>
+<area shape="rect" id="Node000002" href="$classclient_1_1_gui___elenco_brani.html" title=" " alt="" coords="313,56,431,83"/>
+<area shape="poly" id="edge23_Node000000_Node000002" title=" " alt="" coords="198,194,237,142,262,116,292,92,314,81,317,86,294,97,266,120,241,146,202,197"/>
+<area shape="rect" id="Node000003" href="$classclient_1_1_gui___playlist.html" title=" " alt="" coords="326,107,417,133"/>
+<area shape="poly" id="edge24_Node000000_Node000003" title=" " alt="" coords="210,196,248,169,292,143,325,130,327,135,294,148,251,174,213,201"/>
+<area shape="rect" id="Node000004" href="$classclient_1_1_gui___visualizza_playlist.html" title=" " alt="" coords="296,157,447,184"/>
+<area shape="poly" id="edge25_Node000000_Node000004" title=" " alt="" coords="226,207,318,182,320,187,227,212"/>
+<area shape="rect" id="Node000005" href="$classclient_1_1_pannello_emozioni.html" title=" " alt="" coords="309,208,434,235"/>
+<area shape="poly" id="edge26_Node000000_Node000005" title=" " alt="" coords="227,219,309,219,309,224,227,224"/>
+<area shape="rect" id="Node000006" href="$classclient_1_1emotions_summary___gui.html" title=" " alt="" coords="293,259,450,285"/>
+<area shape="poly" id="edge27_Node000000_Node000006" title=" " alt="" coords="227,230,320,255,318,261,226,236"/>
+<area shape="rect" id="Node000007" href="$classclient_1_1notes___gui.html" title=" " alt="" coords="332,309,412,336"/>
+<area shape="poly" id="edge28_Node000000_Node000007" title=" " alt="" coords="213,242,251,269,294,295,332,310,330,315,292,300,248,274,210,246"/>
+<area shape="rect" id="Node000008" href="$classclient_1_1repository_choice___gui.html" title=" " alt="" coords="299,360,444,387"/>
+<area shape="poly" id="edge29_Node000000_Node000008" title=" " alt="" coords="202,246,241,297,266,323,294,346,317,357,314,362,292,350,262,327,237,300,198,249"/>
+<area shape="rect" id="Node000009" href="$classserver_1_1_console_frame.html" title=" " alt="" coords="319,411,424,437"/>
+<area shape="poly" id="edge30_Node000000_Node000009" title=" " alt="" coords="196,248,211,282,232,322,260,362,295,397,320,410,317,415,291,401,256,366,228,325,206,284,191,250"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="5,411,72,437"/>
+<area shape="rect" id="Node000010" href="$interfacecommon_1_1_interfaccia_servizio.html" title=" " alt="" coords="120,411,245,437"/>
+<area shape="poly" id="edge31_Node000011_Node000010" title=" " alt="" coords="87,421,119,421,119,427,87,427"/>
+<area shape="poly" id="edge32_Node000010_Node000009" title=" " alt="" coords="260,421,319,421,319,427,260,427"/>
+</map>

@@ -1,0 +1,352 @@
+\doxysection{emotions\+Summary\+\_\+\+Gui Class Reference}
+\hypertarget{classclient_1_1emotions_summary___gui}{}\label{classclient_1_1emotions_summary___gui}\index{emotionsSummary\_Gui@{emotionsSummary\_Gui}}
+
+
+Inheritance diagram for emotions\+Summary\+\_\+\+Gui\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classclient_1_1emotions_summary___gui__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for emotions\+Summary\+\_\+\+Gui\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classclient_1_1emotions_summary___gui__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classclient_1_1emotions_summary___gui_a7bb7f4cd0e2a797d089c6474b5859218}{emotions\+Summary\+\_\+\+Gui}} (\mbox{\hyperlink{classcommon_1_1_canzoni}{Canzoni}} \mbox{\hyperlink{classclient_1_1emotions_summary___gui_aa609b22b1e14162bed91d269cd1dafa9}{canzone}}, \mbox{\hyperlink{classclient_1_1_emotional_songs}{Emotional\+Songs}} \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a131122caea7d48e89ae86cb86996b187}{previousframe}}, \mbox{\hyperlink{interfacecommon_1_1_interfaccia_servizio}{Interfaccia\+Servizio}} \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a6a810c68843a0f123de03f49ffb925c0}{is}})
+\item 
+boolean \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a1f6821bf85e6b5a41c287f82232b7d7e}{visualizza\+Emozione\+Brano}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Object \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a310179e74b160c2cc815f52ee6cd2721}{riempi\+Tabella}} (\mbox{\hyperlink{classcommon_1_1_emozioni}{Emozioni}} \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a500a67d69d8b77ddc364bccf4064b3e1}{emo\+\_\+canzone}}, JTable tabella)
+\item 
+Vector$<$ String $>$ \mbox{\hyperlink{classclient_1_1emotions_summary___gui_aea57484bfccf7e0cc511b066b51a4a31}{transform}} (int index, Array\+List$<$ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone}{Emozioni\+Canzone}} $>$ brani)
+\item 
+boolean \mbox{\hyperlink{classclient_1_1emotions_summary___gui_ab9bf3a317754f4f25734391084d8fb16}{set\+Medie\+Tabella}} (JTable tabella)
+\item 
+void \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a77410fe5c5b5ddb55910cd7a2297bff7}{init\+Components}} ()
+\item 
+void \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a6e71847d382ed74fda21f22868f93a44}{j\+Tbl\+Emo\+Mouse\+Clicked}} (java.\+awt.\+event.\+Mouse\+Event evt)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcommon_1_1_emozioni}{Emozioni}} \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a500a67d69d8b77ddc364bccf4064b3e1}{emo\+\_\+canzone}}
+\item 
+\mbox{\hyperlink{classcommon_1_1_canzoni}{Canzoni}} \mbox{\hyperlink{classclient_1_1emotions_summary___gui_aa609b22b1e14162bed91d269cd1dafa9}{canzone}}
+\item 
+final \mbox{\hyperlink{classclient_1_1_emotional_songs}{Emotional\+Songs}} \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a131122caea7d48e89ae86cb86996b187}{previousframe}}
+\item 
+\mbox{\hyperlink{interfacecommon_1_1_interfaccia_servizio}{Interfaccia\+Servizio}} \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a6a810c68843a0f123de03f49ffb925c0}{is}}
+\item 
+javax.\+swing.\+JLabel \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a47066ebb7b751f52b9debcc4bd1b1ee4}{j\+Label1}}
+\item 
+javax.\+swing.\+JLabel \mbox{\hyperlink{classclient_1_1emotions_summary___gui_aac4c74e7fdef17e600ac902cf40ee766}{j\+Label2}}
+\item 
+javax.\+swing.\+JScroll\+Pane \mbox{\hyperlink{classclient_1_1emotions_summary___gui_aae4319d2cb4ac19c9a2c7d4d3a2549f4}{j\+Scroll\+Pane1}}
+\item 
+javax.\+swing.\+JTable \mbox{\hyperlink{classclient_1_1emotions_summary___gui_a689abddd5ea4d8762f87f1f2cef0b3d2}{j\+Tbl\+Emo}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Lorenzo Erba, 748702
+\end{DoxyAuthor}
+Lorenzo Erba, 748702,Ferialdo Elezi 749721,Alessandro Zancanella 751494,Matteo Cacciarino 748231, sede CO
+
+Classe rappresentante il panel che mostra le emozioni della canzone selezionata"{}. 
+
+Definition at line \mbox{\hyperlink{emotions_summary___gui_8java_source_l00030}{30}} of file \mbox{\hyperlink{emotions_summary___gui_8java_source}{emotions\+Summary\+\_\+\+Gui.\+java}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classclient_1_1emotions_summary___gui_a7bb7f4cd0e2a797d089c6474b5859218}\label{classclient_1_1emotions_summary___gui_a7bb7f4cd0e2a797d089c6474b5859218} 
+\index{emotionsSummary\_Gui@{emotionsSummary\_Gui}!emotionsSummary\_Gui@{emotionsSummary\_Gui}}
+\index{emotionsSummary\_Gui@{emotionsSummary\_Gui}!emotionsSummary\_Gui@{emotionsSummary\_Gui}}
+\doxysubsubsection{\texorpdfstring{emotionsSummary\_Gui()}{emotionsSummary\_Gui()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classclient_1_1emotions_summary___gui}{emotions\+Summary\+\_\+\+Gui}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcommon_1_1_canzoni}{Canzoni}}}]{canzone,  }\item[{\mbox{\hyperlink{classclient_1_1_emotional_songs}{Emotional\+Songs}}}]{previousframe,  }\item[{\mbox{\hyperlink{interfacecommon_1_1_interfaccia_servizio}{Interfaccia\+Servizio}}}]{is }\end{DoxyParamCaption})}
+
+Costruttore parametrico che inizializza tutti gli attributi ed i componenti
+
+
+\begin{DoxyParams}{Parameters}
+{\em canzone} & variabile di tipo Canzone contenenete le canzoni selezionate dalla quale prelevare le emozioni \\
+\hline
+{\em previousframe} & variabile di tipo Emotional\+Songs contenente il riferimento al frame iniziale \\
+\hline
+{\em is} & variabile di tipo Interfaccia\+Servizio contenente il riferimento al oggetto con i servizi del server \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{emotions_summary___gui_8java_source_l00048}{48}} of file \mbox{\hyperlink{emotions_summary___gui_8java_source}{emotions\+Summary\+\_\+\+Gui.\+java}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{classclient_1_1emotions_summary___gui_a7bb7f4cd0e2a797d089c6474b5859218_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classclient_1_1emotions_summary___gui_a77410fe5c5b5ddb55910cd7a2297bff7}\label{classclient_1_1emotions_summary___gui_a77410fe5c5b5ddb55910cd7a2297bff7} 
+\index{emotionsSummary\_Gui@{emotionsSummary\_Gui}!initComponents@{initComponents}}
+\index{initComponents@{initComponents}!emotionsSummary\_Gui@{emotionsSummary\_Gui}}
+\doxysubsubsection{\texorpdfstring{initComponents()}{initComponents()}}
+{\footnotesize\ttfamily void init\+Components (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+This method is called from within the constructor to initialize the form. WARNING\+: Do NOT modify this code. The content of this method is always regenerated by the Form Editor. 
+
+Definition at line \mbox{\hyperlink{emotions_summary___gui_8java_source_l00227}{227}} of file \mbox{\hyperlink{emotions_summary___gui_8java_source}{emotions\+Summary\+\_\+\+Gui.\+java}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{classclient_1_1emotions_summary___gui_a77410fe5c5b5ddb55910cd7a2297bff7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classclient_1_1emotions_summary___gui_a6e71847d382ed74fda21f22868f93a44}\label{classclient_1_1emotions_summary___gui_a6e71847d382ed74fda21f22868f93a44} 
+\index{emotionsSummary\_Gui@{emotionsSummary\_Gui}!jTblEmoMouseClicked@{jTblEmoMouseClicked}}
+\index{jTblEmoMouseClicked@{jTblEmoMouseClicked}!emotionsSummary\_Gui@{emotionsSummary\_Gui}}
+\doxysubsubsection{\texorpdfstring{jTblEmoMouseClicked()}{jTblEmoMouseClicked()}}
+{\footnotesize\ttfamily void j\+Tbl\+Emo\+Mouse\+Clicked (\begin{DoxyParamCaption}\item[{java.\+awt.\+event.\+Mouse\+Event}]{evt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Metodo invocato al click della riga della tabella. Tale metodo apre il JPanel notes\+\_\+\+Gui, contenente i commenti dell\textquotesingle{}utente selezionato.
+
+
+\begin{DoxyParams}{Parameters}
+{\em evt} & evento rappresentante il click della riga della tabella j\+Tbl\+Emo \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{emotions_summary___gui_8java_source_l00315}{315}} of file \mbox{\hyperlink{emotions_summary___gui_8java_source}{emotions\+Summary\+\_\+\+Gui.\+java}}.
+
+\Hypertarget{classclient_1_1emotions_summary___gui_a310179e74b160c2cc815f52ee6cd2721}\label{classclient_1_1emotions_summary___gui_a310179e74b160c2cc815f52ee6cd2721} 
+\index{emotionsSummary\_Gui@{emotionsSummary\_Gui}!riempiTabella@{riempiTabella}}
+\index{riempiTabella@{riempiTabella}!emotionsSummary\_Gui@{emotionsSummary\_Gui}}
+\doxysubsubsection{\texorpdfstring{riempiTabella()}{riempiTabella()}}
+{\footnotesize\ttfamily Object riempi\+Tabella (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcommon_1_1_emozioni}{Emozioni}}}]{emo\+\_\+canzone,  }\item[{JTable}]{tabella }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Metodo che permette di inserire le emozioni lette dal server nella tabella
+
+
+\begin{DoxyParams}{Parameters}
+{\em emo\+\_\+canzone} & oggetto di tipo Emozioni contenente la lista delle emozioni rilasciate da ogni utente \\
+\hline
+{\em tabella} & oggetto di tipo JTable contenente il riferimento alla tabella presente nella pagina \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Oggetto di tipo String -\/-\/\texorpdfstring{$>$}{>} \"{}1\"{} il riempimento è andato a buon fine Oggetto di tipo String -\/-\/\texorpdfstring{$>$}{>} contenente l\textquotesingle{}errore generato in fase di popolamento della tabella 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{emotions_summary___gui_8java_source_l00103}{103}} of file \mbox{\hyperlink{emotions_summary___gui_8java_source}{emotions\+Summary\+\_\+\+Gui.\+java}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classclient_1_1emotions_summary___gui_a310179e74b160c2cc815f52ee6cd2721_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classclient_1_1emotions_summary___gui_a310179e74b160c2cc815f52ee6cd2721_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classclient_1_1emotions_summary___gui_ab9bf3a317754f4f25734391084d8fb16}\label{classclient_1_1emotions_summary___gui_ab9bf3a317754f4f25734391084d8fb16} 
+\index{emotionsSummary\_Gui@{emotionsSummary\_Gui}!setMedieTabella@{setMedieTabella}}
+\index{setMedieTabella@{setMedieTabella}!emotionsSummary\_Gui@{emotionsSummary\_Gui}}
+\doxysubsubsection{\texorpdfstring{setMedieTabella()}{setMedieTabella()}}
+{\footnotesize\ttfamily boolean set\+Medie\+Tabella (\begin{DoxyParamCaption}\item[{JTable}]{tabella }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Metodo che permette di settare le colonne delle emozioni con le medie relative
+
+
+\begin{DoxyParams}{Parameters}
+{\em tabella} & oggetto di tipo JTable contenente il riferimento alla tabella presente nella pagina \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean true -\/\texorpdfstring{$>$}{>} settings della tabella avvenuto con esito positivo boolean false -\/\texorpdfstring{$>$}{>} settings della tabella ha prodotto un errore 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{emotions_summary___gui_8java_source_l00174}{174}} of file \mbox{\hyperlink{emotions_summary___gui_8java_source}{emotions\+Summary\+\_\+\+Gui.\+java}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{classclient_1_1emotions_summary___gui_ab9bf3a317754f4f25734391084d8fb16_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classclient_1_1emotions_summary___gui_ab9bf3a317754f4f25734391084d8fb16_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classclient_1_1emotions_summary___gui_aea57484bfccf7e0cc511b066b51a4a31}\label{classclient_1_1emotions_summary___gui_aea57484bfccf7e0cc511b066b51a4a31} 
+\index{emotionsSummary\_Gui@{emotionsSummary\_Gui}!transform@{transform}}
+\index{transform@{transform}!emotionsSummary\_Gui@{emotionsSummary\_Gui}}
+\doxysubsubsection{\texorpdfstring{transform()}{transform()}}
+{\footnotesize\ttfamily Vector$<$ String $>$ transform (\begin{DoxyParamCaption}\item[{int}]{index,  }\item[{Array\+List$<$ \mbox{\hyperlink{classcommon_1_1_emozioni_canzone}{Emozioni\+Canzone}} $>$}]{brani }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Metodo che trasforma i brani in un Vector per poterli inserire in una j\+Table
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & parametro di tipo int contenente l\textquotesingle{}indice corrente \\
+\hline
+{\em brani} & Array\+List di tipo Canzone, che è da convertire \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{emotions_summary___gui_8java_source_l00143}{143}} of file \mbox{\hyperlink{emotions_summary___gui_8java_source}{emotions\+Summary\+\_\+\+Gui.\+java}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classclient_1_1emotions_summary___gui_aea57484bfccf7e0cc511b066b51a4a31_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classclient_1_1emotions_summary___gui_a1f6821bf85e6b5a41c287f82232b7d7e}\label{classclient_1_1emotions_summary___gui_a1f6821bf85e6b5a41c287f82232b7d7e} 
+\index{emotionsSummary\_Gui@{emotionsSummary\_Gui}!visualizzaEmozioneBrano@{visualizzaEmozioneBrano}}
+\index{visualizzaEmozioneBrano@{visualizzaEmozioneBrano}!emotionsSummary\_Gui@{emotionsSummary\_Gui}}
+\doxysubsubsection{\texorpdfstring{visualizzaEmozioneBrano()}{visualizzaEmozioneBrano()}}
+{\footnotesize\ttfamily boolean visualizza\+Emozione\+Brano (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Metodo che permette di prelevare le emozioni relative al brano indicato
+
+\begin{DoxyReturn}{Returns}
+true -\/-\/\texorpdfstring{$>$}{>} la tabella è stata riempita correttamente false -\/-\/\texorpdfstring{$>$}{>} errore, implica la visualizzazione di una JOption\+Pane contenente il codice d\textquotesingle{}errore 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{emotions_summary___gui_8java_source_l00063}{63}} of file \mbox{\hyperlink{emotions_summary___gui_8java_source}{emotions\+Summary\+\_\+\+Gui.\+java}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classclient_1_1emotions_summary___gui_a1f6821bf85e6b5a41c287f82232b7d7e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classclient_1_1emotions_summary___gui_a1f6821bf85e6b5a41c287f82232b7d7e_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classclient_1_1emotions_summary___gui_aa609b22b1e14162bed91d269cd1dafa9}\label{classclient_1_1emotions_summary___gui_aa609b22b1e14162bed91d269cd1dafa9} 
+\index{emotionsSummary\_Gui@{emotionsSummary\_Gui}!canzone@{canzone}}
+\index{canzone@{canzone}!emotionsSummary\_Gui@{emotionsSummary\_Gui}}
+\doxysubsubsection{\texorpdfstring{canzone}{canzone}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classcommon_1_1_canzoni}{Canzoni}} canzone\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{emotions_summary___gui_8java_source_l00035}{35}} of file \mbox{\hyperlink{emotions_summary___gui_8java_source}{emotions\+Summary\+\_\+\+Gui.\+java}}.
+
+\Hypertarget{classclient_1_1emotions_summary___gui_a500a67d69d8b77ddc364bccf4064b3e1}\label{classclient_1_1emotions_summary___gui_a500a67d69d8b77ddc364bccf4064b3e1} 
+\index{emotionsSummary\_Gui@{emotionsSummary\_Gui}!emo\_canzone@{emo\_canzone}}
+\index{emo\_canzone@{emo\_canzone}!emotionsSummary\_Gui@{emotionsSummary\_Gui}}
+\doxysubsubsection{\texorpdfstring{emo\_canzone}{emo\_canzone}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classcommon_1_1_emozioni}{Emozioni}} emo\+\_\+canzone\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{emotions_summary___gui_8java_source_l00033}{33}} of file \mbox{\hyperlink{emotions_summary___gui_8java_source}{emotions\+Summary\+\_\+\+Gui.\+java}}.
+
+\Hypertarget{classclient_1_1emotions_summary___gui_a6a810c68843a0f123de03f49ffb925c0}\label{classclient_1_1emotions_summary___gui_a6a810c68843a0f123de03f49ffb925c0} 
+\index{emotionsSummary\_Gui@{emotionsSummary\_Gui}!is@{is}}
+\index{is@{is}!emotionsSummary\_Gui@{emotionsSummary\_Gui}}
+\doxysubsubsection{\texorpdfstring{is}{is}}
+{\footnotesize\ttfamily \mbox{\hyperlink{interfacecommon_1_1_interfaccia_servizio}{Interfaccia\+Servizio}} is\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{emotions_summary___gui_8java_source_l00039}{39}} of file \mbox{\hyperlink{emotions_summary___gui_8java_source}{emotions\+Summary\+\_\+\+Gui.\+java}}.
+
+\Hypertarget{classclient_1_1emotions_summary___gui_a47066ebb7b751f52b9debcc4bd1b1ee4}\label{classclient_1_1emotions_summary___gui_a47066ebb7b751f52b9debcc4bd1b1ee4} 
+\index{emotionsSummary\_Gui@{emotionsSummary\_Gui}!jLabel1@{jLabel1}}
+\index{jLabel1@{jLabel1}!emotionsSummary\_Gui@{emotionsSummary\_Gui}}
+\doxysubsubsection{\texorpdfstring{jLabel1}{jLabel1}}
+{\footnotesize\ttfamily javax.\+swing.\+JLabel j\+Label1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{emotions_summary___gui_8java_source_l00330}{330}} of file \mbox{\hyperlink{emotions_summary___gui_8java_source}{emotions\+Summary\+\_\+\+Gui.\+java}}.
+
+\Hypertarget{classclient_1_1emotions_summary___gui_aac4c74e7fdef17e600ac902cf40ee766}\label{classclient_1_1emotions_summary___gui_aac4c74e7fdef17e600ac902cf40ee766} 
+\index{emotionsSummary\_Gui@{emotionsSummary\_Gui}!jLabel2@{jLabel2}}
+\index{jLabel2@{jLabel2}!emotionsSummary\_Gui@{emotionsSummary\_Gui}}
+\doxysubsubsection{\texorpdfstring{jLabel2}{jLabel2}}
+{\footnotesize\ttfamily javax.\+swing.\+JLabel j\+Label2\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{emotions_summary___gui_8java_source_l00331}{331}} of file \mbox{\hyperlink{emotions_summary___gui_8java_source}{emotions\+Summary\+\_\+\+Gui.\+java}}.
+
+\Hypertarget{classclient_1_1emotions_summary___gui_aae4319d2cb4ac19c9a2c7d4d3a2549f4}\label{classclient_1_1emotions_summary___gui_aae4319d2cb4ac19c9a2c7d4d3a2549f4} 
+\index{emotionsSummary\_Gui@{emotionsSummary\_Gui}!jScrollPane1@{jScrollPane1}}
+\index{jScrollPane1@{jScrollPane1}!emotionsSummary\_Gui@{emotionsSummary\_Gui}}
+\doxysubsubsection{\texorpdfstring{jScrollPane1}{jScrollPane1}}
+{\footnotesize\ttfamily javax.\+swing.\+JScroll\+Pane j\+Scroll\+Pane1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{emotions_summary___gui_8java_source_l00332}{332}} of file \mbox{\hyperlink{emotions_summary___gui_8java_source}{emotions\+Summary\+\_\+\+Gui.\+java}}.
+
+\Hypertarget{classclient_1_1emotions_summary___gui_a689abddd5ea4d8762f87f1f2cef0b3d2}\label{classclient_1_1emotions_summary___gui_a689abddd5ea4d8762f87f1f2cef0b3d2} 
+\index{emotionsSummary\_Gui@{emotionsSummary\_Gui}!jTblEmo@{jTblEmo}}
+\index{jTblEmo@{jTblEmo}!emotionsSummary\_Gui@{emotionsSummary\_Gui}}
+\doxysubsubsection{\texorpdfstring{jTblEmo}{jTblEmo}}
+{\footnotesize\ttfamily javax.\+swing.\+JTable j\+Tbl\+Emo\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{emotions_summary___gui_8java_source_l00333}{333}} of file \mbox{\hyperlink{emotions_summary___gui_8java_source}{emotions\+Summary\+\_\+\+Gui.\+java}}.
+
+\Hypertarget{classclient_1_1emotions_summary___gui_a131122caea7d48e89ae86cb86996b187}\label{classclient_1_1emotions_summary___gui_a131122caea7d48e89ae86cb86996b187} 
+\index{emotionsSummary\_Gui@{emotionsSummary\_Gui}!previousframe@{previousframe}}
+\index{previousframe@{previousframe}!emotionsSummary\_Gui@{emotionsSummary\_Gui}}
+\doxysubsubsection{\texorpdfstring{previousframe}{previousframe}}
+{\footnotesize\ttfamily final \mbox{\hyperlink{classclient_1_1_emotional_songs}{Emotional\+Songs}} previousframe\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{emotions_summary___gui_8java_source_l00037}{37}} of file \mbox{\hyperlink{emotions_summary___gui_8java_source}{emotions\+Summary\+\_\+\+Gui.\+java}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Un\+Insu/\+Lab.\+B/\+Laboratorio\+B/\+Emotional\+Songs/src/main/java/client/\mbox{\hyperlink{emotions_summary___gui_8java}{emotions\+Summary\+\_\+\+Gui.\+java}}\end{DoxyCompactItemize}

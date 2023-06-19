@@ -1,0 +1,7 @@
+<map id="filtraPerTitolo" name="filtraPerTitolo">
+<area shape="rect" id="Node000001" title="Metodo che filtra le canzoni per il titolo." alt="" coords="5,43,102,69"/>
+<area shape="rect" id="Node000002" href="$classserver_1_1_data_tables.html#a991a8d62a3ffa66c044f72b13a85868a" title="Metodo invocato per mappare il datamodel delle canzoni ottenute dall&#39;esecuzione delle query." alt="" coords="163,5,329,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="102,46,148,39,149,44,103,51"/>
+<area shape="rect" id="Node000003" href="$classserver_1_1_database.html#a63798edbcf11407baff763318dcedfe4" title=" " alt="" coords="150,72,342,99"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="103,61,140,67,139,72,102,66"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="getIdPlaylist" name="getIdPlaylist">
+<area shape="rect" id="Node000001" title="Getter dell&#39;attributo idplaylist." alt="" coords="492,47,584,73"/>
+<area shape="rect" id="Node000002" href="$classclient_1_1_gui___elenco_brani.html#a7d809ec39a3bfd18942c19051358ae8b" title=" " alt="" coords="257,5,418,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="477,53,418,43,419,37,477,47"/>
+<area shape="rect" id="Node000003" href="$classclient_1_1_gui___elenco_brani.html#a95ec5dc2d151540c4e79368afc96a94a" title=" " alt="" coords="231,72,444,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="478,73,445,78,444,73,477,67"/>
+<area shape="rect" id="Node000004" href="$classclient_1_1_gui___elenco_brani.html#a3ecac1a96e044d26a890d04c61a3c852" title=" " alt="" coords="5,72,183,115"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="216,96,183,96,183,91,216,91"/>
+</map>

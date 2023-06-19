@@ -1,0 +1,15 @@
+<map id="getNumeroEmozioni" name="getNumeroEmozioni">
+<area shape="rect" id="Node000001" title=" " alt="" coords="721,47,860,73"/>
+<area shape="rect" id="Node000002" href="$classserver_1_1_data_tables.html#a131555d9ee80185bbbe2758af00accc3" title="Metodo invocato per mappare il datamodel delle emozioni ottenute dall&#39;esecuzione delle query." alt="" coords="507,5,673,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="707,49,674,43,674,38,707,44"/>
+<area shape="rect" id="Node000004" href="$classclient_1_1emotions_summary___gui.html#a310179e74b160c2cc815f52ee6cd2721" title=" " alt="" coords="508,72,673,115"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="707,77,674,82,673,77,706,71"/>
+<area shape="rect" id="Node000003" href="$classserver_1_1_console_frame.html#ab853f77a8f5cd283bea964765761826f" title="Metodo che restituisce le emozioni del brano specificato." alt="" coords="240,5,459,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="492,29,459,29,459,24,492,24"/>
+<area shape="rect" id="Node000005" href="$classclient_1_1emotions_summary___gui.html#a1f6821bf85e6b5a41c287f82232b7d7e" title=" " alt="" coords="249,72,450,115"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="492,96,450,96,450,91,492,91"/>
+<area shape="rect" id="Node000006" href="$classclient_1_1repository_choice___gui.html#a8ac11cd567b799ade53c11e13192ac19" title=" " alt="" coords="5,39,192,81"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="234,81,192,75,192,70,235,75"/>
+<area shape="rect" id="Node000007" href="$classclient_1_1repository_choice___gui.html#a532a62757b61e85362ece5a42a5491ab" title=" " alt="" coords="11,105,186,148"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="235,111,187,118,186,112,234,106"/>
+</map>

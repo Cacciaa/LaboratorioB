@@ -1,0 +1,30 @@
+<map id="emotionsSummary_Gui" name="emotionsSummary_Gui">
+<area shape="rect" id="Node000001" title=" " alt="" coords="374,1200,554,1440"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="117,973,169,1043"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,1056,168,1116,182,1147,201,1174,239,1212,284,1243,330,1268,376,1288,374,1293,328,1273,281,1247,236,1216,197,1178,177,1149,163,1118,146,1057"/>
+<area shape="rect" id="Node000003" href="$classcommon_1_1_emozioni.html" title=" " alt="" coords="298,909,446,1107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="392,1106,410,1175,412,1183,407,1185,404,1177,387,1107"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="73,5,153,75"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="111,89,106,183,105,309,115,450,126,522,141,591,168,670,199,728,235,783,280,855,313,908,308,911,275,857,230,786,194,730,163,672,136,593,120,523,110,451,100,309,100,183,106,89"/>
+<area shape="rect" id="Node000007" href="$classcommon_1_1_media_emozioni.html" title=" " alt="" coords="151,139,297,592"/>
+<area shape="poly" id="edge7_Node000007_Node000004" title=" " alt="" coords="132,87,154,152,149,153,127,89"/>
+<area shape="rect" id="Node000008" href="$classcommon_1_1_canzoni.html" title=" " alt="" coords="5,616,93,856"/>
+<area shape="poly" id="edge9_Node000008_Node000004" title=" " alt="" coords="100,89,97,99,76,237,62,376,55,506,52,616,47,616,50,506,57,376,70,236,92,98,94,88"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="321,323,506,408"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="413,408,382,892,377,892,408,408"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="381,5,446,75"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="416,89,416,323,411,323,411,89"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="276,591,337,855,346,892,341,893,332,857,271,592"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="95,848,100,854,120,864,140,864,161,865,182,878,204,910,214,942,216,973,213,1003,210,1034,209,1066,215,1099,231,1135,258,1172,290,1205,326,1234,361,1260,358,1264,322,1239,287,1209,254,1175,226,1137,210,1101,204,1067,204,1034,208,1003,211,973,209,943,200,913,178,882,160,871,140,870,119,869,97,858,91,852"/>
+<area shape="rect" id="Node000009" href="$classclient_1_1_emotional_songs.html" title=" " alt="" coords="471,880,647,1136"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="523,1136,508,1185,503,1183,517,1135"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="531,331,587,400"/>
+<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="561,414,561,881,556,881,556,414"/>
+<area shape="rect" id="Node000011" href="$interfacecommon_1_1_interfaccia_servizio.html" title=" " alt="" coords="611,235,781,496"/>
+<area shape="poly" id="edge14_Node000001_Node000011" title=" " alt="" coords="704,496,707,660,704,846,699,935,690,1016,678,1085,661,1137,643,1169,620,1199,569,1250,565,1247,616,1196,639,1166,656,1135,673,1084,685,1016,693,935,699,845,702,660,699,496"/>
+<area shape="poly" id="edge12_Node000009_Node000011" title=" " alt="" coords="671,496,592,864,587,863,666,495"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="667,5,725,75"/>
+<area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="699,89,699,235,693,235,693,89"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="737,973,786,1043"/>
+<area shape="poly" id="edge15_Node000001_Node000013" title=" " alt="" coords="762,1043,749,1109,735,1145,715,1178,684,1211,648,1239,609,1263,570,1283,568,1278,606,1259,645,1235,680,1207,711,1174,731,1142,744,1107,757,1042"/>
+</map>

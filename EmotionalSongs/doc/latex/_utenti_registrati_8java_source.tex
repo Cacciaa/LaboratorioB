@@ -1,0 +1,136 @@
+\doxysection{Utenti\+Registrati.\+java}
+\hypertarget{_utenti_registrati_8java_source}{}\label{_utenti_registrati_8java_source}\index{D:/UnInsu/Lab.B/LaboratorioB/EmotionalSongs/src/main/java/common/UtentiRegistrati.java@{D:/UnInsu/Lab.B/LaboratorioB/EmotionalSongs/src/main/java/common/UtentiRegistrati.java}}
+\mbox{\hyperlink{_utenti_registrati_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00002}00002\ \textcolor{comment}{\ *\ Click\ nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-\/default.txt\ to\ change\ this\ license}}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00003}00003\ \textcolor{comment}{\ *\ Click\ nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java\ to\ edit\ this\ template}}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00004}00004\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00005}00005\ \textcolor{keyword}{package\ }common;}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00007}00007\ \textcolor{keyword}{import}\ java.io.Serializable;}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00017}\mbox{\hyperlink{classcommon_1_1_utenti_registrati}{00017}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcommon_1_1_utenti_registrati}{UtentiRegistrati}}\ \textcolor{keyword}{implements}\ Serializable\ \{}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00018}00018\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00019}00019\ \ \ \ \ \textcolor{comment}{//attributo\ privato\ di\ tipo\ String\ contenente\ il\ codicefiscale\ dell'utente}}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00020}\mbox{\hyperlink{classcommon_1_1_utenti_registrati_a89e28f6f7714a9b66a902a1aa74f9566}{00020}}\ \ \ \ \ \textcolor{keyword}{private}\ String\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_a89e28f6f7714a9b66a902a1aa74f9566}{codiceFiscale}};}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00021}00021\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00022}00022\ \ \ \ \ \textcolor{comment}{//attributo\ privato\ di\ tipo\ String\ contenente\ il\ nome\ dell'utente}}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00023}\mbox{\hyperlink{classcommon_1_1_utenti_registrati_a4cfff30ec02286864b995e013b6c2a41}{00023}}\ \ \ \ \ \textcolor{keyword}{private}\ String\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_a4cfff30ec02286864b995e013b6c2a41}{nome}};}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00024}00024\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00025}00025\ \ \ \ \ \textcolor{comment}{//attributo\ privato\ di\ tipo\ String\ contenente\ il\ cognome\ dell'utente}}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00026}\mbox{\hyperlink{classcommon_1_1_utenti_registrati_a75fd3fcf5ac6a56a7a15fd5fec7cdd04}{00026}}\ \ \ \ \ \textcolor{keyword}{private}\ String\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_a75fd3fcf5ac6a56a7a15fd5fec7cdd04}{cognome}};}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00027}00027\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00028}00028\ \ \ \ \ \textcolor{comment}{//attributo\ privato\ di\ tipo\ String\ contenente\ la\ citta\ dell'utente}}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00029}\mbox{\hyperlink{classcommon_1_1_utenti_registrati_ae64770b15ce972917c88ef5c453e6592}{00029}}\ \ \ \ \ \textcolor{keyword}{private}\ String\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_ae64770b15ce972917c88ef5c453e6592}{citta}};}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00030}00030\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00031}00031\ \ \ \ \ \textcolor{comment}{//attributo\ privato\ di\ tipo\ int\ contenente\ il\ cap\ dell'utente}}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00032}\mbox{\hyperlink{classcommon_1_1_utenti_registrati_acf9933ba9a016c4f3e65bfb6e6800af1}{00032}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_acf9933ba9a016c4f3e65bfb6e6800af1}{cap}};}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00033}00033\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00034}00034\ \ \ \ \ \textcolor{comment}{//attributo\ privato\ di\ tipo\ String\ contenente\ la\ via\ dell'utente}}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00035}\mbox{\hyperlink{classcommon_1_1_utenti_registrati_a56526e48a82658b1982fded88adcf4ef}{00035}}\ \ \ \ \ \textcolor{keyword}{private}\ String\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_a56526e48a82658b1982fded88adcf4ef}{via}};}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00036}00036\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00037}00037\ \ \ \ \ \textcolor{comment}{//attributo\ privato\ di\ tipo\ int\ contenente\ il\ civico\ dell'utente}}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00038}\mbox{\hyperlink{classcommon_1_1_utenti_registrati_afa82888f78722757200b1cb5bc72f36b}{00038}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_afa82888f78722757200b1cb5bc72f36b}{civico}};}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00039}00039\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00040}00040\ \ \ \ \ \textcolor{comment}{//attributo\ privato\ di\ tipo\ String\ contenente\ l'email\ dell'utente}}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00041}\mbox{\hyperlink{classcommon_1_1_utenti_registrati_ac120cf8981125377a85fe62e1557a509}{00041}}\ \ \ \ \ \textcolor{keyword}{private}\ String\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_ac120cf8981125377a85fe62e1557a509}{email}};}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00042}00042\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00043}00043\ \ \ \ \ \textcolor{comment}{//attributo\ privato\ di\ tipo\ String\ contenente\ la\ password\ dell'utente}}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00044}\mbox{\hyperlink{classcommon_1_1_utenti_registrati_acbd76b816d055b7a642c219fd9751020}{00044}}\ \ \ \ \ \textcolor{keyword}{private}\ String\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_acbd76b816d055b7a642c219fd9751020}{password}};}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00045}00045\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00058}\mbox{\hyperlink{classcommon_1_1_utenti_registrati_ab45a77e81e23175264df89ca7fb25746}{00058}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_ab45a77e81e23175264df89ca7fb25746}{UtentiRegistrati}}(String\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_a89e28f6f7714a9b66a902a1aa74f9566}{codiceFiscale}},\ String\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_a4cfff30ec02286864b995e013b6c2a41}{nome}},\ String\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_a75fd3fcf5ac6a56a7a15fd5fec7cdd04}{cognome}},\ String\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_ae64770b15ce972917c88ef5c453e6592}{citta}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_acf9933ba9a016c4f3e65bfb6e6800af1}{cap}},\ String\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_a56526e48a82658b1982fded88adcf4ef}{via}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_afa82888f78722757200b1cb5bc72f36b}{civico}},\ String\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_ac120cf8981125377a85fe62e1557a509}{email}},\ String\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_acbd76b816d055b7a642c219fd9751020}{password}})\ \{}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00059}00059\ \ \ \ \ \ \ \ \ this.codiceFiscale\ =\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_a89e28f6f7714a9b66a902a1aa74f9566}{codiceFiscale}};}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00060}00060\ \ \ \ \ \ \ \ \ this.nome\ =\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_a4cfff30ec02286864b995e013b6c2a41}{nome}};}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00061}00061\ \ \ \ \ \ \ \ \ this.cognome\ =\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_a75fd3fcf5ac6a56a7a15fd5fec7cdd04}{cognome}};}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00062}00062\ \ \ \ \ \ \ \ \ this.citta\ =\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_ae64770b15ce972917c88ef5c453e6592}{citta}};}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00063}00063\ \ \ \ \ \ \ \ \ this.cap\ =\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_acf9933ba9a016c4f3e65bfb6e6800af1}{cap}};}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00064}00064\ \ \ \ \ \ \ \ \ this.via\ =\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_a56526e48a82658b1982fded88adcf4ef}{via}};}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00065}00065\ \ \ \ \ \ \ \ \ this.civico\ =\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_afa82888f78722757200b1cb5bc72f36b}{civico}};}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00066}00066\ \ \ \ \ \ \ \ \ this.email\ =\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_ac120cf8981125377a85fe62e1557a509}{email}};}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00067}00067\ \ \ \ \ \ \ \ \ this.password\ =\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_acbd76b816d055b7a642c219fd9751020}{password}};}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00068}00068\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00069}00069\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00075}\mbox{\hyperlink{classcommon_1_1_utenti_registrati_ae3551d5da85b215a582e93cb602648a6}{00075}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_ae3551d5da85b215a582e93cb602648a6}{UtentiRegistrati}}(String\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_a4cfff30ec02286864b995e013b6c2a41}{nome}},\ String\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_a75fd3fcf5ac6a56a7a15fd5fec7cdd04}{cognome}})\{}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00076}00076\ \ \ \ \ \ \ \ \ this.nome\ =\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_a4cfff30ec02286864b995e013b6c2a41}{nome}};}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00077}00077\ \ \ \ \ \ \ \ \ this.cognome\ =\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_a75fd3fcf5ac6a56a7a15fd5fec7cdd04}{cognome}};}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00078}00078\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00079}00079\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00084}\mbox{\hyperlink{classcommon_1_1_utenti_registrati_a2ff8ff110ded2818f271d6d4dcb99454}{00084}}\ \ \ \ \ \textcolor{keyword}{public}\ String\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_a2ff8ff110ded2818f271d6d4dcb99454}{getCodiceFiscale}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00085}00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_a89e28f6f7714a9b66a902a1aa74f9566}{codiceFiscale}};}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00086}00086\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00087}00087\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00092}\mbox{\hyperlink{classcommon_1_1_utenti_registrati_ac42ccd775b8fd78bc1f6dae1a86cfc1a}{00092}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_ac42ccd775b8fd78bc1f6dae1a86cfc1a}{setCodiceFiscale}}(String\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_a89e28f6f7714a9b66a902a1aa74f9566}{codiceFiscale}})\ \{}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00093}00093\ \ \ \ \ \ \ \ \ this.codiceFiscale\ =\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_a89e28f6f7714a9b66a902a1aa74f9566}{codiceFiscale}};}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00094}00094\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00095}00095\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00100}\mbox{\hyperlink{classcommon_1_1_utenti_registrati_a7b7ff7170199143b160d41a3e73201f4}{00100}}\ \ \ \ \ \textcolor{keyword}{public}\ String\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_a7b7ff7170199143b160d41a3e73201f4}{getNome}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00101}00101\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_a4cfff30ec02286864b995e013b6c2a41}{nome}};}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00102}00102\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00103}00103\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00108}\mbox{\hyperlink{classcommon_1_1_utenti_registrati_a4d41b18fe7ae467fec31ac2851f94b60}{00108}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_a4d41b18fe7ae467fec31ac2851f94b60}{setNome}}(String\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_a4cfff30ec02286864b995e013b6c2a41}{nome}})\ \{}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00109}00109\ \ \ \ \ \ \ \ \ this.nome\ =\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_a4cfff30ec02286864b995e013b6c2a41}{nome}};}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00110}00110\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00116}\mbox{\hyperlink{classcommon_1_1_utenti_registrati_aa69b41d4a84e43390ff79d5115bd4155}{00116}}\ \ \ \ \ \textcolor{keyword}{public}\ String\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_aa69b41d4a84e43390ff79d5115bd4155}{getCognome}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00117}00117\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_a75fd3fcf5ac6a56a7a15fd5fec7cdd04}{cognome}};}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00118}00118\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00119}00119\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00124}\mbox{\hyperlink{classcommon_1_1_utenti_registrati_a79e2d092e1dd573bd6fed902352830a5}{00124}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_a79e2d092e1dd573bd6fed902352830a5}{setCognome}}(String\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_a75fd3fcf5ac6a56a7a15fd5fec7cdd04}{cognome}})\ \{}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00125}00125\ \ \ \ \ \ \ \ \ this.cognome\ =\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_a75fd3fcf5ac6a56a7a15fd5fec7cdd04}{cognome}};}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00126}00126\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00127}00127\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00132}\mbox{\hyperlink{classcommon_1_1_utenti_registrati_ab6790b8f8169025e56bee5f5a6cd0f94}{00132}}\ \ \ \ \ \textcolor{keyword}{public}\ String\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_ab6790b8f8169025e56bee5f5a6cd0f94}{getCitta}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00133}00133\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_ae64770b15ce972917c88ef5c453e6592}{citta}};}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00134}00134\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00135}00135\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00140}\mbox{\hyperlink{classcommon_1_1_utenti_registrati_ae95e2b2f40055ddd9c517b97739d6aee}{00140}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_ae95e2b2f40055ddd9c517b97739d6aee}{setCitta}}(String\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_ae64770b15ce972917c88ef5c453e6592}{citta}})\ \{}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00141}00141\ \ \ \ \ \ \ \ \ this.citta\ =\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_ae64770b15ce972917c88ef5c453e6592}{citta}};}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00142}00142\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00143}00143\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00148}\mbox{\hyperlink{classcommon_1_1_utenti_registrati_a7afee0f259c3ff2d582ff19e5ed6373d}{00148}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_a7afee0f259c3ff2d582ff19e5ed6373d}{getCap}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00149}00149\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_acf9933ba9a016c4f3e65bfb6e6800af1}{cap}};}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00150}00150\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00151}00151\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00156}\mbox{\hyperlink{classcommon_1_1_utenti_registrati_a6348cfb150e6257d4c41562bdc413248}{00156}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_a6348cfb150e6257d4c41562bdc413248}{setCap}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_acf9933ba9a016c4f3e65bfb6e6800af1}{cap}})\ \{}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00157}00157\ \ \ \ \ \ \ \ \ this.cap\ =\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_acf9933ba9a016c4f3e65bfb6e6800af1}{cap}};}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00158}00158\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00159}00159\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00164}\mbox{\hyperlink{classcommon_1_1_utenti_registrati_a99e6a45c4719ecd44eafb46c03fae01b}{00164}}\ \ \ \ \ \textcolor{keyword}{public}\ String\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_a99e6a45c4719ecd44eafb46c03fae01b}{getVia}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00165}00165\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_a56526e48a82658b1982fded88adcf4ef}{via}};}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00166}00166\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00167}00167\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00172}\mbox{\hyperlink{classcommon_1_1_utenti_registrati_ad293c873649754b59e58ea8fa4e1b93d}{00172}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_ad293c873649754b59e58ea8fa4e1b93d}{setVia}}(String\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_a56526e48a82658b1982fded88adcf4ef}{via}})\ \{}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00173}00173\ \ \ \ \ \ \ \ \ this.via\ =\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_a56526e48a82658b1982fded88adcf4ef}{via}};}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00174}00174\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00175}00175\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00180}\mbox{\hyperlink{classcommon_1_1_utenti_registrati_a68db40da1c4277657fbdbd518b8a7714}{00180}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_a68db40da1c4277657fbdbd518b8a7714}{getCivico}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00181}00181\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_afa82888f78722757200b1cb5bc72f36b}{civico}};}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00182}00182\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00183}00183\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00188}\mbox{\hyperlink{classcommon_1_1_utenti_registrati_a7c4b6632b5f7bf630cb84224a742817e}{00188}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_a7c4b6632b5f7bf630cb84224a742817e}{setCivico}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_afa82888f78722757200b1cb5bc72f36b}{civico}})\ \{}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00189}00189\ \ \ \ \ \ \ \ \ this.civico\ =\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_afa82888f78722757200b1cb5bc72f36b}{civico}};}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00190}00190\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00191}00191\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00196}\mbox{\hyperlink{classcommon_1_1_utenti_registrati_af650efc67273666efa38d5c55eea2b97}{00196}}\ \ \ \ \ \textcolor{keyword}{public}\ String\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_af650efc67273666efa38d5c55eea2b97}{getEmail}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00197}00197\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_ac120cf8981125377a85fe62e1557a509}{email}};}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00198}00198\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00199}00199\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00204}\mbox{\hyperlink{classcommon_1_1_utenti_registrati_aeafd03d347a4b159e03b5f3e9c16464b}{00204}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_aeafd03d347a4b159e03b5f3e9c16464b}{setEmail}}(String\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_ac120cf8981125377a85fe62e1557a509}{email}})\ \{}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00205}00205\ \ \ \ \ \ \ \ \ this.email\ =\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_ac120cf8981125377a85fe62e1557a509}{email}};}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00206}00206\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00207}00207\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00212}\mbox{\hyperlink{classcommon_1_1_utenti_registrati_a26b3c6f2d61d7d4bbe91a7deb815e86d}{00212}}\ \ \ \ \ \textcolor{keyword}{public}\ String\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_a26b3c6f2d61d7d4bbe91a7deb815e86d}{getPassword}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00213}00213\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_acbd76b816d055b7a642c219fd9751020}{password}};}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00214}00214\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00215}00215\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00220}\mbox{\hyperlink{classcommon_1_1_utenti_registrati_aa8ede49ce70bbd58d1a1ee8b7a261cee}{00220}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_aa8ede49ce70bbd58d1a1ee8b7a261cee}{setPassword}}(String\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_acbd76b816d055b7a642c219fd9751020}{password}})\ \{}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00221}00221\ \ \ \ \ \ \ \ \ this.password\ =\ \mbox{\hyperlink{classcommon_1_1_utenti_registrati_acbd76b816d055b7a642c219fd9751020}{password}};}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00222}00222\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00223}00223\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00224}00224\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00225}00225\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00226}00226\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_utenti_registrati_8java_source_l00227}00227\ \}}
+
+\end{DoxyCode}
