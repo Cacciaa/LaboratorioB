@@ -200,7 +200,7 @@ public class ConsoleFrame extends javax.swing.JPanel implements InterfacciaServi
     @Override
     public synchronized ArrayList<Canzoni> filtraPerTitolo(String titolo) throws CanzoneInesistente, MyServerException {
         try {
-            titolo.replace("'", "''");
+           titolo = titolo.replace("'", "''");
             ResultSet rs = db.submitQuery("SELECT * FROM canzoni WHERE LOWER(titolo) LIKE LOWER('" + titolo + "%')");
             this.txtAreaConsole.append("\nFiltra per titolo effettuato");
             return dt.handleCanzoniSet(rs);
@@ -225,7 +225,7 @@ public class ConsoleFrame extends javax.swing.JPanel implements InterfacciaServi
     @Override
     public synchronized ArrayList<Canzoni> filtraPerAutoreAnno(String autore, int anno) throws CanzoneInesistente, MyServerException {
         try {
-            autore.replace("'", "''");
+           autore = autore.replace("'", "''");
             ResultSet rs = db.submitQuery("SELECT * FROM canzoni WHERE LOWER(autore) LIKE LOWER('" + autore + "%') AND anno = " + anno);
             this.txtAreaConsole.append("\nFiltra per autore e anno effettuato");
             return dt.handleCanzoniSet(rs);

@@ -28,13 +28,13 @@
                         <configuration>
                             <archive>
                                 <manifest>
-                                    <mainClass>client.EmotionalSongs</mainClass>
+                                    <mainClass>server.ServerFrame</mainClass>
                                 </manifest>
                             </archive>
                             <descriptorRefs>
                                 <descriptorRef>jar-with-dependencies</descriptorRef>
                             </descriptorRefs>
-                            <finalName>jar2</finalName>
+                            <finalName>jar1</finalName>
                         </configuration>
                         <phase>package</phase>
                         <goals>

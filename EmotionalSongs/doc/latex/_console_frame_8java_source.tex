@@ -1,5 +1,5 @@
 \doxysection{Console\+Frame.\+java}
-\hypertarget{_console_frame_8java_source}{}\label{_console_frame_8java_source}\index{src/main/java/server/ConsoleFrame.java@{src/main/java/server/ConsoleFrame.java}}
+\hypertarget{_console_frame_8java_source}{}\label{_console_frame_8java_source}\index{D:/UnInsu/Lab.B/LaboratorioB/EmotionalSongs/src/main/java/server/ConsoleFrame.java@{D:/UnInsu/Lab.B/LaboratorioB/EmotionalSongs/src/main/java/server/ConsoleFrame.java}}
 \mbox{\hyperlink{_console_frame_8java}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00001}00001\ \textcolor{comment}{/*}}
@@ -154,7 +154,7 @@
 \DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00200}00200\ \ \ \ \ @Override}
 \DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00201}\mbox{\hyperlink{classserver_1_1_console_frame_a5b8294026608668c8f915f834b607c22}{00201}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{synchronized}\ ArrayList<Canzoni>\ \mbox{\hyperlink{classserver_1_1_console_frame_a5b8294026608668c8f915f834b607c22}{filtraPerTitolo}}(String\ titolo)\ \textcolor{keywordflow}{throws}\ \mbox{\hyperlink{classcommon_1_1_canzone_inesistente}{CanzoneInesistente}},\ \mbox{\hyperlink{classcommon_1_1_my_server_exception}{MyServerException}}\ \{}
 \DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00202}00202\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
-\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ titolo.replace(\textcolor{stringliteral}{"{}'"{}},\ \textcolor{stringliteral}{"{}''"{}});}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ titolo\ =\ titolo.replace(\textcolor{stringliteral}{"{}'"{}},\ \textcolor{stringliteral}{"{}''"{}});}
 \DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ ResultSet\ rs\ =\ \mbox{\hyperlink{classserver_1_1_console_frame_a85d663119c421cf6e056810a3ae37ac6}{db}}.\mbox{\hyperlink{classserver_1_1_database_a63798edbcf11407baff763318dcedfe4}{submitQuery}}(\textcolor{stringliteral}{"{}SELECT\ *\ FROM\ canzoni\ WHERE\ LOWER(titolo)\ LIKE\ LOWER('"{}}\ +\ titolo\ +\ \textcolor{stringliteral}{"{}\%')"{}});}
 \DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ this.txtAreaConsole.append(\textcolor{stringliteral}{"{}\(\backslash\)nFiltra\ per\ titolo\ effettuato"{}});}
 \DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classserver_1_1_console_frame_a7cc9a0e1eb39746de1a2eb9a60a874fb}{dt}}.\mbox{\hyperlink{classserver_1_1_data_tables_a991a8d62a3ffa66c044f72b13a85868a}{handleCanzoniSet}}(rs);}
@@ -166,7 +166,7 @@
 \DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00225}00225\ \ \ \ \ @Override}
 \DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00226}\mbox{\hyperlink{classserver_1_1_console_frame_a4df018cf11f2509ef9c274cb734f3c3a}{00226}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{synchronized}\ ArrayList<Canzoni>\ \mbox{\hyperlink{classserver_1_1_console_frame_a4df018cf11f2509ef9c274cb734f3c3a}{filtraPerAutoreAnno}}(String\ autore,\ \textcolor{keywordtype}{int}\ anno)\ \textcolor{keywordflow}{throws}\ \mbox{\hyperlink{classcommon_1_1_canzone_inesistente}{CanzoneInesistente}},\ \mbox{\hyperlink{classcommon_1_1_my_server_exception}{MyServerException}}\ \{}
 \DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00227}00227\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
-\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ autore.replace(\textcolor{stringliteral}{"{}'"{}},\ \textcolor{stringliteral}{"{}''"{}});}
+\DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ autore\ =\ autore.replace(\textcolor{stringliteral}{"{}'"{}},\ \textcolor{stringliteral}{"{}''"{}});}
 \DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ ResultSet\ rs\ =\ \mbox{\hyperlink{classserver_1_1_console_frame_a85d663119c421cf6e056810a3ae37ac6}{db}}.\mbox{\hyperlink{classserver_1_1_database_a63798edbcf11407baff763318dcedfe4}{submitQuery}}(\textcolor{stringliteral}{"{}SELECT\ *\ FROM\ canzoni\ WHERE\ LOWER(autore)\ LIKE\ LOWER('"{}}\ +\ autore\ +\ \textcolor{stringliteral}{"{}\%')\ AND\ anno\ =\ "{}}\ +\ anno);}
 \DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ this.txtAreaConsole.append(\textcolor{stringliteral}{"{}\(\backslash\)nFiltra\ per\ autore\ e\ anno\ effettuato"{}});}
 \DoxyCodeLine{\Hypertarget{_console_frame_8java_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classserver_1_1_console_frame_a7cc9a0e1eb39746de1a2eb9a60a874fb}{dt}}.\mbox{\hyperlink{classserver_1_1_data_tables_a991a8d62a3ffa66c044f72b13a85868a}{handleCanzoniSet}}(rs);}
